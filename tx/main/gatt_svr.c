@@ -3,7 +3,6 @@
  */
 
 #include <stdint.h>
-#include <string.h>
 
 #include "esp_log.h"
 #include "host/ble_hs.h"
@@ -64,8 +63,6 @@ box_message_access(uint16_t conn_handle,
                  (unsigned)conn_handle,
                  (unsigned)attr_handle,
                  (unsigned)len);
-
-        /* Transport test only: data is not persisted yet. */
         return 0;
     }
 
@@ -138,13 +135,11 @@ gatt_svr_init(void)
 #if CONFIG_BT_NIMBLE_GAP_SERVICE
     ble_svc_gap_init();
 #endif
-
     ble_svc_gatt_init();
 
     int rc = ble_gatts_count_cfg(box_services);
     if (rc != 0) {
         return rc;
     }
-
     return ble_gatts_add_svcs(box_services);
 }

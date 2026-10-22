@@ -17,9 +17,14 @@
  * under the License.
  */
 
+#include <stdio.h>
 #include <string.h>
 
+#include "freertos/FreeRTOS.h"
+#include "freertos/queue.h"
+#include "freertos/task.h"
 #include "esp_log.h"
+#include "esp_random.h"
 #include "nvs_flash.h"
 /* BLE */
 #include "nimble/nimble_port.h"
@@ -42,14 +47,23 @@ static uint8_t ext_adv_pattern_1[] = {
 
 static const char *tag = "NimBLE_BLE_PRPH";
 
-/* Advertising UUID expected by Box Messenger:
- * 12345678-1234-5678-9012-123456789abc
- */
 static ble_uuid128_t box_advertising_uuid =
     BLE_UUID128_INIT(
         0xbc, 0x9a, 0x78, 0x56, 0x34, 0x12, 0x12, 0x90,
         0x78, 0x56, 0x34, 0x12, 0x78, 0x56, 0x34, 0x12
     );
+
+#define BOX_TX_QUEUE_LENGTH 4
+#define BOX_TX_TASK_STACK_SIZE 4096
+#define BOX_TX_TASK_PRIORITY 5
+#define BOX_TX_PACKET_DELAY_MS 10
+
+typedef struct { uint16_t conn_handle; } box_tx_request_t;
+static QueueHandle_t box_tx_queue;
+static volatile uint16_t box_subscribed_conn = BLE_HS_CONN_HANDLE_NONE;
+
+static void box_tx_task(void *arg);
+static void box_schedule_test_session(uint16_t conn_handle);
 static int bleprph_gap_event(struct ble_gap_event *event, void *arg);
 #if CONFIG_EXAMPLE_RANDOM_ADDR
 static uint8_t own_addr_type = BLE_OWN_ADDR_RANDOM;
@@ -165,12 +179,10 @@ bleprph_advertise(void)
     struct ble_gap_adv_params params = {0};
     int rc;
 
-    fields.flags = BLE_HS_ADV_F_DISC_GEN |
-                   BLE_HS_ADV_F_BREDR_UNSUP;
+    fields.flags = BLE_HS_ADV_F_DISC_GEN | BLE_HS_ADV_F_BREDR_UNSUP;
     fields.uuids128 = &box_advertising_uuid;
     fields.num_uuids128 = 1;
     fields.uuids128_is_complete = 1;
-
     rc = ble_gap_adv_set_fields(&fields);
     if (rc != 0) {
         ESP_LOGE(tag, "Advertising fields failed: rc=%d", rc);
@@ -181,7 +193,6 @@ bleprph_advertise(void)
     scan_rsp.name = (const uint8_t *)name;
     scan_rsp.name_len = sizeof(name) - 1;
     scan_rsp.name_is_complete = 1;
-
     rc = ble_gap_adv_rsp_set_fields(&scan_rsp);
     if (rc != 0) {
         ESP_LOGE(tag, "Scan response failed: rc=%d", rc);
@@ -190,21 +201,98 @@ bleprph_advertise(void)
 
     params.conn_mode = BLE_GAP_CONN_MODE_UND;
     params.disc_mode = BLE_GAP_DISC_MODE_GEN;
-
-    rc = ble_gap_adv_start(own_addr_type,
-                           NULL,
-                           BLE_HS_FOREVER,
-                           &params,
-                           bleprph_gap_event,
-                           NULL);
+    rc = ble_gap_adv_start(own_addr_type, NULL, BLE_HS_FOREVER,
+                           &params, bleprph_gap_event, NULL);
     if (rc != 0) {
         ESP_LOGE(tag, "Advertising start failed: rc=%d", rc);
         return;
     }
-
     ESP_LOGI(tag, "BOX advertising started");
 }
 #endif
+
+static bool
+box_connection_is_subscribed(uint16_t conn_handle)
+{
+    return box_subscribed_conn == conn_handle;
+}
+
+static void
+box_generate_session_uuid(char out[37])
+{
+    uint8_t u[16];
+    esp_fill_random(u, sizeof(u));
+    u[6] = (u[6] & 0x0f) | 0x40;
+    u[8] = (u[8] & 0x3f) | 0x80;
+    snprintf(out, 37,
+             "%02x%02x%02x%02x-%02x%02x-%02x%02x-%02x%02x-"
+             "%02x%02x%02x%02x%02x%02x",
+             u[0],u[1],u[2],u[3],u[4],u[5],u[6],u[7],
+             u[8],u[9],u[10],u[11],u[12],u[13],u[14],u[15]);
+}
+
+static int
+box_notify_packet(uint16_t conn_handle, const char *packet, const char *type)
+{
+    size_t len = strlen(packet);
+    uint16_t mtu = ble_att_mtu(conn_handle);
+    if (!box_connection_is_subscribed(conn_handle)) {
+        ESP_LOGW(tag, "Skip %s: no subscription", type);
+        return BLE_HS_ENOTCONN;
+    }
+    if (mtu <= 3 || len > (size_t)(mtu - 3)) {
+        ESP_LOGE(tag, "Cannot send %s: len=%u mtu=%u", type,
+                 (unsigned)len, (unsigned)mtu);
+        return BLE_HS_EINVAL;
+    }
+    struct os_mbuf *om = ble_hs_mbuf_from_flat(packet, len);
+    if (om == NULL) return BLE_HS_ENOMEM;
+    int rc = ble_gatts_notify_custom(conn_handle, box_gatt_message_handle(), om);
+    if (rc == 0) {
+        ESP_LOGI(tag, "BOX notify queued: conn=%u type=%s len=%u mtu=%u",
+                 (unsigned)conn_handle,type,(unsigned)len,(unsigned)mtu);
+    } else {
+        ESP_LOGE(tag, "BOX notify failed: type=%s rc=%d", type, rc);
+    }
+    return rc;
+}
+
+static void
+box_schedule_test_session(uint16_t conn_handle)
+{
+    box_tx_request_t r = { .conn_handle = conn_handle };
+    if (box_tx_queue == NULL || xQueueSend(box_tx_queue, &r, 0) != pdTRUE) {
+        ESP_LOGW(tag, "TX queue unavailable or full");
+        return;
+    }
+    ESP_LOGI(tag, "Test session scheduled: conn=%u", (unsigned)conn_handle);
+}
+
+static void
+box_tx_task(void *arg)
+{
+    (void)arg;
+    box_tx_request_t r;
+    while (true) {
+        if (xQueueReceive(box_tx_queue, &r, portMAX_DELAY) != pdTRUE) continue;
+        if (!box_connection_is_subscribed(r.conn_handle)) continue;
+
+        char sid[37], sid_packet[48], trm_packet[48];
+        box_generate_session_uuid(sid);
+        snprintf(sid_packet, sizeof(sid_packet), "V1\nSID\n%s", sid);
+        snprintf(trm_packet, sizeof(trm_packet), "V1\nTRM\n%s", sid);
+        ESP_LOGI(tag, "Test session started: conn=%u sid=%s",
+                 (unsigned)r.conn_handle, sid);
+
+        if (box_notify_packet(r.conn_handle, sid_packet, "SID") != 0) continue;
+        vTaskDelay(pdMS_TO_TICKS(BOX_TX_PACKET_DELAY_MS));
+        if (box_notify_packet(r.conn_handle, trm_packet, "TRM-1") != 0) continue;
+        vTaskDelay(pdMS_TO_TICKS(BOX_TX_PACKET_DELAY_MS));
+        if (box_notify_packet(r.conn_handle, trm_packet, "TRM-2") != 0) continue;
+        ESP_LOGI(tag, "Test session queued completely: conn=%u sid=%s",
+                 (unsigned)r.conn_handle, sid);
+    }
+}
 
 #if MYNEWT_VAL(BLE_POWER_CONTROL)
 static void bleprph_power_control(uint16_t conn_handle)
@@ -272,6 +360,9 @@ bleprph_gap_event(struct ble_gap_event *event, void *arg)
         return 0;
 
     case BLE_GAP_EVENT_DISCONNECT:
+        if (box_subscribed_conn == event->disconnect.conn.conn_handle) {
+            box_subscribed_conn = BLE_HS_CONN_HANDLE_NONE;
+        }
         MODLOG_DFLT(INFO, "disconnect; reason=%d ", event->disconnect.reason);
         bleprph_print_conn_desc(&event->disconnect.conn);
         MODLOG_DFLT(INFO, "\n");
@@ -334,10 +425,15 @@ bleprph_gap_event(struct ble_gap_event *event, void *arg)
                     event->subscribe.prev_indicate,
                     event->subscribe.cur_indicate);
         if (event->subscribe.attr_handle == box_gatt_message_handle()) {
-            ESP_LOGI(tag,
-                     "BOX subscription: conn=%u notify=%u",
+            ESP_LOGI(tag, "BOX subscription: conn=%u notify=%u",
                      (unsigned)event->subscribe.conn_handle,
                      (unsigned)event->subscribe.cur_notify);
+            if (event->subscribe.cur_notify) {
+                box_subscribed_conn = event->subscribe.conn_handle;
+                box_schedule_test_session(event->subscribe.conn_handle);
+            } else if (box_subscribed_conn == event->subscribe.conn_handle) {
+                box_subscribed_conn = BLE_HS_CONN_HANDLE_NONE;
+            }
         }
         return 0;
 
@@ -621,6 +717,13 @@ app_main(void)
 
     /* XXX Need to have template for store */
     ble_store_config_init();
+
+    box_tx_queue = xQueueCreate(BOX_TX_QUEUE_LENGTH, sizeof(box_tx_request_t));
+    assert(box_tx_queue != NULL);
+    BaseType_t task_created = xTaskCreate(box_tx_task, "box_tx",
+                                          BOX_TX_TASK_STACK_SIZE, NULL,
+                                          BOX_TX_TASK_PRIORITY, NULL);
+    assert(task_created == pdPASS);
 
     nimble_port_freertos_init(bleprph_host_task);
 

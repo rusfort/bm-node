@@ -1208,4 +1208,898 @@ entry 0x403c8924
 [0;32mI (283093) NimBLE:  adv_channel_map=0 own_addr_type=0 adv_filter_policy=0 adv_itvl_min=0 adv_itvl_max=0[0m
 [0;32mI (283103) NimBLE: [0m
 
-[
+[0;32mI (283113) NimBLE_BLE_PRPH: BOX advertising started[0m
+[0;32mI (317143) NimBLE: connection established; status=0 [0m
+[0;32mI (317143) NimBLE: handle=1 our_ota_addr_type=0 our_ota_addr=[0m
+[0;32mI (317143) NimBLE: 10:00:3b:6b:c4:76[0m
+[0;32mI (317143) NimBLE:  our_id_addr_type=0 our_id_addr=[0m
+[0;32mI (317143) NimBLE: 10:00:3b:6b:c4:76[0m
+[0;32mI (317153) NimBLE:  peer_ota_addr_type=1 peer_ota_addr=[0m
+[0;32mI (317153) NimBLE: 66:a6:11:48:6f:80[0m
+[0;32mI (317163) NimBLE:  peer_id_addr_type=1 peer_id_addr=[0m
+[0;32mI (317163) NimBLE: 66:a6:11:48:6f:80[0m
+[0;32mI (317163) NimBLE:  conn_itvl=24 conn_latency=0 supervision_timeout=500 encrypted=0 authenticated=0 bonded=0[0m
+
+[0;32mI (317173) NimBLE: [0m
+
+[0;32mI (317563) NimBLE: connection updated; status=0 [0m
+[0;32mI (317563) NimBLE: handle=1 our_ota_addr_type=0 our_ota_addr=[0m
+[0;32mI (317563) NimBLE: 10:00:3b:6b:c4:76[0m
+[0;32mI (317563) NimBLE:  our_id_addr_type=0 our_id_addr=[0m
+[0;32mI (317573) NimBLE: 10:00:3b:6b:c4:76[0m
+[0;32mI (317573) NimBLE:  peer_ota_addr_type=1 peer_ota_addr=[0m
+[0;32mI (317583) NimBLE: 66:a6:11:48:6f:80[0m
+[0;32mI (317583) NimBLE:  peer_id_addr_type=1 peer_id_addr=[0m
+[0;32mI (317583) NimBLE: 66:a6:11:48:6f:80[0m
+[0;32mI (317593) NimBLE:  conn_itvl=6 conn_latency=0 supervision_timeout=500 encrypted=0 authenticated=0 bonded=0[0m
+
+[0;32mI (317603) NimBLE: [0m
+
+[0;32mI (317793) NimBLE: mtu update event; conn_handle=1 cid=4 mtu=517[0m
+
+[0;32mI (317833) NimBLE: subscribe event; conn_handle=1 attr_handle=16 reason=1 prevn=0 curn=1 previ=0 curi=0[0m
+
+[0;32mI (317833) NimBLE_BLE_PRPH: BOX subscription: conn=1 notify=1[0m
+[0;32mI (317893) NimBLE: connection updated; status=0 [0m
+[0;32mI (317893) NimBLE: handle=1 our_ota_addr_type=0 our_ota_addr=[0m
+[0;32mI (317893) NimBLE: 10:00:3b:6b:c4:76[0m
+[0;32mI (317893) NimBLE:  our_id_addr_type=0 our_id_addr=[0m
+[0;32mI (317903) NimBLE: 10:00:3b:6b:c4:76[0m
+[0;32mI (317903) NimBLE:  peer_ota_addr_type=1 peer_ota_addr=[0m
+[0;32mI (317913) NimBLE: 66:a6:11:48:6f:80[0m
+[0;32mI (317913) NimBLE:  peer_id_addr_type=1 peer_id_addr=[0m
+[0;32mI (317913) NimBLE: 66:a6:11:48:6f:80[0m
+[0;32mI (317923) NimBLE:  conn_itvl=24 conn_latency=0 supervision_timeout=500 encrypted=0 authenticated=0 bonded=0[0m
+
+[0;32mI (317933) NimBLE: [0m
+
+[0;32mI (344833) NimBLE: subscribe event; conn_handle=1 attr_handle=16 reason=2 prevn=1 curn=0 previ=0 curi=0[0m
+
+[0;32mI (344833) NimBLE_BLE_PRPH: BOX subscription: conn=1 notify=0[0m
+[0;32mI (344843) NimBLE: disconnect; reason=531 [0m
+[0;32mI (344843) NimBLE: handle=1 our_ota_addr_type=0 our_ota_addr=[0m
+[0;32mI (344853) NimBLE: 10:00:3b:6b:c4:76[0m
+[0;32mI (344853) NimBLE:  our_id_addr_type=0 our_id_addr=[0m
+[0;32mI (344853) NimBLE: 10:00:3b:6b:c4:76[0m
+[0;32mI (344863) NimBLE:  peer_ota_addr_type=1 peer_ota_addr=[0m
+[0;32mI (344863) NimBLE: 66:a6:11:48:6f:80[0m
+[0;32mI (344873) NimBLE:  peer_id_addr_type=1 peer_id_addr=[0m
+[0;32mI (344873) NimBLE: 66:a6:11:48:6f:80[0m
+[0;32mI (344873) NimBLE:  conn_itvl=24 conn_latency=0 supervision_timeout=500 encrypted=0 authenticated=0 bonded=0[0m
+
+[0;32mI (344883) NimBLE: [0m
+
+[0;32mI (344893) NimBLE: GAP procedure initiated: advertise; [0m
+[0;32mI (344893) NimBLE: disc_mode=2[0m
+[0;32mI (344893) NimBLE:  adv_channel_map=0 own_addr_type=0 adv_filter_policy=0 adv_itvl_min=0 adv_itvl_max=0[0m
+[0;32mI (344903) NimBLE: [0m
+
+[0;32mI (344903) NimBLE_BLE_PRPH: BOX advertising started[0m
+[0;32mI (349363) NimBLE: connection established; status=0 [0m
+[0;32mI (349363) NimBLE: handle=1 our_ota_addr_type=0 our_ota_addr=[0m
+[0;32mI (349363) NimBLE: 10:00:3b:6b:c4:76[0m
+[0;32mI (349363) NimBLE:  our_id_addr_type=0 our_id_addr=[0m
+[0;32mI (349373) NimBLE: 10:00:3b:6b:c4:76[0m
+[0;32mI (349373) NimBLE:  peer_ota_addr_type=1 peer_ota_addr=[0m
+[0;32mI (349373) NimBLE: 5e:6f:ef:38:08:45[0m
+[0;32mI (349383) NimBLE:  peer_id_addr_type=1 peer_id_addr=[0m
+[0;32mI (349383) NimBLE: 5e:6f:ef:38:08:45[0m
+[0;32mI (349383) NimBLE:  conn_itvl=24 conn_latency=0 supervision_timeout=500 encrypted=0 authenticated=0 bonded=0[0m
+
+[0;32mI (349393) NimBLE: [0m
+
+[0;32mI (349753) NimBLE: connection updated; status=0 [0m
+[0;32mI (349753) NimBLE: handle=1 our_ota_addr_type=0 our_ota_addr=[0m
+[0;32mI (349753) NimBLE: 10:00:3b:6b:c4:76[0m
+[0;32mI (349753) NimBLE:  our_id_addr_type=0 our_id_addr=[0m
+[0;32mI (349763) NimBLE: 10:00:3b:6b:c4:76[0m
+[0;32mI (349763) NimBLE:  peer_ota_addr_type=1 peer_ota_addr=[0m
+[0;32mI (349773) NimBLE: 5e:6f:ef:38:08:45[0m
+[0;32mI (349773) NimBLE:  peer_id_addr_type=1 peer_id_addr=[0m
+[0;32mI (349773) NimBLE: 5e:6f:ef:38:08:45[0m
+[0;32mI (349783) NimBLE:  conn_itvl=6 conn_latency=0 supervision_timeout=500 encrypted=0 authenticated=0 bonded=0[0m
+
+[0;32mI (349793) NimBLE: [0m
+
+[0;32mI (349963) NimBLE: mtu update event; conn_handle=1 cid=4 mtu=517[0m
+
+[0;32mI (349983) NimBLE: subscribe event; conn_handle=1 attr_handle=16 reason=1 prevn=0 curn=1 previ=0 curi=0[0m
+
+[0;32mI (349983) NimBLE_BLE_PRPH: BOX subscription: conn=1 notify=1[0m
+[0;32mI (350053) NimBLE: connection updated; status=0 [0m
+[0;32mI (350053) NimBLE: handle=1 our_ota_addr_type=0 our_ota_addr=[0m
+[0;32mI (350053) NimBLE: 10:00:3b:6b:c4:76[0m
+[0;32mI (350053) NimBLE:  our_id_addr_type=0 our_id_addr=[0m
+[0;32mI (350063) NimBLE: 10:00:3b:6b:c4:76[0m
+[0;32mI (350063) NimBLE:  peer_ota_addr_type=1 peer_ota_addr=[0m
+[0;32mI (350073) NimBLE: 5e:6f:ef:38:08:45[0m
+[0;32mI (350073) NimBLE:  peer_id_addr_type=1 peer_id_addr=[0m
+[0;32mI (350073) NimBLE: 5e:6f:ef:38:08:45[0m
+[0;32mI (350083) NimBLE:  conn_itvl=24 conn_latency=0 supervision_timeout=500 encrypted=0 authenticated=0 bonded=0[0m
+
+[0;32mI (350093) NimBLE: [0m
+
+[0;32mI (353023) NimBLE: subscribe event; conn_handle=1 attr_handle=16 reason=2 prevn=1 curn=0 previ=0 curi=0[0m
+
+[0;32mI (353023) NimBLE_BLE_PRPH: BOX subscription: conn=1 notify=0[0m
+[0;32mI (353033) NimBLE: disconnect; reason=531 [0m
+[0;32mI (353033) NimBLE: handle=1 our_ota_addr_type=0 our_ota_addr=[0m
+[0;32mI (353043) NimBLE: 10:00:3b:6b:c4:76[0m
+[0;32mI (353043) NimBLE:  our_id_addr_type=0 our_id_addr=[0m
+[0;32mI (353043) NimBLE: 10:00:3b:6b:c4:76[0m
+[0;32mI (353053) NimBLE:  peer_ota_addr_type=1 peer_ota_addr=[0m
+[0;32mI (353053) NimBLE: 5e:6f:ef:38:08:45[0m
+[0;32mI (353053) NimBLE:  peer_id_addr_type=1 peer_id_addr=[0m
+[0;32mI (353063) NimBLE: 5e:6f:ef:38:08:45[0m
+[0;32mI (353063) NimBLE:  conn_itvl=24 conn_latency=0 supervision_timeout=500 encrypted=0 authenticated=0 bonded=0[0m
+
+[0;32mI (353073) NimBLE: [0m
+
+[0;32mI (353083) NimBLE: GAP procedure initiated: advertise; [0m
+[0;32mI (353083) NimBLE: disc_mode=2[0m
+[0;32mI (353083) NimBLE:  adv_channel_map=0 own_addr_type=0 adv_filter_policy=0 adv_itvl_min=0 adv_itvl_max=0[0m
+[0;32mI (353093) NimBLE: [0m
+
+[0;32mI (353093) NimBLE_BLE_PRPH: BOX advertising started[0m
+[0;32mI (375733) NimBLE: connection established; status=0 [0m
+[0;32mI (375733) NimBLE: handle=1 our_ota_addr_type=0 our_ota_addr=[0m
+[0;32mI (375733) NimBLE: 10:00:3b:6b:c4:76[0m
+[0;32mI (375733) NimBLE:  our_id_addr_type=0 our_id_addr=[0m
+[0;32mI (375743) NimBLE: 10:00:3b:6b:c4:76[0m
+[0;32mI (375743) NimBLE:  peer_ota_addr_type=1 peer_ota_addr=[0m
+[0;32mI (375743) NimBLE: 4a:f9:cd:3e:43:20[0m
+[0;32mI (375753) NimBLE:  peer_id_addr_type=1 peer_id_addr=[0m
+[0;32mI (375753) NimBLE: 4a:f9:cd:3e:43:20[0m
+[0;32mI (375763) NimBLE:  conn_itvl=24 conn_latency=0 supervision_timeout=500 encrypted=0 authenticated=0 bonded=0[0m
+
+[0;32mI (375773) NimBLE: [0m
+
+[0;32mI (376123) NimBLE: connection updated; status=0 [0m
+[0;32mI (376123) NimBLE: handle=1 our_ota_addr_type=0 our_ota_addr=[0m
+[0;32mI (376123) NimBLE: 10:00:3b:6b:c4:76[0m
+[0;32mI (376123) NimBLE:  our_id_addr_type=0 our_id_addr=[0m
+[0;32mI (376133) NimBLE: 10:00:3b:6b:c4:76[0m
+[0;32mI (376133) NimBLE:  peer_ota_addr_type=1 peer_ota_addr=[0m
+[0;32mI (376143) NimBLE: 4a:f9:cd:3e:43:20[0m
+[0;32mI (376143) NimBLE:  peer_id_addr_type=1 peer_id_addr=[0m
+[0;32mI (376153) NimBLE: 4a:f9:cd:3e:43:20[0m
+[0;32mI (376153) NimBLE:  conn_itvl=6 conn_latency=0 supervision_timeout=500 encrypted=0 authenticated=0 bonded=0[0m
+
+[0;32mI (376163) NimBLE: [0m
+
+[0;32mI (376333) NimBLE: mtu update event; conn_handle=1 cid=4 mtu=517[0m
+
+[0;32mI (376353) NimBLE: subscribe event; conn_handle=1 attr_handle=16 reason=1 prevn=0 curn=1 previ=0 curi=0[0m
+
+[0;32mI (376353) NimBLE_BLE_PRPH: BOX subscription: conn=1 notify=1[0m
+[0;32mI (376423) NimBLE: connection updated; status=0 [0m
+[0;32mI (376423) NimBLE: handle=1 our_ota_addr_type=0 our_ota_addr=[0m
+[0;32mI (376423) NimBLE: 10:00:3b:6b:c4:76[0m
+[0;32mI (376423) NimBLE:  our_id_addr_type=0 our_id_addr=[0m
+[0;32mI (376433) NimBLE: 10:00:3b:6b:c4:76[0m
+[0;32mI (376433) NimBLE:  peer_ota_addr_type=1 peer_ota_addr=[0m
+[0;32mI (376443) NimBLE: 4a:f9:cd:3e:43:20[0m
+[0;32mI (376443) NimBLE:  peer_id_addr_type=1 peer_id_addr=[0m
+[0;32mI (376453) NimBLE: 4a:f9:cd:3e:43:20[0m
+[0;32mI (376453) NimBLE:  conn_itvl=24 conn_latency=0 supervision_timeout=500 encrypted=0 authenticated=0 bonded=0[0m
+
+[0;32mI (376463) NimBLE: [0m
+
+[0;32mI (379363) NimBLE: subscribe event; conn_handle=1 attr_handle=16 reason=2 prevn=1 curn=0 previ=0 curi=0[0m
+
+[0;32mI (379363) NimBLE_BLE_PRPH: BOX subscription: conn=1 notify=0[0m
+[0;32mI (379373) NimBLE: disconnect; reason=531 [0m
+[0;32mI (379373) NimBLE: handle=1 our_ota_addr_type=0 our_ota_addr=[0m
+[0;32mI (379383) NimBLE: 10:00:3b:6b:c4:76[0m
+[0;32mI (379383) NimBLE:  our_id_addr_type=0 our_id_addr=[0m
+[0;32mI (379383) NimBLE: 10:00:3b:6b:c4:76[0m
+[0;32mI (379393) NimBLE:  peer_ota_addr_type=1 peer_ota_addr=[0m
+[0;32mI (379393) NimBLE: 4a:f9:cd:3e:43:20[0m
+[0;32mI (379403) NimBLE:  peer_id_addr_type=1 peer_id_addr=[0m
+[0;32mI (379403) NimBLE: 4a:f9:cd:3e:43:20[0m
+[0;32mI (379403) NimBLE:  conn_itvl=24 conn_latency=0 supervision_timeout=500 encrypted=0 authenticated=0 bonded=0[0m
+
+[0;32mI (379413) NimBLE: [0m
+
+[0;32mI (379423) NimBLE: GAP procedure initiated: advertise; [0m
+[0;32mI (379423) NimBLE: disc_mode=2[0m
+[0;32mI (379423) NimBLE:  adv_channel_map=0 own_addr_type=0 adv_filter_policy=0 adv_itvl_min=0 adv_itvl_max=0[0m
+[0;32mI (379433) NimBLE: [0m
+
+[0;32mI (379433) NimBLE_BLE_PRPH: BOX advertising started[0m
+[0;32mI (384823) NimBLE: connection established; status=0 [0m
+[0;32mI (384823) NimBLE: handle=1 our_ota_addr_type=0 our_ota_addr=[0m
+[0;32mI (384823) NimBLE: 10:00:3b:6b:c4:76[0m
+[0;32mI (384823) NimBLE:  our_id_addr_type=0 our_id_addr=[0m
+[0;32mI (384833) NimBLE: 10:00:3b:6b:c4:76[0m
+[0;32mI (384833) NimBLE:  peer_ota_addr_type=1 peer_ota_addr=[0m
+[0;32mI (384833) NimBLE: 4d:ed:96:e0:a2:22[0m
+[0;32mI (384843) NimBLE:  peer_id_addr_type=1 peer_id_addr=[0m
+[0;32mI (384843) NimBLE: 4d:ed:96:e0:a2:22[0m
+[0;32mI (384853) NimBLE:  conn_itvl=24 conn_latency=0 supervision_timeout=500 encrypted=0 authenticated=0 bonded=0[0m
+
+[0;32mI (384863) NimBLE: [0m
+
+[0;32mI (385213) NimBLE: connection updated; status=0 [0m
+[0;32mI (385213) NimBLE: handle=1 our_ota_addr_type=0 our_ota_addr=[0m
+[0;32mI (385213) NimBLE: 10:00:3b:6b:c4:76[0m
+[0;32mI (385213) NimBLE:  our_id_addr_type=0 our_id_addr=[0m
+[0;32mI (385223) NimBLE: 10:00:3b:6b:c4:76[0m
+[0;32mI (385223) NimBLE:  peer_ota_addr_type=1 peer_ota_addr=[0m
+[0;32mI (385223) NimBLE: 4d:ed:96:e0:a2:22[0m
+[0;32mI (385233) NimBLE:  peer_id_addr_type=1 peer_id_addr=[0m
+[0;32mI (385233) NimBLE: 4d:ed:96:e0:a2:22[0m
+[0;32mI (385243) NimBLE:  conn_itvl=6 conn_latency=0 supervision_timeout=500 encrypted=0 authenticated=0 bonded=0[0m
+
+[0;32mI (385253) NimBLE: [0m
+
+[0;32mI (385413) NimBLE: mtu update event; conn_handle=1 cid=4 mtu=517[0m
+
+[0;32mI (385433) NimBLE: subscribe event; conn_handle=1 attr_handle=16 reason=1 prevn=0 curn=1 previ=0 curi=0[0m
+
+[0;32mI (385433) NimBLE_BLE_PRPH: BOX subscription: conn=1 notify=1[0m
+[0;32mI (385513) NimBLE: connection updated; status=0 [0m
+[0;32mI (385513) NimBLE: handle=1 our_ota_addr_type=0 our_ota_addr=[0m
+[0;32mI (385513) NimBLE: 10:00:3b:6b:c4:76[0m
+[0;32mI (385513) NimBLE:  our_id_addr_type=0 our_id_addr=[0m
+[0;32mI (385523) NimBLE: 10:00:3b:6b:c4:76[0m
+[0;32mI (385523) NimBLE:  peer_ota_addr_type=1 peer_ota_addr=[0m
+[0;32mI (385533) NimBLE: 4d:ed:96:e0:a2:22[0m
+[0;32mI (385533) NimBLE:  peer_id_addr_type=1 peer_id_addr=[0m
+[0;32mI (385533) NimBLE: 4d:ed:96:e0:a2:22[0m
+[0;32mI (385543) NimBLE:  conn_itvl=24 conn_latency=0 supervision_timeout=500 encrypted=0 authenticated=0 bonded=0[0m
+
+[0;32mI (385553) NimBLE: [0m
+
+[0;32mI (388453) NimBLE: subscribe event; conn_handle=1 attr_handle=16 reason=2 prevn=1 curn=0 previ=0 curi=0[0m
+
+[0;32mI (388453) NimBLE_BLE_PRPH: BOX subscription: conn=1 notify=0[0m
+[0;32mI (388463) NimBLE: disconnect; reason=531 [0m
+[0;32mI (388463) NimBLE: handle=1 our_ota_addr_type=0 our_ota_addr=[0m
+[0;32mI (388473) NimBLE: 10:00:3b:6b:c4:76[0m
+[0;32mI (388473) NimBLE:  our_id_addr_type=0 our_id_addr=[0m
+[0;32mI (388473) NimBLE: 10:00:3b:6b:c4:76[0m
+[0;32mI (388483) NimBLE:  peer_ota_addr_type=1 peer_ota_addr=[0m
+[0;32mI (388483) NimBLE: 4d:ed:96:e0:a2:22[0m
+[0;32mI (388483) NimBLE:  peer_id_addr_type=1 peer_id_addr=[0m
+[0;32mI (388493) NimBLE: 4d:ed:96:e0:a2:22[0m
+[0;32mI (388493) NimBLE:  conn_itvl=24 conn_latency=0 supervision_timeout=500 encrypted=0 authenticated=0 bonded=0[0m
+
+[0;32mI (388503) NimBLE: [0m
+
+[0;32mI (388513) NimBLE: GAP procedure initiated: advertise; [0m
+[0;32mI (388513) NimBLE: disc_mode=2[0m
+[0;32mI (388513) NimBLE:  adv_channel_map=0 own_addr_type=0 adv_filter_policy=0 adv_itvl_min=0 adv_itvl_max=0[0m
+[0;32mI (388523) NimBLE: [0m
+
+[0;32mI (388523) NimBLE_BLE_PRPH: BOX advertising started[0m
+[0;32mI (394663) NimBLE: connection established; status=0 [0m
+[0;32mI (394663) NimBLE: handle=1 our_ota_addr_type=0 our_ota_addr=[0m
+[0;32mI (394663) NimBLE: 10:00:3b:6b:c4:76[0m
+[0;32mI (394663) NimBLE:  our_id_addr_type=0 our_id_addr=[0m
+[0;32mI (394673) NimBLE: 10:00:3b:6b:c4:76[0m
+[0;32mI (394673) NimBLE:  peer_ota_addr_type=1 peer_ota_addr=[0m
+[0;32mI (394683) NimBLE: 42:ef:99:89:8d:f2[0m
+[0;32mI (394683) NimBLE:  peer_id_addr_type=1 peer_id_addr=[0m
+[0;32mI (394683) NimBLE: 42:ef:99:89:8d:f2[0m
+[0;32mI (394693) NimBLE:  conn_itvl=24 conn_latency=0 supervision_timeout=500 encrypted=0 authenticated=0 bonded=0[0m
+
+[0;32mI (394703) NimBLE: [0m
+
+[0;32mI (395083) NimBLE: connection updated; status=0 [0m
+[0;32mI (395083) NimBLE: handle=1 our_ota_addr_type=0 our_ota_addr=[0m
+[0;32mI (395083) NimBLE: 10:00:3b:6b:c4:76[0m
+[0;32mI (395093) NimBLE:  our_id_addr_type=0 our_id_addr=[0m
+[0;32mI (395093) NimBLE: 10:00:3b:6b:c4:76[0m
+[0;32mI (395093) NimBLE:  peer_ota_addr_type=1 peer_ota_addr=[0m
+[0;32mI (395103) NimBLE: 42:ef:99:89:8d:f2[0m
+[0;32mI (395103) NimBLE:  peer_id_addr_type=1 peer_id_addr=[0m
+[0;32mI (395113) NimBLE: 42:ef:99:89:8d:f2[0m
+[0;32mI (395113) NimBLE:  conn_itvl=6 conn_latency=0 supervision_timeout=500 encrypted=0 authenticated=0 bonded=0[0m
+
+[0;32mI (395123) NimBLE: [0m
+
+[0;32mI (395263) NimBLE: connection updated; status=0 [0m
+[0;32mI (395263) NimBLE: handle=1 our_ota_addr_type=0 our_ota_addr=[0m
+[0;32mI (395263) NimBLE: 10:00:3b:6b:c4:76[0m
+[0;32mI (395273) NimBLE:  our_id_addr_type=0 our_id_addr=[0m
+[0;32mI (395273) NimBLE: 10:00:3b:6b:c4:76[0m
+[0;32mI (395273) NimBLE:  peer_ota_addr_type=1 peer_ota_addr=[0m
+[0;32mI (395283) NimBLE: 42:ef:99:89:8d:f2[0m
+[0;32mI (395283) NimBLE:  peer_id_addr_type=1 peer_id_addr=[0m
+[0;32mI (395293) NimBLE: 42:ef:99:89:8d:f2[0m
+[0;32mI (395293) NimBLE:  conn_itvl=24 conn_latency=0 supervision_timeout=500 encrypted=0 authenticated=0 bonded=0[0m
+
+[0;32mI (395303) NimBLE: [0m
+
+[0;32mI (396133) NimBLE: disconnect; reason=531 [0m
+[0;32mI (396133) NimBLE: handle=1 our_ota_addr_type=0 our_ota_addr=[0m
+[0;32mI (396133) NimBLE: 10:00:3b:6b:c4:76[0m
+[0;32mI (396143) NimBLE:  our_id_addr_type=0 our_id_addr=[0m
+[0;32mI (396143) NimBLE: 10:00:3b:6b:c4:76[0m
+[0;32mI (396143) NimBLE:  peer_ota_addr_type=1 peer_ota_addr=[0m
+[0;32mI (396153) NimBLE: 42:ef:99:89:8d:f2[0m
+[0;32mI (396153) NimBLE:  peer_id_addr_type=1 peer_id_addr=[0m
+[0;32mI (396163) NimBLE: 42:ef:99:89:8d:f2[0m
+[0;32mI (396163) NimBLE:  conn_itvl=24 conn_latency=0 supervision_timeout=500 encrypted=0 authenticated=0 bonded=0[0m
+
+[0;32mI (396173) NimBLE: [0m
+
+[0;32mI (396173) NimBLE: GAP procedure initiated: advertise; [0m
+[0;32mI (396183) NimBLE: disc_mode=2[0m
+[0;32mI (396183) NimBLE:  adv_channel_map=0 own_addr_type=0 adv_filter_policy=0 adv_itvl_min=0 adv_itvl_max=0[0m
+[0;32mI (396193) NimBLE: [0m
+
+[0;32mI (396193) NimBLE_BLE_PRPH: BOX advertising started[0m
+[0;32mI (408103) NimBLE: connection established; status=0 [0m
+[0;32mI (408103) NimBLE: handle=1 our_ota_addr_type=0 our_ota_addr=[0m
+[0;32mI (408103) NimBLE: 10:00:3b:6b:c4:76[0m
+[0;32mI (408103) NimBLE:  our_id_addr_type=0 our_id_addr=[0m
+[0;32mI (408113) NimBLE: 10:00:3b:6b:c4:76[0m
+[0;32mI (408113) NimBLE:  peer_ota_addr_type=1 peer_ota_addr=[0m
+[0;32mI (408123) NimBLE: 44:13:3e:5d:2e:8e[0m
+[0;32mI (408123) NimBLE:  peer_id_addr_type=1 peer_id_addr=[0m
+[0;32mI (408123) NimBLE: 44:13:3e:5d:2e:8e[0m
+[0;32mI (408133) NimBLE:  conn_itvl=24 conn_latency=0 supervision_timeout=500 encrypted=0 authenticated=0 bonded=0[0m
+
+[0;32mI (408143) NimBLE: [0m
+
+[0;32mI (408493) NimBLE: connection updated; status=0 [0m
+[0;32mI (408493) NimBLE: handle=1 our_ota_addr_type=0 our_ota_addr=[0m
+[0;32mI (408493) NimBLE: 10:00:3b:6b:c4:76[0m
+[0;32mI (408493) NimBLE:  our_id_addr_type=0 our_id_addr=[0m
+[0;32mI (408503) NimBLE: 10:00:3b:6b:c4:76[0m
+[0;32mI (408503) NimBLE:  peer_ota_addr_type=1 peer_ota_addr=[0m
+[0;32mI (408513) NimBLE: 44:13:3e:5d:2e:8e[0m
+[0;32mI (408513) NimBLE:  peer_id_addr_type=1 peer_id_addr=[0m
+[0;32mI (408513) NimBLE: 44:13:3e:5d:2e:8e[0m
+[0;32mI (408523) NimBLE:  conn_itvl=6 conn_latency=0 supervision_timeout=500 encrypted=0 authenticated=0 bonded=0[0m
+
+[0;32mI (408533) NimBLE: [0m
+
+[0;32mI (408703) NimBLE: mtu update event; conn_handle=1 cid=4 mtu=517[0m
+
+[0;32mI (408723) NimBLE: subscribe event; conn_handle=1 attr_handle=16 reason=1 prevn=0 curn=1 previ=0 curi=0[0m
+
+[0;32mI (408723) NimBLE_BLE_PRPH: BOX subscription: conn=1 notify=1[0m
+[0;32mI (408793) NimBLE: connection updated; status=0 [0m
+[0;32mI (408793) NimBLE: handle=1 our_ota_addr_type=0 our_ota_addr=[0m
+[0;32mI (408793) NimBLE: 10:00:3b:6b:c4:76[0m
+[0;32mI (408793) NimBLE:  our_id_addr_type=0 our_id_addr=[0m
+[0;32mI (408803) NimBLE: 10:00:3b:6b:c4:76[0m
+[0;32mI (408803) NimBLE:  peer_ota_addr_type=1 peer_ota_addr=[0m
+[0;32mI (408813) NimBLE: 44:13:3e:5d:2e:8e[0m
+[0;32mI (408813) NimBLE:  peer_id_addr_type=1 peer_id_addr=[0m
+[0;32mI (408823) NimBLE: 44:13:3e:5d:2e:8e[0m
+[0;32mI (408823) NimBLE:  conn_itvl=24 conn_latency=0 supervision_timeout=500 encrypted=0 authenticated=0 bonded=0[0m
+
+[0;32mI (408833) NimBLE: [0m
+
+[0;32mI (411763) NimBLE: subscribe event; conn_handle=1 attr_handle=16 reason=2 prevn=1 curn=0 previ=0 curi=0[0m
+
+[0;32mI (411763) NimBLE_BLE_PRPH: BOX subscription: conn=1 notify=0[0m
+[0;32mI (411773) NimBLE: disconnect; reason=531 [0m
+[0;32mI (411773) NimBLE: handle=1 our_ota_addr_type=0 our_ota_addr=[0m
+[0;32mI (411783) NimBLE: 10:00:3b:6b:c4:76[0m
+[0;32mI (411783) NimBLE:  our_id_addr_type=0 our_id_addr=[0m
+[0;32mI (411783) NimBLE: 10:00:3b:6b:c4:76[0m
+[0;32mI (411793) NimBLE:  peer_ota_addr_type=1 peer_ota_addr=[0m
+[0;32mI (411793) NimBLE: 44:13:3e:5d:2e:8e[0m
+[0;32mI (411803) NimBLE:  peer_id_addr_type=1 peer_id_addr=[0m
+[0;32mI (411803) NimBLE: 44:13:3e:5d:2e:8e[0m
+[0;32mI (411803) NimBLE:  conn_itvl=24 conn_latency=0 supervision_timeout=500 encrypted=0 authenticated=0 bonded=0[0m
+
+[0;32mI (411813) NimBLE: [0m
+
+[0;32mI (411823) NimBLE: GAP procedure initiated: advertise; [0m
+[0;32mI (411823) NimBLE: disc_mode=2[0m
+[0;32mI (411823) NimBLE:  adv_channel_map=0 own_addr_type=0 adv_filter_policy=0 adv_itvl_min=0 adv_itvl_max=0[0m
+[0;32mI (411833) NimBLE: [0m
+
+[0;32mI (411833) NimBLE_BLE_PRPH: BOX advertising started[0m
+[0;32mI (418153) NimBLE: connection established; status=0 [0m
+[0;32mI (418153) NimBLE: handle=1 our_ota_addr_type=0 our_ota_addr=[0m
+[0;32mI (418153) NimBLE: 10:00:3b:6b:c4:76[0m
+[0;32mI (418153) NimBLE:  our_id_addr_type=0 our_id_addr=[0m
+[0;32mI (418163) NimBLE: 10:00:3b:6b:c4:76[0m
+[0;32mI (418163) NimBLE:  peer_ota_addr_type=1 peer_ota_addr=[0m
+[0;32mI (418173) NimBLE: 5a:53:60:6c:13:80[0m
+[0;32mI (418173) NimBLE:  peer_id_addr_type=1 peer_id_addr=[0m
+[0;32mI (418173) NimBLE: 5a:53:60:6c:13:80[0m
+[0;32mI (418183) NimBLE:  conn_itvl=24 conn_latency=0 supervision_timeout=500 encrypted=0 authenticated=0 bonded=0[0m
+
+[0;32mI (418193) NimBLE: [0m
+
+[0;32mI (418543) NimBLE: connection updated; status=0 [0m
+[0;32mI (418543) NimBLE: handle=1 our_ota_addr_type=0 our_ota_addr=[0m
+[0;32mI (418543) NimBLE: 10:00:3b:6b:c4:76[0m
+[0;32mI (418543) NimBLE:  our_id_addr_type=0 our_id_addr=[0m
+[0;32mI (418553) NimBLE: 10:00:3b:6b:c4:76[0m
+[0;32mI (418553) NimBLE:  peer_ota_addr_type=1 peer_ota_addr=[0m
+[0;32mI (418563) NimBLE: 5a:53:60:6c:13:80[0m
+[0;32mI (418563) NimBLE:  peer_id_addr_type=1 peer_id_addr=[0m
+[0;32mI (418563) NimBLE: 5a:53:60:6c:13:80[0m
+[0;32mI (418573) NimBLE:  conn_itvl=6 conn_latency=0 supervision_timeout=500 encrypted=0 authenticated=0 bonded=0[0m
+
+[0;32mI (418583) NimBLE: [0m
+
+[0;32mI (418753) NimBLE: mtu update event; conn_handle=1 cid=4 mtu=517[0m
+
+[0;32mI (418783) NimBLE: subscribe event; conn_handle=1 attr_handle=16 reason=1 prevn=0 curn=1 previ=0 curi=0[0m
+
+[0;32mI (418783) NimBLE_BLE_PRPH: BOX subscription: conn=1 notify=1[0m
+[0;32mI (418843) NimBLE: connection updated; status=0 [0m
+[0;32mI (418843) NimBLE: handle=1 our_ota_addr_type=0 our_ota_addr=[0m
+[0;32mI (418843) NimBLE: 10:00:3b:6b:c4:76[0m
+[0;32mI (418843) NimBLE:  our_id_addr_type=0 our_id_addr=[0m
+[0;32mI (418853) NimBLE: 10:00:3b:6b:c4:76[0m
+[0;32mI (418853) NimBLE:  peer_ota_addr_type=1 peer_ota_addr=[0m
+[0;32mI (418863) NimBLE: 5a:53:60:6c:13:80[0m
+[0;32mI (418863) NimBLE:  peer_id_addr_type=1 peer_id_addr=[0m
+[0;32mI (418863) NimBLE: 5a:53:60:6c:13:80[0m
+[0;32mI (418873) NimBLE:  conn_itvl=24 conn_latency=0 supervision_timeout=500 encrypted=0 authenticated=0 bonded=0[0m
+
+[0;32mI (418883) NimBLE: [0m
+
+[0;32mI (421813) NimBLE: subscribe event; conn_handle=1 attr_handle=16 reason=2 prevn=1 curn=0 previ=0 curi=0[0m
+
+[0;32mI (421813) NimBLE_BLE_PRPH: BOX subscription: conn=1 notify=0[0m
+[0;32mI (421823) NimBLE: disconnect; reason=531 [0m
+[0;32mI (421823) NimBLE: handle=1 our_ota_addr_type=0 our_ota_addr=[0m
+[0;32mI (421823) NimBLE: 10:00:3b:6b:c4:76[0m
+[0;32mI (421833) NimBLE:  our_id_addr_type=0 our_id_addr=[0m
+[0;32mI (421833) NimBLE: 10:00:3b:6b:c4:76[0m
+[0;32mI (421843) NimBLE:  peer_ota_addr_type=1 peer_ota_addr=[0m
+[0;32mI (421843) NimBLE: 5a:53:60:6c:13:80[0m
+[0;32mI (421843) NimBLE:  peer_id_addr_type=1 peer_id_addr=[0m
+[0;32mI (421853) NimBLE: 5a:53:60:6c:13:80[0m
+[0;32mI (421853) NimBLE:  conn_itvl=24 conn_latency=0 supervision_timeout=500 encrypted=0 authenticated=0 bonded=0[0m
+
+[0;32mI (421863) NimBLE: [0m
+
+[0;32mI (421873) NimBLE: GAP procedure initiated: advertise; [0m
+[0;32mI (421873) NimBLE: disc_mode=2[0m
+[0;32mI (421873) NimBLE:  adv_channel_map=0 own_addr_type=0 adv_filter_policy=0 adv_itvl_min=0 adv_itvl_max=0[0m
+[0;32mI (421883) NimBLE: [0m
+
+[0;32mI (421883) NimBLE_BLE_PRPH: BOX advertising started[0m
+[0;32mI (449743) NimBLE: connection established; status=0 [0m
+[0;32mI (449743) NimBLE: handle=1 our_ota_addr_type=0 our_ota_addr=[0m
+[0;32mI (449743) NimBLE: 10:00:3b:6b:c4:76[0m
+[0;32mI (449743) NimBLE:  our_id_addr_type=0 our_id_addr=[0m
+[0;32mI (449753) NimBLE: 10:00:3b:6b:c4:76[0m
+[0;32mI (449753) NimBLE:  peer_ota_addr_type=1 peer_ota_addr=[0m
+[0;32mI (449763) NimBLE: 4d:d2:74:8c:78:85[0m
+[0;32mI (449763) NimBLE:  peer_id_addr_type=1 peer_id_addr=[0m
+[0;32mI (449773) NimBLE: 4d:d2:74:8c:78:85[0m
+[0;32mI (449773) NimBLE:  conn_itvl=24 conn_latency=0 supervision_timeout=500 encrypted=0 authenticated=0 bonded=0[0m
+
+[0;32mI (449783) NimBLE: [0m
+
+[0;32mI (450133) NimBLE: connection updated; status=0 [0m
+[0;32mI (450133) NimBLE: handle=1 our_ota_addr_type=0 our_ota_addr=[0m
+[0;32mI (450133) NimBLE: 10:00:3b:6b:c4:76[0m
+[0;32mI (450133) NimBLE:  our_id_addr_type=0 our_id_addr=[0m
+[0;32mI (450143) NimBLE: 10:00:3b:6b:c4:76[0m
+[0;32mI (450143) NimBLE:  peer_ota_addr_type=1 peer_ota_addr=[0m
+[0;32mI (450153) NimBLE: 4d:d2:74:8c:78:85[0m
+[0;32mI (450153) NimBLE:  peer_id_addr_type=1 peer_id_addr=[0m
+[0;32mI (450163) NimBLE: 4d:d2:74:8c:78:85[0m
+[0;32mI (450163) NimBLE:  conn_itvl=6 conn_latency=0 supervision_timeout=500 encrypted=0 authenticated=0 bonded=0[0m
+
+[0;32mI (450173) NimBLE: [0m
+
+[0;32mI (450343) NimBLE: mtu update event; conn_handle=1 cid=4 mtu=517[0m
+
+[0;32mI (450373) NimBLE: subscribe event; conn_handle=1 attr_handle=16 reason=1 prevn=0 curn=1 previ=0 curi=0[0m
+
+[0;32mI (450373) NimBLE_BLE_PRPH: BOX subscription: conn=1 notify=1[0m
+[0;32mI (450433) NimBLE: connection updated; status=0 [0m
+[0;32mI (450433) NimBLE: handle=1 our_ota_addr_type=0 our_ota_addr=[0m
+[0;32mI (450433) NimBLE: 10:00:3b:6b:c4:76[0m
+[0;32mI (450433) NimBLE:  our_id_addr_type=0 our_id_addr=[0m
+[0;32mI (450443) NimBLE: 10:00:3b:6b:c4:76[0m
+[0;32mI (450443) NimBLE:  peer_ota_addr_type=1 peer_ota_addr=[0m
+[0;32mI (450453) NimBLE: 4d:d2:74:8c:78:85[0m
+[0;32mI (450453) NimBLE:  peer_id_addr_type=1 peer_id_addr=[0m
+[0;32mI (450463) NimBLE: 4d:d2:74:8c:78:85[0m
+[0;32mI (450463) NimBLE:  conn_itvl=24 conn_latency=0 supervision_timeout=500 encrypted=0 authenticated=0 bonded=0[0m
+
+[0;32mI (450473) NimBLE: [0m
+
+[0;32mI (453403) NimBLE: subscribe event; conn_handle=1 attr_handle=16 reason=2 prevn=1 curn=0 previ=0 curi=0[0m
+
+[0;32mI (453403) NimBLE_BLE_PRPH: BOX subscription: conn=1 notify=0[0m
+[0;32mI (453413) NimBLE: disconnect; reason=531 [0m
+[0;32mI (453413) NimBLE: handle=1 our_ota_addr_type=0 our_ota_addr=[0m
+[0;32mI (453423) NimBLE: 10:00:3b:6b:c4:76[0m
+[0;32mI (453423) NimBLE:  our_id_addr_type=0 our_id_addr=[0m
+[0;32mI (453423) NimBLE: 10:00:3b:6b:c4:76[0m
+[0;32mI (453433) NimBLE:  peer_ota_addr_type=1 peer_ota_addr=[0m
+[0;32mI (453433) NimBLE: 4d:d2:74:8c:78:85[0m
+[0;32mI (453443) NimBLE:  peer_id_addr_type=1 peer_id_addr=[0m
+[0;32mI (453443) NimBLE: 4d:d2:74:8c:78:85[0m
+[0;32mI (453443) NimBLE:  conn_itvl=24 conn_latency=0 supervision_timeout=500 encrypted=0 authenticated=0 bonded=0[0m
+
+[0;32mI (453453) NimBLE: [0m
+
+[0;32mI (453463) NimBLE: GAP procedure initiated: advertise; [0m
+[0;32mI (453463) NimBLE: disc_mode=2[0m
+[0;32mI (453463) NimBLE:  adv_channel_map=0 own_addr_type=0 adv_filter_policy=0 adv_itvl_min=0 adv_itvl_max=0[0m
+[0;32mI (453473) NimBLE: [0m
+
+[0;32mI (453473) NimBLE_BLE_PRPH: BOX advertising started[0m
+[0;32mI (460243) NimBLE: connection established; status=0 [0m
+[0;32mI (460243) NimBLE: handle=1 our_ota_addr_type=0 our_ota_addr=[0m
+[0;32mI (460243) NimBLE: 10:00:3b:6b:c4:76[0m
+[0;32mI (460243) NimBLE:  our_id_addr_type=0 our_id_addr=[0m
+[0;32mI (460253) NimBLE: 10:00:3b:6b:c4:76[0m
+[0;32mI (460253) NimBLE:  peer_ota_addr_type=1 peer_ota_addr=[0m
+[0;32mI (460263) NimBLE: 6e:c5:f4:62:19:a7[0m
+[0;32mI (460263) NimBLE:  peer_id_addr_type=1 peer_id_addr=[0m
+[0;32mI (460273) NimBLE: 6e:c5:f4:62:19:a7[0m
+[0;32mI (460273) NimBLE:  conn_itvl=24 conn_latency=0 supervision_timeout=500 encrypted=0 authenticated=0 bonded=0[0m
+
+[0;32mI (460283) NimBLE: [0m
+
+[0;32mI (460633) NimBLE: connection updated; status=0 [0m
+[0;32mI (460633) NimBLE: handle=1 our_ota_addr_type=0 our_ota_addr=[0m
+[0;32mI (460633) NimBLE: 10:00:3b:6b:c4:76[0m
+[0;32mI (460643) NimBLE:  our_id_addr_type=0 our_id_addr=[0m
+[0;32mI (460643) NimBLE: 10:00:3b:6b:c4:76[0m
+[0;32mI (460643) NimBLE:  peer_ota_addr_type=1 peer_ota_addr=[0m
+[0;32mI (460653) NimBLE: 6e:c5:f4:62:19:a7[0m
+[0;32mI (460653) NimBLE:  peer_id_addr_type=1 peer_id_addr=[0m
+[0;32mI (460663) NimBLE: 6e:c5:f4:62:19:a7[0m
+[0;32mI (460663) NimBLE:  conn_itvl=6 conn_latency=0 supervision_timeout=500 encrypted=0 authenticated=0 bonded=0[0m
+
+[0;32mI (460673) NimBLE: [0m
+
+[0;32mI (460853) NimBLE: mtu update event; conn_handle=1 cid=4 mtu=517[0m
+
+[0;32mI (460883) NimBLE: subscribe event; conn_handle=1 attr_handle=16 reason=1 prevn=0 curn=1 previ=0 curi=0[0m
+
+[0;32mI (460883) NimBLE_BLE_PRPH: BOX subscription: conn=1 notify=1[0m
+[0;32mI (460933) NimBLE: connection updated; status=0 [0m
+[0;32mI (460933) NimBLE: handle=1 our_ota_addr_type=0 our_ota_addr=[0m
+[0;32mI (460933) NimBLE: 10:00:3b:6b:c4:76[0m
+[0;32mI (460943) NimBLE:  our_id_addr_type=0 our_id_addr=[0m
+[0;32mI (460943) NimBLE: 10:00:3b:6b:c4:76[0m
+[0;32mI (460943) NimBLE:  peer_ota_addr_type=1 peer_ota_addr=[0m
+[0;32mI (460953) NimBLE: 6e:c5:f4:62:19:a7[0m
+[0;32mI (460953) NimBLE:  peer_id_addr_type=1 peer_id_addr=[0m
+[0;32mI (460963) NimBLE: 6e:c5:f4:62:19:a7[0m
+[0;32mI (460963) NimBLE:  conn_itvl=24 conn_latency=0 supervision_timeout=500 encrypted=0 authenticated=0 bonded=0[0m
+
+[0;32mI (460973) NimBLE: [0m
+
+[0;32mI (463903) NimBLE: subscribe event; conn_handle=1 attr_handle=16 reason=2 prevn=1 curn=0 previ=0 curi=0[0m
+
+[0;32mI (463903) NimBLE_BLE_PRPH: BOX subscription: conn=1 notify=0[0m
+[0;32mI (463913) NimBLE: disconnect; reason=531 [0m
+[0;32mI (463913) NimBLE: handle=1 our_ota_addr_type=0 our_ota_addr=[0m
+[0;32mI (463923) NimBLE: 10:00:3b:6b:c4:76[0m
+[0;32mI (463923) NimBLE:  our_id_addr_type=0 our_id_addr=[0m
+[0;32mI (463923) NimBLE: 10:00:3b:6b:c4:76[0m
+[0;32mI (463933) NimBLE:  peer_ota_addr_type=1 peer_ota_addr=[0m
+[0;32mI (463933) NimBLE: 6e:c5:f4:62:19:a7[0m
+[0;32mI (463943) NimBLE:  peer_id_addr_type=1 peer_id_addr=[0m
+[0;32mI (463943) NimBLE: 6e:c5:f4:62:19:a7[0m
+[0;32mI (463943) NimBLE:  conn_itvl=24 conn_latency=0 supervision_timeout=500 encrypted=0 authenticated=0 bonded=0[0m
+
+[0;32mI (463953) NimBLE: [0m
+
+[0;32mI (463963) NimBLE: GAP procedure initiated: advertise; [0m
+[0;32mI (463963) NimBLE: disc_mode=2[0m
+[0;32mI (463963) NimBLE:  adv_channel_map=0 own_addr_type=0 adv_filter_policy=0 adv_itvl_min=0 adv_itvl_max=0[0m
+[0;32mI (463973) NimBLE: [0m
+
+[0;32mI (463983) NimBLE_BLE_PRPH: BOX advertising started[0m
+[0;32mI (482113) NimBLE: connection established; status=0 [0m
+[0;32mI (482113) NimBLE: handle=1 our_ota_addr_type=0 our_ota_addr=[0m
+[0;32mI (482113) NimBLE: 10:00:3b:6b:c4:76[0m
+[0;32mI (482123) NimBLE:  our_id_addr_type=0 our_id_addr=[0m
+[0;32mI (482123) NimBLE: 10:00:3b:6b:c4:76[0m
+[0;32mI (482123) NimBLE:  peer_ota_addr_type=1 peer_ota_addr=[0m
+[0;32mI (482133) NimBLE: 41:b0:ba:88:21:32[0m
+[0;32mI (482133) NimBLE:  peer_id_addr_type=1 peer_id_addr=[0m
+[0;32mI (482143) NimBLE: 41:b0:ba:88:21:32[0m
+[0;32mI (482143) NimBLE:  conn_itvl=24 conn_latency=0 supervision_timeout=500 encrypted=0 authenticated=0 bonded=0[0m
+
+[0;32mI (482153) NimBLE: [0m
+
+[0;32mI (482503) NimBLE: connection updated; status=0 [0m
+[0;32mI (482503) NimBLE: handle=1 our_ota_addr_type=0 our_ota_addr=[0m
+[0;32mI (482503) NimBLE: 10:00:3b:6b:c4:76[0m
+[0;32mI (482503) NimBLE:  our_id_addr_type=0 our_id_addr=[0m
+[0;32mI (482513) NimBLE: 10:00:3b:6b:c4:76[0m
+[0;32mI (482513) NimBLE:  peer_ota_addr_type=1 peer_ota_addr=[0m
+[0;32mI (482523) NimBLE: 41:b0:ba:88:21:32[0m
+[0;32mI (482523) NimBLE:  peer_id_addr_type=1 peer_id_addr=[0m
+[0;32mI (482533) NimBLE: 41:b0:ba:88:21:32[0m
+[0;32mI (482533) NimBLE:  conn_itvl=6 conn_latency=0 supervision_timeout=500 encrypted=0 authenticated=0 bonded=0[0m
+
+[0;32mI (482543) NimBLE: [0m
+
+[0;32mI (482713) NimBLE: mtu update event; conn_handle=1 cid=4 mtu=517[0m
+
+[0;32mI (482753) NimBLE: subscribe event; conn_handle=1 attr_handle=16 reason=1 prevn=0 curn=1 previ=0 curi=0[0m
+
+[0;32mI (482753) NimBLE_BLE_PRPH: BOX subscription: conn=1 notify=1[0m
+[0;32mI (482803) NimBLE: connection updated; status=0 [0m
+[0;32mI (482803) NimBLE: handle=1 our_ota_addr_type=0 our_ota_addr=[0m
+[0;32mI (482803) NimBLE: 10:00:3b:6b:c4:76[0m
+[0;32mI (482803) NimBLE:  our_id_addr_type=0 our_id_addr=[0m
+[0;32mI (482813) NimBLE: 10:00:3b:6b:c4:76[0m
+[0;32mI (482813) NimBLE:  peer_ota_addr_type=1 peer_ota_addr=[0m
+[0;32mI (482823) NimBLE: 41:b0:ba:88:21:32[0m
+[0;32mI (482823) NimBLE:  peer_id_addr_type=1 peer_id_addr=[0m
+[0;32mI (482833) NimBLE: 41:b0:ba:88:21:32[0m
+[0;32mI (482833) NimBLE:  conn_itvl=24 conn_latency=0 supervision_timeout=500 encrypted=0 authenticated=0 bonded=0[0m
+
+[0;32mI (482843) NimBLE: [0m
+
+[0;32mI (485773) NimBLE: subscribe event; conn_handle=1 attr_handle=16 reason=2 prevn=1 curn=0 previ=0 curi=0[0m
+
+[0;32mI (485773) NimBLE_BLE_PRPH: BOX subscription: conn=1 notify=0[0m
+[0;32mI (485783) NimBLE: disconnect; reason=531 [0m
+[0;32mI (485783) NimBLE: handle=1 our_ota_addr_type=0 our_ota_addr=[0m
+[0;32mI (485793) NimBLE: 10:00:3b:6b:c4:76[0m
+[0;32mI (485793) NimBLE:  our_id_addr_type=0 our_id_addr=[0m
+[0;32mI (485793) NimBLE: 10:00:3b:6b:c4:76[0m
+[0;32mI (485803) NimBLE:  peer_ota_addr_type=1 peer_ota_addr=[0m
+[0;32mI (485803) NimBLE: 41:b0:ba:88:21:32[0m
+[0;32mI (485813) NimBLE:  peer_id_addr_type=1 peer_id_addr=[0m
+[0;32mI (485813) NimBLE: 41:b0:ba:88:21:32[0m
+[0;32mI (485813) NimBLE:  conn_itvl=24 conn_latency=0 supervision_timeout=500 encrypted=0 authenticated=0 bonded=0[0m
+
+[0;32mI (485823) NimBLE: [0m
+
+[0;32mI (485833) NimBLE: GAP procedure initiated: advertise; [0m
+[0;32mI (485833) NimBLE: disc_mode=2[0m
+[0;32mI (485833) NimBLE:  adv_channel_map=0 own_addr_type=0 adv_filter_policy=0 adv_itvl_min=0 adv_itvl_max=0[0m
+[0;32mI (485843) NimBLE: [0m
+
+[0;32mI (485843) NimBLE_BLE_PRPH: BOX advertising started[0m
+[0;32mI (504703) NimBLE: connection established; status=0 [0m
+[0;32mI (504703) NimBLE: handle=1 our_ota_addr_type=0 our_ota_addr=[0m
+[0;32mI (504703) NimBLE: 10:00:3b:6b:c4:76[0m
+[0;32mI (504713) NimBLE:  our_id_addr_type=0 our_id_addr=[0m
+[0;32mI (504713) NimBLE: 10:00:3b:6b:c4:76[0m
+[0;32mI (504713) NimBLE:  peer_ota_addr_type=1 peer_ota_addr=[0m
+[0;32mI (504723) NimBLE: 47:69:9d:76:ea:79[0m
+[0;32mI (504723) NimBLE:  peer_id_addr_type=1 peer_id_addr=[0m
+[0;32mI (504733) NimBLE: 47:69:9d:76:ea:79[0m
+[0;32mI (504733) NimBLE:  conn_itvl=24 conn_latency=0 supervision_timeout=500 encrypted=0 authenticated=0 bonded=0[0m
+
+[0;32mI (504743) NimBLE: [0m
+
+[0;32mI (505103) NimBLE: connection updated; status=0 [0m
+[0;32mI (505103) NimBLE: handle=1 our_ota_addr_type=0 our_ota_addr=[0m
+[0;32mI (505103) NimBLE: 10:00:3b:6b:c4:76[0m
+[0;32mI (505103) NimBLE:  our_id_addr_type=0 our_id_addr=[0m
+[0;32mI (505113) NimBLE: 10:00:3b:6b:c4:76[0m
+[0;32mI (505113) NimBLE:  peer_ota_addr_type=1 peer_ota_addr=[0m
+[0;32mI (505113) NimBLE: 47:69:9d:76:ea:79[0m
+[0;32mI (505123) NimBLE:  peer_id_addr_type=1 peer_id_addr=[0m
+[0;32mI (505123) NimBLE: 47:69:9d:76:ea:79[0m
+[0;32mI (505133) NimBLE:  conn_itvl=6 conn_latency=0 supervision_timeout=500 encrypted=0 authenticated=0 bonded=0[0m
+
+[0;32mI (505143) NimBLE: [0m
+
+[0;32mI (505313) NimBLE: mtu update event; conn_handle=1 cid=4 mtu=517[0m
+
+[0;32mI (505333) NimBLE: subscribe event; conn_handle=1 attr_handle=16 reason=1 prevn=0 curn=1 previ=0 curi=0[0m
+
+[0;32mI (505333) NimBLE_BLE_PRPH: BOX subscription: conn=1 notify=1[0m
+[0;32mI (505393) NimBLE: connection updated; status=0 [0m
+[0;32mI (505393) NimBLE: handle=1 our_ota_addr_type=0 our_ota_addr=[0m
+[0;32mI (505393) NimBLE: 10:00:3b:6b:c4:76[0m
+[0;32mI (505393) NimBLE:  our_id_addr_type=0 our_id_addr=[0m
+[0;32mI (505403) NimBLE: 10:00:3b:6b:c4:76[0m
+[0;32mI (505403) NimBLE:  peer_ota_addr_type=1 peer_ota_addr=[0m
+[0;32mI (505413) NimBLE: 47:69:9d:76:ea:79[0m
+[0;32mI (505413) NimBLE:  peer_id_addr_type=1 peer_id_addr=[0m
+[0;32mI (505423) NimBLE: 47:69:9d:76:ea:79[0m
+[0;32mI (505423) NimBLE:  conn_itvl=24 conn_latency=0 supervision_timeout=500 encrypted=0 authenticated=0 bonded=0[0m
+
+[0;32mI (505433) NimBLE: [0m
+
+[0;32mI (508363) NimBLE: subscribe event; conn_handle=1 attr_handle=16 reason=2 prevn=1 curn=0 previ=0 curi=0[0m
+
+[0;32mI (508363) NimBLE_BLE_PRPH: BOX subscription: conn=1 notify=0[0m
+[0;32mI (508373) NimBLE: disconnect; reason=531 [0m
+[0;32mI (508373) NimBLE: handle=1 our_ota_addr_type=0 our_ota_addr=[0m
+[0;32mI (508383) NimBLE: 10:00:3b:6b:c4:76[0m
+[0;32mI (508383) NimBLE:  our_id_addr_type=0 our_id_addr=[0m
+[0;32mI (508383) NimBLE: 10:00:3b:6b:c4:76[0m
+[0;32mI (508393) NimBLE:  peer_ota_addr_type=1 peer_ota_addr=[0m
+[0;32mI (508393) NimBLE: 47:69:9d:76:ea:79[0m
+[0;32mI (508393) NimBLE:  peer_id_addr_type=1 peer_id_addr=[0m
+[0;32mI (508403) NimBLE: 47:69:9d:76:ea:79[0m
+[0;32mI (508403) NimBLE:  conn_itvl=24 conn_latency=0 supervision_timeout=500 encrypted=0 authenticated=0 bonded=0[0m
+
+[0;32mI (508413) NimBLE: [0m
+
+[0;32mI (508423) NimBLE: GAP procedure initiated: advertise; [0m
+[0;32mI (508423) NimBLE: disc_mode=2[0m
+[0;32mI (508423) NimBLE:  adv_channel_map=0 own_addr_type=0 adv_filter_policy=0 adv_itvl_min=0 adv_itvl_max=0[0m
+[0;32mI (508433) NimBLE: [0m
+
+[0;32mI (508433) NimBLE_BLE_PRPH: BOX advertising started[0m
+[0;32mI (609833) NimBLE: connection established; status=0 [0m
+[0;32mI (609833) NimBLE: handle=1 our_ota_addr_type=0 our_ota_addr=[0m
+[0;32mI (609833) NimBLE: 10:00:3b:6b:c4:76[0m
+[0;32mI (609833) NimBLE:  our_id_addr_type=0 our_id_addr=[0m
+[0;32mI (609833) NimBLE: 10:00:3b:6b:c4:76[0m
+[0;32mI (609843) NimBLE:  peer_ota_addr_type=1 peer_ota_addr=[0m
+[0;32mI (609843) NimBLE: 78:15:9c:4a:bb:de[0m
+[0;32mI (609853) NimBLE:  peer_id_addr_type=1 peer_id_addr=[0m
+[0;32mI (609853) NimBLE: 78:15:9c:4a:bb:de[0m
+[0;32mI (609853) NimBLE:  conn_itvl=24 conn_latency=0 supervision_timeout=500 encrypted=0 authenticated=0 bonded=0[0m
+
+[0;32mI (609863) NimBLE: [0m
+
+[0;32mI (610223) NimBLE: connection updated; status=0 [0m
+[0;32mI (610223) NimBLE: handle=1 our_ota_addr_type=0 our_ota_addr=[0m
+[0;32mI (610223) NimBLE: 10:00:3b:6b:c4:76[0m
+[0;32mI (610223) NimBLE:  our_id_addr_type=0 our_id_addr=[0m
+[0;32mI (610223) NimBLE: 10:00:3b:6b:c4:76[0m
+[0;32mI (610233) NimBLE:  peer_ota_addr_type=1 peer_ota_addr=[0m
+[0;32mI (610233) NimBLE: 78:15:9c:4a:bb:de[0m
+[0;32mI (610243) NimBLE:  peer_id_addr_type=1 peer_id_addr=[0m
+[0;32mI (610243) NimBLE: 78:15:9c:4a:bb:de[0m
+[0;32mI (610243) NimBLE:  conn_itvl=6 conn_latency=0 supervision_timeout=500 encrypted=0 authenticated=0 bonded=0[0m
+
+[0;32mI (610253) NimBLE: [0m
+
+[0;32mI (610473) NimBLE: mtu update event; conn_handle=1 cid=4 mtu=517[0m
+
+[0;32mI (610493) NimBLE: subscribe event; conn_handle=1 attr_handle=16 reason=1 prevn=0 curn=1 previ=0 curi=0[0m
+
+[0;32mI (610493) NimBLE_BLE_PRPH: BOX subscription: conn=1 notify=1[0m
+[0;32mI (610573) NimBLE: connection updated; status=0 [0m
+[0;32mI (610573) NimBLE: handle=1 our_ota_addr_type=0 our_ota_addr=[0m
+[0;32mI (610573) NimBLE: 10:00:3b:6b:c4:76[0m
+[0;32mI (610573) NimBLE:  our_id_addr_type=0 our_id_addr=[0m
+[0;32mI (610583) NimBLE: 10:00:3b:6b:c4:76[0m
+[0;32mI (610583) NimBLE:  peer_ota_addr_type=1 peer_ota_addr=[0m
+[0;32mI (610593) NimBLE: 78:15:9c:4a:bb:de[0m
+[0;32mI (610593) NimBLE:  peer_id_addr_type=1 peer_id_addr=[0m
+[0;32mI (610603) NimBLE: 78:15:9c:4a:bb:de[0m
+[0;32mI (610603) NimBLE:  conn_itvl=24 conn_latency=0 supervision_timeout=500 encrypted=0 authenticated=0 bonded=0[0m
+
+[0;32mI (610613) NimBLE: [0m
+
+[0;32mI (613813) NimBLE: subscribe event; conn_handle=1 attr_handle=16 reason=2 prevn=1 curn=0 previ=0 curi=0[0m
+
+[0;32mI (613813) NimBLE_BLE_PRPH: BOX subscription: conn=1 notify=0[0m
+[0;32mI (613823) NimBLE: disconnect; reason=531 [0m
+[0;32mI (613823) NimBLE: handle=1 our_ota_addr_type=0 our_ota_addr=[0m
+[0;32mI (613833) NimBLE: 10:00:3b:6b:c4:76[0m
+[0;32mI (613833) NimBLE:  our_id_addr_type=0 our_id_addr=[0m
+[0;32mI (613833) NimBLE: 10:00:3b:6b:c4:76[0m
+[0;32mI (613843) NimBLE:  peer_ota_addr_type=1 peer_ota_addr=[0m
+[0;32mI (613843) NimBLE: 78:15:9c:4a:bb:de[0m
+[0;32mI (613853) NimBLE:  peer_id_addr_type=1 peer_id_addr=[0m
+[0;32mI (613853) NimBLE: 78:15:9c:4a:bb:de[0m
+[0;32mI (613853) NimBLE:  conn_itvl=24 conn_latency=0 supervision_timeout=500 encrypted=0 authenticated=0 bonded=0[0m
+
+[0;32mI (613863) NimBLE: [0m
+
+[0;32mI (613873) NimBLE: GAP procedure initiated: advertise; [0m
+[0;32mI (613873) NimBLE: disc_mode=2[0m
+[0;32mI (613873) NimBLE:  adv_channel_map=0 own_addr_type=0 adv_filter_policy=0 adv_itvl_min=0 adv_itvl_max=0[0m
+[0;32mI (613883) NimBLE: [0m
+
+[0;32mI (613883) NimBLE_BLE_PRPH: BOX advertising started[0m
+[0;32mI (636503) NimBLE: connection established; status=0 [0m
+[0;32mI (636503) NimBLE: handle=1 our_ota_addr_type=0 our_ota_addr=[0m
+[0;32mI (636503) NimBLE: 10:00:3b:6b:c4:76[0m
+[0;32mI (636503) NimBLE:  our_id_addr_type=0 our_id_addr=[0m
+[0;32mI (636513) NimBLE: 10:00:3b:6b:c4:76[0m
+[0;32mI (636513) NimBLE:  peer_ota_addr_type=1 peer_ota_addr=[0m
+[0;32mI (636513) NimBLE: 5c:f2:1e:c5:28:28[0m
+[0;32mI (636523) NimBLE:  peer_id_addr_type=1 peer_id_addr=[0m
+[0;32mI (636523) NimBLE: 5c:f2:1e:c5:28:28[0m
+[0;32mI (636533) NimBLE:  conn_itvl=24 conn_latency=0 supervision_timeout=500 encrypted=0 authenticated=0 bonded=0[0m
+
+[0;32mI (636533) NimBLE: [0m
+
+[0;32mI (636893) NimBLE: connection updated; status=0 [0m
+[0;32mI (636893) NimBLE: handle=1 our_ota_addr_type=0 our_ota_addr=[0m
+[0;32mI (636893) NimBLE: 10:00:3b:6b:c4:76[0m
+[0;32mI (636893) NimBLE:  our_id_addr_type=0 our_id_addr=[0m
+[0;32mI (636903) NimBLE: 10:00:3b:6b:c4:76[0m
+[0;32mI (636903) NimBLE:  peer_ota_addr_type=1 peer_ota_addr=[0m
+[0;32mI (636903) NimBLE: 5c:f2:1e:c5:28:28[0m
+[0;32mI (636913) NimBLE:  peer_id_addr_type=1 peer_id_addr=[0m
+[0;32mI (636913) NimBLE: 5c:f2:1e:c5:28:28[0m
+[0;32mI (636913) NimBLE:  conn_itvl=6 conn_latency=0 supervision_timeout=500 encrypted=0 authenticated=0 bonded=0[0m
+
+[0;32mI (636923) NimBLE: [0m
+
+[0;32mI (637113) NimBLE: mtu update event; conn_handle=1 cid=4 mtu=517[0m
+
+[0;32mI (637143) NimBLE: subscribe event; conn_handle=1 attr_handle=16 reason=1 prevn=0 curn=1 previ=0 curi=0[0m
+
+[0;32mI (637143) NimBLE_BLE_PRPH: BOX subscription: conn=1 notify=1[0m
+[0;32mI (637213) NimBLE: connection updated; status=0 [0m
+[0;32mI (637213) NimBLE: handle=1 our_ota_addr_type=0 our_ota_addr=[0m
+[0;32mI (637213) NimBLE: 10:00:3b:6b:c4:76[0m
+[0;32mI (637223) NimBLE:  our_id_addr_type=0 our_id_addr=[0m
+[0;32mI (637223) NimBLE: 10:00:3b:6b:c4:76[0m
+[0;32mI (637223) NimBLE:  peer_ota_addr_type=1 peer_ota_addr=[0m
+[0;32mI (637233) NimBLE: 5c:f2:1e:c5:28:28[0m
+[0;32mI (637233) NimBLE:  peer_id_addr_type=1 peer_id_addr=[0m
+[0;32mI (637243) NimBLE: 5c:f2:1e:c5:28:28[0m
+[0;32mI (637243) NimBLE:  conn_itvl=24 conn_latency=0 supervision_timeout=500 encrypted=0 authenticated=0 bonded=0[0m
+
+[0;32mI (637253) NimBLE: [0m
+
+[0;32mI (640183) NimBLE: subscribe event; conn_handle=1 attr_handle=16 reason=2 prevn=1 curn=0 previ=0 curi=0[0m
+
+[0;32mI (640183) NimBLE_BLE_PRPH: BOX subscription: conn=1 notify=0[0m
+[0;32mI (640193) NimBLE: disconnect; reason=531 [0m
+[0;32mI (640193) NimBLE: handle=1 our_ota_addr_type=0 our_ota_addr=[0m
+[0;32mI (640203) NimBLE: 10:00:3b:6b:c4:76[0m
+[0;32mI (640203) NimBLE:  our_id_addr_type=0 our_id_addr=[0m
+[0;32mI (640203) NimBLE: 10:00:3b:6b:c4:76[0m
+[0;32mI (640213) NimBLE:  peer_ota_addr_type=1 peer_ota_addr=[0m
+[0;32mI (640213) NimBLE: 5c:f2:1e:c5:28:28[0m
+[0;32mI (640223) NimBLE:  peer_id_addr_type=1 peer_id_addr=[0m
+[0;32mI (640223) NimBLE: 5c:f2:1e:c5:28:28[0m
+[0;32mI (640223) NimBLE:  conn_itvl=24 conn_latency=0 supervision_timeout=500 encrypted=0 authenticated=0 bonded=0[0m
+
+[0;32mI (640233) NimBLE: [0m
+
+[0;32mI (640243) NimBLE: GAP procedure initiated: advertise; [0m
+[0;32mI (640243) NimBLE: disc_mode=2[0m
+[0;32mI (640243) NimBLE:  adv_channel_map=0 own_addr_type=0 adv_filter_policy=0 adv_itvl_min=0 adv_itvl_max=0[0m
+[0;32mI (640253) NimBLE: [0m
+
+[0;32mI (640263) NimBLE_BLE_PRPH: BOX advertising started[0m
+[0;32mI (646253) NimBLE: connection established; status=0 [0m
+[0;32mI (646253) NimBLE: handle=1 our_ota_addr_type=0 our_ota_addr=[0m
+[0;32mI (646253) NimBLE: 10:00:3b:6b:c4:76[0m
+[0;32mI (646253) NimBLE:  our_id_addr_type=0 our_id_addr=[0m
+[0;32mI (646263) NimBLE: 10:00:3b:6b:c4:76[0m
+[0;32mI (646263) NimBLE:  peer_ota_addr_type=1 peer_ota_addr=[0m
+[0;32mI (646263) NimBLE: 5f:76:8f:04:19:04[0m
+[0;32mI (646273) NimBLE:  peer_id_addr_type=1 peer_id_addr=[0m
+[0;32mI (646273) NimBLE: 5f:76:8f:04:19:04[0m
+[0;32mI (646283) NimBLE:  conn_itvl=24 conn_latency=0 supervision_timeout=500 encrypted=0 authenticated=0 bonded=0[0m
+
+[0;32mI (646293) NimBLE: [0m
+
+[0;32mI (646653) NimBLE: connection updated; status=0 [0m
+[0;32mI (646653) NimBLE: handle=1 our_ota_addr_type=0 our_ota_addr=[0m
+[0;32mI (646653) NimBLE: 10:00:3b:6b:c4:76[0m
+[0;32mI (646653) NimBLE:  our_id_addr_type=0 our_id_addr=[0m
+[0;32mI (646653) NimBLE: 10:00:3b:6b:c4:76[0m
+[0;32mI (646663) NimBLE:  peer_ota_addr_type=1 peer_ota_addr=[0m
+[0;32mI (646663) NimBLE: 5f:76:8f:04:19:04[0m
+[0;32mI (646673) NimBLE:  peer_id_addr_type=1 peer_id_addr=[0m
+[0;32mI (646673) NimBLE: 5f:76:8f:04:19:04[0m
+[0;32mI (646673) NimBLE:  conn_itvl=6 conn_latency=0 supervision_timeout=500 encrypted=0 authenticated=0 bonded=0[0m
+
+[0;32mI (646683) NimBLE: [0m
+
+[0;32mI (646873) NimBLE: mtu update event; conn_handle=1 cid=4 mtu=517[0m
+
+[0;32mI (646893) NimBLE: subscribe event; conn_handle=1 attr_handle=16 reason=1 prevn=0 curn=1 previ=0 curi=0[0m
+
+[0;32mI (646893) NimBLE_BLE_PRPH: BOX subscription: conn=1 notify=1[0m
+[0;32mI (646963) NimBLE: connection updated; status=0 [0m
+[0;32mI (646963) NimBLE: handle=1 our_ota_addr_type=0 our_ota_addr=[0m
+[0;32mI (646963) NimBLE: 10:00:3b:6b:c4:76[0m
+[0;32mI (646963) NimBLE:  our_id_addr_type=0 our_id_addr=[0m
+[0;32mI (646973) NimBLE: 10:00:3b:6b:c4:76[0m
+[0;32mI (646973) NimBLE:  peer_ota_addr_type=1 peer_ota_addr=[0m
+[0;32mI (646983) NimBLE: 5f:76:8f:04:19:04[0m
+[0;32mI (646983) NimBLE:  peer_id_addr_type=1 peer_id_addr=[0m
+[0;32mI (646993) NimBLE: 5f:76:8f:04:19:04[0m
+[0;32mI (646993) NimBLE:  conn_itvl=24 conn_latency=0 supervision_timeout=500 encrypted=0 authenticated=0 bonded=0[0m
+
+[0;32mI (647003) NimBLE: [0m
+

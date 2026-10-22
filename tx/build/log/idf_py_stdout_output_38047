@@ -1,0 +1,282 @@
+Command: /Users/nickrusfort/.espressif/python_env/idf5.5_py3.13_env/bin/python /Users/nickrusfort/esp/esp-idf-v5.5.5/tools/idf_monitor.py -p /dev/cu.usbmodem5CCD0111651 -b 115200 --toolchain-prefix xtensa-esp32s3-elf- --target esp32s3 --revision 0 /Users/nickrusfort/Desktop/dev/bm-node/tx/build/bleprph.elf /Users/nickrusfort/Desktop/dev/bm-node/tx/build/bootloader/bootloader.elf -m '/Users/nickrusfort/.espressif/python_env/idf5.5_py3.13_env/bin/python' '/Users/nickrusfort/esp/esp-idf-v5.5.5/tools/idf.py' '-p' '/dev/cu.usbmodem5CCD0111651'
+����Ҫ�Ҋ�j
+[0;32mI (239) app_init: ELF file SHA25�ESP-ROM:esp32s3-20210327[0m
+Build:Mar 27 2021
+rst:0x1 (POWERON),boot:0x8 (SPI_FAST_FLASH_BOOT)
+SPIWP:0xee
+mode:DIO, clock div:1
+load:0x3fce2820,len:0x14f0
+load:0x403c8700,len:0xd24
+load:0x403cb700,len:0x2eec
+entry 0x403c8924
+[0;32mI (24) boot: ESP-IDF v5.5.5 2nd stage bootloader[0m
+[0;32mI (25) boot: compile time Oct 22 2026 12:15:01[0m
+[0;32mI (25) boot: Multicore bootloader[0m
+[0;32mI (25) boot: chip revision: v0.2[0m
+[0;32mI (28) boot: efuse block revision: v1.3[0m
+[0;32mI (31) boot.esp32s3: Boot SPI Speed : 80MHz[0m
+[0;32mI (35) boot.esp32s3: SPI Mode       : DIO[0m
+[0;32mI (39) boot.esp32s3: SPI Flash Size : 8MB[0m
+[0;32mI (43) boot: Enabling RNG early entropy source...[0m
+[0;32mI (47) boot: Partition Table:[0m
+[0;32mI (50) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (56) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (63) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (69) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (76) boot: End of partition table[0m
+[0;32mI (79) esp_image: segment 0: paddr=00010020 vaddr=3c060020 size=14ae8h ( 84712) map[0m
+[0;32mI (102) esp_image: segment 1: paddr=00024b10 vaddr=3fc9b100 size=0423ch ( 16956) load[0m
+[0;32mI (106) esp_image: segment 2: paddr=00028d54 vaddr=40374000 size=072c4h ( 29380) load[0m
+[0;32mI (113) esp_image: segment 3: paddr=00030020 vaddr=42000020 size=544ach (345260) map[0m
+[0;32mI (176) esp_image: segment 4: paddr=000844d4 vaddr=4037b2c4 size=0fe00h ( 65024) load[0m
+[0;32mI (191) esp_image: segment 5: paddr=000942dc vaddr=50000000 size=00020h (    32) load[0m
+[0;32mI (200) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (201) boot: Disabling RNG early entropy source...[0m
+[0;32mI (211) cpu_start: Multicore app[0m
+[0;32mI (219) cpu_start: GPIO 44 and 43 are used as console UART I/O pins[0m
+[0;32mI (220) cpu_start: Pro cpu start user code[0m
+[0;32mI (220) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (221) app_init: Application information:[0m
+[0;32mI (225) app_init: Project name:     bleprph[0m
+[0;32mI (229) app_init: App version:      f114bed-dirty[0m
+[0;32mI (234) app_init: Compile time:     Oct 22 2026 16:57:13[0m
+[0;32mI (239) app_init: ELF file SHA256:  29eb7ba5e...[0m
+[0;32mI (243) app_init: ESP-IDF:          v5.5.5[0m
+[0;32mI (247) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (251) efuse_init: Max chip rev:     v0.99 [0m
+[0;32mI (255) efuse_init: Chip rev:         v0.2[0m
+[0;32mI (258) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (265) heap_init: At 3FCA00D8 len 00049638 (293 KiB): RAM[0m
+[0;32mI (270) heap_init: At 3FCE9710 len 00005724 (21 KiB): RAM[0m
+[0;32mI (275) heap_init: At 3FCF0000 len 00008000 (32 KiB): DRAM[0m
+[0;32mI (280) heap_init: At 600FE000 len 00001FE8 (7 KiB): RTCRAM[0m
+[0;32mI (287) spi_flash: detected chip: generic[0m
+[0;32mI (289) spi_flash: flash io: dio[0m
+[0;32mI (292) sleep_gpio: Configure to isolate all GPIO pins in sleep state[0m
+[0;32mI (299) sleep_gpio: Enable automatic switching of GPIO sleep configuration[0m
+[0;32mI (305) coexist: coex firmware version: 6f3d08c[0m
+[0;32mI (309) coexist: coexist rom version e7ae62f[0m
+[0;32mI (314) main_task: Started on CPU0[0m
+[0;32mI (334) main_task: Calling app_main()[0m
+[0;32mI (344) BLE_INIT: BT controller compile version [51d9dfd][0m
+[0;32mI (344) BLE_INIT: Using main XTAL as clock source[0m
+[0;32mI (344) BLE_INIT: Feature Config, ADV:1, BLE_50:1, DTM:1, SCAN:1, CCA:0, SMP:1, CONNECT:1[0m
+[0;32mI (354) BLE_INIT: Bluetooth MAC: 10:00:3b:6b:c4:76[0m
+[0;32mI (354) phy_init: phy_version 712,87e8c20e,Apr 13 2026,18:51:10[0m
+[0;32mI (404) NimBLE_BLE_PRPH: BLE Host Task Started[0m
+[0;32mI (404) BOX_GATT: Service: 0x1800 handle=1[0m
+[0;32mI (404) BOX_GATT: Characteristic: 0x2a00 value_handle=3[0m
+[0;32mI (404) BOX_GATT: Characteristic: 0x2a01 value_handle=5[0m
+[0;32mI (404) BOX_GATT: Service: 0x1801 handle=6[0m
+[0;32mI (414) BOX_GATT: Characteristic: 0x2a05 value_handle=8[0m
+[0;32mI (414) BOX_GATT: Characteristic: 0x2b3a value_handle=11[0m
+[0;32mI (424) BOX_GATT: Characteristic: 0x2b29 value_handle=13[0m
+[0;32mI (424) BOX_GATT: Service: 12345678-1234-5678-9012-aabbccddeeff handle=14[0m
+[0;32mI (434) BOX_GATT: Characteristic: 12345678-1234-5678-aaaa-aabbccddeeff value_handle=16[0m
+[0;32mI (444) NimBLE: GAP procedure initiated: stop advertising.[0m
+
+[0;32mI (444) NimBLE: Device Address: [0m
+[0;32mI (444) NimBLE: 10:00:3b:6b:c4:76[0m
+[0;32mI (454) NimBLE: [0m
+
+[0;32mI (454) NimBLE: GAP procedure initiated: advertise; [0m
+[0;32mI (454) NimBLE: disc_mode=2[0m
+[0;32mI (464) NimBLE:  adv_channel_map=0 own_addr_type=0 adv_filter_policy=0 adv_itvl_min=0 adv_itvl_max=0[0m
+[0;32mI (474) NimBLE: [0m
+
+[0;32mI (474) NimBLE_BLE_PRPH: BOX advertising started[0m
+[0;32mI (474) uart: queue free spaces: 8[0m
+[0;32mI (484) main_task: Returned from app_main()[0m
+[0;32mI (1964) NimBLE: connection established; status=0 [0m
+[0;32mI (1964) NimBLE: handle=1 our_ota_addr_type=0 our_ota_addr=[0m
+[0;32mI (1964) NimBLE: 10:00:3b:6b:c4:76[0m
+[0;32mI (1964) NimBLE:  our_id_addr_type=0 our_id_addr=[0m
+[0;32mI (1974) NimBLE: 10:00:3b:6b:c4:76[0m
+[0;32mI (1974) NimBLE:  peer_ota_addr_type=1 peer_ota_addr=[0m
+[0;32mI (1984) NimBLE: 55:df:aa:55:d5:11[0m
+[0;32mI (1984) NimBLE:  peer_id_addr_type=1 peer_id_addr=[0m
+[0;32mI (1984) NimBLE: 55:df:aa:55:d5:11[0m
+[0;32mI (1994) NimBLE:  conn_itvl=24 conn_latency=0 supervision_timeout=500 encrypted=0 authenticated=0 bonded=0[0m
+
+[0;32mI (2004) NimBLE: [0m
+
+[0;32mI (2384) NimBLE: connection updated; status=0 [0m
+[0;32mI (2384) NimBLE: handle=1 our_ota_addr_type=0 our_ota_addr=[0m
+[0;32mI (2384) NimBLE: 10:00:3b:6b:c4:76[0m
+[0;32mI (2384) NimBLE:  our_id_addr_type=0 our_id_addr=[0m
+[0;32mI (2394) NimBLE: 10:00:3b:6b:c4:76[0m
+[0;32mI (2394) NimBLE:  peer_ota_addr_type=1 peer_ota_addr=[0m
+[0;32mI (2404) NimBLE: 55:df:aa:55:d5:11[0m
+[0;32mI (2404) NimBLE:  peer_id_addr_type=1 peer_id_addr=[0m
+[0;32mI (2404) NimBLE: 55:df:aa:55:d5:11[0m
+[0;32mI (2414) NimBLE:  conn_itvl=6 conn_latency=0 supervision_timeout=500 encrypted=0 authenticated=0 bonded=0[0m
+
+[0;32mI (2424) NimBLE: [0m
+
+[0;32mI (2574) NimBLE: mtu update event; conn_handle=1 cid=4 mtu=517[0m
+
+[0;32mI (2594) NimBLE: subscribe event; conn_handle=1 attr_handle=16 reason=1 prevn=0 curn=1 previ=0 curi=0[0m
+
+[0;32mI (2594) NimBLE_BLE_PRPH: BOX subscription: conn=1 notify=1[0m
+[0;32mI (2604) NimBLE_BLE_PRPH: Test session scheduled: conn=1[0m
+[0;32mI (2604) NimBLE_BLE_PRPH: Test session started: conn=1 sid=a18beee3-f99a-4183-8662-0f9fbeefd297[0m
+[0;32mI (2614) NimBLE: GATT procedure initiated: notify; [0m
+[0;32mI (2614) NimBLE: att_handle=16[0m
+
+[0;32mI (2624) NimBLE: notify_tx event; conn_handle=1 attr_handle=16 status=0 is_indication=0[0m
+[0;32mI (2624) NimBLE_BLE_PRPH: BOX notify queued: conn=1 type=SID len=43 mtu=517[0m
+[0;32mI (2644) NimBLE: GATT procedure initiated: notify; [0m
+[0;32mI (2644) NimBLE: att_handle=16[0m
+
+[0;32mI (2644) NimBLE: notify_tx event; conn_handle=1 attr_handle=16 status=0 is_indication=0[0m
+[0;32mI (2654) NimBLE_BLE_PRPH: BOX notify queued: conn=1 type=TRM-1 len=43 mtu=517[0m
+[0;32mI (2654) NimBLE: connection updated; status=0 [0m
+[0;32mI (2664) NimBLE: handle=1 our_ota_addr_type=0 our_ota_addr=[0m
+[0;32mI (2664) NimBLE: 10:00:3b:6b:c4:76[0m
+[0;32mI (2674) NimBLE:  our_id_addr_type=0 our_id_addr=[0m
+[0;32mI (2674) NimBLE: 10:00:3b:6b:c4:76[0m
+[0;32mI (2674) NimBLE: GATT procedure initiated: notify; [0m
+[0;32mI (2674) NimBLE:  peer_ota_addr_type=1 peer_ota_addr=[0m
+[0;32mI (2684) NimBLE: att_handle=16[0m
+
+[0;32mI (2684) NimBLE: 55:df:aa:55:d5:11[0m
+[0;32mI (2694) NimBLE: notify_tx event; conn_handle=1 attr_handle=16 status=0 is_indication=0[0m
+[0;32mI (2694) NimBLE:  peer_id_addr_type=1 peer_id_addr=[0m
+[0;32mI (2704) NimBLE_BLE_PRPH: BOX notify queued: conn=1 type=TRM-2 len=43 mtu=517[0m
+[0;32mI (2704) NimBLE: 55:df:aa:55:d5:11[0m
+[0;32mI (2714) NimBLE_BLE_PRPH: Test session queued completely: conn=1 sid=a18beee3-f99a-4183-8662-0f9fbeefd297[0m
+[0;32mI (2714) NimBLE:  conn_itvl=24 conn_latency=0 supervision_timeout=500 encrypted=0 authenticated=0 bonded=0[0m
+
+[0;32mI (2734) NimBLE: [0m
+
+[0;32mI (3674) NimBLE: subscribe event; conn_handle=1 attr_handle=16 reason=2 prevn=1 curn=0 previ=0 curi=0[0m
+
+[0;32mI (3674) NimBLE_BLE_PRPH: BOX subscription: conn=1 notify=0[0m
+[0;32mI (3684) NimBLE: disconnect; reason=531 [0m
+[0;32mI (3684) NimBLE: handle=1 our_ota_addr_type=0 our_ota_addr=[0m
+[0;32mI (3684) NimBLE: 10:00:3b:6b:c4:76[0m
+[0;32mI (3694) NimBLE:  our_id_addr_type=0 our_id_addr=[0m
+[0;32mI (3694) NimBLE: 10:00:3b:6b:c4:76[0m
+[0;32mI (3704) NimBLE:  peer_ota_addr_type=1 peer_ota_addr=[0m
+[0;32mI (3704) NimBLE: 55:df:aa:55:d5:11[0m
+[0;32mI (3704) NimBLE:  peer_id_addr_type=1 peer_id_addr=[0m
+[0;32mI (3714) NimBLE: 55:df:aa:55:d5:11[0m
+[0;32mI (3714) NimBLE:  conn_itvl=24 conn_latency=0 supervision_timeout=500 encrypted=0 authenticated=0 bonded=0[0m
+
+[0;32mI (3724) NimBLE: [0m
+
+[0;32mI (3724) NimBLE: GAP procedure initiated: advertise; [0m
+[0;32mI (3734) NimBLE: disc_mode=2[0m
+[0;32mI (3734) NimBLE:  adv_channel_map=0 own_addr_type=0 adv_filter_policy=0 adv_itvl_min=0 adv_itvl_max=0[0m
+[0;32mI (3744) NimBLE: [0m
+
+[0;32mI (3744) NimBLE_BLE_PRPH: BOX advertising started[0m
+[0;32mI (26744) NimBLE: connection established; status=0 [0m
+[0;32mI (26744) NimBLE: handle=1 our_ota_addr_type=0 our_ota_addr=[0m
+[0;32mI (26744) NimBLE: 10:00:3b:6b:c4:76[0m
+[0;32mI (26744) NimBLE:  our_id_addr_type=0 our_id_addr=[0m
+[0;32mI (26754) NimBLE: 10:00:3b:6b:c4:76[0m
+[0;32mI (26754) NimBLE:  peer_ota_addr_type=1 peer_ota_addr=[0m
+[0;32mI (26764) NimBLE: 64:a8:a9:da:ed:33[0m
+[0;32mI (26764) NimBLE:  peer_id_addr_type=1 peer_id_addr=[0m
+[0;32mI (26764) NimBLE: 64:a8:a9:da:ed:33[0m
+[0;32mI (26774) NimBLE:  conn_itvl=24 conn_latency=0 supervision_timeout=500 encrypted=0 authenticated=0 bonded=0[0m
+
+[0;32mI (26784) NimBLE: [0m
+
+[0;32mI (27134) NimBLE: connection updated; status=0 [0m
+[0;32mI (27134) NimBLE: handle=1 our_ota_addr_type=0 our_ota_addr=[0m
+[0;32mI (27134) NimBLE: 10:00:3b:6b:c4:76[0m
+[0;32mI (27134) NimBLE:  our_id_addr_type=0 our_id_addr=[0m
+[0;32mI (27144) NimBLE: 10:00:3b:6b:c4:76[0m
+[0;32mI (27144) NimBLE:  peer_ota_addr_type=1 peer_ota_addr=[0m
+[0;32mI (27154) NimBLE: 64:a8:a9:da:ed:33[0m
+[0;32mI (27154) NimBLE:  peer_id_addr_type=1 peer_id_addr=[0m
+[0;32mI (27154) NimBLE: 64:a8:a9:da:ed:33[0m
+[0;32mI (27164) NimBLE:  conn_itvl=6 conn_latency=0 supervision_timeout=500 encrypted=0 authenticated=0 bonded=0[0m
+
+[0;32mI (27174) NimBLE: [0m
+
+[0;32mI (27364) NimBLE: mtu update event; conn_handle=1 cid=4 mtu=517[0m
+
+[0;32mI (27404) NimBLE: subscribe event; conn_handle=1 attr_handle=16 reason=1 prevn=0 curn=1 previ=0 curi=0[0m
+
+[0;32mI (27404) NimBLE_BLE_PRPH: BOX subscription: conn=1 notify=1[0m
+[0;32mI (27414) NimBLE_BLE_PRPH: Test session scheduled: conn=1[0m
+[0;32mI (27414) NimBLE_BLE_PRPH: Test session started: conn=1 sid=7a654063-3be4-41a7-b4c6-6a164b1bf063[0m
+[0;32mI (27424) NimBLE: GATT procedure initiated: notify; [0m
+[0;32mI (27424) NimBLE: att_handle=16[0m
+
+[0;32mI (27434) NimBLE: notify_tx event; conn_handle=1 attr_handle=16 status=0 is_indication=0[0m
+[0;32mI (27434) NimBLE_BLE_PRPH: BOX notify queued: conn=1 type=SID len=43 mtu=517[0m
+[0;32mI (27454) NimBLE: GATT procedure initiated: notify; [0m
+[0;32mI (27454) NimBLE: att_handle=16[0m
+
+[0;32mI (27454) NimBLE: notify_tx event; conn_handle=1 attr_handle=16 status=0 is_indication=0[0m
+[0;32mI (27464) NimBLE_BLE_PRPH: BOX notify queued: conn=1 type=TRM-1 len=43 mtu=517[0m
+[0;32mI (27464) NimBLE: connection updated; status=0 [0m
+[0;32mI (27474) NimBLE: handle=1 our_ota_addr_type=0 our_ota_addr=[0m
+[0;32mI (27474) NimBLE: 10:00:3b:6b:c4:76[0m
+[0;32mI (27484) NimBLE:  our_id_addr_type=0 our_id_addr=[0m
+[0;32mI (27484) NimBLE: GATT procedure initiated: notify; [0m
+[0;32mI (27484) NimBLE: 10:00:3b:6b:c4:76[0m
+[0;32mI (27494) NimBLE: att_handle=16[0m
+
+[0;32mI (27494) NimBLE:  peer_ota_addr_type=1 peer_ota_addr=[0m
+[0;32mI (27494) NimBLE: notify_tx event; conn_handle=1 attr_handle=16 status=0 is_indication=0[0m
+[0;32mI (27504) NimBLE: 64:a8:a9:da:ed:33[0m
+[0;32mI (27504) NimBLE_BLE_PRPH: BOX notify queued: conn=1 type=TRM-2 len=43 mtu=517[0m
+[0;32mI (27514) NimBLE:  peer_id_addr_type=1 peer_id_addr=[0m
+[0;32mI (27514) NimBLE_BLE_PRPH: Test session queued completely: conn=1 sid=7a654063-3be4-41a7-b4c6-6a164b1bf063[0m
+[0;32mI (27524) NimBLE: 64:a8:a9:da:ed:33[0m
+[0;32mI (27534) NimBLE:  conn_itvl=24 conn_latency=0 supervision_timeout=500 encrypted=0 authenticated=0 bonded=0[0m
+
+[0;32mI (27544) NimBLE: [0m
+
+[0;32mI (28514) NimBLE: subscribe event; conn_handle=1 attr_handle=16 reason=2 prevn=1 curn=0 previ=0 curi=0[0m
+
+[0;32mI (28514) NimBLE_BLE_PRPH: BOX subscription: conn=1 notify=0[0m
+[0;32mI (28524) NimBLE: disconnect; reason=531 [0m
+[0;32mI (28524) NimBLE: handle=1 our_ota_addr_type=0 our_ota_addr=[0m
+[0;32mI (28524) NimBLE: 10:00:3b:6b:c4:76[0m
+[0;32mI (28534) NimBLE:  our_id_addr_type=0 our_id_addr=[0m
+[0;32mI (28534) NimBLE: 10:00:3b:6b:c4:76[0m
+[0;32mI (28544) NimBLE:  peer_ota_addr_type=1 peer_ota_addr=[0m
+[0;32mI (28544) NimBLE: 64:a8:a9:da:ed:33[0m
+[0;32mI (28544) NimBLE:  peer_id_addr_type=1 peer_id_addr=[0m
+[0;32mI (28554) NimBLE: 64:a8:a9:da:ed:33[0m
+[0;32mI (28554) NimBLE:  conn_itvl=24 conn_latency=0 supervision_timeout=500 encrypted=0 authenticated=0 bonded=0[0m
+
+[0;32mI (28564) NimBLE: [0m
+
+[0;32mI (28564) NimBLE: GAP procedure initiated: advertise; [0m
+[0;32mI (28574) NimBLE: disc_mode=2[0m
+[0;32mI (28574) NimBLE:  adv_channel_map=0 own_addr_type=0 adv_filter_policy=0 adv_itvl_min=0 adv_itvl_max=0[0m
+[0;32mI (28584) NimBLE: [0m
+
+[0;32mI (28584) NimBLE_BLE_PRPH: BOX advertising started[0m
+[0;32mI (66134) NimBLE: connection established; status=0 [0m
+[0;32mI (66134) NimBLE: handle=1 our_ota_addr_type=0 our_ota_addr=[0m
+[0;32mI (66134) NimBLE: 10:00:3b:6b:c4:76[0m
+[0;32mI (66144) NimBLE:  our_id_addr_type=0 our_id_addr=[0m
+[0;32mI (66144) NimBLE: 10:00:3b:6b:c4:76[0m
+[0;32mI (66144) NimBLE:  peer_ota_addr_type=1 peer_ota_addr=[0m
+[0;32mI (66154) NimBLE: 7a:ca:e4:ed:ea:74[0m
+[0;32mI (66154) NimBLE:  peer_id_addr_type=1 peer_id_addr=[0m
+[0;32mI (66164) NimBLE: 7a:ca:e4:ed:ea:74[0m
+[0;32mI (66164) NimBLE:  conn_itvl=24 conn_latency=0 supervision_timeout=500 encrypted=0 authenticated=0 bonded=0[0m
+
+[0;32mI (66174) NimBLE: [0m
+
+[0;32mI (66524) NimBLE: connection updated; status=0 [0m
+[0;32mI (66524) NimBLE: handle=1 our_ota_addr_type=0 our_ota_addr=[0m
+[0;32mI (66524) NimBLE: 10:00:3b:6b:c4:76[0m
+[0;32mI (66524) NimBLE:  our_id_addr_type=0 our_id_addr=[0m
+[0;32mI (66534) NimBLE: 10:00:3b:6b:c4:76[0m
+[0;32mI (66534) NimBLE:  peer_ota_addr_type=1 peer_ota_addr=[0m
+[0;32mI (66544) NimBLE: 7a:ca:e4:ed:ea:74[0m
+[0;32mI (66544) NimBLE:  peer_id_addr_type=1 peer_id_addr=[0m
+[0;32mI (66554) NimBLE: 7a:ca:e4:ed:ea:74[0m
+[0;32mI (66554) NimBLE:  conn_itvl=6 conn_latency=0 supervision_timeout=500 encrypted=0 authenticated=0 bonded=0[0m
+
+
