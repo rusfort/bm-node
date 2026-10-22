@@ -277,14 +277,40 @@ box_tx_task(void *arg)
         if (xQueueReceive(box_tx_queue, &r, portMAX_DELAY) != pdTRUE) continue;
         if (!box_connection_is_subscribed(r.conn_handle)) continue;
 
-        char sid[37], sid_packet[48], trm_packet[48];
+        static const char box_id[] =
+            "10000000-0000-4000-8000-aabbccddeeff";
+        static const char message_id[] =
+            "20000000-0000-4000-8000-aabbccddeeff";
+
+        char sid[37];
+        char sid_packet[48];
+        char trm_packet[48];
+        char box_packet[256];
+
         box_generate_session_uuid(sid);
         snprintf(sid_packet, sizeof(sid_packet), "V1\nSID\n%s", sid);
+        snprintf(box_packet, sizeof(box_packet),
+                 "V1\nBOX\n%s\n"
+                 "%s\n"
+                 "2099-12-31 23:59:59\n"
+                 "0\n"
+                 "BOX-TEST-RECEIVER\n"
+                 "text\n"
+                 "ESP32-BOX-TEST",
+                 box_id,
+                 message_id);
         snprintf(trm_packet, sizeof(trm_packet), "V1\nTRM\n%s", sid);
-        ESP_LOGI(tag, "Test session started: conn=%u sid=%s",
-                 (unsigned)r.conn_handle, sid);
+
+        ESP_LOGI(tag,
+                 "Test session started: conn=%u sid=%s box=%s message=%s",
+                 (unsigned)r.conn_handle,
+                 sid,
+                 box_id,
+                 message_id);
 
         if (box_notify_packet(r.conn_handle, sid_packet, "SID") != 0) continue;
+        vTaskDelay(pdMS_TO_TICKS(BOX_TX_PACKET_DELAY_MS));
+        if (box_notify_packet(r.conn_handle, box_packet, "BOX") != 0) continue;
         vTaskDelay(pdMS_TO_TICKS(BOX_TX_PACKET_DELAY_MS));
         if (box_notify_packet(r.conn_handle, trm_packet, "TRM-1") != 0) continue;
         vTaskDelay(pdMS_TO_TICKS(BOX_TX_PACKET_DELAY_MS));
