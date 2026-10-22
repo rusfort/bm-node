@@ -1,0 +1,2 @@
+source /Users/nickrusfort/Desktop/dev/bm-node/hello_world/build/bootloader/gdbinit/symbols
+source /Users/nickrusfort/Desktop/dev/bm-node/hello_world/build/bootloader/gdbinit/connect
