@@ -1,7 +1,7 @@
 {
     "version":            "1.2",
     "project_name":       "bleprph",
-    "project_version":    "74c1ce3-dirty",
+    "project_version":    "e84df4b-dirty",
     "project_path":       "/Users/nickrusfort/Desktop/dev/bm-node/tx",
     "idf_path":           "/Users/nickrusfort/esp/esp-idf-v5.5.5",
     "build_dir":          "/Users/nickrusfort/Desktop/dev/bm-node/tx/build",
@@ -610,7 +610,7 @@
             "managed_reqs": [],
             "managed_priv_reqs": [ "nimble_peripheral_utils" ],
             "file": "/Users/nickrusfort/Desktop/dev/bm-node/tx/build/esp-idf/main/libmain.a",
-            "sources": [ "/Users/nickrusfort/Desktop/dev/bm-node/tx/main/main.c", "/Users/nickrusfort/Desktop/dev/bm-node/tx/main/gatt_svr.c" ],
+            "sources": [ "/Users/nickrusfort/Desktop/dev/bm-node/tx/main/main.c", "/Users/nickrusfort/Desktop/dev/bm-node/tx/main/gatt_svr.c", "/Users/nickrusfort/Desktop/dev/bm-node/tx/main/box_reverse.c", "/Users/nickrusfort/Desktop/dev/bm-node/tx/main/box_protocol.c" ],
             "include_dirs": [ "." ]
         },
         "mbedtls": {

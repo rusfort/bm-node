@@ -35,6 +35,8 @@
 #include "console/console.h"
 #include "services/gap/ble_svc_gap.h"
 #include "bleprph.h"
+/* BOX_REVERSE_CHANNEL_V1 */
+#include "box_reverse.h"
 
 #if CONFIG_EXAMPLE_EXTENDED_ADV
 static uint8_t ext_adv_pattern_1[] = {
@@ -174,6 +176,7 @@ ext_bleprph_advertise(void)
 static void
 bleprph_advertise(void)
 {
+    if (ble_gap_adv_active()) return;
     struct ble_hs_adv_fields fields = {0};
     struct ble_hs_adv_fields scan_rsp = {0};
     struct ble_gap_adv_params params = {0};
@@ -278,7 +281,7 @@ box_tx_task(void *arg)
         if (!box_connection_is_subscribed(r.conn_handle)) continue;
 
         static const char box_id[] =
-            "10000000-0000-4000-8000-aabbccddeeff";
+            BOX_TEST_BOX_ID;
         static const char message_id[] =
             "20000000-0000-4000-8000-aabbccddeeff";
 
@@ -286,6 +289,7 @@ box_tx_task(void *arg)
         char sid_packet[48];
         char trm_packet[48];
         char box_packet[256];
+        char acb_packet[44];
 
         box_generate_session_uuid(sid);
         snprintf(sid_packet, sizeof(sid_packet), "V1\nSID\n%s", sid);
@@ -310,6 +314,16 @@ box_tx_task(void *arg)
 
         if (box_notify_packet(r.conn_handle, sid_packet, "SID") != 0) continue;
         vTaskDelay(pdMS_TO_TICKS(BOX_TX_PACKET_DELAY_MS));
+        bool acb_failed = false;
+        for (unsigned slot = 0; slot < BOX_REVERSE_ACK_CAPACITY; ++slot) {
+            if (!box_reverse_build_acb(slot, acb_packet, sizeof(acb_packet))) continue;
+            if (box_notify_packet(r.conn_handle, acb_packet, "ACB") != 0) {
+                acb_failed = true; break;
+            }
+            ESP_LOGI(tag, "ACB queued: callback_id=%s (not Android confirmation)", acb_packet + 7);
+            vTaskDelay(pdMS_TO_TICKS(BOX_TX_PACKET_DELAY_MS));
+        }
+        if (acb_failed) continue;
         if (box_notify_packet(r.conn_handle, box_packet, "BOX") != 0) continue;
         vTaskDelay(pdMS_TO_TICKS(BOX_TX_PACKET_DELAY_MS));
         if (box_notify_packet(r.conn_handle, trm_packet, "TRM-1") != 0) continue;
@@ -368,6 +382,7 @@ bleprph_gap_event(struct ble_gap_event *event, void *arg)
             rc = ble_gap_conn_find(event->connect.conn_handle, &desc);
             assert(rc == 0);
             bleprph_print_conn_desc(&desc);
+            box_reverse_peripheral_connected(event->connect.conn_handle);
         }
         MODLOG_DFLT(INFO, "\n");
 
@@ -389,6 +404,7 @@ bleprph_gap_event(struct ble_gap_event *event, void *arg)
         if (box_subscribed_conn == event->disconnect.conn.conn_handle) {
             box_subscribed_conn = BLE_HS_CONN_HANDLE_NONE;
         }
+        box_reverse_peripheral_disconnected(event->disconnect.conn.conn_handle);
         MODLOG_DFLT(INFO, "disconnect; reason=%d ", event->disconnect.reason);
         bleprph_print_conn_desc(&event->disconnect.conn);
         MODLOG_DFLT(INFO, "\n");
@@ -607,6 +623,8 @@ bleprph_gap_event(struct ble_gap_event *event, void *arg)
 static void
 bleprph_on_reset(int reason)
 {
+    box_reverse_on_reset();
+    box_subscribed_conn = BLE_HS_CONN_HANDLE_NONE;
     MODLOG_DFLT(ERROR, "Resetting state; reason=%d\n", reason);
 }
 
@@ -652,6 +670,8 @@ bleprph_on_sync(void)
         MODLOG_DFLT(ERROR, "error determining address type; rc=%d\n", rc);
         return;
     }
+
+    box_reverse_on_sync(own_addr_type);
 
     /* Printing ADDR */
     uint8_t addr_val[6] = {0};
@@ -743,6 +763,8 @@ app_main(void)
 
     /* XXX Need to have template for store */
     ble_store_config_init();
+
+    box_reverse_init(bleprph_advertise);
 
     box_tx_queue = xQueueCreate(BOX_TX_QUEUE_LENGTH, sizeof(box_tx_request_t));
     assert(box_tx_queue != NULL);
