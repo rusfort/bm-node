@@ -17,12 +17,15 @@
  * under the License.
  */
 
+#include <string.h>
+
 #include "esp_log.h"
 #include "nvs_flash.h"
 /* BLE */
 #include "nimble/nimble_port.h"
 #include "nimble/nimble_port_freertos.h"
 #include "host/ble_hs.h"
+#include "host/ble_uuid.h"
 #include "host/util/util.h"
 #include "console/console.h"
 #include "services/gap/ble_svc_gap.h"
@@ -38,6 +41,15 @@ static uint8_t ext_adv_pattern_1[] = {
 #endif
 
 static const char *tag = "NimBLE_BLE_PRPH";
+
+/* Advertising UUID expected by Box Messenger:
+ * 12345678-1234-5678-9012-123456789abc
+ */
+static ble_uuid128_t box_advertising_uuid =
+    BLE_UUID128_INIT(
+        0xbc, 0x9a, 0x78, 0x56, 0x34, 0x12, 0x12, 0x90,
+        0x78, 0x56, 0x34, 0x12, 0x78, 0x56, 0x34, 0x12
+    );
 static int bleprph_gap_event(struct ble_gap_event *event, void *arg);
 #if CONFIG_EXAMPLE_RANDOM_ADDR
 static uint8_t own_addr_type = BLE_OWN_ADDR_RANDOM;
@@ -148,66 +160,49 @@ ext_bleprph_advertise(void)
 static void
 bleprph_advertise(void)
 {
-    struct ble_gap_adv_params adv_params;
-    struct ble_hs_adv_fields fields;
-#if CONFIG_BT_NIMBLE_GAP_SERVICE
-    const char *name;
-#endif
+    struct ble_hs_adv_fields fields = {0};
+    struct ble_hs_adv_fields scan_rsp = {0};
+    struct ble_gap_adv_params params = {0};
     int rc;
 
-    /**
-     *  Set the advertisement data included in our advertisements:
-     *     o Flags (indicates advertisement type and other general info).
-     *     o Advertising tx power.
-     *     o Device name.
-     *     o 16-bit service UUIDs (alert notifications).
-     */
-
-    memset(&fields, 0, sizeof fields);
-
-    /* Advertise two flags:
-     *     o Discoverability in forthcoming advertisement (general)
-     *     o BLE-only (BR/EDR unsupported).
-     */
     fields.flags = BLE_HS_ADV_F_DISC_GEN |
                    BLE_HS_ADV_F_BREDR_UNSUP;
-
-    /* Indicate that the TX power level field should be included; have the
-     * stack fill this value automatically.  This is done by assigning the
-     * special value BLE_HS_ADV_TX_PWR_LVL_AUTO.
-     */
-    fields.tx_pwr_lvl_is_present = 1;
-    fields.tx_pwr_lvl = BLE_HS_ADV_TX_PWR_LVL_AUTO;
-
-#if CONFIG_BT_NIMBLE_GAP_SERVICE
-    name = ble_svc_gap_device_name();
-    fields.name = (uint8_t *)name;
-    fields.name_len = strlen(name);
-    fields.name_is_complete = 1;
-#endif
-
-    fields.uuids16 = (ble_uuid16_t[]) {
-        BLE_UUID16_INIT(GATT_SVR_SVC_ALERT_UUID)
-    };
-    fields.num_uuids16 = 1;
-    fields.uuids16_is_complete = 1;
+    fields.uuids128 = &box_advertising_uuid;
+    fields.num_uuids128 = 1;
+    fields.uuids128_is_complete = 1;
 
     rc = ble_gap_adv_set_fields(&fields);
     if (rc != 0) {
-        MODLOG_DFLT(ERROR, "error setting advertisement data; rc=%d\n", rc);
+        ESP_LOGE(tag, "Advertising fields failed: rc=%d", rc);
         return;
     }
 
-    /* Begin advertising. */
-    memset(&adv_params, 0, sizeof adv_params);
-    adv_params.conn_mode = BLE_GAP_CONN_MODE_UND;
-    adv_params.disc_mode = BLE_GAP_DISC_MODE_GEN;
-    rc = ble_gap_adv_start(own_addr_type, NULL, BLE_HS_FOREVER,
-                           &adv_params, bleprph_gap_event, NULL);
+    static const char name[] = "BOX-TX-01";
+    scan_rsp.name = (const uint8_t *)name;
+    scan_rsp.name_len = sizeof(name) - 1;
+    scan_rsp.name_is_complete = 1;
+
+    rc = ble_gap_adv_rsp_set_fields(&scan_rsp);
     if (rc != 0) {
-        MODLOG_DFLT(ERROR, "error enabling advertisement; rc=%d\n", rc);
+        ESP_LOGE(tag, "Scan response failed: rc=%d", rc);
         return;
     }
+
+    params.conn_mode = BLE_GAP_CONN_MODE_UND;
+    params.disc_mode = BLE_GAP_DISC_MODE_GEN;
+
+    rc = ble_gap_adv_start(own_addr_type,
+                           NULL,
+                           BLE_HS_FOREVER,
+                           &params,
+                           bleprph_gap_event,
+                           NULL);
+    if (rc != 0) {
+        ESP_LOGE(tag, "Advertising start failed: rc=%d", rc);
+        return;
+    }
+
+    ESP_LOGI(tag, "BOX advertising started");
 }
 #endif
 
@@ -338,6 +333,12 @@ bleprph_gap_event(struct ble_gap_event *event, void *arg)
                     event->subscribe.cur_notify,
                     event->subscribe.prev_indicate,
                     event->subscribe.cur_indicate);
+        if (event->subscribe.attr_handle == box_gatt_message_handle()) {
+            ESP_LOGI(tag,
+                     "BOX subscription: conn=%u notify=%u",
+                     (unsigned)event->subscribe.conn_handle,
+                     (unsigned)event->subscribe.cur_notify);
+        }
         return 0;
 
     case BLE_GAP_EVENT_MTU:
@@ -614,7 +615,7 @@ app_main(void)
 
 #if CONFIG_BT_NIMBLE_GAP_SERVICE
     /* Set the default device name. */
-    rc = ble_svc_gap_device_name_set("nimble-bleprph");
+    rc = ble_svc_gap_device_name_set("BOX-TX-01");
     assert(rc == 0);
 #endif
 

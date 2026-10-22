@@ -21,6 +21,7 @@
 #define H_BLEPRPH_
 
 #include <stdbool.h>
+#include <stdint.h>
 #include "nimble/ble.h"
 #include "modlog/modlog.h"
 #include "esp_peripheral.h"
@@ -41,6 +42,7 @@ struct ble_gatt_register_ctxt;
 
 void gatt_svr_register_cb(struct ble_gatt_register_ctxt *ctxt, void *arg);
 int gatt_svr_init(void);
+uint16_t box_gatt_message_handle(void);
 
 #ifdef __cplusplus
 }

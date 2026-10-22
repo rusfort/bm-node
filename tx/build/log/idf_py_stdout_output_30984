@@ -1,0 +1,139 @@
+Command: /Users/nickrusfort/.espressif/python_env/idf5.5_py3.13_env/bin/python /Users/nickrusfort/esp/esp-idf-v5.5.5/tools/idf_monitor.py -p /dev/cu.usbmodem5CCD0111651 -b 115200 --toolchain-prefix xtensa-esp32s3-elf- --target esp32s3 --revision 0 /Users/nickrusfort/Desktop/dev/bm-node/tx/build/bleprph.elf /Users/nickrusfort/Desktop/dev/bm-node/tx/build/bootloader/bootloader.elf -m '/Users/nickrusfort/.espressif/python_env/idf5.5_py3.13_env/bin/python' '/Users/nickrusfort/esp/esp-idf-v5.5.5/tools/idf.py' '-p' '/dev/cu.usbmodem5CCD0111651'
+[0;32mI (211) cpu_start: Multicore app[0m
+ESP-ROM:esp32s3-20210327
+Build:Mar 27 2021
+rst:0x1 (POWERON),boot:0x8 (SPI_FAST_FLASH_BOOT)
+SPIWP:0xee
+mode:DIO, clock div:1
+load:0x3fce2820,len:0x14f0
+load:0x403c8700,len:0xd24
+load:0x403cb700,len:0x2eec
+entry 0x403c8924
+[0;32mI (24) boot: ESP-IDF v5.5.5 2nd stage bootloader[0m
+[0;32mI (25) boot: compile time Oct 22 2026 12:15:01[0m
+[0;32mI (25) boot: Multicore bootloader[0m
+[0;32mI (25) boot: chip revision: v0.2[0m
+[0;32mI (28) boot: efuse block revision: v1.3[0m
+[0;32mI (31) boot.esp32s3: Boot SPI Speed : 80MHz[0m
+[0;32mI (35) boot.esp32s3: SPI Mode       : DIO[0m
+[0;32mI (39) boot.esp32s3: SPI Flash Size : 8MB[0m
+[0;32mI (43) boot: Enabling RNG early entropy source...[0m
+[0;32mI (47) boot: Partition Table:[0m
+[0;32mI (50) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (56) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (63) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (69) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (76) boot: End of partition table[0m
+[0;32mI (79) esp_image: segment 0: paddr=00010020 vaddr=3c060020 size=14a88h ( 84616) map[0m
+[0;32mI (102) esp_image: segment 1: paddr=00024ab0 vaddr=3fc9b100 size=0424ch ( 16972) load[0m
+[0;32mI (106) esp_image: segment 2: paddr=00028d04 vaddr=40374000 size=07314h ( 29460) load[0m
+[0;32mI (113) esp_image: segment 3: paddr=00030020 vaddr=42000020 size=54410h (345104) map[0m
+[0;32mI (176) esp_image: segment 4: paddr=00084438 vaddr=4037b314 size=0fdb0h ( 64944) load[0m
+[0;32mI (191) esp_image: segment 5: paddr=000941f0 vaddr=50000000 size=00020h (    32) load[0m
+[0;32mI (200) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (201) boot: Disabling RNG early entropy source...[0m
+[0;32mI (211) cpu_start: Multicore app[0m
+[0;32mI (219) cpu_start: GPIO 44 and 43 are used as console UART I/O pins[0m
+[0;32mI (220) cpu_start: Pro cpu start user code[0m
+[0;32mI (220) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (221) app_init: Application information:[0m
+[0;32mI (225) app_init: Project name:     bleprph[0m
+[0;32mI (229) app_init: App version:      03c2784[0m
+[0;32mI (233) app_init: Compile time:     Oct 22 2026 12:50:47[0m
+[0;32mI (238) app_init: ELF file SHA256:  80a09608f...[0m
+[0;32mI (242) app_init: ESP-IDF:          v5.5.5[0m
+[0;32mI (246) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (250) efuse_init: Max chip rev:     v0.99 [0m
+[0;32mI (254) efuse_init: Chip rev:         v0.2[0m
+[0;32mI (258) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (264) heap_init: At 3FCA00F0 len 00049620 (293 KiB): RAM[0m
+[0;32mI (269) heap_init: At 3FCE9710 len 00005724 (21 KiB): RAM[0m
+[0;32mI (274) heap_init: At 3FCF0000 len 00008000 (32 KiB): DRAM[0m
+[0;32mI (280) heap_init: At 600FE000 len 00001FE8 (7 KiB): RTCRAM[0m
+[0;32mI (286) spi_flash: detected chip: generic[0m
+[0;32mI (289) spi_flash: flash io: dio[0m
+[0;32mI (292) sleep_gpio: Configure to isolate all GPIO pins in sleep state[0m
+[0;32mI (298) sleep_gpio: Enable automatic switching of GPIO sleep configuration[0m
+[0;32mI (305) coexist: coex firmware version: 6f3d08c[0m
+[0;32mI (309) coexist: coexist rom version e7ae62f[0m
+[0;32mI (313) main_task: Started on CPU0[0m
+[0;32mI (333) main_task: Calling app_main()[0m
+[0;32mI (343) BLE_INIT: BT controller compile version [51d9dfd][0m
+[0;32mI (343) BLE_INIT: Using main XTAL as clock source[0m
+[0;32mI (343) BLE_INIT: Feature Config, ADV:1, BLE_50:1, DTM:1, SCAN:1, CCA:0, SMP:1, CONNECT:1[0m
+[0;32mI (353) BLE_INIT: Bluetooth MAC: 10:00:3b:6b:c4:76[0m
+[0;32mI (353) phy_init: phy_version 712,87e8c20e,Apr 13 2026,18:51:10[0m
+[0;32mI (403) phy_init: Saving new calibration data due to checksum failure or outdated calibration data, mode(0)[0m
+[0;32mI (423) NimBLE_BLE_PRPH: BLE Host Task Started[0m
+[0;32mI (423) NimBLE: GAP procedure initiated: stop advertising.[0m
+
+[0;32mI (423) NimBLE: Device Address: [0m
+[0;32mI (423) NimBLE: 10:00:3b:6b:c4:76[0m
+[0;32mI (423) NimBLE: [0m
+
+[0;32mI (423) NimBLE: GAP procedure initiated: advertise; [0m
+[0;32mI (433) NimBLE: disc_mode=2[0m
+[0;32mI (433) NimBLE:  adv_channel_map=0 own_addr_type=0 adv_filter_policy=0 adv_itvl_min=0 adv_itvl_max=0[0m
+[0;32mI (443) NimBLE: [0m
+
+[0;32mI (443) uart: queue free spaces: 8[0m
+[0;32mI (443) main_task: Returned from app_main()[0m
+[0;32mI (5823) NimBLE: connection established; status=0 [0m
+[0;32mI (5823) NimBLE: handle=1 our_ota_addr_type=0 our_ota_addr=[0m
+[0;32mI (5823) NimBLE: 10:00:3b:6b:c4:76[0m
+[0;32mI (5833) NimBLE:  our_id_addr_type=0 our_id_addr=[0m
+[0;32mI (5833) NimBLE: 10:00:3b:6b:c4:76[0m
+[0;32mI (5833) NimBLE:  peer_ota_addr_type=1 peer_ota_addr=[0m
+[0;32mI (5843) NimBLE: 40:56:d7:e4:56:99[0m
+[0;32mI (5843) NimBLE:  peer_id_addr_type=1 peer_id_addr=[0m
+[0;32mI (5853) NimBLE: 40:56:d7:e4:56:99[0m
+[0;32mI (5853) NimBLE:  conn_itvl=24 conn_latency=0 supervision_timeout=500 encrypted=0 authenticated=0 bonded=0[0m
+
+[0;32mI (5863) NimBLE: [0m
+
+[0;32mI (6213) NimBLE: connection updated; status=0 [0m
+[0;32mI (6213) NimBLE: handle=1 our_ota_addr_type=0 our_ota_addr=[0m
+[0;32mI (6213) NimBLE: 10:00:3b:6b:c4:76[0m
+[0;32mI (6223) NimBLE:  our_id_addr_type=0 our_id_addr=[0m
+[0;32mI (6223) NimBLE: 10:00:3b:6b:c4:76[0m
+[0;32mI (6223) NimBLE:  peer_ota_addr_type=1 peer_ota_addr=[0m
+[0;32mI (6233) NimBLE: 40:56:d7:e4:56:99[0m
+[0;32mI (6233) NimBLE:  peer_id_addr_type=1 peer_id_addr=[0m
+[0;32mI (6243) NimBLE: 40:56:d7:e4:56:99[0m
+[0;32mI (6243) NimBLE:  conn_itvl=6 conn_latency=0 supervision_timeout=500 encrypted=0 authenticated=0 bonded=0[0m
+
+[0;32mI (6253) NimBLE: [0m
+
+[0;32mI (6573) NimBLE: mtu update event; conn_handle=1 cid=4 mtu=517[0m
+
+[0;32mI (6633) NimBLE: connection updated; status=0 [0m
+[0;32mI (6633) NimBLE: handle=1 our_ota_addr_type=0 our_ota_addr=[0m
+[0;32mI (6633) NimBLE: 10:00:3b:6b:c4:76[0m
+[0;32mI (6633) NimBLE:  our_id_addr_type=0 our_id_addr=[0m
+[0;32mI (6643) NimBLE: 10:00:3b:6b:c4:76[0m
+[0;32mI (6643) NimBLE:  peer_ota_addr_type=1 peer_ota_addr=[0m
+[0;32mI (6653) NimBLE: 40:56:d7:e4:56:99[0m
+[0;32mI (6653) NimBLE:  peer_id_addr_type=1 peer_id_addr=[0m
+[0;32mI (6653) NimBLE: 40:56:d7:e4:56:99[0m
+[0;32mI (6663) NimBLE:  conn_itvl=24 conn_latency=0 supervision_timeout=500 encrypted=0 authenticated=0 bonded=0[0m
+
+[0;32mI (6673) NimBLE: [0m
+
+[0;32mI (572673) NimBLE: disconnect; reason=520 [0m
+[0;32mI (572673) NimBLE: handle=1 our_ota_addr_type=0 our_ota_addr=[0m
+[0;32mI (572673) NimBLE: 10:00:3b:6b:c4:76[0m
+[0;32mI (572673) NimBLE:  our_id_addr_type=0 our_id_addr=[0m
+[0;32mI (572673) NimBLE: 10:00:3b:6b:c4:76[0m
+[0;32mI (572673) NimBLE:  peer_ota_addr_type=1 peer_ota_addr=[0m
+[0;32mI (572683) NimBLE: 40:56:d7:e4:56:99[0m
+[0;32mI (572683) NimBLE:  peer_id_addr_type=1 peer_id_addr=[0m
+[0;32mI (572693) NimBLE: 40:56:d7:e4:56:99[0m
+[0;32mI (572693) NimBLE:  conn_itvl=24 conn_latency=0 supervision_timeout=500 encrypted=0 authenticated=0 bonded=0[0m
+
+[0;32mI (572703) NimBLE: [0m
+
+[0;32mI (572703) NimBLE: GAP procedure initiated: advertise; [0m
+[0;32mI (572713) NimBLE: disc_mode=2[0m
+[0;32mI (572713) NimBLE:  adv_channel_map=0 own_addr_type=0 adv_filter_policy=0 adv_itvl_min=0 adv_itvl_max=0[0m
+[0;32mI (572723) NimBLE: [0m
+
