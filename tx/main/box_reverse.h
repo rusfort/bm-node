@@ -3,7 +3,7 @@
 #include <stddef.h>
 #include <stdint.h>
 #define BOX_REVERSE_ACK_CAPACITY 10
-#define BOX_TEST_BOX_ID "10000000-0000-4000-8000-aabbccddeeff"
+#define BOX_TEST_BOX_ID "10000000-0000-4000-8000-aabbccddee01"
 /* All lifecycle hooks except build_acb run in NimBLE host context. */
 void box_reverse_init(void (*resume_advertising)(void));
 void box_reverse_on_sync(uint8_t own_addr_type);

@@ -1,0 +1,2235 @@
+Command: /Users/nickrusfort/.espressif/python_env/idf5.5_py3.13_env/bin/python /Users/nickrusfort/esp/esp-idf-v5.5.5/tools/idf_monitor.py -p /dev/cu.usbmodem5CCD0111651 -b 115200 --toolchain-prefix xtensa-esp32s3-elf- --target esp32s3 --revision 0 /Users/nickrusfort/Desktop/dev/bm-node/box-node-e2e/build/box_node_e2e.elf /Users/nickrusfort/Desktop/dev/bm-node/box-node-e2e/build/bootloader/bootloader.elf -m '/Users/nickrusfort/.espressif/python_env/idf5.5_py3.13_env/bin/python' '/Users/nickrusfort/esp/esp-idf-v5.5.5/tools/idf.py' '-p' '/dev/cu.usbmodem5CCD0111651'
+RT I/O pins
+[0;32mI (214) cpu_start: Pro cpu start �ESP-ROM:esp32s3-20210327[0m
+Build:Mar 27 2021
+rst:0x1 (POWERON),boot:0x8 (SPI_FAST_FLASH_BOOT)
+SPIWP:0xee
+mode:DIO, clock div:1
+load:0x3fce2820,len:0x14f0
+load:0x403c8700,len:0xd24
+load:0x403cb700,len:0x2eec
+entry 0x403c8924
+[0;32mI (24) boot: ESP-IDF v5.5.5 2nd stage bootloader[0m
+[0;32mI (25) boot: compile time Oct 24 2026 21:13:06[0m
+[0;32mI (25) boot: Multicore bootloader[0m
+[0;32mI (25) boot: chip revision: v0.2[0m
+[0;32mI (28) boot: efuse block revision: v1.3[0m
+[0;32mI (31) boot.esp32s3: Boot SPI Speed : 80MHz[0m
+[0;32mI (35) boot.esp32s3: SPI Mode       : DIO[0m
+[0;32mI (39) boot.esp32s3: SPI Flash Size : 8MB[0m
+[0;32mI (43) boot: Enabling RNG early entropy source...[0m
+[0;32mI (47) boot: Partition Table:[0m
+[0;32mI (50) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (56) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (63) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (69) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (76) boot: End of partition table[0m
+[0;32mI (79) esp_image: segment 0: paddr=00010020 vaddr=3c050020 size=13d2ch ( 81196) map[0m
+[0;32mI (101) esp_image: segment 1: paddr=00023d54 vaddr=3fc9a200 size=041ech ( 16876) load[0m
+[0;32mI (105) esp_image: segment 2: paddr=00027f48 vaddr=40374000 size=080d0h ( 32976) load[0m
+[0;32mI (113) esp_image: segment 3: paddr=00030020 vaddr=42000020 size=4eef0h (323312) map[0m
+[0;32mI (172) esp_image: segment 4: paddr=0007ef18 vaddr=4037c0d0 size=0e120h ( 57632) load[0m
+[0;32mI (186) esp_image: segment 5: paddr=0008d040 vaddr=50000000 size=00020h (    32) load[0m
+[0;32mI (195) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (195) boot: Disabling RNG early entropy source...[0m
+[0;32mI (205) cpu_start: Multicore app[0m
+[0;32mI (213) cpu_start: GPIO 44 and 43 are used as console UART I/O pins[0m
+[0;32mI (214) cpu_start: Pro cpu start user code[0m
+[0;32mI (214) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (216) app_init: Application information:[0m
+[0;32mI (219) app_init: Project name:     box_node_e2e[0m
+[0;32mI (224) app_init: App version:      1d401a3-dirty[0m
+[0;32mI (228) app_init: Compile time:     Oct 24 2026 21:12:55[0m
+[0;32mI (233) app_init: ELF file SHA256:  dbca6b94b...[0m
+[0;32mI (238) app_init: ESP-IDF:          v5.5.5[0m
+[0;32mI (241) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (245) efuse_init: Max chip rev:     v0.99 [0m
+[0;32mI (249) efuse_init: Chip rev:         v0.2[0m
+[0;32mI (253) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (259) heap_init: At 3FCA36F8 len 00046018 (280 KiB): RAM[0m
+[0;32mI (264) heap_init: At 3FCE9710 len 00005724 (21 KiB): RAM[0m
+[0;32mI (270) heap_init: At 3FCF0000 len 00008000 (32 KiB): DRAM[0m
+[0;32mI (275) heap_init: At 600FE000 len 00001FE8 (7 KiB): RTCRAM[0m
+[0;32mI (281) spi_flash: detected chip: generic[0m
+[0;32mI (284) spi_flash: flash io: dio[0m
+[0;32mI (287) sleep_gpio: Configure to isolate all GPIO pins in sleep state[0m
+[0;32mI (293) sleep_gpio: Enable automatic switching of GPIO sleep configuration[0m
+[0;32mI (300) coexist: coex firmware version: 6f3d08c[0m
+[0;32mI (304) coexist: coexist rom version e7ae62f[0m
+[0;32mI (308) main_task: Started on CPU0[0m
+[0;32mI (328) main_task: Calling app_main()[0m
+[0;32mI (338) E2E: E2E init: run=9cd5c954 node_suffix=aabbccddeeff ttl="2026-12-31 23:59:59"[0m
+[0;32mI (338) E2E: E2E ids: M1=9cd5c954-5ce5-4c84-b3c8-37e446e2dfd1 X1=89ac5a56-52e2-4799-87ac-d2f987f2ec7d X2=9d85fbe0-0462-44f0-93de-031d88b989ba[0m
+[0;32mI (348) BLE_INIT: BT controller compile version [51d9dfd][0m
+[0;32mI (348) BLE_INIT: Using main XTAL as clock source[0m
+[0;32mI (358) BLE_INIT: Feature Config, ADV:1, BLE_50:1, DTM:1, SCAN:1, CCA:0, SMP:1, CONNECT:1[0m
+[0;32mI (368) BLE_INIT: Bluetooth MAC: 10:00:3b:6b:c4:76[0m
+[0;32mI (368) phy_init: phy_version 712,87e8c20e,Apr 13 2026,18:51:10[0m
+[0;32mI (418) BOX_NODE: Own BLE address 10:00:3b:6b:c4:76 type=0[0m
+[0;32mI (418) BOX_TX: advertising Box UUID as BOX-NODE-01[0m
+[0;32mI (418) BOX_NODE: Box Node E2E firmware started[0m
+[0;32mI (418) main_task: Returned from app_main()[0m
+[0;32mI (1138) BOX_RX: Box device 76:e0:f5:e4:66:fb rssi=-60 -> connect[0m
+[0;32mI (1348) BOX_RX: connected to Android GATT server conn=3[0m
+[0;32mI (1458) BOX_RX: MTU exchange status=0 mtu=517[0m
+[0;32mI (1848) BOX_RX: Box characteristic found: peer_id=545e05cfd599 val_handle=156[0m
+[0;32mI (2148) BOX_RX: subscribed to Android 545e05cfd599 (conn=3 val=156 cccd=157), waiting for its session[0m
+[0;32mI (2548) E2E: RX SID 035c174f-4bac-404e-9e09-0846e8efdd06[0m
+[0;32mI (2558) E2E:   msg 20000000-0000-4000-8000-aabbccddeeff ttl="2099-12-31 23:59:59" units=1 type=text len=14 -> NEW[0m
+[0;32mI (2558) E2E: RX BOX id=58592a52-0135-49a2-a368-827dec55d357 msgs=1 new=1 dup=0[0m
+[0;32mI (2568) E2E: STEP 5: Node CBB prepared: callback=33675d6a-f242-4832-83b2-aabbccddeeff box=58592a52-0135-49a2-a368-827dec55d357[0m
+[0;32mI (2608) E2E:   msg e75a6d68-7753-4299-9fd4-a3d88b81847d ttl="2026-11-23 21:12:11" units=0 type=text len=24 -> NEW[0m
+[0;32mI (2608) E2E: RX BOX id=7df229b9-eeab-408a-ae0c-0584d6ed784a msgs=1 new=1 dup=0[0m
+[0;32mI (2608) E2E:   no callback for this box (test sends exactly one CBB and one CDB)[0m
+[0;32mI (2618) E2E: RX TRM 035c174f-4bac-404e-9e09-0846e8efdd06 (session complete)[0m
+[0;32mI (2628) E2E: RX TRM 035c174f-4bac-404e-9e09-0846e8efdd06 (session complete)[0m
+[0;32mI (2928) BOX_RX: Android session done -> disconnect[0m
+[0;32mI (2948) BOX_RX: disconnected from Android conn=3 reason=534[0m
+[0;32mI (4628) BOX_RX: Box device 76:e0:f5:e4:66:fb rssi=-59 -> connect[0m
+[0;32mI (5098) BOX_RX: connected to Android GATT server conn=3[0m
+[0;32mI (5208) BOX_RX: MTU exchange status=0 mtu=517[0m
+[0;32mI (5598) BOX_RX: Box characteristic found: peer_id=545e05cfd599 val_handle=156[0m
+[0;32mI (20428) E2E: ==== E2E run 9cd5c954  t=20s  result=RUNNING ====[0m
+[0;32mI (20428) E2E:   [..] 1 NEW: BOX X1 -> Android           89ac5a56-52e2-4799-87ac-d2f987f2ec7d[0m
+[0;32mI (20428) E2E:   [..] 2 Android CBB(X1) received         [0m
+[0;32mI (20428) E2E:   [..] 2 ACB(CBB X1) delivered  [A+1]     [0m
+[0;32mI (20438) E2E:   [..] 3 DUP: BOX X2 (same M1) -> Android 9d85fbe0-0462-44f0-93de-031d88b989ba[0m
+[0;32mI (20448) E2E:   [..] 4 Android CDB(X2) received         [0m
+[0;32mI (20448) E2E:   [..] 4 ACB(CDB X2) delivered  [A+1]     [0m
+[0;32mI (20458) E2E:   [..] 5 Node CBB(new box) delivered [C+1] 58592a52-0135-49a2-a368-827dec55d357[0m
+[0;32mI (20468) E2E:   [..] 6 Node CDB(dup box) delivered [D+1] waiting Android BOX with known msg[0m
+[0;32mI (20468) E2E:   [..] i Android ACB for Node CBB         (info)[0m
+[0;32mI (20478) E2E:   [..] i Android ACB for Node CDB         (info)[0m
+[0;32mI (20478) E2E:   rx: SID=1 TRM=2 BOX=2 CBB=0 CDB=0 ACB=0 | msgs new=2 dup=0 ignored_boxes=1[0m
+[0;32mI (20488) E2E:   tx: sessions=0 pkts_ok=0 pending_acb=0[0m
+[0;32mI (20498) E2E:   Expected Android delta: B+1 C+1 D+1 A+2[0m
+[0;33mW (35808) BOX_RX: CCCD write failed rc=13 -> disconnect[0m
+[0;32mI (35828) BOX_RX: disconnected from Android conn=3 reason=534[0m
+[0;32mI (36458) BOX_TX: incoming connect status=0 conn=1[0m
+[0;32mI (36458) BOX_TX: advertising Box UUID as BOX-NODE-01[0m
+[0;32mI (37028) BOX_TX: mtu conn=1 mtu=517[0m
+[0;32mI (37068) BOX_TX: subscription conn=1 notify=1[0m
+[0;32mI (37218) BOX_TX: session start conn=1 mtu=517 sid=43619eac-6ffb-4375-bbd3-99cabdb4ea23 packets=5[0m
+[0;32mI (37218) BOX_TX:   notify SID          len= 43 -> ok (rc=0)[0m
+[0;32mI (37228) BOX_TX:   notify CBB          len= 80 -> ok (rc=0)[0m
+[0;32mI (37238) BOX_TX:   notify BOX-X1(new)  len=145 -> ok (rc=0)[0m
+[0;32mI (37248) BOX_TX:   notify TRM          len= 43 -> ok (rc=0)[0m
+[0;32mI (37258) BOX_TX:   notify TRM          len= 43 -> ok (rc=0)[0m
+[0;32mI (37268) E2E: STEP 5 done: Node CBB delivered -> Android C+1[0m
+[0;32mI (37268) E2E: STEP 1: BOX X1 with new M1 delivered -> Android B+1 expected[0m
+[0;32mI (37268) E2E: TX session 43619eac-6ffb-4375-bbd3-99cabdb4ea23 committed: 5/5 packets delivered[0m
+[0;32mI (37478) BOX_RX: Box device 76:e0:f5:e4:66:fb rssi=-58 -> connect[0m
+[0;32mI (38278) BOX_TX: subscription conn=1 notify=0[0m
+[0;32mI (38278) BOX_TX: incoming disconnect conn=1 reason=531[0m
+[0;32mI (38338) BOX_RX: connected to Android GATT server conn=4[0m
+[0;32mI (38398) BOX_RX: MTU exchange status=0 mtu=517[0m
+[0;32mI (38638) BOX_RX: Box characteristic found: peer_id=545e05cfd599 val_handle=156[0m
+[0;32mI (40498) E2E: ==== E2E run 9cd5c954  t=40s  result=RUNNING ====[0m
+[0;32mI (40498) E2E:   [OK] 1 NEW: BOX X1 -> Android           89ac5a56-52e2-4799-87ac-d2f987f2ec7d[0m
+[0;32mI (40498) E2E:   [..] 2 Android CBB(X1) received         [0m
+[0;32mI (40498) E2E:   [..] 2 ACB(CBB X1) delivered  [A+1]     [0m
+[0;32mI (40508) E2E:   [..] 3 DUP: BOX X2 (same M1) -> Android 9d85fbe0-0462-44f0-93de-031d88b989ba[0m
+[0;32mI (40518) E2E:   [..] 4 Android CDB(X2) received         [0m
+[0;32mI (40518) E2E:   [..] 4 ACB(CDB X2) delivered  [A+1]     [0m
+[0;32mI (40528) E2E:   [OK] 5 Node CBB(new box) delivered [C+1] 58592a52-0135-49a2-a368-827dec55d357[0m
+[0;32mI (40538) E2E:   [..] 6 Node CDB(dup box) delivered [D+1] waiting Android BOX with known msg[0m
+[0;32mI (40538) E2E:   [..] i Android ACB for Node CBB         (info)[0m
+[0;32mI (40548) E2E:   [..] i Android ACB for Node CDB         (info)[0m
+[0;32mI (40548) E2E:   rx: SID=1 TRM=2 BOX=2 CBB=0 CDB=0 ACB=0 | msgs new=2 dup=0 ignored_boxes=1[0m
+[0;32mI (40558) E2E:   tx: sessions=1 pkts_ok=5 pending_acb=0[0m
+[0;32mI (40568) E2E:   Expected Android delta: B+1 C+1 D+1 A+2[0m
+[0;32mI (60568) E2E: ==== E2E run 9cd5c954  t=60s  result=RUNNING ====[0m
+[0;32mI (60568) E2E:   [OK] 1 NEW: BOX X1 -> Android           89ac5a56-52e2-4799-87ac-d2f987f2ec7d[0m
+[0;32mI (60568) E2E:   [..] 2 Android CBB(X1) received         [0m
+[0;32mI (60568) E2E:   [..] 2 ACB(CBB X1) delivered  [A+1]     [0m
+[0;32mI (60578) E2E:   [..] 3 DUP: BOX X2 (same M1) -> Android 9d85fbe0-0462-44f0-93de-031d88b989ba[0m
+[0;32mI (60588) E2E:   [..] 4 Android CDB(X2) received         [0m
+[0;32mI (60588) E2E:   [..] 4 ACB(CDB X2) delivered  [A+1]     [0m
+[0;32mI (60598) E2E:   [OK] 5 Node CBB(new box) delivered [C+1] 58592a52-0135-49a2-a368-827dec55d357[0m
+[0;32mI (60608) E2E:   [..] 6 Node CDB(dup box) delivered [D+1] waiting Android BOX with known msg[0m
+[0;32mI (60608) E2E:   [..] i Android ACB for Node CBB         (info)[0m
+[0;32mI (60618) E2E:   [..] i Android ACB for Node CDB         (info)[0m
+[0;32mI (60618) E2E:   rx: SID=1 TRM=2 BOX=2 CBB=0 CDB=0 ACB=0 | msgs new=2 dup=0 ignored_boxes=1[0m
+[0;32mI (60628) E2E:   tx: sessions=1 pkts_ok=5 pending_acb=0[0m
+[0;32mI (60638) E2E:   Expected Android delta: B+1 C+1 D+1 A+2[0m
+[0;33mW (68758) BOX_RX: CCCD write failed rc=13 -> disconnect[0m
+[0;32mI (68768) BOX_RX: disconnected from Android conn=4 reason=534[0m
+[0;32mI (70428) BOX_RX: Box device 76:e0:f5:e4:66:fb rssi=-55 -> connect[0m
+[0;32mI (70648) BOX_RX: connected to Android GATT server conn=1[0m
+[0;32mI (70758) BOX_RX: MTU exchange status=0 mtu=517[0m
+[0;32mI (71148) BOX_RX: Box characteristic found: peer_id=545e05cfd599 val_handle=156[0m
+[0;32mI (71508) BOX_RX: subscribed to Android 545e05cfd599 (conn=1 val=156 cccd=157), waiting for its session[0m
+[0;32mI (72358) E2E: RX SID c92c5ac6-6bc3-4f0e-a3ef-912ad704faf2[0m
+[0;32mI (72358) E2E: INFO Android confirmed Node CBB with ACB: 33675d6a-f242-4832-83b2-aabbccddeeff[0m
+[0;32mI (72408) E2E: RX CBB id=9c3e0b52-8f20-49d0-aabf-b3f6d37de296 boxes=1 x1=1 x2=0[0m
+[0;32mI (72408) E2E: STEP 2: Android stored M1 as new and sent CBB(X1) -> ACB scheduled[0m
+[0;32mI (72408) E2E: RX BOX 7df229b9-eeab-408a-ae0c-0584d6ed784a already processed -> skipped[0m
+[0;32mI (72418) E2E:   msg 9cd5c954-5ce5-4c84-b3c8-37e446e2dfd1 ttl="2026-12-31 23:59:59" units=1 type=text len=18 -> DUP[0m
+[0;32mI (72428) E2E: RX BOX id=e2401d31-5ed7-4e1f-afcd-f0eaf86a9515 msgs=1 new=0 dup=1[0m
+[0;32mI (72438) E2E: STEP 6: Node CDB prepared: callback=7aa03d90-6821-4c46-b167-aabbccddeeff box=e2401d31-5ed7-4e1f-afcd-f0eaf86a9515[0m
+[0;32mI (72448) E2E: RX TRM c92c5ac6-6bc3-4f0e-a3ef-912ad704faf2 (session complete)[0m
+[0;32mI (72458) E2E: RX TRM c92c5ac6-6bc3-4f0e-a3ef-912ad704faf2 (session complete)[0m
+[0;32mI (72748) BOX_RX: Android session done -> disconnect[0m
+[0;32mI (72758) BOX_RX: disconnected from Android conn=1 reason=534[0m
+[0;32mI (74578) BOX_RX: Box device 76:e0:f5:e4:66:fb rssi=-59 -> connect[0m
+[0;32mI (74798) BOX_RX: connected to Android GATT server conn=1[0m
+[0;32mI (74908) BOX_RX: MTU exchange status=0 mtu=517[0m
+[0;32mI (75298) BOX_RX: Box characteristic found: peer_id=545e05cfd599 val_handle=156[0m
+[0;32mI (75608) BOX_RX: subscribed to Android 545e05cfd599 (conn=1 val=156 cccd=157), waiting for its session[0m
+[0;32mI (76408) E2E: RX SID c92c5ac6-6bc3-4f0e-a3ef-912ad704faf2 already fully received -> close[0m
+[0;32mI (76408) E2E: RX CBB id=9c3e0b52-8f20-49d0-aabf-b3f6d37de296 boxes=1 x1=1 x2=0[0m
+[0;32mI (76458) E2E: RX BOX 7df229b9-eeab-408a-ae0c-0584d6ed784a already processed -> skipped[0m
+[0;32mI (76458) E2E: RX BOX e2401d31-5ed7-4e1f-afcd-f0eaf86a9515 already processed -> skipped[0m
+[0;32mI (76458) E2E: RX TRM c92c5ac6-6bc3-4f0e-a3ef-912ad704faf2 (session complete)[0m
+[0;32mI (76468) E2E: RX TRM c92c5ac6-6bc3-4f0e-a3ef-912ad704faf2 (session complete)[0m
+[0;32mI (76748) BOX_RX: Android session done -> disconnect[0m
+[0;32mI (76758) BOX_RX: disconnected from Android conn=1 reason=534[0m
+[0;32mI (78388) BOX_RX: Box device 76:e0:f5:e4:66:fb rssi=-54 -> connect[0m
+[0;32mI (78648) BOX_RX: connected to Android GATT server conn=1[0m
+[0;32mI (78758) BOX_RX: MTU exchange status=0 mtu=517[0m
+[0;32mI (79148) BOX_RX: Box characteristic found: peer_id=545e05cfd599 val_handle=156[0m
+[0;32mI (79458) BOX_RX: subscribed to Android 545e05cfd599 (conn=1 val=156 cccd=157), waiting for its session[0m
+[0;32mI (79458) E2E: RX SID c92c5ac6-6bc3-4f0e-a3ef-912ad704faf2 already fully received -> close[0m
+[0;32mI (79458) E2E: RX CBB id=9c3e0b52-8f20-49d0-aabf-b3f6d37de296 boxes=1 x1=1 x2=0[0m
+[0;32mI (79508) E2E: RX BOX 7df229b9-eeab-408a-ae0c-0584d6ed784a already processed -> skipped[0m
+[0;32mI (79558) E2E: RX BOX e2401d31-5ed7-4e1f-afcd-f0eaf86a9515 already processed -> skipped[0m
+[0;32mI (79558) E2E: RX TRM c92c5ac6-6bc3-4f0e-a3ef-912ad704faf2 (session complete)[0m
+[0;32mI (79558) E2E: RX TRM c92c5ac6-6bc3-4f0e-a3ef-912ad704faf2 (session complete)[0m
+[0;32mI (79748) BOX_RX: Android session done -> disconnect[0m
+[0;32mI (79758) BOX_RX: disconnected from Android conn=1 reason=534[0m
+[0;32mI (80648) E2E: ==== E2E run 9cd5c954  t=80s  result=RUNNING ====[0m
+[0;32mI (80648) E2E:   [OK] 1 NEW: BOX X1 -> Android           89ac5a56-52e2-4799-87ac-d2f987f2ec7d[0m
+[0;32mI (80648) E2E:   [OK] 2 Android CBB(X1) received         9c3e0b52-8f20-49d0-aabf-b3f6d37de296[0m
+[0;32mI (80658) E2E:   [..] 2 ACB(CBB X1) delivered  [A+1]     [0m
+[0;32mI (80658) E2E:   [..] 3 DUP: BOX X2 (same M1) -> Android 9d85fbe0-0462-44f0-93de-031d88b989ba[0m
+[0;32mI (80668) E2E:   [..] 4 Android CDB(X2) received         [0m
+[0;32mI (80668) E2E:   [..] 4 ACB(CDB X2) delivered  [A+1]     [0m
+[0;32mI (80678) E2E:   [OK] 5 Node CBB(new box) delivered [C+1] 58592a52-0135-49a2-a368-827dec55d357[0m
+[0;32mI (80688) E2E:   [..] 6 Node CDB(dup box) delivered [D+1] e2401d31-5ed7-4e1f-afcd-f0eaf86a9515[0m
+[0;32mI (80698) E2E:   [OK] i Android ACB for Node CBB         (info)[0m
+[0;32mI (80698) E2E:   [..] i Android ACB for Node CDB         (info)[0m
+[0;32mI (80708) E2E:   rx: SID=4 TRM=8 BOX=8 CBB=3 CDB=0 ACB=3 | msgs new=2 dup=1 ignored_boxes=1[0m
+[0;32mI (80718) E2E:   tx: sessions=1 pkts_ok=5 pending_acb=1[0m
+[0;32mI (80718) E2E:   Expected Android delta: B+1 C+1 D+1 A+2[0m
+[0;32mI (81378) BOX_RX: Box device 76:e0:f5:e4:66:fb rssi=-55 -> connect[0m
+[0;32mI (81598) BOX_RX: connected to Android GATT server conn=1[0m
+[0;32mI (81708) BOX_RX: MTU exchange status=0 mtu=517[0m
+[0;32mI (82098) BOX_RX: Box characteristic found: peer_id=545e05cfd599 val_handle=156[0m
+[0;32mI (82408) BOX_RX: subscribed to Android 545e05cfd599 (conn=1 val=156 cccd=157), waiting for its session[0m
+[0;32mI (82508) E2E: RX SID c92c5ac6-6bc3-4f0e-a3ef-912ad704faf2 already fully received -> close[0m
+[0;32mI (82508) E2E: RX CBB id=9c3e0b52-8f20-49d0-aabf-b3f6d37de296 boxes=1 x1=1 x2=0[0m
+[0;32mI (82508) E2E: RX BOX 7df229b9-eeab-408a-ae0c-0584d6ed784a already processed -> skipped[0m
+[0;32mI (82518) E2E: RX BOX e2401d31-5ed7-4e1f-afcd-f0eaf86a9515 already processed -> skipped[0m
+[0;32mI (82558) E2E: RX TRM c92c5ac6-6bc3-4f0e-a3ef-912ad704faf2 (session complete)[0m
+[0;32mI (82558) E2E: RX TRM c92c5ac6-6bc3-4f0e-a3ef-912ad704faf2 (session complete)[0m
+[0;32mI (82828) BOX_RX: Android session done -> disconnect[0m
+[0;32mI (82858) BOX_RX: disconnected from Android conn=1 reason=534[0m
+[0;32mI (84528) BOX_RX: Box device 76:e0:f5:e4:66:fb rssi=-59 -> connect[0m
+[0;32mI (84748) BOX_RX: connected to Android GATT server conn=1[0m
+[0;32mI (84858) BOX_RX: MTU exchange status=0 mtu=517[0m
+[0;32mI (85248) BOX_RX: Box characteristic found: peer_id=545e05cfd599 val_handle=156[0m
+[0;32mI (100728) E2E: ==== E2E run 9cd5c954  t=100s  result=RUNNING ====[0m
+[0;32mI (100728) E2E:   [OK] 1 NEW: BOX X1 -> Android           89ac5a56-52e2-4799-87ac-d2f987f2ec7d[0m
+[0;32mI (100728) E2E:   [OK] 2 Android CBB(X1) received         9c3e0b52-8f20-49d0-aabf-b3f6d37de296[0m
+[0;32mI (100738) E2E:   [..] 2 ACB(CBB X1) delivered  [A+1]     [0m
+[0;32mI (100738) E2E:   [..] 3 DUP: BOX X2 (same M1) -> Android 9d85fbe0-0462-44f0-93de-031d88b989ba[0m
+[0;32mI (100748) E2E:   [..] 4 Android CDB(X2) received         [0m
+[0;32mI (100758) E2E:   [..] 4 ACB(CDB X2) delivered  [A+1]     [0m
+[0;32mI (100758) E2E:   [OK] 5 Node CBB(new box) delivered [C+1] 58592a52-0135-49a2-a368-827dec55d357[0m
+[0;32mI (100768) E2E:   [..] 6 Node CDB(dup box) delivered [D+1] e2401d31-5ed7-4e1f-afcd-f0eaf86a9515[0m
+[0;32mI (100778) E2E:   [OK] i Android ACB for Node CBB         (info)[0m
+[0;32mI (100778) E2E:   [..] i Android ACB for Node CDB         (info)[0m
+[0;32mI (100788) E2E:   rx: SID=5 TRM=10 BOX=10 CBB=4 CDB=0 ACB=4 | msgs new=2 dup=1 ignored_boxes=1[0m
+[0;32mI (100798) E2E:   tx: sessions=1 pkts_ok=5 pending_acb=1[0m
+[0;32mI (100798) E2E:   Expected Android delta: B+1 C+1 D+1 A+2[0m
+[0;33mW (115458) BOX_RX: CCCD write failed rc=13 -> disconnect[0m
+[0;32mI (115478) BOX_RX: disconnected from Android conn=1 reason=534[0m
+[0;32mI (117048) BOX_RX: Box device 76:e0:f5:e4:66:fb rssi=-55 -> connect[0m
+[0;32mI (117248) BOX_RX: connected to Android GATT server conn=1[0m
+[0;32mI (117358) BOX_RX: MTU exchange status=0 mtu=517[0m
+[0;32mI (117748) BOX_RX: Box characteristic found: peer_id=545e05cfd599 val_handle=156[0m
+[0;32mI (118048) BOX_RX: subscribed to Android 545e05cfd599 (conn=1 val=156 cccd=157), waiting for its session[0m
+[0;32mI (120808) E2E: ==== E2E run 9cd5c954  t=120s  result=RUNNING ====[0m
+[0;32mI (120808) E2E:   [OK] 1 NEW: BOX X1 -> Android           89ac5a56-52e2-4799-87ac-d2f987f2ec7d[0m
+[0;32mI (120808) E2E:   [OK] 2 Android CBB(X1) received         9c3e0b52-8f20-49d0-aabf-b3f6d37de296[0m
+[0;32mI (120818) E2E:   [..] 2 ACB(CBB X1) delivered  [A+1]     [0m
+[0;32mI (120818) E2E:   [..] 3 DUP: BOX X2 (same M1) -> Android 9d85fbe0-0462-44f0-93de-031d88b989ba[0m
+[0;32mI (120828) E2E:   [..] 4 Android CDB(X2) received         [0m
+[0;32mI (120838) E2E:   [..] 4 ACB(CDB X2) delivered  [A+1]     [0m
+[0;32mI (120838) E2E:   [OK] 5 Node CBB(new box) delivered [C+1] 58592a52-0135-49a2-a368-827dec55d357[0m
+[0;32mI (120848) E2E:   [..] 6 Node CDB(dup box) delivered [D+1] e2401d31-5ed7-4e1f-afcd-f0eaf86a9515[0m
+[0;32mI (120858) E2E:   [OK] i Android ACB for Node CBB         (info)[0m
+[0;32mI (120858) E2E:   [..] i Android ACB for Node CDB         (info)[0m
+[0;32mI (120868) E2E:   rx: SID=5 TRM=10 BOX=10 CBB=4 CDB=0 ACB=4 | msgs new=2 dup=1 ignored_boxes=1[0m
+[0;32mI (120878) E2E:   tx: sessions=1 pkts_ok=5 pending_acb=1[0m
+[0;32mI (120878) E2E:   Expected Android delta: B+1 C+1 D+1 A+2[0m
+[0;32mI (140888) E2E: ==== E2E run 9cd5c954  t=140s  result=RUNNING ====[0m
+[0;32mI (140888) E2E:   [OK] 1 NEW: BOX X1 -> Android           89ac5a56-52e2-4799-87ac-d2f987f2ec7d[0m
+[0;32mI (140888) E2E:   [OK] 2 Android CBB(X1) received         9c3e0b52-8f20-49d0-aabf-b3f6d37de296[0m
+[0;32mI (140898) E2E:   [..] 2 ACB(CBB X1) delivered  [A+1]     [0m
+[0;32mI (140898) E2E:   [..] 3 DUP: BOX X2 (same M1) -> Android 9d85fbe0-0462-44f0-93de-031d88b989ba[0m
+[0;32mI (140908) E2E:   [..] 4 Android CDB(X2) received         [0m
+[0;32mI (140918) E2E:   [..] 4 ACB(CDB X2) delivered  [A+1]     [0m
+[0;32mI (140918) E2E:   [OK] 5 Node CBB(new box) delivered [C+1] 58592a52-0135-49a2-a368-827dec55d357[0m
+[0;32mI (140928) E2E:   [..] 6 Node CDB(dup box) delivered [D+1] e2401d31-5ed7-4e1f-afcd-f0eaf86a9515[0m
+[0;32mI (140938) E2E:   [OK] i Android ACB for Node CBB         (info)[0m
+[0;32mI (140938) E2E:   [..] i Android ACB for Node CDB         (info)[0m
+[0;32mI (140948) E2E:   rx: SID=5 TRM=10 BOX=10 CBB=4 CDB=0 ACB=4 | msgs new=2 dup=1 ignored_boxes=1[0m
+[0;32mI (140958) E2E:   tx: sessions=1 pkts_ok=5 pending_acb=1[0m
+[0;32mI (140958) E2E:   Expected Android delta: B+1 C+1 D+1 A+2[0m
+[0;32mI (157268) BOX_RX: hold timeout without TRM -> disconnect[0m
+[0;32mI (157278) BOX_RX: disconnected from Android conn=1 reason=534[0m
+[0;32mI (158918) BOX_RX: Box device 76:e0:f5:e4:66:fb rssi=-55 -> connect[0m
+[0;32mI (159148) BOX_RX: connected to Android GATT server conn=1[0m
+[0;32mI (159258) BOX_RX: MTU exchange status=0 mtu=517[0m
+[0;32mI (159648) BOX_RX: Box characteristic found: peer_id=545e05cfd599 val_handle=156[0m
+[0;32mI (160968) E2E: ==== E2E run 9cd5c954  t=160s  result=RUNNING ====[0m
+[0;32mI (160968) E2E:   [OK] 1 NEW: BOX X1 -> Android           89ac5a56-52e2-4799-87ac-d2f987f2ec7d[0m
+[0;32mI (160968) E2E:   [OK] 2 Android CBB(X1) received         9c3e0b52-8f20-49d0-aabf-b3f6d37de296[0m
+[0;32mI (160978) E2E:   [..] 2 ACB(CBB X1) delivered  [A+1]     [0m
+[0;32mI (160978) E2E:   [..] 3 DUP: BOX X2 (same M1) -> Android 9d85fbe0-0462-44f0-93de-031d88b989ba[0m
+[0;32mI (160988) E2E:   [..] 4 Android CDB(X2) received         [0m
+[0;32mI (160998) E2E:   [..] 4 ACB(CDB X2) delivered  [A+1]     [0m
+[0;32mI (160998) E2E:   [OK] 5 Node CBB(new box) delivered [C+1] 58592a52-0135-49a2-a368-827dec55d357[0m
+[0;32mI (161008) E2E:   [..] 6 Node CDB(dup box) delivered [D+1] e2401d31-5ed7-4e1f-afcd-f0eaf86a9515[0m
+[0;32mI (161018) E2E:   [OK] i Android ACB for Node CBB         (info)[0m
+[0;32mI (161018) E2E:   [..] i Android ACB for Node CDB         (info)[0m
+[0;32mI (161028) E2E:   rx: SID=5 TRM=10 BOX=10 CBB=4 CDB=0 ACB=4 | msgs new=2 dup=1 ignored_boxes=1[0m
+[0;32mI (161038) E2E:   tx: sessions=1 pkts_ok=5 pending_acb=1[0m
+[0;32mI (161038) E2E:   Expected Android delta: B+1 C+1 D+1 A+2[0m
+[0;32mI (181048) E2E: ==== E2E run 9cd5c954  t=180s  result=RUNNING ====[0m
+[0;32mI (181048) E2E:   [OK] 1 NEW: BOX X1 -> Android           89ac5a56-52e2-4799-87ac-d2f987f2ec7d[0m
+[0;32mI (181048) E2E:   [OK] 2 Android CBB(X1) received         9c3e0b52-8f20-49d0-aabf-b3f6d37de296[0m
+[0;32mI (181058) E2E:   [..] 2 ACB(CBB X1) delivered  [A+1]     [0m
+[0;32mI (181058) E2E:   [..] 3 DUP: BOX X2 (same M1) -> Android 9d85fbe0-0462-44f0-93de-031d88b989ba[0m
+[0;32mI (181068) E2E:   [..] 4 Android CDB(X2) received         [0m
+[0;32mI (181078) E2E:   [..] 4 ACB(CDB X2) delivered  [A+1]     [0m
+[0;32mI (181078) E2E:   [OK] 5 Node CBB(new box) delivered [C+1] 58592a52-0135-49a2-a368-827dec55d357[0m
+[0;32mI (181088) E2E:   [..] 6 Node CDB(dup box) delivered [D+1] e2401d31-5ed7-4e1f-afcd-f0eaf86a9515[0m
+[0;32mI (181098) E2E:   [OK] i Android ACB for Node CBB         (info)[0m
+[0;32mI (181098) E2E:   [..] i Android ACB for Node CDB         (info)[0m
+[0;32mI (181108) E2E:   rx: SID=5 TRM=10 BOX=10 CBB=4 CDB=0 ACB=4 | msgs new=2 dup=1 ignored_boxes=1[0m
+[0;32mI (181118) E2E:   tx: sessions=1 pkts_ok=5 pending_acb=1[0m
+[0;32mI (181118) E2E:   Expected Android delta: B+1 C+1 D+1 A+2[0m
+[0;33mW (189848) BOX_RX: CCCD write failed rc=13 -> disconnect[0m
+[0;32mI (189878) BOX_RX: disconnected from Android conn=1 reason=534[0m
+[0;32mI (191538) BOX_RX: Box device 76:e0:f5:e4:66:fb rssi=-55 -> connect[0m
+[0;32mI (191898) BOX_RX: connected to Android GATT server conn=1[0m
+[0;32mI (192008) BOX_RX: MTU exchange status=0 mtu=517[0m
+[0;32mI (192398) BOX_RX: Box characteristic found: peer_id=545e05cfd599 val_handle=156[0m
+[0;32mI (201128) E2E: ==== E2E run 9cd5c954  t=200s  result=RUNNING ====[0m
+[0;32mI (201128) E2E:   [OK] 1 NEW: BOX X1 -> Android           89ac5a56-52e2-4799-87ac-d2f987f2ec7d[0m
+[0;32mI (201128) E2E:   [OK] 2 Android CBB(X1) received         9c3e0b52-8f20-49d0-aabf-b3f6d37de296[0m
+[0;32mI (201138) E2E:   [..] 2 ACB(CBB X1) delivered  [A+1]     [0m
+[0;32mI (201138) E2E:   [..] 3 DUP: BOX X2 (same M1) -> Android 9d85fbe0-0462-44f0-93de-031d88b989ba[0m
+[0;32mI (201148) E2E:   [..] 4 Android CDB(X2) received         [0m
+[0;32mI (201158) E2E:   [..] 4 ACB(CDB X2) delivered  [A+1]     [0m
+[0;32mI (201158) E2E:   [OK] 5 Node CBB(new box) delivered [C+1] 58592a52-0135-49a2-a368-827dec55d357[0m
+[0;32mI (201168) E2E:   [..] 6 Node CDB(dup box) delivered [D+1] e2401d31-5ed7-4e1f-afcd-f0eaf86a9515[0m
+[0;32mI (201178) E2E:   [OK] i Android ACB for Node CBB         (info)[0m
+[0;32mI (201178) E2E:   [..] i Android ACB for Node CDB         (info)[0m
+[0;32mI (201188) E2E:   rx: SID=5 TRM=10 BOX=10 CBB=4 CDB=0 ACB=4 | msgs new=2 dup=1 ignored_boxes=1[0m
+[0;32mI (201198) E2E:   tx: sessions=1 pkts_ok=5 pending_acb=1[0m
+[0;32mI (201198) E2E:   Expected Android delta: B+1 C+1 D+1 A+2[0m
+[0;32mI (221208) E2E: ==== E2E run 9cd5c954  t=220s  result=RUNNING ====[0m
+[0;32mI (221208) E2E:   [OK] 1 NEW: BOX X1 -> Android           89ac5a56-52e2-4799-87ac-d2f987f2ec7d[0m
+[0;32mI (221208) E2E:   [OK] 2 Android CBB(X1) received         9c3e0b52-8f20-49d0-aabf-b3f6d37de296[0m
+[0;32mI (221218) E2E:   [..] 2 ACB(CBB X1) delivered  [A+1]     [0m
+[0;32mI (221218) E2E:   [..] 3 DUP: BOX X2 (same M1) -> Android 9d85fbe0-0462-44f0-93de-031d88b989ba[0m
+[0;32mI (221228) E2E:   [..] 4 Android CDB(X2) received         [0m
+[0;32mI (221238) E2E:   [..] 4 ACB(CDB X2) delivered  [A+1]     [0m
+[0;32mI (221238) E2E:   [OK] 5 Node CBB(new box) delivered [C+1] 58592a52-0135-49a2-a368-827dec55d357[0m
+[0;32mI (221248) E2E:   [..] 6 Node CDB(dup box) delivered [D+1] e2401d31-5ed7-4e1f-afcd-f0eaf86a9515[0m
+[0;32mI (221258) E2E:   [OK] i Android ACB for Node CBB         (info)[0m
+[0;32mI (221258) E2E:   [..] i Android ACB for Node CDB         (info)[0m
+[0;32mI (221268) E2E:   rx: SID=5 TRM=10 BOX=10 CBB=4 CDB=0 ACB=4 | msgs new=2 dup=1 ignored_boxes=1[0m
+[0;32mI (221278) E2E:   tx: sessions=1 pkts_ok=5 pending_acb=1[0m
+[0;32mI (221278) E2E:   Expected Android delta: B+1 C+1 D+1 A+2[0m
+[0;33mW (222608) BOX_RX: CCCD write failed rc=13 -> disconnect[0m
+[0;32mI (222628) BOX_RX: disconnected from Android conn=1 reason=534[0m
+[0;32mI (224218) BOX_RX: Box device 76:e0:f5:e4:66:fb rssi=-89 -> connect[0m
+[0;32mI (224598) BOX_RX: connected to Android GATT server conn=1[0m
+[0;32mI (224808) BOX_RX: MTU exchange status=0 mtu=517[0m
+[0;32mI (225298) BOX_RX: Box characteristic found: peer_id=545e05cfd599 val_handle=156[0m
+[0;32mI (241288) E2E: ==== E2E run 9cd5c954  t=240s  result=RUNNING ====[0m
+[0;32mI (241288) E2E:   [OK] 1 NEW: BOX X1 -> Android           89ac5a56-52e2-4799-87ac-d2f987f2ec7d[0m
+[0;32mI (241288) E2E:   [OK] 2 Android CBB(X1) received         9c3e0b52-8f20-49d0-aabf-b3f6d37de296[0m
+[0;32mI (241298) E2E:   [..] 2 ACB(CBB X1) delivered  [A+1]     [0m
+[0;32mI (241298) E2E:   [..] 3 DUP: BOX X2 (same M1) -> Android 9d85fbe0-0462-44f0-93de-031d88b989ba[0m
+[0;32mI (241308) E2E:   [..] 4 Android CDB(X2) received         [0m
+[0;32mI (241318) E2E:   [..] 4 ACB(CDB X2) delivered  [A+1]     [0m
+[0;32mI (241318) E2E:   [OK] 5 Node CBB(new box) delivered [C+1] 58592a52-0135-49a2-a368-827dec55d357[0m
+[0;32mI (241328) E2E:   [..] 6 Node CDB(dup box) delivered [D+1] e2401d31-5ed7-4e1f-afcd-f0eaf86a9515[0m
+[0;32mI (241338) E2E:   [OK] i Android ACB for Node CBB         (info)[0m
+[0;32mI (241338) E2E:   [..] i Android ACB for Node CDB         (info)[0m
+[0;32mI (241348) E2E:   rx: SID=5 TRM=10 BOX=10 CBB=4 CDB=0 ACB=4 | msgs new=2 dup=1 ignored_boxes=1[0m
+[0;32mI (241358) E2E:   tx: sessions=1 pkts_ok=5 pending_acb=1[0m
+[0;32mI (241358) E2E:   Expected Android delta: B+1 C+1 D+1 A+2[0m
+[0;33mW (255498) BOX_RX: CCCD write failed rc=13 -> disconnect[0m
+[0;32mI (255778) BOX_RX: disconnected from Android conn=1 reason=534[0m
+[0;32mI (257398) BOX_RX: Box device 76:e0:f5:e4:66:fb rssi=-90 -> connect[0m
+[0;32mI (258398) BOX_RX: connected to Android GATT server conn=1[0m
+[0;32mI (258508) BOX_RX: MTU exchange status=0 mtu=517[0m
+[0;32mI (259048) BOX_RX: Box characteristic found: peer_id=545e05cfd599 val_handle=156[0m
+[0;32mI (259348) BOX_RX: subscribed to Android 545e05cfd599 (conn=1 val=156 cccd=157), waiting for its session[0m
+[0;32mI (259908) E2E: RX SID c92c5ac6-6bc3-4f0e-a3ef-912ad704faf2 already fully received -> close[0m
+[0;32mI (259908) E2E: RX CBB id=9c3e0b52-8f20-49d0-aabf-b3f6d37de296 boxes=1 x1=1 x2=0[0m
+[0;32mI (259908) E2E: RX BOX 7df229b9-eeab-408a-ae0c-0584d6ed784a already processed -> skipped[0m
+[0;32mI (259958) E2E: RX BOX e2401d31-5ed7-4e1f-afcd-f0eaf86a9515 already processed -> skipped[0m
+[0;32mI (259958) E2E: RX TRM c92c5ac6-6bc3-4f0e-a3ef-912ad704faf2 (session complete)[0m
+[0;32mI (259958) E2E: RX TRM c92c5ac6-6bc3-4f0e-a3ef-912ad704faf2 (session complete)[0m
+[0;32mI (260168) BOX_RX: Android session done -> disconnect[0m
+[0;32mI (260258) BOX_RX: disconnected from Android conn=1 reason=534[0m
+[0;32mI (261368) E2E: ==== E2E run 9cd5c954  t=261s  result=RUNNING ====[0m
+[0;32mI (261368) E2E:   [OK] 1 NEW: BOX X1 -> Android           89ac5a56-52e2-4799-87ac-d2f987f2ec7d[0m
+[0;32mI (261368) E2E:   [OK] 2 Android CBB(X1) received         9c3e0b52-8f20-49d0-aabf-b3f6d37de296[0m
+[0;32mI (261378) E2E:   [..] 2 ACB(CBB X1) delivered  [A+1]     [0m
+[0;32mI (261378) E2E:   [..] 3 DUP: BOX X2 (same M1) -> Android 9d85fbe0-0462-44f0-93de-031d88b989ba[0m
+[0;32mI (261388) E2E:   [..] 4 Android CDB(X2) received         [0m
+[0;32mI (261398) E2E:   [..] 4 ACB(CDB X2) delivered  [A+1]     [0m
+[0;32mI (261398) E2E:   [OK] 5 Node CBB(new box) delivered [C+1] 58592a52-0135-49a2-a368-827dec55d357[0m
+[0;32mI (261408) E2E:   [..] 6 Node CDB(dup box) delivered [D+1] e2401d31-5ed7-4e1f-afcd-f0eaf86a9515[0m
+[0;32mI (261418) E2E:   [OK] i Android ACB for Node CBB         (info)[0m
+[0;32mI (261418) E2E:   [..] i Android ACB for Node CDB         (info)[0m
+[0;32mI (261428) E2E:   rx: SID=6 TRM=12 BOX=12 CBB=5 CDB=0 ACB=4 | msgs new=2 dup=1 ignored_boxes=1[0m
+[0;32mI (261438) E2E:   tx: sessions=1 pkts_ok=5 pending_acb=1[0m
+[0;32mI (261438) E2E:   Expected Android delta: B+1 C+1 D+1 A+2[0m
+[0;32mI (261888) BOX_RX: Box device 76:e0:f5:e4:66:fb rssi=-85 -> connect[0m
+[0;32mI (262248) BOX_RX: connected to Android GATT server conn=1[0m
+[0;32mI (262358) BOX_RX: MTU exchange status=0 mtu=517[0m
+[0;32mI (262848) BOX_RX: Box characteristic found: peer_id=545e05cfd599 val_handle=156[0m
+[0;32mI (281448) E2E: ==== E2E run 9cd5c954  t=281s  result=RUNNING ====[0m
+[0;32mI (281448) E2E:   [OK] 1 NEW: BOX X1 -> Android           89ac5a56-52e2-4799-87ac-d2f987f2ec7d[0m
+[0;32mI (281448) E2E:   [OK] 2 Android CBB(X1) received         9c3e0b52-8f20-49d0-aabf-b3f6d37de296[0m
+[0;32mI (281458) E2E:   [..] 2 ACB(CBB X1) delivered  [A+1]     [0m
+[0;32mI (281458) E2E:   [..] 3 DUP: BOX X2 (same M1) -> Android 9d85fbe0-0462-44f0-93de-031d88b989ba[0m
+[0;32mI (281468) E2E:   [..] 4 Android CDB(X2) received         [0m
+[0;32mI (281478) E2E:   [..] 4 ACB(CDB X2) delivered  [A+1]     [0m
+[0;32mI (281478) E2E:   [OK] 5 Node CBB(new box) delivered [C+1] 58592a52-0135-49a2-a368-827dec55d357[0m
+[0;32mI (281488) E2E:   [..] 6 Node CDB(dup box) delivered [D+1] e2401d31-5ed7-4e1f-afcd-f0eaf86a9515[0m
+[0;32mI (281498) E2E:   [OK] i Android ACB for Node CBB         (info)[0m
+[0;32mI (281498) E2E:   [..] i Android ACB for Node CDB         (info)[0m
+[0;32mI (281508) E2E:   rx: SID=6 TRM=12 BOX=12 CBB=5 CDB=0 ACB=4 | msgs new=2 dup=1 ignored_boxes=1[0m
+[0;32mI (281518) E2E:   tx: sessions=1 pkts_ok=5 pending_acb=1[0m
+[0;32mI (281518) E2E:   Expected Android delta: B+1 C+1 D+1 A+2[0m
+[0;33mW (293058) BOX_RX: CCCD write failed rc=13 -> disconnect[0m
+[0;32mI (293078) BOX_RX: disconnected from Android conn=1 reason=534[0m
+[0;32mI (294888) BOX_RX: Box device 76:e0:f5:e4:66:fb rssi=-85 -> connect[0m
+[0;32mI (295198) BOX_RX: connected to Android GATT server conn=1[0m
+[0;32mI (295358) BOX_RX: MTU exchange status=0 mtu=517[0m
+[0;32mI (295848) BOX_RX: Box characteristic found: peer_id=545e05cfd599 val_handle=156[0m
+[0;32mI (301528) E2E: ==== E2E run 9cd5c954  t=301s  result=RUNNING ====[0m
+[0;32mI (301528) E2E:   [OK] 1 NEW: BOX X1 -> Android           89ac5a56-52e2-4799-87ac-d2f987f2ec7d[0m
+[0;32mI (301528) E2E:   [OK] 2 Android CBB(X1) received         9c3e0b52-8f20-49d0-aabf-b3f6d37de296[0m
+[0;32mI (301538) E2E:   [..] 2 ACB(CBB X1) delivered  [A+1]     [0m
+[0;32mI (301538) E2E:   [..] 3 DUP: BOX X2 (same M1) -> Android 9d85fbe0-0462-44f0-93de-031d88b989ba[0m
+[0;32mI (301548) E2E:   [..] 4 Android CDB(X2) received         [0m
+[0;32mI (301558) E2E:   [..] 4 ACB(CDB X2) delivered  [A+1]     [0m
+[0;32mI (301558) E2E:   [OK] 5 Node CBB(new box) delivered [C+1] 58592a52-0135-49a2-a368-827dec55d357[0m
+[0;32mI (301568) E2E:   [..] 6 Node CDB(dup box) delivered [D+1] e2401d31-5ed7-4e1f-afcd-f0eaf86a9515[0m
+[0;32mI (301578) E2E:   [OK] i Android ACB for Node CBB         (info)[0m
+[0;32mI (301578) E2E:   [..] i Android ACB for Node CDB         (info)[0m
+[0;32mI (301588) E2E:   rx: SID=6 TRM=12 BOX=12 CBB=5 CDB=0 ACB=4 | msgs new=2 dup=1 ignored_boxes=1[0m
+[0;32mI (301598) E2E:   tx: sessions=1 pkts_ok=5 pending_acb=1[0m
+[0;32mI (301598) E2E:   Expected Android delta: B+1 C+1 D+1 A+2[0m
+[0;32mI (321608) E2E: ==== E2E run 9cd5c954  t=321s  result=RUNNING ====[0m
+[0;32mI (321608) E2E:   [OK] 1 NEW: BOX X1 -> Android           89ac5a56-52e2-4799-87ac-d2f987f2ec7d[0m
+[0;32mI (321608) E2E:   [OK] 2 Android CBB(X1) received         9c3e0b52-8f20-49d0-aabf-b3f6d37de296[0m
+[0;32mI (321618) E2E:   [..] 2 ACB(CBB X1) delivered  [A+1]     [0m
+[0;32mI (321618) E2E:   [..] 3 DUP: BOX X2 (same M1) -> Android 9d85fbe0-0462-44f0-93de-031d88b989ba[0m
+[0;32mI (321628) E2E:   [..] 4 Android CDB(X2) received         [0m
+[0;32mI (321638) E2E:   [..] 4 ACB(CDB X2) delivered  [A+1]     [0m
+[0;32mI (321638) E2E:   [OK] 5 Node CBB(new box) delivered [C+1] 58592a52-0135-49a2-a368-827dec55d357[0m
+[0;32mI (321648) E2E:   [..] 6 Node CDB(dup box) delivered [D+1] e2401d31-5ed7-4e1f-afcd-f0eaf86a9515[0m
+[0;32mI (321658) E2E:   [OK] i Android ACB for Node CBB         (info)[0m
+[0;32mI (321658) E2E:   [..] i Android ACB for Node CDB         (info)[0m
+[0;32mI (321668) E2E:   rx: SID=6 TRM=12 BOX=12 CBB=5 CDB=0 ACB=4 | msgs new=2 dup=1 ignored_boxes=1[0m
+[0;32mI (321678) E2E:   tx: sessions=1 pkts_ok=5 pending_acb=1[0m
+[0;32mI (321678) E2E:   Expected Android delta: B+1 C+1 D+1 A+2[0m
+[0;33mW (326048) BOX_RX: CCCD write failed rc=13 -> disconnect[0m
+[0;32mI (326078) BOX_RX: disconnected from Android conn=1 reason=534[0m
+[0;32mI (327688) BOX_RX: Box device 76:e0:f5:e4:66:fb rssi=-91 -> connect[0m
+[0;32mI (328548) BOX_RX: connected to Android GATT server conn=1[0m
+[0;32mI (328658) BOX_RX: MTU exchange status=0 mtu=517[0m
+[0;32mI (329148) BOX_RX: Box characteristic found: peer_id=545e05cfd599 val_handle=156[0m
+[0;32mI (329448) BOX_RX: subscribed to Android 545e05cfd599 (conn=1 val=156 cccd=157), waiting for its session[0m
+[0;32mI (329808) E2E: RX SID c92c5ac6-6bc3-4f0e-a3ef-912ad704faf2 already fully received -> close[0m
+[0;32mI (329808) E2E: RX CBB id=9c3e0b52-8f20-49d0-aabf-b3f6d37de296 boxes=1 x1=1 x2=0[0m
+[0;32mI (329858) E2E: RX BOX 7df229b9-eeab-408a-ae0c-0584d6ed784a already processed -> skipped[0m
+[0;32mI (329858) E2E: RX BOX e2401d31-5ed7-4e1f-afcd-f0eaf86a9515 already processed -> skipped[0m
+[0;32mI (329858) E2E: RX TRM c92c5ac6-6bc3-4f0e-a3ef-912ad704faf2 (session complete)[0m
+[0;32mI (329868) E2E: RX TRM c92c5ac6-6bc3-4f0e-a3ef-912ad704faf2 (session complete)[0m
+[0;32mI (330088) BOX_RX: Android session done -> disconnect[0m
+[0;32mI (330098) BOX_RX: disconnected from Android conn=1 reason=534[0m
+[0;32mI (331698) BOX_RX: Box device 76:e0:f5:e4:66:fb rssi=-90 -> connect[0m
+[0;32mI (332198) BOX_RX: connected to Android GATT server conn=1[0m
+[0;32mI (332348) BOX_RX: MTU exchange status=0 mtu=517[0m
+[0;32mI (332898) BOX_RX: Box characteristic found: peer_id=545e05cfd599 val_handle=156[0m
+[0;32mI (333298) BOX_RX: subscribed to Android 545e05cfd599 (conn=1 val=156 cccd=157), waiting for its session[0m
+[0;32mI (333858) E2E: RX SID c92c5ac6-6bc3-4f0e-a3ef-912ad704faf2 already fully received -> close[0m
+[0;32mI (333858) E2E: RX CBB id=9c3e0b52-8f20-49d0-aabf-b3f6d37de296 boxes=1 x1=1 x2=0[0m
+[0;32mI (333858) E2E: RX BOX 7df229b9-eeab-408a-ae0c-0584d6ed784a already processed -> skipped[0m
+[0;32mI (333868) E2E: RX BOX e2401d31-5ed7-4e1f-afcd-f0eaf86a9515 already processed -> skipped[0m
+[0;32mI (333948) E2E: RX TRM c92c5ac6-6bc3-4f0e-a3ef-912ad704faf2 (session complete)[0m
+[0;32mI (333958) E2E: RX TRM c92c5ac6-6bc3-4f0e-a3ef-912ad704faf2 (session complete)[0m
+[0;32mI (334188) BOX_RX: Android session done -> disconnect[0m
+[0;32mI (334448) BOX_RX: disconnected from Android conn=1 reason=534[0m
+[0;32mI (336198) BOX_RX: Box device 76:e0:f5:e4:66:fb rssi=-85 -> connect[0m
+[0;32mI (336548) BOX_RX: connected to Android GATT server conn=1[0m
+[0;32mI (336848) BOX_RX: MTU exchange status=0 mtu=517[0m
+[0;32mI (337298) BOX_RX: Box characteristic found: peer_id=545e05cfd599 val_handle=156[0m
+[0;32mI (341688) E2E: ==== E2E run 9cd5c954  t=341s  result=RUNNING ====[0m
+[0;32mI (341688) E2E:   [OK] 1 NEW: BOX X1 -> Android           89ac5a56-52e2-4799-87ac-d2f987f2ec7d[0m
+[0;32mI (341688) E2E:   [OK] 2 Android CBB(X1) received         9c3e0b52-8f20-49d0-aabf-b3f6d37de296[0m
+[0;32mI (341698) E2E:   [..] 2 ACB(CBB X1) delivered  [A+1]     [0m
+[0;32mI (341698) E2E:   [..] 3 DUP: BOX X2 (same M1) -> Android 9d85fbe0-0462-44f0-93de-031d88b989ba[0m
+[0;32mI (341708) E2E:   [..] 4 Android CDB(X2) received         [0m
+[0;32mI (341718) E2E:   [..] 4 ACB(CDB X2) delivered  [A+1]     [0m
+[0;32mI (341718) E2E:   [OK] 5 Node CBB(new box) delivered [C+1] 58592a52-0135-49a2-a368-827dec55d357[0m
+[0;32mI (341728) E2E:   [..] 6 Node CDB(dup box) delivered [D+1] e2401d31-5ed7-4e1f-afcd-f0eaf86a9515[0m
+[0;32mI (341738) E2E:   [OK] i Android ACB for Node CBB         (info)[0m
+[0;32mI (341738) E2E:   [..] i Android ACB for Node CDB         (info)[0m
+[0;32mI (341748) E2E:   rx: SID=8 TRM=16 BOX=16 CBB=7 CDB=0 ACB=4 | msgs new=2 dup=1 ignored_boxes=1[0m
+[0;32mI (341758) E2E:   tx: sessions=1 pkts_ok=5 pending_acb=1[0m
+[0;32mI (341758) E2E:   Expected Android delta: B+1 C+1 D+1 A+2[0m
+[0;32mI (361768) E2E: ==== E2E run 9cd5c954  t=361s  result=RUNNING ====[0m
+[0;32mI (361768) E2E:   [OK] 1 NEW: BOX X1 -> Android           89ac5a56-52e2-4799-87ac-d2f987f2ec7d[0m
+[0;32mI (361768) E2E:   [OK] 2 Android CBB(X1) received         9c3e0b52-8f20-49d0-aabf-b3f6d37de296[0m
+[0;32mI (361778) E2E:   [..] 2 ACB(CBB X1) delivered  [A+1]     [0m
+[0;32mI (361778) E2E:   [..] 3 DUP: BOX X2 (same M1) -> Android 9d85fbe0-0462-44f0-93de-031d88b989ba[0m
+[0;32mI (361788) E2E:   [..] 4 Android CDB(X2) received         [0m
+[0;32mI (361798) E2E:   [..] 4 ACB(CDB X2) delivered  [A+1]     [0m
+[0;32mI (361798) E2E:   [OK] 5 Node CBB(new box) delivered [C+1] 58592a52-0135-49a2-a368-827dec55d357[0m
+[0;32mI (361808) E2E:   [..] 6 Node CDB(dup box) delivered [D+1] e2401d31-5ed7-4e1f-afcd-f0eaf86a9515[0m
+[0;32mI (361818) E2E:   [OK] i Android ACB for Node CBB         (info)[0m
+[0;32mI (361818) E2E:   [..] i Android ACB for Node CDB         (info)[0m
+[0;32mI (361828) E2E:   rx: SID=8 TRM=16 BOX=16 CBB=7 CDB=0 ACB=4 | msgs new=2 dup=1 ignored_boxes=1[0m
+[0;32mI (361838) E2E:   tx: sessions=1 pkts_ok=5 pending_acb=1[0m
+[0;32mI (361838) E2E:   Expected Android delta: B+1 C+1 D+1 A+2[0m
+[0;33mW (367598) BOX_RX: CCCD write failed rc=13 -> disconnect[0m
+[0;32mI (367628) BOX_RX: disconnected from Android conn=1 reason=534[0m
+[0;32mI (369288) BOX_RX: Box device 76:e0:f5:e4:66:fb rssi=-89 -> connect[0m
+[0;32mI (371048) BOX_RX: connected to Android GATT server conn=1[0m
+[0;32mI (371208) BOX_RX: MTU exchange status=0 mtu=517[0m
+[0;32mI (371718) BOX_RX: Box characteristic found: peer_id=545e05cfd599 val_handle=156[0m
+[0;32mI (372018) BOX_RX: subscribed to Android 545e05cfd599 (conn=1 val=156 cccd=157), waiting for its session[0m
+[0;32mI (372318) E2E: RX SID c92c5ac6-6bc3-4f0e-a3ef-912ad704faf2 already fully received -> close[0m
+[0;32mI (372368) E2E: RX CBB id=9c3e0b52-8f20-49d0-aabf-b3f6d37de296 boxes=1 x1=1 x2=0[0m
+[0;32mI (372368) E2E: RX BOX 7df229b9-eeab-408a-ae0c-0584d6ed784a already processed -> skipped[0m
+[0;32mI (372368) E2E: RX BOX e2401d31-5ed7-4e1f-afcd-f0eaf86a9515 already processed -> skipped[0m
+[0;32mI (372418) E2E: RX TRM c92c5ac6-6bc3-4f0e-a3ef-912ad704faf2 (session complete)[0m
+[0;32mI (372418) E2E: RX TRM c92c5ac6-6bc3-4f0e-a3ef-912ad704faf2 (session complete)[0m
+[0;32mI (372648) BOX_RX: Android session done -> disconnect[0m
+[0;32mI (372668) BOX_RX: disconnected from Android conn=1 reason=534[0m
+[0;32mI (374488) BOX_RX: Box device 76:e0:f5:e4:66:fb rssi=-88 -> connect[0m
+[0;32mI (375348) BOX_RX: connected to Android GATT server conn=1[0m
+[0;32mI (375458) BOX_RX: MTU exchange status=0 mtu=517[0m
+[0;32mI (375968) BOX_RX: Box characteristic found: peer_id=545e05cfd599 val_handle=156[0m
+[0;32mI (376318) BOX_RX: subscribed to Android 545e05cfd599 (conn=1 val=156 cccd=157), waiting for its session[0m
+[0;32mI (376918) E2E: RX SID c92c5ac6-6bc3-4f0e-a3ef-912ad704faf2 already fully received -> close[0m
+[0;32mI (376918) E2E: RX CBB id=9c3e0b52-8f20-49d0-aabf-b3f6d37de296 boxes=1 x1=1 x2=0[0m
+[0;32mI (376928) E2E: RX BOX 7df229b9-eeab-408a-ae0c-0584d6ed784a already processed -> skipped[0m
+[0;32mI (376928) E2E: RX BOX e2401d31-5ed7-4e1f-afcd-f0eaf86a9515 already processed -> skipped[0m
+[0;32mI (376968) E2E: RX TRM c92c5ac6-6bc3-4f0e-a3ef-912ad704faf2 (session complete)[0m
+[0;32mI (376968) E2E: RX TRM c92c5ac6-6bc3-4f0e-a3ef-912ad704faf2 (session complete)[0m
+[0;32mI (377248) BOX_RX: Android session done -> disconnect[0m
+[0;32mI (377268) BOX_RX: disconnected from Android conn=1 reason=534[0m
+[0;32mI (379128) BOX_RX: Box device 76:e0:f5:e4:66:fb rssi=-88 -> connect[0m
+[0;32mI (379998) BOX_RX: connected to Android GATT server conn=1[0m
+[0;32mI (380108) BOX_RX: MTU exchange status=0 mtu=517[0m
+[0;32mI (380718) BOX_RX: Box characteristic found: peer_id=545e05cfd599 val_handle=156[0m
+[0;32mI (381118) BOX_RX: subscribed to Android 545e05cfd599 (conn=1 val=156 cccd=157), waiting for its session[0m
+[0;32mI (381668) E2E: RX SID c92c5ac6-6bc3-4f0e-a3ef-912ad704faf2 already fully received -> close[0m
+[0;32mI (381668) E2E: RX CBB id=9c3e0b52-8f20-49d0-aabf-b3f6d37de296 boxes=1 x1=1 x2=0[0m
+[0;32mI (381768) E2E: RX BOX 7df229b9-eeab-408a-ae0c-0584d6ed784a already processed -> skipped[0m
+[0;32mI (381768) E2E: RX BOX e2401d31-5ed7-4e1f-afcd-f0eaf86a9515 already processed -> skipped[0m
+[0;32mI (381818) E2E: RX TRM c92c5ac6-6bc3-4f0e-a3ef-912ad704faf2 (session complete)[0m
+[0;32mI (381818) E2E: RX TRM c92c5ac6-6bc3-4f0e-a3ef-912ad704faf2 (session complete)[0m
+[0;32mI (381848) E2E: ==== E2E run 9cd5c954  t=381s  result=RUNNING ====[0m
+[0;32mI (381848) E2E:   [OK] 1 NEW: BOX X1 -> Android           89ac5a56-52e2-4799-87ac-d2f987f2ec7d[0m
+[0;32mI (381848) E2E:   [OK] 2 Android CBB(X1) received         9c3e0b52-8f20-49d0-aabf-b3f6d37de296[0m
+[0;32mI (381858) E2E:   [..] 2 ACB(CBB X1) delivered  [A+1]     [0m
+[0;32mI (381858) E2E:   [..] 3 DUP: BOX X2 (same M1) -> Android 9d85fbe0-0462-44f0-93de-031d88b989ba[0m
+[0;32mI (381868) E2E:   [..] 4 Android CDB(X2) received         [0m
+[0;32mI (381878) E2E:   [..] 4 ACB(CDB X2) delivered  [A+1]     [0m
+[0;32mI (381878) E2E:   [OK] 5 Node CBB(new box) delivered [C+1] 58592a52-0135-49a2-a368-827dec55d357[0m
+[0;32mI (381888) E2E:   [..] 6 Node CDB(dup box) delivered [D+1] e2401d31-5ed7-4e1f-afcd-f0eaf86a9515[0m
+[0;32mI (381898) E2E:   [OK] i Android ACB for Node CBB         (info)[0m
+[0;32mI (381898) E2E:   [..] i Android ACB for Node CDB         (info)[0m
+[0;32mI (381908) E2E:   rx: SID=11 TRM=22 BOX=22 CBB=10 CDB=0 ACB=4 | msgs new=2 dup=1 ignored_boxes=1[0m
+[0;32mI (381918) E2E:   tx: sessions=1 pkts_ok=5 pending_acb=1[0m
+[0;32mI (381918) E2E:   Expected Android delta: B+1 C+1 D+1 A+2[0m
+[0;32mI (381928) BOX_RX: Android session done -> disconnect[0m
+[0;32mI (381968) BOX_RX: disconnected from Android conn=1 reason=534[0m
+[0;32mI (383798) BOX_RX: Box device 76:e0:f5:e4:66:fb rssi=-88 -> connect[0m
+[0;32mI (384448) BOX_RX: connected to Android GATT server conn=1[0m
+[0;32mI (384558) BOX_RX: MTU exchange status=0 mtu=517[0m
+[0;32mI (384948) BOX_RX: Box characteristic found: peer_id=545e05cfd599 val_handle=156[0m
+[0;32mI (385268) BOX_RX: subscribed to Android 545e05cfd599 (conn=1 val=156 cccd=157), waiting for its session[0m
+[0;32mI (385918) E2E: RX SID c92c5ac6-6bc3-4f0e-a3ef-912ad704faf2 already fully received -> close[0m
+[0;32mI (385918) E2E: RX CBB id=9c3e0b52-8f20-49d0-aabf-b3f6d37de296 boxes=1 x1=1 x2=0[0m
+[0;32mI (385968) E2E: RX BOX 7df229b9-eeab-408a-ae0c-0584d6ed784a already processed -> skipped[0m
+[0;32mI (385968) E2E: RX BOX e2401d31-5ed7-4e1f-afcd-f0eaf86a9515 already processed -> skipped[0m
+[0;32mI (385968) E2E: RX TRM c92c5ac6-6bc3-4f0e-a3ef-912ad704faf2 (session complete)[0m
+[0;32mI (385978) E2E: RX TRM c92c5ac6-6bc3-4f0e-a3ef-912ad704faf2 (session complete)[0m
+[0;32mI (386228) BOX_RX: Android session done -> disconnect[0m
+[0;32mI (386268) BOX_RX: disconnected from Android conn=1 reason=534[0m
+[0;32mI (388188) BOX_RX: Box device 76:e0:f5:e4:66:fb rssi=-88 -> connect[0m
+[0;32mI (388398) BOX_RX: connected to Android GATT server conn=1[0m
+[0;32mI (388508) BOX_RX: MTU exchange status=0 mtu=517[0m
+[0;32mI (389118) BOX_RX: Box characteristic found: peer_id=545e05cfd599 val_handle=156[0m
+[0;32mI (389418) BOX_RX: subscribed to Android 545e05cfd599 (conn=1 val=156 cccd=157), waiting for its session[0m
+[0;32mI (390068) E2E: RX SID c92c5ac6-6bc3-4f0e-a3ef-912ad704faf2 already fully received -> close[0m
+[0;32mI (390118) E2E: RX CBB id=9c3e0b52-8f20-49d0-aabf-b3f6d37de296 boxes=1 x1=1 x2=0[0m
+[0;32mI (390168) E2E: RX BOX 7df229b9-eeab-408a-ae0c-0584d6ed784a already processed -> skipped[0m
+[0;32mI (390168) E2E: RX BOX e2401d31-5ed7-4e1f-afcd-f0eaf86a9515 already processed -> skipped[0m
+[0;32mI (390168) E2E: RX TRM c92c5ac6-6bc3-4f0e-a3ef-912ad704faf2 (session complete)[0m
+[0;32mI (390178) E2E: RX TRM c92c5ac6-6bc3-4f0e-a3ef-912ad704faf2 (session complete)[0m
+[0;32mI (390328) BOX_RX: Android session done -> disconnect[0m
+[0;32mI (390368) BOX_RX: disconnected from Android conn=1 reason=534[0m
+[0;32mI (391928) BOX_RX: Box device 76:e0:f5:e4:66:fb rssi=-88 -> connect[0m
+[0;32mI (392148) BOX_RX: connected to Android GATT server conn=1[0m
+[0;32mI (392308) BOX_RX: MTU exchange status=0 mtu=517[0m
+[0;32mI (392968) BOX_RX: Box characteristic found: peer_id=545e05cfd599 val_handle=156[0m
+[0;32mI (401928) E2E: ==== E2E run 9cd5c954  t=401s  result=RUNNING ====[0m
+[0;32mI (401928) E2E:   [OK] 1 NEW: BOX X1 -> Android           89ac5a56-52e2-4799-87ac-d2f987f2ec7d[0m
+[0;32mI (401928) E2E:   [OK] 2 Android CBB(X1) received         9c3e0b52-8f20-49d0-aabf-b3f6d37de296[0m
+[0;32mI (401938) E2E:   [..] 2 ACB(CBB X1) delivered  [A+1]     [0m
+[0;32mI (401938) E2E:   [..] 3 DUP: BOX X2 (same M1) -> Android 9d85fbe0-0462-44f0-93de-031d88b989ba[0m
+[0;32mI (401948) E2E:   [..] 4 Android CDB(X2) received         [0m
+[0;32mI (401958) E2E:   [..] 4 ACB(CDB X2) delivered  [A+1]     [0m
+[0;32mI (401958) E2E:   [OK] 5 Node CBB(new box) delivered [C+1] 58592a52-0135-49a2-a368-827dec55d357[0m
+[0;32mI (401968) E2E:   [..] 6 Node CDB(dup box) delivered [D+1] e2401d31-5ed7-4e1f-afcd-f0eaf86a9515[0m
+[0;32mI (401978) E2E:   [OK] i Android ACB for Node CBB         (info)[0m
+[0;32mI (401978) E2E:   [..] i Android ACB for Node CDB         (info)[0m
+[0;32mI (401988) E2E:   rx: SID=13 TRM=26 BOX=26 CBB=12 CDB=0 ACB=4 | msgs new=2 dup=1 ignored_boxes=1[0m
+[0;32mI (401998) E2E:   tx: sessions=1 pkts_ok=5 pending_acb=1[0m
+[0;32mI (401998) E2E:   Expected Android delta: B+1 C+1 D+1 A+2[0m
+[0;32mI (422008) E2E: ==== E2E run 9cd5c954  t=421s  result=RUNNING ====[0m
+[0;32mI (422008) E2E:   [OK] 1 NEW: BOX X1 -> Android           89ac5a56-52e2-4799-87ac-d2f987f2ec7d[0m
+[0;32mI (422008) E2E:   [OK] 2 Android CBB(X1) received         9c3e0b52-8f20-49d0-aabf-b3f6d37de296[0m
+[0;32mI (422018) E2E:   [..] 2 ACB(CBB X1) delivered  [A+1]     [0m
+[0;32mI (422018) E2E:   [..] 3 DUP: BOX X2 (same M1) -> Android 9d85fbe0-0462-44f0-93de-031d88b989ba[0m
+[0;32mI (422028) E2E:   [..] 4 Android CDB(X2) received         [0m
+[0;32mI (422038) E2E:   [..] 4 ACB(CDB X2) delivered  [A+1]     [0m
+[0;32mI (422038) E2E:   [OK] 5 Node CBB(new box) delivered [C+1] 58592a52-0135-49a2-a368-827dec55d357[0m
+[0;32mI (422048) E2E:   [..] 6 Node CDB(dup box) delivered [D+1] e2401d31-5ed7-4e1f-afcd-f0eaf86a9515[0m
+[0;32mI (422058) E2E:   [OK] i Android ACB for Node CBB         (info)[0m
+[0;32mI (422058) E2E:   [..] i Android ACB for Node CDB         (info)[0m
+[0;32mI (422068) E2E:   rx: SID=13 TRM=26 BOX=26 CBB=12 CDB=0 ACB=4 | msgs new=2 dup=1 ignored_boxes=1[0m
+[0;32mI (422078) E2E:   tx: sessions=1 pkts_ok=5 pending_acb=1[0m
+[0;32mI (422078) E2E:   Expected Android delta: B+1 C+1 D+1 A+2[0m
+[0;33mW (423218) BOX_RX: CCCD write failed rc=13 -> disconnect[0m
+[0;32mI (423248) BOX_RX: disconnected from Android conn=1 reason=534[0m
+[0;32mI (424808) BOX_RX: Box device 76:e0:f5:e4:66:fb rssi=-88 -> connect[0m
+[0;32mI (425548) BOX_RX: connected to Android GATT server conn=1[0m
+[0;32mI (425658) BOX_RX: MTU exchange status=0 mtu=517[0m
+[0;32mI (426148) BOX_RX: Box characteristic found: peer_id=545e05cfd599 val_handle=156[0m
+[0;32mI (426498) BOX_RX: subscribed to Android 545e05cfd599 (conn=1 val=156 cccd=157), waiting for its session[0m
+[0;32mI (426908) E2E: RX SID c92c5ac6-6bc3-4f0e-a3ef-912ad704faf2 already fully received -> close[0m
+[0;32mI (427048) E2E: RX CBB id=9c3e0b52-8f20-49d0-aabf-b3f6d37de296 boxes=1 x1=1 x2=0[0m
+[0;32mI (427158) E2E: RX BOX 7df229b9-eeab-408a-ae0c-0584d6ed784a already processed -> skipped[0m
+[0;32mI (427188) BOX_RX: Android session done -> disconnect[0m
+[0;32mI (427208) BOX_RX: disconnected from Android conn=1 reason=534[0m
+[0;32mI (428838) BOX_RX: Box device 76:e0:f5:e4:66:fb rssi=-88 -> connect[0m
+[0;32mI (429448) BOX_RX: connected to Android GATT server conn=1[0m
+[0;32mI (429558) BOX_RX: MTU exchange status=0 mtu=517[0m
+[0;32mI (430198) BOX_RX: Box characteristic found: peer_id=545e05cfd599 val_handle=156[0m
+[0;32mI (442088) E2E: ==== E2E run 9cd5c954  t=441s  result=RUNNING ====[0m
+[0;32mI (442088) E2E:   [OK] 1 NEW: BOX X1 -> Android           89ac5a56-52e2-4799-87ac-d2f987f2ec7d[0m
+[0;32mI (442088) E2E:   [OK] 2 Android CBB(X1) received         9c3e0b52-8f20-49d0-aabf-b3f6d37de296[0m
+[0;32mI (442098) E2E:   [..] 2 ACB(CBB X1) delivered  [A+1]     [0m
+[0;32mI (442098) E2E:   [..] 3 DUP: BOX X2 (same M1) -> Android 9d85fbe0-0462-44f0-93de-031d88b989ba[0m
+[0;32mI (442108) E2E:   [..] 4 Android CDB(X2) received         [0m
+[0;32mI (442118) E2E:   [..] 4 ACB(CDB X2) delivered  [A+1]     [0m
+[0;32mI (442118) E2E:   [OK] 5 Node CBB(new box) delivered [C+1] 58592a52-0135-49a2-a368-827dec55d357[0m
+[0;32mI (442128) E2E:   [..] 6 Node CDB(dup box) delivered [D+1] e2401d31-5ed7-4e1f-afcd-f0eaf86a9515[0m
+[0;32mI (442138) E2E:   [OK] i Android ACB for Node CBB         (info)[0m
+[0;32mI (442138) E2E:   [..] i Android ACB for Node CDB         (info)[0m
+[0;32mI (442148) E2E:   rx: SID=14 TRM=26 BOX=27 CBB=13 CDB=0 ACB=4 | msgs new=2 dup=1 ignored_boxes=1[0m
+[0;32mI (442158) E2E:   tx: sessions=1 pkts_ok=5 pending_acb=1[0m
+[0;32mI (442158) E2E:   Expected Android delta: B+1 C+1 D+1 A+2[0m
+[0;33mW (460398) BOX_RX: CCCD write failed rc=13 -> disconnect[0m
+[0;32mI (460418) BOX_RX: disconnected from Android conn=1 reason=534[0m
+[0;32mI (462018) BOX_RX: Box device 76:e0:f5:e4:66:fb rssi=-89 -> connect[0m
+[0;32mI (462168) E2E: ==== E2E run 9cd5c954  t=461s  result=RUNNING ====[0m
+[0;32mI (462168) E2E:   [OK] 1 NEW: BOX X1 -> Android           89ac5a56-52e2-4799-87ac-d2f987f2ec7d[0m
+[0;32mI (462168) E2E:   [OK] 2 Android CBB(X1) received         9c3e0b52-8f20-49d0-aabf-b3f6d37de296[0m
+[0;32mI (462178) E2E:   [..] 2 ACB(CBB X1) delivered  [A+1]     [0m
+[0;32mI (462178) E2E:   [..] 3 DUP: BOX X2 (same M1) -> Android 9d85fbe0-0462-44f0-93de-031d88b989ba[0m
+[0;32mI (462188) E2E:   [..] 4 Android CDB(X2) received         [0m
+[0;32mI (462198) E2E:   [..] 4 ACB(CDB X2) delivered  [A+1]     [0m
+[0;32mI (462198) E2E:   [OK] 5 Node CBB(new box) delivered [C+1] 58592a52-0135-49a2-a368-827dec55d357[0m
+[0;32mI (462208) E2E:   [..] 6 Node CDB(dup box) delivered [D+1] e2401d31-5ed7-4e1f-afcd-f0eaf86a9515[0m
+[0;32mI (462218) E2E:   [OK] i Android ACB for Node CBB         (info)[0m
+[0;32mI (462218) E2E:   [..] i Android ACB for Node CDB         (info)[0m
+[0;32mI (462228) E2E:   rx: SID=14 TRM=26 BOX=27 CBB=13 CDB=0 ACB=4 | msgs new=2 dup=1 ignored_boxes=1[0m
+[0;32mI (462238) E2E:   tx: sessions=1 pkts_ok=5 pending_acb=1[0m
+[0;32mI (462238) E2E:   Expected Android delta: B+1 C+1 D+1 A+2[0m
+[0;32mI (462348) BOX_RX: connected to Android GATT server conn=1[0m
+[0;32mI (462508) BOX_RX: MTU exchange status=0 mtu=517[0m
+[0;32mI (463048) BOX_RX: Box characteristic found: peer_id=545e05cfd599 val_handle=156[0m
+[0;32mI (463348) BOX_RX: subscribed to Android 545e05cfd599 (conn=1 val=156 cccd=157), waiting for its session[0m
+[0;32mI (464208) E2E: RX SID c92c5ac6-6bc3-4f0e-a3ef-912ad704faf2 already fully received -> close[0m
+[0;32mI (464208) E2E: RX CBB id=9c3e0b52-8f20-49d0-aabf-b3f6d37de296 boxes=1 x1=1 x2=0[0m
+[0;32mI (464258) E2E: RX BOX 7df229b9-eeab-408a-ae0c-0584d6ed784a already processed -> skipped[0m
+[0;32mI (464308) E2E: RX BOX e2401d31-5ed7-4e1f-afcd-f0eaf86a9515 already processed -> skipped[0m
+[0;32mI (464308) E2E: RX TRM c92c5ac6-6bc3-4f0e-a3ef-912ad704faf2 (session complete)[0m
+[0;32mI (464308) E2E: RX TRM c92c5ac6-6bc3-4f0e-a3ef-912ad704faf2 (session complete)[0m
+[0;32mI (464548) BOX_RX: Android session done -> disconnect[0m
+[0;32mI (464558) BOX_RX: disconnected from Android conn=1 reason=534[0m
+[0;32mI (466928) BOX_RX: Box device 76:e0:f5:e4:66:fb rssi=-93 -> connect[0m
+[0;32mI (467448) BOX_RX: connected to Android GATT server conn=1[0m
+[0;32mI (467558) BOX_RX: MTU exchange status=0 mtu=517[0m
+[0;32mI (467948) BOX_RX: Box characteristic found: peer_id=545e05cfd599 val_handle=156[0m
+[0;32mI (468298) BOX_RX: subscribed to Android 545e05cfd599 (conn=1 val=156 cccd=157), waiting for its session[0m
+[0;32mI (469048) E2E: RX SID c92c5ac6-6bc3-4f0e-a3ef-912ad704faf2 already fully received -> close[0m
+[0;32mI (469058) E2E: RX CBB id=9c3e0b52-8f20-49d0-aabf-b3f6d37de296 boxes=1 x1=1 x2=0[0m
+[0;32mI (469058) E2E: RX BOX 7df229b9-eeab-408a-ae0c-0584d6ed784a already processed -> skipped[0m
+[0;32mI (469108) E2E: RX BOX e2401d31-5ed7-4e1f-afcd-f0eaf86a9515 already processed -> skipped[0m
+[0;32mI (469108) E2E: RX TRM c92c5ac6-6bc3-4f0e-a3ef-912ad704faf2 (session complete)[0m
+[0;32mI (469108) E2E: RX TRM c92c5ac6-6bc3-4f0e-a3ef-912ad704faf2 (session complete)[0m
+[0;32mI (469348) BOX_RX: Android session done -> disconnect[0m
+[0;32mI (469598) BOX_RX: disconnected from Android conn=1 reason=534[0m
+[0;32mI (471788) BOX_RX: Box device 76:e0:f5:e4:66:fb rssi=-89 -> connect[0m
+[0;32mI (471998) BOX_RX: connected to Android GATT server conn=1[0m
+[0;32mI (472108) BOX_RX: MTU exchange status=0 mtu=517[0m
+[0;32mI (472498) BOX_RX: Box characteristic found: peer_id=545e05cfd599 val_handle=156[0m
+[0;32mI (482248) E2E: ==== E2E run 9cd5c954  t=481s  result=RUNNING ====[0m
+[0;32mI (482248) E2E:   [OK] 1 NEW: BOX X1 -> Android           89ac5a56-52e2-4799-87ac-d2f987f2ec7d[0m
+[0;32mI (482248) E2E:   [OK] 2 Android CBB(X1) received         9c3e0b52-8f20-49d0-aabf-b3f6d37de296[0m
+[0;32mI (482258) E2E:   [..] 2 ACB(CBB X1) delivered  [A+1]     [0m
+[0;32mI (482258) E2E:   [..] 3 DUP: BOX X2 (same M1) -> Android 9d85fbe0-0462-44f0-93de-031d88b989ba[0m
+[0;32mI (482268) E2E:   [..] 4 Android CDB(X2) received         [0m
+[0;32mI (482278) E2E:   [..] 4 ACB(CDB X2) delivered  [A+1]     [0m
+[0;32mI (482278) E2E:   [OK] 5 Node CBB(new box) delivered [C+1] 58592a52-0135-49a2-a368-827dec55d357[0m
+[0;32mI (482288) E2E:   [..] 6 Node CDB(dup box) delivered [D+1] e2401d31-5ed7-4e1f-afcd-f0eaf86a9515[0m
+[0;32mI (482298) E2E:   [OK] i Android ACB for Node CBB         (info)[0m
+[0;32mI (482298) E2E:   [..] i Android ACB for Node CDB         (info)[0m
+[0;32mI (482308) E2E:   rx: SID=16 TRM=30 BOX=31 CBB=15 CDB=0 ACB=4 | msgs new=2 dup=1 ignored_boxes=1[0m
+[0;32mI (482318) E2E:   tx: sessions=1 pkts_ok=5 pending_acb=1[0m
+[0;32mI (482318) E2E:   Expected Android delta: B+1 C+1 D+1 A+2[0m
+[0;32mI (502328) E2E: ==== E2E run 9cd5c954  t=501s  result=RUNNING ====[0m
+[0;32mI (502328) E2E:   [OK] 1 NEW: BOX X1 -> Android           89ac5a56-52e2-4799-87ac-d2f987f2ec7d[0m
+[0;32mI (502328) E2E:   [OK] 2 Android CBB(X1) received         9c3e0b52-8f20-49d0-aabf-b3f6d37de296[0m
+[0;32mI (502338) E2E:   [..] 2 ACB(CBB X1) delivered  [A+1]     [0m
+[0;32mI (502338) E2E:   [..] 3 DUP: BOX X2 (same M1) -> Android 9d85fbe0-0462-44f0-93de-031d88b989ba[0m
+[0;32mI (502348) E2E:   [..] 4 Android CDB(X2) received         [0m
+[0;32mI (502358) E2E:   [..] 4 ACB(CDB X2) delivered  [A+1]     [0m
+[0;32mI (502358) E2E:   [OK] 5 Node CBB(new box) delivered [C+1] 58592a52-0135-49a2-a368-827dec55d357[0m
+[0;32mI (502368) E2E:   [..] 6 Node CDB(dup box) delivered [D+1] e2401d31-5ed7-4e1f-afcd-f0eaf86a9515[0m
+[0;32mI (502378) E2E:   [OK] i Android ACB for Node CBB         (info)[0m
+[0;32mI (502378) E2E:   [..] i Android ACB for Node CDB         (info)[0m
+[0;32mI (502388) E2E:   rx: SID=16 TRM=30 BOX=31 CBB=15 CDB=0 ACB=4 | msgs new=2 dup=1 ignored_boxes=1[0m
+[0;32mI (502398) E2E:   tx: sessions=1 pkts_ok=5 pending_acb=1[0m
+[0;32mI (502398) E2E:   Expected Android delta: B+1 C+1 D+1 A+2[0m
+[0;33mW (502698) BOX_RX: CCCD write failed rc=13 -> disconnect[0m
+[0;32mI (502728) BOX_RX: disconnected from Android conn=1 reason=534[0m
+[0;32mI (504488) BOX_RX: Box device 76:e0:f5:e4:66:fb rssi=-88 -> connect[0m
+[0;32mI (505248) BOX_RX: connected to Android GATT server conn=1[0m
+[0;32mI (505358) BOX_RX: MTU exchange status=0 mtu=517[0m
+[0;32mI (505748) BOX_RX: Box characteristic found: peer_id=545e05cfd599 val_handle=156[0m
+[0;32mI (506048) BOX_RX: subscribed to Android 545e05cfd599 (conn=1 val=156 cccd=157), waiting for its session[0m
+[0;32mI (506508) E2E: RX SID c92c5ac6-6bc3-4f0e-a3ef-912ad704faf2 already fully received -> close[0m
+[0;32mI (506508) E2E: RX CBB id=9c3e0b52-8f20-49d0-aabf-b3f6d37de296 boxes=1 x1=1 x2=0[0m
+[0;32mI (506508) E2E: RX BOX 7df229b9-eeab-408a-ae0c-0584d6ed784a already processed -> skipped[0m
+[0;32mI (506558) E2E: RX BOX e2401d31-5ed7-4e1f-afcd-f0eaf86a9515 already processed -> skipped[0m
+[0;32mI (506558) E2E: RX TRM c92c5ac6-6bc3-4f0e-a3ef-912ad704faf2 (session complete)[0m
+[0;32mI (506558) E2E: RX TRM c92c5ac6-6bc3-4f0e-a3ef-912ad704faf2 (session complete)[0m
+[0;32mI (506808) BOX_RX: Android session done -> disconnect[0m
+[0;32mI (506848) BOX_RX: disconnected from Android conn=1 reason=534[0m
+[0;32mI (508498) BOX_RX: Box device 76:e0:f5:e4:66:fb rssi=-88 -> connect[0m
+[0;32mI (508698) BOX_RX: connected to Android GATT server conn=1[0m
+[0;32mI (508858) BOX_RX: MTU exchange status=0 mtu=517[0m
+[0;32mI (509248) BOX_RX: Box characteristic found: peer_id=545e05cfd599 val_handle=156[0m
+[0;32mI (509598) BOX_RX: subscribed to Android 545e05cfd599 (conn=1 val=156 cccd=157), waiting for its session[0m
+[0;32mI (510358) E2E: RX SID c92c5ac6-6bc3-4f0e-a3ef-912ad704faf2 already fully received -> close[0m
+[0;32mI (510358) E2E: RX CBB id=9c3e0b52-8f20-49d0-aabf-b3f6d37de296 boxes=1 x1=1 x2=0[0m
+[0;32mI (510408) E2E: RX BOX 7df229b9-eeab-408a-ae0c-0584d6ed784a already processed -> skipped[0m
+[0;32mI (510458) E2E: RX BOX e2401d31-5ed7-4e1f-afcd-f0eaf86a9515 already processed -> skipped[0m
+[0;32mI (510458) E2E: RX TRM c92c5ac6-6bc3-4f0e-a3ef-912ad704faf2 (session complete)[0m
+[0;32mI (510458) E2E: RX TRM c92c5ac6-6bc3-4f0e-a3ef-912ad704faf2 (session complete)[0m
+[0;32mI (510708) BOX_RX: Android session done -> disconnect[0m
+[0;32mI (510758) BOX_RX: disconnected from Android conn=1 reason=534[0m
+[0;32mI (512338) BOX_RX: Box device 76:e0:f5:e4:66:fb rssi=-88 -> connect[0m
+[0;32mI (512698) BOX_RX: connected to Android GATT server conn=1[0m
+[0;32mI (512908) BOX_RX: MTU exchange status=0 mtu=517[0m
+[0;32mI (513348) BOX_RX: Box characteristic found: peer_id=545e05cfd599 val_handle=156[0m
+[0;32mI (513698) BOX_RX: subscribed to Android 545e05cfd599 (conn=1 val=156 cccd=157), waiting for its session[0m
+[0;32mI (514308) E2E: RX SID c92c5ac6-6bc3-4f0e-a3ef-912ad704faf2 already fully received -> close[0m
+[0;32mI (514358) E2E: RX CBB id=9c3e0b52-8f20-49d0-aabf-b3f6d37de296 boxes=1 x1=1 x2=0[0m
+[0;32mI (514358) E2E: RX BOX 7df229b9-eeab-408a-ae0c-0584d6ed784a already processed -> skipped[0m
+[0;32mI (514368) E2E: RX BOX e2401d31-5ed7-4e1f-afcd-f0eaf86a9515 already processed -> skipped[0m
+[0;32mI (514368) E2E: RX TRM c92c5ac6-6bc3-4f0e-a3ef-912ad704faf2 (session complete)[0m
+[0;32mI (514408) E2E: RX TRM c92c5ac6-6bc3-4f0e-a3ef-912ad704faf2 (session complete)[0m
+[0;32mI (514608) BOX_RX: Android session done -> disconnect[0m
+[0;32mI (514648) BOX_RX: disconnected from Android conn=1 reason=534[0m
+[0;32mI (516208) BOX_RX: Box device 76:e0:f5:e4:66:fb rssi=-89 -> connect[0m
+[0;32mI (516948) BOX_RX: connected to Android GATT server conn=1[0m
+[0;32mI (517158) BOX_RX: MTU exchange status=0 mtu=517[0m
+[0;32mI (517648) BOX_RX: Box characteristic found: peer_id=545e05cfd599 val_handle=156[0m
+[0;32mI (518098) BOX_RX: subscribed to Android 545e05cfd599 (conn=1 val=156 cccd=157), waiting for its session[0m
+[0;32mI (518708) E2E: RX SID c92c5ac6-6bc3-4f0e-a3ef-912ad704faf2 already fully received -> close[0m
+[0;32mI (518808) E2E: RX CBB id=9c3e0b52-8f20-49d0-aabf-b3f6d37de296 boxes=1 x1=1 x2=0[0m
+[0;32mI (518858) E2E: RX BOX 7df229b9-eeab-408a-ae0c-0584d6ed784a already processed -> skipped[0m
+[0;32mI (518858) E2E: RX BOX e2401d31-5ed7-4e1f-afcd-f0eaf86a9515 already processed -> skipped[0m
+[0;32mI (518858) E2E: RX TRM c92c5ac6-6bc3-4f0e-a3ef-912ad704faf2 (session complete)[0m
+[0;32mI (518868) E2E: RX TRM c92c5ac6-6bc3-4f0e-a3ef-912ad704faf2 (session complete)[0m
+[0;32mI (519008) BOX_RX: Android session done -> disconnect[0m
+[0;32mI (519048) BOX_RX: disconnected from Android conn=1 reason=534[0m
+[0;32mI (521108) BOX_RX: Box device 76:e0:f5:e4:66:fb rssi=-88 -> connect[0m
+[0;32mI (522348) BOX_RX: connected to Android GATT server conn=1[0m
+[0;32mI (522408) E2E: ==== E2E run 9cd5c954  t=522s  result=RUNNING ====[0m
+[0;32mI (522408) E2E:   [OK] 1 NEW: BOX X1 -> Android           89ac5a56-52e2-4799-87ac-d2f987f2ec7d[0m
+[0;32mI (522408) E2E:   [OK] 2 Android CBB(X1) received         9c3e0b52-8f20-49d0-aabf-b3f6d37de296[0m
+[0;32mI (522418) E2E:   [..] 2 ACB(CBB X1) delivered  [A+1]     [0m
+[0;32mI (522418) E2E:   [..] 3 DUP: BOX X2 (same M1) -> Android 9d85fbe0-0462-44f0-93de-031d88b989ba[0m
+[0;32mI (522428) E2E:   [..] 4 Android CDB(X2) received         [0m
+[0;32mI (522438) E2E:   [..] 4 ACB(CDB X2) delivered  [A+1]     [0m
+[0;32mI (522438) E2E:   [OK] 5 Node CBB(new box) delivered [C+1] 58592a52-0135-49a2-a368-827dec55d357[0m
+[0;32mI (522448) E2E:   [..] 6 Node CDB(dup box) delivered [D+1] e2401d31-5ed7-4e1f-afcd-f0eaf86a9515[0m
+[0;32mI (522458) E2E:   [OK] i Android ACB for Node CBB         (info)[0m
+[0;32mI (522458) E2E:   [..] i Android ACB for Node CDB         (info)[0m
+[0;32mI (522468) E2E:   rx: SID=20 TRM=38 BOX=39 CBB=19 CDB=0 ACB=4 | msgs new=2 dup=1 ignored_boxes=1[0m
+[0;32mI (522478) E2E:   tx: sessions=1 pkts_ok=5 pending_acb=1[0m
+[0;32mI (522478) E2E:   Expected Android delta: B+1 C+1 D+1 A+2[0m
+[0;32mI (522558) BOX_RX: MTU exchange status=0 mtu=517[0m
+[0;32mI (522998) BOX_RX: Box characteristic found: peer_id=545e05cfd599 val_handle=156[0m
+[0;32mI (542488) E2E: ==== E2E run 9cd5c954  t=542s  result=RUNNING ====[0m
+[0;32mI (542488) E2E:   [OK] 1 NEW: BOX X1 -> Android           89ac5a56-52e2-4799-87ac-d2f987f2ec7d[0m
+[0;32mI (542488) E2E:   [OK] 2 Android CBB(X1) received         9c3e0b52-8f20-49d0-aabf-b3f6d37de296[0m
+[0;32mI (542498) E2E:   [..] 2 ACB(CBB X1) delivered  [A+1]     [0m
+[0;32mI (542498) E2E:   [..] 3 DUP: BOX X2 (same M1) -> Android 9d85fbe0-0462-44f0-93de-031d88b989ba[0m
+[0;32mI (542508) E2E:   [..] 4 Android CDB(X2) received         [0m
+[0;32mI (542518) E2E:   [..] 4 ACB(CDB X2) delivered  [A+1]     [0m
+[0;32mI (542518) E2E:   [OK] 5 Node CBB(new box) delivered [C+1] 58592a52-0135-49a2-a368-827dec55d357[0m
+[0;32mI (542528) E2E:   [..] 6 Node CDB(dup box) delivered [D+1] e2401d31-5ed7-4e1f-afcd-f0eaf86a9515[0m
+[0;32mI (542538) E2E:   [OK] i Android ACB for Node CBB         (info)[0m
+[0;32mI (542538) E2E:   [..] i Android ACB for Node CDB         (info)[0m
+[0;32mI (542548) E2E:   rx: SID=20 TRM=38 BOX=39 CBB=19 CDB=0 ACB=4 | msgs new=2 dup=1 ignored_boxes=1[0m
+[0;32mI (542558) E2E:   tx: sessions=1 pkts_ok=5 pending_acb=1[0m
+[0;32mI (542558) E2E:   Expected Android delta: B+1 C+1 D+1 A+2[0m
+[0;33mW (553198) BOX_RX: CCCD write failed rc=13 -> disconnect[0m
+[0;32mI (553228) BOX_RX: disconnected from Android conn=1 reason=534[0m
+[0;32mI (554998) BOX_RX: Box device 76:e0:f5:e4:66:fb rssi=-89 -> connect[0m
+[0;32mI (555898) BOX_RX: connected to Android GATT server conn=1[0m
+[0;32mI (556298) BOX_RX: MTU exchange status=0 mtu=517[0m
+[0;32mI (556798) BOX_RX: Box characteristic found: peer_id=545e05cfd599 val_handle=156[0m
+[0;32mI (562568) E2E: ==== E2E run 9cd5c954  t=562s  result=RUNNING ====[0m
+[0;32mI (562568) E2E:   [OK] 1 NEW: BOX X1 -> Android           89ac5a56-52e2-4799-87ac-d2f987f2ec7d[0m
+[0;32mI (562568) E2E:   [OK] 2 Android CBB(X1) received         9c3e0b52-8f20-49d0-aabf-b3f6d37de296[0m
+[0;32mI (562578) E2E:   [..] 2 ACB(CBB X1) delivered  [A+1]     [0m
+[0;32mI (562578) E2E:   [..] 3 DUP: BOX X2 (same M1) -> Android 9d85fbe0-0462-44f0-93de-031d88b989ba[0m
+[0;32mI (562588) E2E:   [..] 4 Android CDB(X2) received         [0m
+[0;32mI (562598) E2E:   [..] 4 ACB(CDB X2) delivered  [A+1]     [0m
+[0;32mI (562598) E2E:   [OK] 5 Node CBB(new box) delivered [C+1] 58592a52-0135-49a2-a368-827dec55d357[0m
+[0;32mI (562608) E2E:   [..] 6 Node CDB(dup box) delivered [D+1] e2401d31-5ed7-4e1f-afcd-f0eaf86a9515[0m
+[0;32mI (562618) E2E:   [OK] i Android ACB for Node CBB         (info)[0m
+[0;32mI (562618) E2E:   [..] i Android ACB for Node CDB         (info)[0m
+[0;32mI (562628) E2E:   rx: SID=20 TRM=38 BOX=39 CBB=19 CDB=0 ACB=4 | msgs new=2 dup=1 ignored_boxes=1[0m
+[0;32mI (562638) E2E:   tx: sessions=1 pkts_ok=5 pending_acb=1[0m
+[0;32mI (562638) E2E:   Expected Android delta: B+1 C+1 D+1 A+2[0m
+[0;32mI (582648) E2E: ==== E2E run 9cd5c954  t=582s  result=RUNNING ====[0m
+[0;32mI (582648) E2E:   [OK] 1 NEW: BOX X1 -> Android           89ac5a56-52e2-4799-87ac-d2f987f2ec7d[0m
+[0;32mI (582648) E2E:   [OK] 2 Android CBB(X1) received         9c3e0b52-8f20-49d0-aabf-b3f6d37de296[0m
+[0;32mI (582658) E2E:   [..] 2 ACB(CBB X1) delivered  [A+1]     [0m
+[0;32mI (582658) E2E:   [..] 3 DUP: BOX X2 (same M1) -> Android 9d85fbe0-0462-44f0-93de-031d88b989ba[0m
+[0;32mI (582668) E2E:   [..] 4 Android CDB(X2) received         [0m
+[0;32mI (582678) E2E:   [..] 4 ACB(CDB X2) delivered  [A+1]     [0m
+[0;32mI (582678) E2E:   [OK] 5 Node CBB(new box) delivered [C+1] 58592a52-0135-49a2-a368-827dec55d357[0m
+[0;32mI (582688) E2E:   [..] 6 Node CDB(dup box) delivered [D+1] e2401d31-5ed7-4e1f-afcd-f0eaf86a9515[0m
+[0;32mI (582698) E2E:   [OK] i Android ACB for Node CBB         (info)[0m
+[0;32mI (582698) E2E:   [..] i Android ACB for Node CDB         (info)[0m
+[0;32mI (582708) E2E:   rx: SID=20 TRM=38 BOX=39 CBB=19 CDB=0 ACB=4 | msgs new=2 dup=1 ignored_boxes=1[0m
+[0;32mI (582718) E2E:   tx: sessions=1 pkts_ok=5 pending_acb=1[0m
+[0;32mI (582718) E2E:   Expected Android delta: B+1 C+1 D+1 A+2[0m
+[0;33mW (587048) BOX_RX: CCCD write failed rc=13 -> disconnect[0m
+[0;32mI (587088) BOX_RX: disconnected from Android conn=1 reason=534[0m
+[0;32mI (588718) BOX_RX: Box device 76:e0:f5:e4:66:fb rssi=-89 -> connect[0m
+[0;32mI (589048) BOX_RX: connected to Android GATT server conn=1[0m
+[0;32mI (589158) BOX_RX: MTU exchange status=0 mtu=517[0m
+[0;32mI (589548) BOX_RX: Box characteristic found: peer_id=545e05cfd599 val_handle=156[0m
+[0;32mI (589848) BOX_RX: subscribed to Android 545e05cfd599 (conn=1 val=156 cccd=157), waiting for its session[0m
+[0;32mI (589958) E2E: RX SID c92c5ac6-6bc3-4f0e-a3ef-912ad704faf2 already fully received -> close[0m
+[0;32mI (589958) E2E: RX CBB id=9c3e0b52-8f20-49d0-aabf-b3f6d37de296 boxes=1 x1=1 x2=0[0m
+[0;32mI (590008) E2E: RX BOX 7df229b9-eeab-408a-ae0c-0584d6ed784a already processed -> skipped[0m
+[0;32mI (590058) E2E: RX BOX e2401d31-5ed7-4e1f-afcd-f0eaf86a9515 already processed -> skipped[0m
+[0;32mI (590058) E2E: RX TRM c92c5ac6-6bc3-4f0e-a3ef-912ad704faf2 (session complete)[0m
+[0;32mI (590058) E2E: RX TRM c92c5ac6-6bc3-4f0e-a3ef-912ad704faf2 (session complete)[0m
+[0;32mI (590228) BOX_RX: Android session done -> disconnect[0m
+[0;32mI (590248) BOX_RX: disconnected from Android conn=1 reason=534[0m
+[0;32mI (591828) BOX_RX: Box device 76:e0:f5:e4:66:fb rssi=-86 -> connect[0m
+[0;32mI (592098) BOX_RX: connected to Android GATT server conn=1[0m
+[0;32mI (592208) BOX_RX: MTU exchange status=0 mtu=517[0m
+[0;32mI (592648) BOX_RX: Box characteristic found: peer_id=545e05cfd599 val_handle=156[0m
+[0;32mI (593148) BOX_RX: subscribed to Android 545e05cfd599 (conn=1 val=156 cccd=157), waiting for its session[0m
+[0;32mI (593698) E2E: RX SID c92c5ac6-6bc3-4f0e-a3ef-912ad704faf2 already fully received -> close[0m
+[0;32mI (593808) E2E: RX CBB id=9c3e0b52-8f20-49d0-aabf-b3f6d37de296 boxes=1 x1=1 x2=0[0m
+[0;32mI (593808) E2E: RX BOX 7df229b9-eeab-408a-ae0c-0584d6ed784a already processed -> skipped[0m
+[0;32mI (593808) E2E: RX BOX e2401d31-5ed7-4e1f-afcd-f0eaf86a9515 already processed -> skipped[0m
+[0;32mI (593818) E2E: RX TRM c92c5ac6-6bc3-4f0e-a3ef-912ad704faf2 (session complete)[0m
+[0;32mI (593818) E2E: RX TRM c92c5ac6-6bc3-4f0e-a3ef-912ad704faf2 (session complete)[0m
+[0;32mI (594028) BOX_RX: Android session done -> disconnect[0m
+[0;32mI (594058) BOX_RX: disconnected from Android conn=1 reason=534[0m
+[0;32mI (595808) BOX_RX: Box device 76:e0:f5:e4:66:fb rssi=-98 -> connect[0m
+[0;32mI (596698) BOX_RX: connected to Android GATT server conn=1[0m
+[0;32mI (596808) BOX_RX: MTU exchange status=0 mtu=517[0m
+[0;32mI (597248) BOX_RX: Box characteristic found: peer_id=545e05cfd599 val_handle=156[0m
+[0;32mI (597598) BOX_RX: subscribed to Android 545e05cfd599 (conn=1 val=156 cccd=157), waiting for its session[0m
+[0;32mI (598408) E2E: RX SID c92c5ac6-6bc3-4f0e-a3ef-912ad704faf2 already fully received -> close[0m
+[0;32mI (598458) E2E: RX CBB id=9c3e0b52-8f20-49d0-aabf-b3f6d37de296 boxes=1 x1=1 x2=0[0m
+[0;32mI (598458) E2E: RX BOX 7df229b9-eeab-408a-ae0c-0584d6ed784a already processed -> skipped[0m
+[0;32mI (598558) E2E: RX BOX e2401d31-5ed7-4e1f-afcd-f0eaf86a9515 already processed -> skipped[0m
+[0;32mI (598558) E2E: RX TRM c92c5ac6-6bc3-4f0e-a3ef-912ad704faf2 (session complete)[0m
+[0;32mI (598558) E2E: RX TRM c92c5ac6-6bc3-4f0e-a3ef-912ad704faf2 (session complete)[0m
+[0;32mI (598728) BOX_RX: Android session done -> disconnect[0m
+[0;32mI (598748) BOX_RX: disconnected from Android conn=1 reason=534[0m
+[0;32mI (600668) BOX_RX: Box device 76:e0:f5:e4:66:fb rssi=-88 -> connect[0m
+[0;32mI (600898) BOX_RX: connected to Android GATT server conn=1[0m
+[0;32mI (601058) BOX_RX: MTU exchange status=0 mtu=517[0m
+[0;32mI (601498) BOX_RX: Box characteristic found: peer_id=545e05cfd599 val_handle=156[0m
+[0;32mI (601798) BOX_RX: subscribed to Android 545e05cfd599 (conn=1 val=156 cccd=157), waiting for its session[0m
+[0;32mI (602558) E2E: RX SID c92c5ac6-6bc3-4f0e-a3ef-912ad704faf2 already fully received -> close[0m
+[0;32mI (602558) E2E: RX CBB id=9c3e0b52-8f20-49d0-aabf-b3f6d37de296 boxes=1 x1=1 x2=0[0m
+[0;32mI (602558) E2E: RX BOX 7df229b9-eeab-408a-ae0c-0584d6ed784a already processed -> skipped[0m
+[0;32mI (602598) E2E: RX BOX e2401d31-5ed7-4e1f-afcd-f0eaf86a9515 already processed -> skipped[0m
+[0;32mI (602608) E2E: RX TRM c92c5ac6-6bc3-4f0e-a3ef-912ad704faf2 (session complete)[0m
+[0;32mI (602658) E2E: RX TRM c92c5ac6-6bc3-4f0e-a3ef-912ad704faf2 (session complete)[0m
+[0;32mI (602728) E2E: ==== E2E run 9cd5c954  t=602s  result=RUNNING ====[0m
+[0;32mI (602728) E2E:   [OK] 1 NEW: BOX X1 -> Android           89ac5a56-52e2-4799-87ac-d2f987f2ec7d[0m
+[0;32mI (602728) E2E:   [OK] 2 Android CBB(X1) received         9c3e0b52-8f20-49d0-aabf-b3f6d37de296[0m
+[0;32mI (602738) E2E:   [..] 2 ACB(CBB X1) delivered  [A+1]     [0m
+[0;32mI (602738) E2E:   [..] 3 DUP: BOX X2 (same M1) -> Android 9d85fbe0-0462-44f0-93de-031d88b989ba[0m
+[0;32mI (602748) E2E:   [..] 4 Android CDB(X2) received         [0m
+[0;32mI (602758) E2E:   [..] 4 ACB(CDB X2) delivered  [A+1]     [0m
+[0;32mI (602758) E2E:   [OK] 5 Node CBB(new box) delivered [C+1] 58592a52-0135-49a2-a368-827dec55d357[0m
+[0;32mI (602768) E2E:   [..] 6 Node CDB(dup box) delivered [D+1] e2401d31-5ed7-4e1f-afcd-f0eaf86a9515[0m
+[0;32mI (602778) E2E:   [OK] i Android ACB for Node CBB         (info)[0m
+[0;32mI (602778) E2E:   [..] i Android ACB for Node CDB         (info)[0m
+[0;32mI (602788) E2E:   rx: SID=24 TRM=46 BOX=47 CBB=23 CDB=0 ACB=4 | msgs new=2 dup=1 ignored_boxes=1[0m
+[0;32mI (602798) E2E:   tx: sessions=1 pkts_ok=5 pending_acb=1[0m
+[0;32mI (602798) E2E:   Expected Android delta: B+1 C+1 D+1 A+2[0m
+[0;32mI (602808) BOX_RX: Android session done -> disconnect[0m
+[0;32mI (602848) BOX_RX: disconnected from Android conn=1 reason=534[0m
+[0;32mI (604478) BOX_RX: Box device 76:e0:f5:e4:66:fb rssi=-93 -> connect[0m
+[0;32mI (604848) BOX_RX: connected to Android GATT server conn=1[0m
+[0;32mI (605008) BOX_RX: MTU exchange status=0 mtu=517[0m
+[0;32mI (605548) BOX_RX: Box characteristic found: peer_id=545e05cfd599 val_handle=156[0m
+[0;32mI (605848) BOX_RX: subscribed to Android 545e05cfd599 (conn=1 val=156 cccd=157), waiting for its session[0m
+[0;32mI (622808) E2E: ==== E2E run 9cd5c954  t=622s  result=RUNNING ====[0m
+[0;32mI (622808) E2E:   [OK] 1 NEW: BOX X1 -> Android           89ac5a56-52e2-4799-87ac-d2f987f2ec7d[0m
+[0;32mI (622808) E2E:   [OK] 2 Android CBB(X1) received         9c3e0b52-8f20-49d0-aabf-b3f6d37de296[0m
+[0;32mI (622818) E2E:   [..] 2 ACB(CBB X1) delivered  [A+1]     [0m
+[0;32mI (622818) E2E:   [..] 3 DUP: BOX X2 (same M1) -> Android 9d85fbe0-0462-44f0-93de-031d88b989ba[0m
+[0;32mI (622828) E2E:   [..] 4 Android CDB(X2) received         [0m
+[0;32mI (622838) E2E:   [..] 4 ACB(CDB X2) delivered  [A+1]     [0m
+[0;32mI (622838) E2E:   [OK] 5 Node CBB(new box) delivered [C+1] 58592a52-0135-49a2-a368-827dec55d357[0m
+[0;32mI (622848) E2E:   [..] 6 Node CDB(dup box) delivered [D+1] e2401d31-5ed7-4e1f-afcd-f0eaf86a9515[0m
+[0;32mI (622858) E2E:   [OK] i Android ACB for Node CBB         (info)[0m
+[0;32mI (622858) E2E:   [..] i Android ACB for Node CDB         (info)[0m
+[0;32mI (622868) E2E:   rx: SID=24 TRM=46 BOX=47 CBB=23 CDB=0 ACB=4 | msgs new=2 dup=1 ignored_boxes=1[0m
+[0;32mI (622878) E2E:   tx: sessions=1 pkts_ok=5 pending_acb=1[0m
+[0;32mI (622878) E2E:   Expected Android delta: B+1 C+1 D+1 A+2[0m
+[0;32mI (642888) E2E: ==== E2E run 9cd5c954  t=642s  result=RUNNING ====[0m
+[0;32mI (642888) E2E:   [OK] 1 NEW: BOX X1 -> Android           89ac5a56-52e2-4799-87ac-d2f987f2ec7d[0m
+[0;32mI (642888) E2E:   [OK] 2 Android CBB(X1) received         9c3e0b52-8f20-49d0-aabf-b3f6d37de296[0m
+[0;32mI (642898) E2E:   [..] 2 ACB(CBB X1) delivered  [A+1]     [0m
+[0;32mI (642898) E2E:   [..] 3 DUP: BOX X2 (same M1) -> Android 9d85fbe0-0462-44f0-93de-031d88b989ba[0m
+[0;32mI (642908) E2E:   [..] 4 Android CDB(X2) received         [0m
+[0;32mI (642918) E2E:   [..] 4 ACB(CDB X2) delivered  [A+1]     [0m
+[0;32mI (642918) E2E:   [OK] 5 Node CBB(new box) delivered [C+1] 58592a52-0135-49a2-a368-827dec55d357[0m
+[0;32mI (642928) E2E:   [..] 6 Node CDB(dup box) delivered [D+1] e2401d31-5ed7-4e1f-afcd-f0eaf86a9515[0m
+[0;32mI (642938) E2E:   [OK] i Android ACB for Node CBB         (info)[0m
+[0;32mI (642938) E2E:   [..] i Android ACB for Node CDB         (info)[0m
+[0;32mI (642948) E2E:   rx: SID=24 TRM=46 BOX=47 CBB=23 CDB=0 ACB=4 | msgs new=2 dup=1 ignored_boxes=1[0m
+[0;32mI (642958) E2E:   tx: sessions=1 pkts_ok=5 pending_acb=1[0m
+[0;32mI (642958) E2E:   Expected Android delta: B+1 C+1 D+1 A+2[0m
+[0;32mI (644868) BOX_RX: hold timeout without TRM -> disconnect[0m
+[0;32mI (645008) BOX_RX: disconnected from Android conn=1 reason=534[0m
+[0;32mI (646958) BOX_RX: Box device 76:e0:f5:e4:66:fb rssi=-89 -> connect[0m
+[0;32mI (647598) BOX_RX: connected to Android GATT server conn=1[0m
+[0;32mI (647708) BOX_RX: MTU exchange status=0 mtu=517[0m
+[0;32mI (648198) BOX_RX: Box characteristic found: peer_id=545e05cfd599 val_handle=156[0m
+[0;32mI (648698) BOX_RX: subscribed to Android 545e05cfd599 (conn=1 val=156 cccd=157), waiting for its session[0m
+[0;32mI (648748) E2E: RX SID c92c5ac6-6bc3-4f0e-a3ef-912ad704faf2 already fully received -> close[0m
+[0;32mI (648758) E2E: RX CBB id=9c3e0b52-8f20-49d0-aabf-b3f6d37de296 boxes=1 x1=1 x2=0[0m
+[0;32mI (648758) E2E: RX BOX 7df229b9-eeab-408a-ae0c-0584d6ed784a already processed -> skipped[0m
+[0;32mI (648768) E2E: RX BOX e2401d31-5ed7-4e1f-afcd-f0eaf86a9515 already processed -> skipped[0m
+[0;32mI (648798) E2E: RX TRM c92c5ac6-6bc3-4f0e-a3ef-912ad704faf2 (session complete)[0m
+[0;32mI (648808) E2E: RX TRM c92c5ac6-6bc3-4f0e-a3ef-912ad704faf2 (session complete)[0m
+[0;32mI (649068) BOX_RX: Android session done -> disconnect[0m
+[0;32mI (649098) BOX_RX: disconnected from Android conn=1 reason=534[0m
+[0;32mI (650758) BOX_RX: Box device 76:e0:f5:e4:66:fb rssi=-88 -> connect[0m
+[0;32mI (652198) BOX_RX: connected to Android GATT server conn=1[0m
+[0;32mI (652308) BOX_RX: MTU exchange status=0 mtu=517[0m
+[0;32mI (652748) BOX_RX: Box characteristic found: peer_id=545e05cfd599 val_handle=156[0m
+[0;32mI (653098) BOX_RX: subscribed to Android 545e05cfd599 (conn=1 val=156 cccd=157), waiting for its session[0m
+[0;32mI (653958) E2E: RX SID c92c5ac6-6bc3-4f0e-a3ef-912ad704faf2 already fully received -> close[0m
+[0;32mI (654008) E2E: RX CBB id=9c3e0b52-8f20-49d0-aabf-b3f6d37de296 boxes=1 x1=1 x2=0[0m
+[0;32mI (654008) E2E: RX BOX 7df229b9-eeab-408a-ae0c-0584d6ed784a already processed -> skipped[0m
+[0;32mI (654008) E2E: RX BOX e2401d31-5ed7-4e1f-afcd-f0eaf86a9515 already processed -> skipped[0m
+[0;32mI (654018) E2E: RX TRM c92c5ac6-6bc3-4f0e-a3ef-912ad704faf2 (session complete)[0m
+[0;32mI (654018) E2E: RX TRM c92c5ac6-6bc3-4f0e-a3ef-912ad704faf2 (session complete)[0m
+[0;32mI (654268) BOX_RX: Android session done -> disconnect[0m
+[0;32mI (654298) BOX_RX: disconnected from Android conn=1 reason=534[0m
+[0;32mI (655928) BOX_RX: Box device 76:e0:f5:e4:66:fb rssi=-88 -> connect[0m
+[0;32mI (657348) BOX_RX: connected to Android GATT server conn=1[0m
+[0;32mI (657458) BOX_RX: MTU exchange status=0 mtu=517[0m
+[0;32mI (657848) BOX_RX: Box characteristic found: peer_id=545e05cfd599 val_handle=156[0m
+[0;32mI (662968) E2E: ==== E2E run 9cd5c954  t=662s  result=RUNNING ====[0m
+[0;32mI (662968) E2E:   [OK] 1 NEW: BOX X1 -> Android           89ac5a56-52e2-4799-87ac-d2f987f2ec7d[0m
+[0;32mI (662968) E2E:   [OK] 2 Android CBB(X1) received         9c3e0b52-8f20-49d0-aabf-b3f6d37de296[0m
+[0;32mI (662978) E2E:   [..] 2 ACB(CBB X1) delivered  [A+1]     [0m
+[0;32mI (662978) E2E:   [..] 3 DUP: BOX X2 (same M1) -> Android 9d85fbe0-0462-44f0-93de-031d88b989ba[0m
+[0;32mI (662988) E2E:   [..] 4 Android CDB(X2) received         [0m
+[0;32mI (662998) E2E:   [..] 4 ACB(CDB X2) delivered  [A+1]     [0m
+[0;32mI (662998) E2E:   [OK] 5 Node CBB(new box) delivered [C+1] 58592a52-0135-49a2-a368-827dec55d357[0m
+[0;32mI (663008) E2E:   [..] 6 Node CDB(dup box) delivered [D+1] e2401d31-5ed7-4e1f-afcd-f0eaf86a9515[0m
+[0;32mI (663018) E2E:   [OK] i Android ACB for Node CBB         (info)[0m
+[0;32mI (663018) E2E:   [..] i Android ACB for Node CDB         (info)[0m
+[0;32mI (663028) E2E:   rx: SID=26 TRM=50 BOX=51 CBB=25 CDB=0 ACB=4 | msgs new=2 dup=1 ignored_boxes=1[0m
+[0;32mI (663038) E2E:   tx: sessions=1 pkts_ok=5 pending_acb=1[0m
+[0;32mI (663038) E2E:   Expected Android delta: B+1 C+1 D+1 A+2[0m
+[0;32mI (683048) E2E: ==== E2E run 9cd5c954  t=682s  result=RUNNING ====[0m
+[0;32mI (683048) E2E:   [OK] 1 NEW: BOX X1 -> Android           89ac5a56-52e2-4799-87ac-d2f987f2ec7d[0m
+[0;32mI (683048) E2E:   [OK] 2 Android CBB(X1) received         9c3e0b52-8f20-49d0-aabf-b3f6d37de296[0m
+[0;32mI (683058) E2E:   [..] 2 ACB(CBB X1) delivered  [A+1]     [0m
+[0;32mI (683058) E2E:   [..] 3 DUP: BOX X2 (same M1) -> Android 9d85fbe0-0462-44f0-93de-031d88b989ba[0m
+[0;32mI (683068) E2E:   [..] 4 Android CDB(X2) received         [0m
+[0;32mI (683078) E2E:   [..] 4 ACB(CDB X2) delivered  [A+1]     [0m
+[0;32mI (683078) E2E:   [OK] 5 Node CBB(new box) delivered [C+1] 58592a52-0135-49a2-a368-827dec55d357[0m
+[0;32mI (683088) E2E:   [..] 6 Node CDB(dup box) delivered [D+1] e2401d31-5ed7-4e1f-afcd-f0eaf86a9515[0m
+[0;32mI (683098) E2E:   [OK] i Android ACB for Node CBB         (info)[0m
+[0;32mI (683098) E2E:   [..] i Android ACB for Node CDB         (info)[0m
+[0;32mI (683108) E2E:   rx: SID=26 TRM=50 BOX=51 CBB=25 CDB=0 ACB=4 | msgs new=2 dup=1 ignored_boxes=1[0m
+[0;32mI (683118) E2E:   tx: sessions=1 pkts_ok=5 pending_acb=1[0m
+[0;32mI (683118) E2E:   Expected Android delta: B+1 C+1 D+1 A+2[0m
+[0;33mW (688048) BOX_RX: CCCD write failed rc=13 -> disconnect[0m
+[0;32mI (688078) BOX_RX: disconnected from Android conn=1 reason=534[0m
+[0;32mI (689658) BOX_RX: Box device 76:e0:f5:e4:66:fb rssi=-87 -> connect[0m
+[0;32mI (689848) BOX_RX: connected to Android GATT server conn=1[0m
+[0;32mI (689958) BOX_RX: MTU exchange status=0 mtu=517[0m
+[0;32mI (690398) BOX_RX: Box characteristic found: peer_id=545e05cfd599 val_handle=156[0m
+[0;32mI (690698) BOX_RX: subscribed to Android 545e05cfd599 (conn=1 val=156 cccd=157), waiting for its session[0m
+[0;32mI (691658) E2E: RX SID c92c5ac6-6bc3-4f0e-a3ef-912ad704faf2 already fully received -> close[0m
+[0;32mI (691658) E2E: RX CBB id=9c3e0b52-8f20-49d0-aabf-b3f6d37de296 boxes=1 x1=1 x2=0[0m
+[0;32mI (691658) E2E: RX BOX 7df229b9-eeab-408a-ae0c-0584d6ed784a already processed -> skipped[0m
+[0;32mI (691668) E2E: RX BOX e2401d31-5ed7-4e1f-afcd-f0eaf86a9515 already processed -> skipped[0m
+[0;32mI (691708) E2E: RX TRM c92c5ac6-6bc3-4f0e-a3ef-912ad704faf2 (session complete)[0m
+[0;32mI (691708) E2E: RX TRM c92c5ac6-6bc3-4f0e-a3ef-912ad704faf2 (session complete)[0m
+[0;32mI (691928) BOX_RX: Android session done -> disconnect[0m
+[0;32mI (691948) BOX_RX: disconnected from Android conn=1 reason=534[0m
+[0;32mI (693858) BOX_RX: Box device 76:e0:f5:e4:66:fb rssi=-88 -> connect[0m
+[0;32mI (694948) BOX_RX: connected to Android GATT server conn=1[0m
+[0;32mI (695058) BOX_RX: MTU exchange status=0 mtu=517[0m
+[0;32mI (695728) BOX_RX: Box characteristic found: peer_id=545e05cfd599 val_handle=156[0m
+[0;32mI (696028) BOX_RX: subscribed to Android 545e05cfd599 (conn=1 val=156 cccd=157), waiting for its session[0m
+[0;32mI (696528) E2E: RX SID c92c5ac6-6bc3-4f0e-a3ef-912ad704faf2 already fully received -> close[0m
+[0;32mI (696528) E2E: RX CBB id=9c3e0b52-8f20-49d0-aabf-b3f6d37de296 boxes=1 x1=1 x2=0[0m
+[0;32mI (696628) E2E: RX BOX 7df229b9-eeab-408a-ae0c-0584d6ed784a already processed -> skipped[0m
+[0;32mI (696628) E2E: RX BOX e2401d31-5ed7-4e1f-afcd-f0eaf86a9515 already processed -> skipped[0m
+[0;32mI (696628) E2E: RX TRM c92c5ac6-6bc3-4f0e-a3ef-912ad704faf2 (session complete)[0m
+[0;32mI (696638) E2E: RX TRM c92c5ac6-6bc3-4f0e-a3ef-912ad704faf2 (session complete)[0m
+[0;32mI (696828) BOX_RX: Android session done -> disconnect[0m
+[0;32mI (696878) BOX_RX: disconnected from Android conn=1 reason=534[0m
+[0;32mI (698458) BOX_RX: Box device 76:e0:f5:e4:66:fb rssi=-91 -> connect[0m
+[0;32mI (698648) BOX_RX: connected to Android GATT server conn=1[0m
+[0;32mI (698758) BOX_RX: MTU exchange status=0 mtu=517[0m
+[0;32mI (699328) BOX_RX: Box characteristic found: peer_id=545e05cfd599 val_handle=156[0m
+[0;32mI (699628) BOX_RX: subscribed to Android 545e05cfd599 (conn=1 val=156 cccd=157), waiting for its session[0m
+[0;32mI (700328) E2E: RX SID c92c5ac6-6bc3-4f0e-a3ef-912ad704faf2 already fully received -> close[0m
+[0;32mI (700328) E2E: RX CBB id=9c3e0b52-8f20-49d0-aabf-b3f6d37de296 boxes=1 x1=1 x2=0[0m
+[0;32mI (700378) E2E: RX BOX 7df229b9-eeab-408a-ae0c-0584d6ed784a already processed -> skipped[0m
+[0;32mI (700378) E2E: RX BOX e2401d31-5ed7-4e1f-afcd-f0eaf86a9515 already processed -> skipped[0m
+[0;32mI (700428) E2E: RX TRM c92c5ac6-6bc3-4f0e-a3ef-912ad704faf2 (session complete)[0m
+[0;32mI (700428) E2E: RX TRM c92c5ac6-6bc3-4f0e-a3ef-912ad704faf2 (session complete)[0m
+[0;32mI (700628) BOX_RX: Android session done -> disconnect[0m
+[0;32mI (700678) BOX_RX: disconnected from Android conn=1 reason=534[0m
+[0;32mI (702528) BOX_RX: Box device 76:e0:f5:e4:66:fb rssi=-90 -> connect[0m
+[0;32mI (703128) E2E: ==== E2E run 9cd5c954  t=702s  result=RUNNING ====[0m
+[0;32mI (703128) E2E:   [OK] 1 NEW: BOX X1 -> Android           89ac5a56-52e2-4799-87ac-d2f987f2ec7d[0m
+[0;32mI (703128) E2E:   [OK] 2 Android CBB(X1) received         9c3e0b52-8f20-49d0-aabf-b3f6d37de296[0m
+[0;32mI (703138) E2E:   [..] 2 ACB(CBB X1) delivered  [A+1]     [0m
+[0;32mI (703138) E2E:   [..] 3 DUP: BOX X2 (same M1) -> Android 9d85fbe0-0462-44f0-93de-031d88b989ba[0m
+[0;32mI (703148) E2E:   [..] 4 Android CDB(X2) received         [0m
+[0;32mI (703158) E2E:   [..] 4 ACB(CDB X2) delivered  [A+1]     [0m
+[0;32mI (703158) E2E:   [OK] 5 Node CBB(new box) delivered [C+1] 58592a52-0135-49a2-a368-827dec55d357[0m
+[0;32mI (703168) E2E:   [..] 6 Node CDB(dup box) delivered [D+1] e2401d31-5ed7-4e1f-afcd-f0eaf86a9515[0m
+[0;32mI (703178) E2E:   [OK] i Android ACB for Node CBB         (info)[0m
+[0;32mI (703178) E2E:   [..] i Android ACB for Node CDB         (info)[0m
+[0;32mI (703188) E2E:   rx: SID=29 TRM=56 BOX=57 CBB=28 CDB=0 ACB=4 | msgs new=2 dup=1 ignored_boxes=1[0m
+[0;32mI (703198) E2E:   tx: sessions=1 pkts_ok=5 pending_acb=1[0m
+[0;32mI (703198) E2E:   Expected Android delta: B+1 C+1 D+1 A+2[0m
+[0;32mI (703448) BOX_RX: connected to Android GATT server conn=1[0m
+[0;32mI (703558) BOX_RX: MTU exchange status=0 mtu=517[0m
+[0;32mI (704028) BOX_RX: Box characteristic found: peer_id=545e05cfd599 val_handle=156[0m
+[0;32mI (704378) BOX_RX: subscribed to Android 545e05cfd599 (conn=1 val=156 cccd=157), waiting for its session[0m
+[0;32mI (705078) E2E: RX SID c92c5ac6-6bc3-4f0e-a3ef-912ad704faf2 already fully received -> close[0m
+[0;32mI (705078) E2E: RX CBB id=9c3e0b52-8f20-49d0-aabf-b3f6d37de296 boxes=1 x1=1 x2=0[0m
+[0;32mI (705128) E2E: RX BOX 7df229b9-eeab-408a-ae0c-0584d6ed784a already processed -> skipped[0m
+[0;32mI (705178) E2E: RX BOX e2401d31-5ed7-4e1f-afcd-f0eaf86a9515 already processed -> skipped[0m
+[0;32mI (705178) E2E: RX TRM c92c5ac6-6bc3-4f0e-a3ef-912ad704faf2 (session complete)[0m
+[0;32mI (705178) E2E: RX TRM c92c5ac6-6bc3-4f0e-a3ef-912ad704faf2 (session complete)[0m
+[0;32mI (705408) BOX_RX: Android session done -> disconnect[0m
+[0;32mI (705428) BOX_RX: disconnected from Android conn=1 reason=534[0m
+[0;32mI (707088) BOX_RX: Box device 76:e0:f5:e4:66:fb rssi=-93 -> connect[0m
+[0;32mI (723208) E2E: ==== E2E run 9cd5c954  t=722s  result=RUNNING ====[0m
+[0;32mI (723208) E2E:   [OK] 1 NEW: BOX X1 -> Android           89ac5a56-52e2-4799-87ac-d2f987f2ec7d[0m
+[0;32mI (723208) E2E:   [OK] 2 Android CBB(X1) received         9c3e0b52-8f20-49d0-aabf-b3f6d37de296[0m
+[0;32mI (723218) E2E:   [..] 2 ACB(CBB X1) delivered  [A+1]     [0m
+[0;32mI (723218) E2E:   [..] 3 DUP: BOX X2 (same M1) -> Android 9d85fbe0-0462-44f0-93de-031d88b989ba[0m
+[0;32mI (723228) E2E:   [..] 4 Android CDB(X2) received         [0m
+[0;32mI (723238) E2E:   [..] 4 ACB(CDB X2) delivered  [A+1]     [0m
+[0;32mI (723238) E2E:   [OK] 5 Node CBB(new box) delivered [C+1] 58592a52-0135-49a2-a368-827dec55d357[0m
+[0;32mI (723248) E2E:   [..] 6 Node CDB(dup box) delivered [D+1] e2401d31-5ed7-4e1f-afcd-f0eaf86a9515[0m
+[0;32mI (723258) E2E:   [OK] i Android ACB for Node CBB         (info)[0m
+[0;32mI (723258) E2E:   [..] i Android ACB for Node CDB         (info)[0m
+[0;32mI (723268) E2E:   rx: SID=30 TRM=58 BOX=59 CBB=29 CDB=0 ACB=4 | msgs new=2 dup=1 ignored_boxes=1[0m
+[0;32mI (723278) E2E:   tx: sessions=1 pkts_ok=5 pending_acb=1[0m
+[0;32mI (723278) E2E:   Expected Android delta: B+1 C+1 D+1 A+2[0m
+[0;32mI (743288) E2E: ==== E2E run 9cd5c954  t=742s  result=RUNNING ====[0m
+[0;32mI (743288) E2E:   [OK] 1 NEW: BOX X1 -> Android           89ac5a56-52e2-4799-87ac-d2f987f2ec7d[0m
+[0;32mI (743288) E2E:   [OK] 2 Android CBB(X1) received         9c3e0b52-8f20-49d0-aabf-b3f6d37de296[0m
+[0;32mI (743298) E2E:   [..] 2 ACB(CBB X1) delivered  [A+1]     [0m
+[0;32mI (743298) E2E:   [..] 3 DUP: BOX X2 (same M1) -> Android 9d85fbe0-0462-44f0-93de-031d88b989ba[0m
+[0;32mI (743308) E2E:   [..] 4 Android CDB(X2) received         [0m
+[0;32mI (743318) E2E:   [..] 4 ACB(CDB X2) delivered  [A+1]     [0m
+[0;32mI (743318) E2E:   [OK] 5 Node CBB(new box) delivered [C+1] 58592a52-0135-49a2-a368-827dec55d357[0m
+[0;32mI (743328) E2E:   [..] 6 Node CDB(dup box) delivered [D+1] e2401d31-5ed7-4e1f-afcd-f0eaf86a9515[0m
+[0;32mI (743338) E2E:   [OK] i Android ACB for Node CBB         (info)[0m
+[0;32mI (743338) E2E:   [..] i Android ACB for Node CDB         (info)[0m
+[0;32mI (743348) E2E:   rx: SID=30 TRM=58 BOX=59 CBB=29 CDB=0 ACB=4 | msgs new=2 dup=1 ignored_boxes=1[0m
+[0;32mI (743358) E2E:   tx: sessions=1 pkts_ok=5 pending_acb=1[0m
+[0;32mI (743358) E2E:   Expected Android delta: B+1 C+1 D+1 A+2[0m
+[0;32mI (763368) E2E: ==== E2E run 9cd5c954  t=763s  result=RUNNING ====[0m
+[0;32mI (763368) E2E:   [OK] 1 NEW: BOX X1 -> Android           89ac5a56-52e2-4799-87ac-d2f987f2ec7d[0m
+[0;32mI (763368) E2E:   [OK] 2 Android CBB(X1) received         9c3e0b52-8f20-49d0-aabf-b3f6d37de296[0m
+[0;32mI (763378) E2E:   [..] 2 ACB(CBB X1) delivered  [A+1]     [0m
+[0;32mI (763378) E2E:   [..] 3 DUP: BOX X2 (same M1) -> Android 9d85fbe0-0462-44f0-93de-031d88b989ba[0m
+[0;32mI (763388) E2E:   [..] 4 Android CDB(X2) received         [0m
+[0;32mI (763398) E2E:   [..] 4 ACB(CDB X2) delivered  [A+1]     [0m
+[0;32mI (763398) E2E:   [OK] 5 Node CBB(new box) delivered [C+1] 58592a52-0135-49a2-a368-827dec55d357[0m
+[0;32mI (763408) E2E:   [..] 6 Node CDB(dup box) delivered [D+1] e2401d31-5ed7-4e1f-afcd-f0eaf86a9515[0m
+[0;32mI (763418) E2E:   [OK] i Android ACB for Node CBB         (info)[0m
+[0;32mI (763418) E2E:   [..] i Android ACB for Node CDB         (info)[0m
+[0;32mI (763428) E2E:   rx: SID=30 TRM=58 BOX=59 CBB=29 CDB=0 ACB=4 | msgs new=2 dup=1 ignored_boxes=1[0m
+[0;32mI (763438) E2E:   tx: sessions=1 pkts_ok=5 pending_acb=1[0m
+[0;32mI (763438) E2E:   Expected Android delta: B+1 C+1 D+1 A+2[0m
+[0;32mI (783448) E2E: ==== E2E run 9cd5c954  t=783s  result=RUNNING ====[0m
+[0;32mI (783448) E2E:   [OK] 1 NEW: BOX X1 -> Android           89ac5a56-52e2-4799-87ac-d2f987f2ec7d[0m
+[0;32mI (783448) E2E:   [OK] 2 Android CBB(X1) received         9c3e0b52-8f20-49d0-aabf-b3f6d37de296[0m
+[0;32mI (783458) E2E:   [..] 2 ACB(CBB X1) delivered  [A+1]     [0m
+[0;32mI (783458) E2E:   [..] 3 DUP: BOX X2 (same M1) -> Android 9d85fbe0-0462-44f0-93de-031d88b989ba[0m
+[0;32mI (783468) E2E:   [..] 4 Android CDB(X2) received         [0m
+[0;32mI (783478) E2E:   [..] 4 ACB(CDB X2) delivered  [A+1]     [0m
+[0;32mI (783478) E2E:   [OK] 5 Node CBB(new box) delivered [C+1] 58592a52-0135-49a2-a368-827dec55d357[0m
+[0;32mI (783488) E2E:   [..] 6 Node CDB(dup box) delivered [D+1] e2401d31-5ed7-4e1f-afcd-f0eaf86a9515[0m
+[0;32mI (783498) E2E:   [OK] i Android ACB for Node CBB         (info)[0m
+[0;32mI (783498) E2E:   [..] i Android ACB for Node CDB         (info)[0m
+[0;32mI (783508) E2E:   rx: SID=30 TRM=58 BOX=59 CBB=29 CDB=0 ACB=4 | msgs new=2 dup=1 ignored_boxes=1[0m
+[0;32mI (783518) E2E:   tx: sessions=1 pkts_ok=5 pending_acb=1[0m
+[0;32mI (783518) E2E:   Expected Android delta: B+1 C+1 D+1 A+2[0m
+[0;32mI (803528) E2E: ==== E2E run 9cd5c954  t=803s  result=RUNNING ====[0m
+[0;32mI (803528) E2E:   [OK] 1 NEW: BOX X1 -> Android           89ac5a56-52e2-4799-87ac-d2f987f2ec7d[0m
+[0;32mI (803528) E2E:   [OK] 2 Android CBB(X1) received         9c3e0b52-8f20-49d0-aabf-b3f6d37de296[0m
+[0;32mI (803538) E2E:   [..] 2 ACB(CBB X1) delivered  [A+1]     [0m
+[0;32mI (803538) E2E:   [..] 3 DUP: BOX X2 (same M1) -> Android 9d85fbe0-0462-44f0-93de-031d88b989ba[0m
+[0;32mI (803548) E2E:   [..] 4 Android CDB(X2) received         [0m
+[0;32mI (803558) E2E:   [..] 4 ACB(CDB X2) delivered  [A+1]     [0m
+[0;32mI (803558) E2E:   [OK] 5 Node CBB(new box) delivered [C+1] 58592a52-0135-49a2-a368-827dec55d357[0m
+[0;32mI (803568) E2E:   [..] 6 Node CDB(dup box) delivered [D+1] e2401d31-5ed7-4e1f-afcd-f0eaf86a9515[0m
+[0;32mI (803578) E2E:   [OK] i Android ACB for Node CBB         (info)[0m
+[0;32mI (803578) E2E:   [..] i Android ACB for Node CDB         (info)[0m
+[0;32mI (803588) E2E:   rx: SID=30 TRM=58 BOX=59 CBB=29 CDB=0 ACB=4 | msgs new=2 dup=1 ignored_boxes=1[0m
+[0;32mI (803598) E2E:   tx: sessions=1 pkts_ok=5 pending_acb=1[0m
+[0;32mI (803598) E2E:   Expected Android delta: B+1 C+1 D+1 A+2[0m
+[0;32mI (823608) E2E: ==== E2E run 9cd5c954  t=823s  result=RUNNING ====[0m
+[0;32mI (823608) E2E:   [OK] 1 NEW: BOX X1 -> Android           89ac5a56-52e2-4799-87ac-d2f987f2ec7d[0m
+[0;32mI (823608) E2E:   [OK] 2 Android CBB(X1) received         9c3e0b52-8f20-49d0-aabf-b3f6d37de296[0m
+[0;32mI (823618) E2E:   [..] 2 ACB(CBB X1) delivered  [A+1]     [0m
+[0;32mI (823618) E2E:   [..] 3 DUP: BOX X2 (same M1) -> Android 9d85fbe0-0462-44f0-93de-031d88b989ba[0m
+[0;32mI (823628) E2E:   [..] 4 Android CDB(X2) received         [0m
+[0;32mI (823638) E2E:   [..] 4 ACB(CDB X2) delivered  [A+1]     [0m
+[0;32mI (823638) E2E:   [OK] 5 Node CBB(new box) delivered [C+1] 58592a52-0135-49a2-a368-827dec55d357[0m
+[0;32mI (823648) E2E:   [..] 6 Node CDB(dup box) delivered [D+1] e2401d31-5ed7-4e1f-afcd-f0eaf86a9515[0m
+[0;32mI (823658) E2E:   [OK] i Android ACB for Node CBB         (info)[0m
+[0;32mI (823658) E2E:   [..] i Android ACB for Node CDB         (info)[0m
+[0;32mI (823668) E2E:   rx: SID=30 TRM=58 BOX=59 CBB=29 CDB=0 ACB=4 | msgs new=2 dup=1 ignored_boxes=1[0m
+[0;32mI (823678) E2E:   tx: sessions=1 pkts_ok=5 pending_acb=1[0m
+[0;32mI (823678) E2E:   Expected Android delta: B+1 C+1 D+1 A+2[0m
+[0;32mI (843688) E2E: ==== E2E run 9cd5c954  t=843s  result=RUNNING ====[0m
+[0;32mI (843688) E2E:   [OK] 1 NEW: BOX X1 -> Android           89ac5a56-52e2-4799-87ac-d2f987f2ec7d[0m
+[0;32mI (843688) E2E:   [OK] 2 Android CBB(X1) received         9c3e0b52-8f20-49d0-aabf-b3f6d37de296[0m
+[0;32mI (843698) E2E:   [..] 2 ACB(CBB X1) delivered  [A+1]     [0m
+[0;32mI (843698) E2E:   [..] 3 DUP: BOX X2 (same M1) -> Android 9d85fbe0-0462-44f0-93de-031d88b989ba[0m
+[0;32mI (843708) E2E:   [..] 4 Android CDB(X2) received         [0m
+[0;32mI (843718) E2E:   [..] 4 ACB(CDB X2) delivered  [A+1]     [0m
+[0;32mI (843718) E2E:   [OK] 5 Node CBB(new box) delivered [C+1] 58592a52-0135-49a2-a368-827dec55d357[0m
+[0;32mI (843728) E2E:   [..] 6 Node CDB(dup box) delivered [D+1] e2401d31-5ed7-4e1f-afcd-f0eaf86a9515[0m
+[0;32mI (843738) E2E:   [OK] i Android ACB for Node CBB         (info)[0m
+[0;32mI (843738) E2E:   [..] i Android ACB for Node CDB         (info)[0m
+[0;32mI (843748) E2E:   rx: SID=30 TRM=58 BOX=59 CBB=29 CDB=0 ACB=4 | msgs new=2 dup=1 ignored_boxes=1[0m
+[0;32mI (843758) E2E:   tx: sessions=1 pkts_ok=5 pending_acb=1[0m
+[0;32mI (843758) E2E:   Expected Android delta: B+1 C+1 D+1 A+2[0m
+[0;32mI (863768) E2E: ==== E2E run 9cd5c954  t=863s  result=RUNNING ====[0m
+[0;32mI (863768) E2E:   [OK] 1 NEW: BOX X1 -> Android           89ac5a56-52e2-4799-87ac-d2f987f2ec7d[0m
+[0;32mI (863768) E2E:   [OK] 2 Android CBB(X1) received         9c3e0b52-8f20-49d0-aabf-b3f6d37de296[0m
+[0;32mI (863778) E2E:   [..] 2 ACB(CBB X1) delivered  [A+1]     [0m
+[0;32mI (863778) E2E:   [..] 3 DUP: BOX X2 (same M1) -> Android 9d85fbe0-0462-44f0-93de-031d88b989ba[0m
+[0;32mI (863788) E2E:   [..] 4 Android CDB(X2) received         [0m
+[0;32mI (863798) E2E:   [..] 4 ACB(CDB X2) delivered  [A+1]     [0m
+[0;32mI (863798) E2E:   [OK] 5 Node CBB(new box) delivered [C+1] 58592a52-0135-49a2-a368-827dec55d357[0m
+[0;32mI (863808) E2E:   [..] 6 Node CDB(dup box) delivered [D+1] e2401d31-5ed7-4e1f-afcd-f0eaf86a9515[0m
+[0;32mI (863818) E2E:   [OK] i Android ACB for Node CBB         (info)[0m
+[0;32mI (863818) E2E:   [..] i Android ACB for Node CDB         (info)[0m
+[0;32mI (863828) E2E:   rx: SID=30 TRM=58 BOX=59 CBB=29 CDB=0 ACB=4 | msgs new=2 dup=1 ignored_boxes=1[0m
+[0;32mI (863838) E2E:   tx: sessions=1 pkts_ok=5 pending_acb=1[0m
+[0;32mI (863838) E2E:   Expected Android delta: B+1 C+1 D+1 A+2[0m
+[0;32mI (883848) E2E: ==== E2E run 9cd5c954  t=883s  result=RUNNING ====[0m
+[0;32mI (883848) E2E:   [OK] 1 NEW: BOX X1 -> Android           89ac5a56-52e2-4799-87ac-d2f987f2ec7d[0m
+[0;32mI (883848) E2E:   [OK] 2 Android CBB(X1) received         9c3e0b52-8f20-49d0-aabf-b3f6d37de296[0m
+[0;32mI (883858) E2E:   [..] 2 ACB(CBB X1) delivered  [A+1]     [0m
+[0;32mI (883858) E2E:   [..] 3 DUP: BOX X2 (same M1) -> Android 9d85fbe0-0462-44f0-93de-031d88b989ba[0m
+[0;32mI (883868) E2E:   [..] 4 Android CDB(X2) received         [0m
+[0;32mI (883878) E2E:   [..] 4 ACB(CDB X2) delivered  [A+1]     [0m
+[0;32mI (883878) E2E:   [OK] 5 Node CBB(new box) delivered [C+1] 58592a52-0135-49a2-a368-827dec55d357[0m
+[0;32mI (883888) E2E:   [..] 6 Node CDB(dup box) delivered [D+1] e2401d31-5ed7-4e1f-afcd-f0eaf86a9515[0m
+[0;32mI (883898) E2E:   [OK] i Android ACB for Node CBB         (info)[0m
+[0;32mI (883898) E2E:   [..] i Android ACB for Node CDB         (info)[0m
+[0;32mI (883908) E2E:   rx: SID=30 TRM=58 BOX=59 CBB=29 CDB=0 ACB=4 | msgs new=2 dup=1 ignored_boxes=1[0m
+[0;32mI (883918) E2E:   tx: sessions=1 pkts_ok=5 pending_acb=1[0m
+[0;32mI (883918) E2E:   Expected Android delta: B+1 C+1 D+1 A+2[0m
+[0;32mI (900428) E2E: ################ E2E FAIL: timeout ################[0m
+[0;32mI (900428) E2E: ==== E2E run 9cd5c954  t=900s  result=FAIL ====[0m
+[0;32mI (900428) E2E:   [OK] 1 NEW: BOX X1 -> Android           89ac5a56-52e2-4799-87ac-d2f987f2ec7d[0m
+[0;32mI (900428) E2E:   [OK] 2 Android CBB(X1) received         9c3e0b52-8f20-49d0-aabf-b3f6d37de296[0m
+[0;32mI (900438) E2E:   [..] 2 ACB(CBB X1) delivered  [A+1]     [0m
+[0;32mI (900448) E2E:   [..] 3 DUP: BOX X2 (same M1) -> Android 9d85fbe0-0462-44f0-93de-031d88b989ba[0m
+[0;32mI (900458) E2E:   [..] 4 Android CDB(X2) received         [0m
+[0;32mI (900458) E2E:   [..] 4 ACB(CDB X2) delivered  [A+1]     [0m
+[0;32mI (900468) E2E:   [OK] 5 Node CBB(new box) delivered [C+1] 58592a52-0135-49a2-a368-827dec55d357[0m
+[0;32mI (900468) E2E:   [..] 6 Node CDB(dup box) delivered [D+1] e2401d31-5ed7-4e1f-afcd-f0eaf86a9515[0m
+[0;32mI (900478) E2E:   [OK] i Android ACB for Node CBB         (info)[0m
+[0;32mI (900488) E2E:   [..] i Android ACB for Node CDB         (info)[0m
+[0;32mI (900488) E2E:   rx: SID=30 TRM=58 BOX=59 CBB=29 CDB=0 ACB=4 | msgs new=2 dup=1 ignored_boxes=1[0m
+[0;32mI (900498) E2E:   tx: sessions=1 pkts_ok=5 pending_acb=1[0m
+[0;32mI (900508) E2E:   Expected Android delta: B+1 C+1 D+1 A+2[0m
+[0;32mI (1307308) BOX_TX: incoming connect status=0 conn=3[0m
+[0;32mI (1307308) BOX_TX: advertising Box UUID as BOX-NODE-01[0m
+[0;32mI (1307958) BOX_TX: mtu conn=3 mtu=517[0m
+[0;32mI (1307988) BOX_TX: subscription conn=3 notify=1[0m
+[0;32mI (1308138) BOX_TX: session start conn=3 mtu=517 sid=509814cb-85a5-460a-82af-93736a43d6b7 packets=5[0m
+[0;32mI (1308138) BOX_TX:   notify SID          len= 43 -> ok (rc=0)[0m
+[0;32mI (1308148) BOX_TX:   notify ACB          len= 43 -> ok (rc=0)[0m
+[0;32mI (1308158) BOX_TX:   notify CDB          len= 80 -> ok (rc=0)[0m
+[0;32mI (1308168) BOX_TX:   notify TRM          len= 43 -> ok (rc=0)[0m
+[0;32mI (1308178) BOX_TX:   notify TRM          len= 43 -> ok (rc=0)[0m
+[0;32mI (1308188) E2E: STEP 2 done: ACB for CBB(X1) delivered -> Android A+1[0m
+[0;32mI (1308188) E2E: STEP 6 done: Node CDB delivered -> Android D+1[0m
+[0;32mI (1308188) E2E: TX session 509814cb-85a5-460a-82af-93736a43d6b7 committed: 5/5 packets delivered[0m
+[0;32mI (1309188) BOX_TX: subscription conn=3 notify=0[0m
+[0;32mI (1309188) BOX_TX: incoming disconnect conn=3 reason=531[0m
+[0;32mI (1618898) BOX_TX: incoming connect status=0 conn=1[0m
+[0;32mI (1618898) BOX_TX: advertising Box UUID as BOX-NODE-01[0m
+[0;32mI (1619528) BOX_TX: mtu conn=1 mtu=517[0m
+[0;32mI (1619568) BOX_TX: subscription conn=1 notify=1[0m
+[0;32mI (1619718) BOX_TX: session start conn=1 mtu=517 sid=81a89e48-d140-4dcc-a8b4-8023be6eaa78 packets=3[0m
+[0;32mI (1619718) BOX_TX:   notify SID          len= 43 -> ok (rc=0)[0m
+[0;32mI (1619728) BOX_TX:   notify TRM          len= 43 -> ok (rc=0)[0m
+[0;32mI (1619738) BOX_TX:   notify TRM          len= 43 -> ok (rc=0)[0m
+[0;32mI (1619748) E2E: TX session 81a89e48-d140-4dcc-a8b4-8023be6eaa78 committed: 3/3 packets delivered[0m
+[0;32mI (1620798) BOX_TX: subscription conn=1 notify=0[0m
+[0;32mI (1620798) BOX_TX: incoming disconnect conn=1 reason=531[0m
+[0;32mI (1702088) BOX_TX: incoming connect status=0 conn=3[0m
+[0;32mI (1702088) BOX_TX: advertising Box UUID as BOX-NODE-01[0m
+[0;32mI (1702778) BOX_TX: mtu conn=3 mtu=517[0m
+[0;32mI (1702818) BOX_TX: subscription conn=3 notify=1[0m
+[0;32mI (1702968) BOX_TX: session start conn=3 mtu=517 sid=029e91a5-56dd-4a3f-a62c-208e39383877 packets=3[0m
+[0;32mI (1702968) BOX_TX:   notify SID          len= 43 -> ok (rc=0)[0m
+[0;32mI (1702978) BOX_TX:   notify TRM          len= 43 -> ok (rc=0)[0m
+[0;32mI (1702988) BOX_TX:   notify TRM          len= 43 -> ok (rc=0)[0m
+[0;32mI (1702998) E2E: TX session 029e91a5-56dd-4a3f-a62c-208e39383877 committed: 3/3 packets delivered[0m
+[0;32mI (1704028) BOX_TX: subscription conn=3 notify=0[0m
+[0;32mI (1704028) BOX_TX: incoming disconnect conn=3 reason=531[0m
+[0;32mI (1819928) BOX_TX: incoming connect status=0 conn=1[0m
+[0;32mI (1819938) BOX_TX: advertising Box UUID as BOX-NODE-01[0m
+[0;32mI (1820628) BOX_TX: mtu conn=1 mtu=517[0m
+[0;32mI (1820658) BOX_TX: subscription conn=1 notify=1[0m
+[0;32mI (1820808) BOX_TX: session start conn=1 mtu=517 sid=f0070f7d-e6c5-4e7e-b8f4-77d5dab5f119 packets=3[0m
+[0;32mI (1820808) BOX_TX:   notify SID          len= 43 -> ok (rc=0)[0m
+[0;32mI (1820818) BOX_TX:   notify TRM          len= 43 -> ok (rc=0)[0m
+[0;32mI (1820828) BOX_TX:   notify TRM          len= 43 -> ok (rc=0)[0m
+[0;32mI (1820838) E2E: TX session f0070f7d-e6c5-4e7e-b8f4-77d5dab5f119 committed: 3/3 packets delivered[0m
+[0;32mI (1821858) BOX_TX: subscription conn=1 notify=0[0m
+[0;32mI (1821858) BOX_TX: incoming disconnect conn=1 reason=531[0m
+[0;32mI (1842858) BOX_TX: incoming connect status=0 conn=3[0m
+[0;32mI (1842858) BOX_TX: advertising Box UUID as BOX-NODE-01[0m
+[0;32mI (1843458) BOX_TX: mtu conn=3 mtu=517[0m
+[0;32mI (1843488) BOX_TX: subscription conn=3 notify=1[0m
+[0;32mI (1843638) BOX_TX: session start conn=3 mtu=517 sid=998fe745-8503-4586-9d1b-535aeae6b1b4 packets=3[0m
+[0;32mI (1843638) BOX_TX:   notify SID          len= 43 -> ok (rc=0)[0m
+[0;32mI (1843648) BOX_TX:   notify TRM          len= 43 -> ok (rc=0)[0m
+[0;32mI (1843658) BOX_TX:   notify TRM          len= 43 -> ok (rc=0)[0m
+[0;32mI (1843668) E2E: TX session 998fe745-8503-4586-9d1b-535aeae6b1b4 committed: 3/3 packets delivered[0m
+[0;32mI (1844688) BOX_TX: subscription conn=3 notify=0[0m
+[0;32mI (1844688) BOX_TX: incoming disconnect conn=3 reason=531[0m
+[0;32mI (1878618) BOX_TX: incoming connect status=0 conn=1[0m
+[0;32mI (1878618) BOX_TX: advertising Box UUID as BOX-NODE-01[0m
+[0;32mI (1879238) BOX_TX: mtu conn=1 mtu=517[0m
+[0;32mI (1879268) BOX_TX: subscription conn=1 notify=1[0m
+[0;32mI (1879418) BOX_TX: session start conn=1 mtu=517 sid=606a1381-3a93-426e-b6e8-9e0384e23c51 packets=3[0m
+[0;32mI (1879418) BOX_TX:   notify SID          len= 43 -> ok (rc=0)[0m
+[0;32mI (1879428) BOX_TX:   notify TRM          len= 43 -> ok (rc=0)[0m
+[0;32mI (1879438) BOX_TX:   notify TRM          len= 43 -> ok (rc=0)[0m
+[0;32mI (1879448) E2E: TX session 606a1381-3a93-426e-b6e8-9e0384e23c51 committed: 3/3 packets delivered[0m
+[0;32mI (1880518) BOX_TX: subscription conn=1 notify=0[0m
+[0;32mI (1880518) BOX_TX: incoming disconnect conn=1 reason=531[0m
+[0;32mI (1910718) BOX_TX: incoming connect status=0 conn=3[0m
+[0;32mI (1910718) BOX_TX: advertising Box UUID as BOX-NODE-01[0m
+[0;32mI (1911348) BOX_TX: mtu conn=3 mtu=517[0m
+[0;32mI (1911378) BOX_TX: subscription conn=3 notify=1[0m
+[0;32mI (1911528) BOX_TX: session start conn=3 mtu=517 sid=b72138e0-6c99-453d-9083-798f5c9533b5 packets=3[0m
+[0;32mI (1911528) BOX_TX:   notify SID          len= 43 -> ok (rc=0)[0m
+[0;32mI (1911538) BOX_TX:   notify TRM          len= 43 -> ok (rc=0)[0m
+[0;32mI (1911548) BOX_TX:   notify TRM          len= 43 -> ok (rc=0)[0m
+[0;32mI (1911558) E2E: TX session b72138e0-6c99-453d-9083-798f5c9533b5 committed: 3/3 packets delivered[0m
+[0;32mI (1912608) BOX_TX: subscription conn=3 notify=0[0m
+[0;32mI (1912608) BOX_TX: incoming disconnect conn=3 reason=531[0m
+[0;32mI (1940928) BOX_TX: incoming connect status=0 conn=1[0m
+[0;32mI (1940928) BOX_TX: advertising Box UUID as BOX-NODE-01[0m
+[0;32mI (1941588) BOX_TX: mtu conn=1 mtu=517[0m
+[0;32mI (1941608) BOX_TX: subscription conn=1 notify=1[0m
+[0;32mI (1941758) BOX_TX: session start conn=1 mtu=517 sid=1d8ee799-112b-409a-a499-a9fd1ff8227c packets=3[0m
+[0;32mI (1941758) BOX_TX:   notify SID          len= 43 -> ok (rc=0)[0m
+[0;32mI (1941768) BOX_TX:   notify TRM          len= 43 -> ok (rc=0)[0m
+[0;32mI (1941778) BOX_TX:   notify TRM          len= 43 -> ok (rc=0)[0m
+[0;32mI (1941788) E2E: TX session 1d8ee799-112b-409a-a499-a9fd1ff8227c committed: 3/3 packets delivered[0m
+[0;32mI (1942798) BOX_TX: subscription conn=1 notify=0[0m
+[0;32mI (1942798) BOX_TX: incoming disconnect conn=1 reason=531[0m
+[0;32mI (1963608) BOX_TX: incoming connect status=0 conn=3[0m
+[0;32mI (1963608) BOX_TX: advertising Box UUID as BOX-NODE-01[0m
+[0;32mI (1964218) BOX_TX: mtu conn=3 mtu=517[0m
+[0;32mI (1964248) BOX_TX: subscription conn=3 notify=1[0m
+[0;32mI (1964398) BOX_TX: session start conn=3 mtu=517 sid=1d455814-34bb-4e08-8a35-00b98e2e4957 packets=3[0m
+[0;32mI (1964398) BOX_TX:   notify SID          len= 43 -> ok (rc=0)[0m
+[0;32mI (1964408) BOX_TX:   notify TRM          len= 43 -> ok (rc=0)[0m
+[0;32mI (1964418) BOX_TX:   notify TRM          len= 43 -> ok (rc=0)[0m
+[0;32mI (1964428) E2E: TX session 1d455814-34bb-4e08-8a35-00b98e2e4957 committed: 3/3 packets delivered[0m
+[0;32mI (1965498) BOX_TX: subscription conn=3 notify=0[0m
+[0;32mI (1965508) BOX_TX: incoming disconnect conn=3 reason=531[0m
+[0;32mI (1993818) BOX_TX: incoming connect status=0 conn=1[0m
+[0;32mI (1993818) BOX_TX: advertising Box UUID as BOX-NODE-01[0m
+[0;32mI (1994408) BOX_TX: mtu conn=1 mtu=517[0m
+[0;32mI (1994448) BOX_TX: subscription conn=1 notify=1[0m
+[0;32mI (1994598) BOX_TX: session start conn=1 mtu=517 sid=436dedea-95a0-4acd-8470-cd0ebfd61cc2 packets=3[0m
+[0;32mI (1994598) BOX_TX:   notify SID          len= 43 -> ok (rc=0)[0m
+[0;32mI (1994608) BOX_TX:   notify TRM          len= 43 -> ok (rc=0)[0m
+[0;32mI (1994618) BOX_TX:   notify TRM          len= 43 -> ok (rc=0)[0m
+[0;32mI (1994628) E2E: TX session 436dedea-95a0-4acd-8470-cd0ebfd61cc2 committed: 3/3 packets delivered[0m
+[0;32mI (1995628) BOX_TX: subscription conn=1 notify=0[0m
+[0;32mI (1995628) BOX_TX: incoming disconnect conn=1 reason=531[0m
+[0;32mI (2022138) BOX_TX: incoming connect status=0 conn=3[0m
+[0;32mI (2022138) BOX_TX: advertising Box UUID as BOX-NODE-01[0m
+[0;32mI (2022728) BOX_TX: mtu conn=3 mtu=517[0m
+[0;32mI (2022758) BOX_TX: subscription conn=3 notify=1[0m
+[0;32mI (2022908) BOX_TX: session start conn=3 mtu=517 sid=7a537e2d-cd7d-4232-b233-18029af92ecb packets=3[0m
+[0;32mI (2022908) BOX_TX:   notify SID          len= 43 -> ok (rc=0)[0m
+[0;32mI (2022918) BOX_TX:   notify TRM          len= 43 -> ok (rc=0)[0m
+[0;32mI (2022928) BOX_TX:   notify TRM          len= 43 -> ok (rc=0)[0m
+[0;32mI (2022938) E2E: TX session 7a537e2d-cd7d-4232-b233-18029af92ecb committed: 3/3 packets delivered[0m
+[0;32mI (2023938) BOX_TX: subscription conn=3 notify=0[0m
+[0;32mI (2023938) BOX_TX: incoming disconnect conn=3 reason=531[0m
+[0;32mI (2079228) BOX_TX: incoming connect status=0 conn=1[0m
+[0;32mI (2079238) BOX_TX: advertising Box UUID as BOX-NODE-01[0m
+[0;32mI (2079888) BOX_TX: mtu conn=1 mtu=517[0m
+[0;32mI (2079918) BOX_TX: subscription conn=1 notify=1[0m
+[0;32mI (2080068) BOX_TX: session start conn=1 mtu=517 sid=0a3584e3-5b17-46cb-a7a0-af2f60c3ecac packets=3[0m
+[0;32mI (2080068) BOX_TX:   notify SID          len= 43 -> ok (rc=0)[0m
+[0;32mI (2080078) BOX_TX:   notify TRM          len= 43 -> ok (rc=0)[0m
+[0;32mI (2080088) BOX_TX:   notify TRM          len= 43 -> ok (rc=0)[0m
+[0;32mI (2080098) E2E: TX session 0a3584e3-5b17-46cb-a7a0-af2f60c3ecac committed: 3/3 packets delivered[0m
+[0;32mI (2081128) BOX_TX: subscription conn=1 notify=0[0m
+[0;32mI (2081128) BOX_TX: incoming disconnect conn=1 reason=531[0m
+[0;32mI (2106228) BOX_TX: incoming connect status=0 conn=3[0m
+[0;32mI (2106238) BOX_TX: advertising Box UUID as BOX-NODE-01[0m
+[0;32mI (2106838) BOX_TX: mtu conn=3 mtu=517[0m
+[0;32mI (2106868) BOX_TX: subscription conn=3 notify=1[0m
+[0;32mI (2107018) BOX_TX: session start conn=3 mtu=517 sid=14041f04-bdd2-464b-a3e2-0fa1c1e37bcf packets=3[0m
+[0;32mI (2107018) BOX_TX:   notify SID          len= 43 -> ok (rc=0)[0m
+[0;32mI (2107028) BOX_TX:   notify TRM          len= 43 -> ok (rc=0)[0m
+[0;32mI (2107038) BOX_TX:   notify TRM          len= 43 -> ok (rc=0)[0m
+[0;32mI (2107048) E2E: TX session 14041f04-bdd2-464b-a3e2-0fa1c1e37bcf committed: 3/3 packets delivered[0m
+[0;32mI (2108098) BOX_TX: subscription conn=3 notify=0[0m
+[0;32mI (2108098) BOX_TX: incoming disconnect conn=3 reason=531[0m
+[0;32mI (2127088) BOX_TX: incoming connect status=0 conn=1[0m
+[0;32mI (2127088) BOX_TX: advertising Box UUID as BOX-NODE-01[0m
+[0;32mI (2127828) BOX_TX: mtu conn=1 mtu=517[0m
+[0;32mI (2127868) BOX_TX: subscription conn=1 notify=1[0m
+[0;32mI (2128018) BOX_TX: session start conn=1 mtu=517 sid=283524b1-2988-4d2b-9e1e-f0d0544eba7f packets=3[0m
+[0;32mI (2128018) BOX_TX:   notify SID          len= 43 -> ok (rc=0)[0m
+[0;32mI (2128028) BOX_TX:   notify TRM          len= 43 -> ok (rc=0)[0m
+[0;32mI (2128038) BOX_TX:   notify TRM          len= 43 -> ok (rc=0)[0m
+[0;32mI (2128048) E2E: TX session 283524b1-2988-4d2b-9e1e-f0d0544eba7f committed: 3/3 packets delivered[0m
+[0;32mI (2129058) BOX_TX: subscription conn=1 notify=0[0m
+[0;32mI (2129068) BOX_TX: incoming disconnect conn=1 reason=531[0m
+[0;32mI (2155288) BOX_TX: incoming connect status=0 conn=3[0m
+[0;32mI (2155288) BOX_TX: advertising Box UUID as BOX-NODE-01[0m
+[0;32mI (2155878) BOX_TX: mtu conn=3 mtu=517[0m
+[0;32mI (2155908) BOX_TX: subscription conn=3 notify=1[0m
+[0;32mI (2156058) BOX_TX: session start conn=3 mtu=517 sid=cbeaf6c8-e98d-46a5-b591-1b744f7a1993 packets=3[0m
+[0;32mI (2156058) BOX_TX:   notify SID          len= 43 -> ok (rc=0)[0m
+[0;32mI (2156068) BOX_TX:   notify TRM          len= 43 -> ok (rc=0)[0m
+[0;32mI (2156078) BOX_TX:   notify TRM          len= 43 -> ok (rc=0)[0m
+[0;32mI (2156088) E2E: TX session cbeaf6c8-e98d-46a5-b591-1b744f7a1993 committed: 3/3 packets delivered[0m
+[0;32mI (2157088) BOX_TX: subscription conn=3 notify=0[0m
+[0;32mI (2157088) BOX_TX: incoming disconnect conn=3 reason=531[0m
+[0;32mI (2180308) BOX_TX: incoming connect status=0 conn=1[0m
+[0;32mI (2180308) BOX_TX: advertising Box UUID as BOX-NODE-01[0m
+[0;32mI (2180928) BOX_TX: mtu conn=1 mtu=517[0m
+[0;32mI (2180958) BOX_TX: subscription conn=1 notify=1[0m
+[0;32mI (2181108) BOX_TX: session start conn=1 mtu=517 sid=7672a13d-fb8d-4ed9-92a3-4d3e7890e3d3 packets=3[0m
+[0;32mI (2181108) BOX_TX:   notify SID          len= 43 -> ok (rc=0)[0m
+[0;32mI (2181118) BOX_TX:   notify TRM          len= 43 -> ok (rc=0)[0m
+[0;32mI (2181128) BOX_TX:   notify TRM          len= 43 -> ok (rc=0)[0m
+[0;32mI (2181138) E2E: TX session 7672a13d-fb8d-4ed9-92a3-4d3e7890e3d3 committed: 3/3 packets delivered[0m
+[0;32mI (2182188) BOX_TX: subscription conn=1 notify=0[0m
+[0;32mI (2182198) BOX_TX: incoming disconnect conn=1 reason=531[0m
+[0;32mI (2210488) BOX_TX: incoming connect status=0 conn=3[0m
+[0;32mI (2210488) BOX_TX: advertising Box UUID as BOX-NODE-01[0m
+[0;32mI (2211078) BOX_TX: mtu conn=3 mtu=517[0m
+[0;32mI (2211118) BOX_TX: subscription conn=3 notify=1[0m
+[0;32mI (2211268) BOX_TX: session start conn=3 mtu=517 sid=ad42985c-62e7-41e3-b70d-e1385724f649 packets=3[0m
+[0;32mI (2211268) BOX_TX:   notify SID          len= 43 -> ok (rc=0)[0m
+[0;32mI (2211278) BOX_TX:   notify TRM          len= 43 -> ok (rc=0)[0m
+[0;32mI (2211288) BOX_TX:   notify TRM          len= 43 -> ok (rc=0)[0m
+[0;32mI (2211298) E2E: TX session ad42985c-62e7-41e3-b70d-e1385724f649 committed: 3/3 packets delivered[0m
+[0;32mI (2212348) BOX_TX: subscription conn=3 notify=0[0m
+[0;32mI (2212348) BOX_TX: incoming disconnect conn=3 reason=531[0m
+[0;32mI (2239438) BOX_TX: incoming connect status=0 conn=1[0m
+[0;32mI (2239438) BOX_TX: advertising Box UUID as BOX-NODE-01[0m
+[0;32mI (2240078) BOX_TX: mtu conn=1 mtu=517[0m
+[0;32mI (2240108) BOX_TX: subscription conn=1 notify=1[0m
+[0;32mI (2240258) BOX_TX: session start conn=1 mtu=517 sid=284a3edf-df9e-4c9e-9e84-29f5969b2067 packets=3[0m
+[0;32mI (2240258) BOX_TX:   notify SID          len= 43 -> ok (rc=0)[0m
+[0;32mI (2240268) BOX_TX:   notify TRM          len= 43 -> ok (rc=0)[0m
+[0;32mI (2240278) BOX_TX:   notify TRM          len= 43 -> ok (rc=0)[0m
+[0;32mI (2240288) E2E: TX session 284a3edf-df9e-4c9e-9e84-29f5969b2067 committed: 3/3 packets delivered[0m
+[0;32mI (2241328) BOX_TX: subscription conn=1 notify=0[0m
+[0;32mI (2241328) BOX_TX: incoming disconnect conn=1 reason=531[0m
+[0;32mI (2266168) BOX_TX: incoming connect status=0 conn=3[0m
+[0;32mI (2266168) BOX_TX: advertising Box UUID as BOX-NODE-01[0m
+[0;32mI (2266908) BOX_TX: mtu conn=3 mtu=517[0m
+[0;32mI (2266938) BOX_TX: subscription conn=3 notify=1[0m
+[0;32mI (2267088) BOX_TX: session start conn=3 mtu=517 sid=97fcec56-76de-4518-b81b-f0d044554350 packets=3[0m
+[0;32mI (2267088) BOX_TX:   notify SID          len= 43 -> ok (rc=0)[0m
+[0;32mI (2267098) BOX_TX:   notify TRM          len= 43 -> ok (rc=0)[0m
+[0;32mI (2267108) BOX_TX:   notify TRM          len= 43 -> ok (rc=0)[0m
+[0;32mI (2267118) E2E: TX session 97fcec56-76de-4518-b81b-f0d044554350 committed: 3/3 packets delivered[0m
+[0;32mI (2268168) BOX_TX: subscription conn=3 notify=0[0m
+[0;32mI (2268168) BOX_TX: incoming disconnect conn=3 reason=531[0m
+[0;32mI (2294698) BOX_TX: incoming connect status=0 conn=1[0m
+[0;32mI (2294698) BOX_TX: advertising Box UUID as BOX-NODE-01[0m
+[0;32mI (2295328) BOX_TX: mtu conn=1 mtu=517[0m
+[0;32mI (2295348) BOX_TX: subscription conn=1 notify=1[0m
+[0;32mI (2295508) BOX_TX: session start conn=1 mtu=517 sid=f37a5b26-decb-4602-bcb8-6dd437a1b8fe packets=3[0m
+[0;32mI (2295508) BOX_TX:   notify SID          len= 43 -> ok (rc=0)[0m
+[0;32mI (2295518) BOX_TX:   notify TRM          len= 43 -> ok (rc=0)[0m
+[0;32mI (2295528) BOX_TX:   notify TRM          len= 43 -> ok (rc=0)[0m
+[0;32mI (2295538) E2E: TX session f37a5b26-decb-4602-bcb8-6dd437a1b8fe committed: 3/3 packets delivered[0m
+[0;32mI (2296588) BOX_TX: subscription conn=1 notify=0[0m
+[0;32mI (2296588) BOX_TX: incoming disconnect conn=1 reason=531[0m
+[0;32mI (2347708) BOX_TX: incoming connect status=0 conn=3[0m
+[0;32mI (2347718) BOX_TX: advertising Box UUID as BOX-NODE-01[0m
+[0;32mI (2348338) BOX_TX: mtu conn=3 mtu=517[0m
+[0;32mI (2348368) BOX_TX: subscription conn=3 notify=1[0m
+[0;32mI (2348518) BOX_TX: session start conn=3 mtu=517 sid=4208f113-4254-404d-ad6d-5a2961958a6c packets=3[0m
+[0;32mI (2348518) BOX_TX:   notify SID          len= 43 -> ok (rc=0)[0m
+[0;32mI (2348528) BOX_TX:   notify TRM          len= 43 -> ok (rc=0)[0m
+[0;32mI (2348538) BOX_TX:   notify TRM          len= 43 -> ok (rc=0)[0m
+[0;32mI (2348548) E2E: TX session 4208f113-4254-404d-ad6d-5a2961958a6c committed: 3/3 packets delivered[0m
+[0;32mI (2349568) BOX_TX: subscription conn=3 notify=0[0m
+[0;32mI (2349568) BOX_TX: incoming disconnect conn=3 reason=531[0m
+[0;32mI (2409908) BOX_TX: incoming connect status=0 conn=1[0m
+[0;32mI (2409908) BOX_TX: advertising Box UUID as BOX-NODE-01[0m
+[0;32mI (2410498) BOX_TX: mtu conn=1 mtu=517[0m
+[0;32mI (2410538) BOX_TX: subscription conn=1 notify=1[0m
+[0;32mI (2410688) BOX_TX: session start conn=1 mtu=517 sid=2910e651-8f5f-4ae3-adb2-aaa30b22f9b9 packets=3[0m
+[0;32mI (2410688) BOX_TX:   notify SID          len= 43 -> ok (rc=0)[0m
+[0;32mI (2410698) BOX_TX:   notify TRM          len= 43 -> ok (rc=0)[0m
+[0;32mI (2410708) BOX_TX:   notify TRM          len= 43 -> ok (rc=0)[0m
+[0;32mI (2410718) E2E: TX session 2910e651-8f5f-4ae3-adb2-aaa30b22f9b9 committed: 3/3 packets delivered[0m
+[0;32mI (2411778) BOX_TX: subscription conn=1 notify=0[0m
+[0;32mI (2411778) BOX_TX: incoming disconnect conn=1 reason=531[0m
+[0;32mI (2516558) BOX_TX: incoming connect status=0 conn=3[0m
+[0;32mI (2516558) BOX_TX: advertising Box UUID as BOX-NODE-01[0m
+[0;32mI (2517268) BOX_TX: mtu conn=3 mtu=517[0m
+[0;32mI (2517338) BOX_TX: subscription conn=3 notify=1[0m
+[0;32mI (2517488) BOX_TX: session start conn=3 mtu=517 sid=91ea0e08-bba2-4bc1-ad8d-ae7f7e25a68a packets=3[0m
+[0;32mI (2517488) BOX_TX:   notify SID          len= 43 -> ok (rc=0)[0m
+[0;32mI (2517498) BOX_TX:   notify TRM          len= 43 -> ok (rc=0)[0m
+[0;32mI (2517508) BOX_TX:   notify TRM          len= 43 -> ok (rc=0)[0m
+[0;32mI (2517518) E2E: TX session 91ea0e08-bba2-4bc1-ad8d-ae7f7e25a68a committed: 3/3 packets delivered[0m
+[0;32mI (2518548) BOX_TX: subscription conn=3 notify=0[0m
+[0;32mI (2518548) BOX_TX: incoming disconnect conn=3 reason=531[0m
+[0;32mI (2555288) BOX_TX: incoming connect status=0 conn=1[0m
+[0;32mI (2555288) BOX_TX: advertising Box UUID as BOX-NODE-01[0m
+[0;32mI (2556078) BOX_TX: mtu conn=1 mtu=517[0m
+[0;32mI (2556108) BOX_TX: subscription conn=1 notify=1[0m
+[0;32mI (2556258) BOX_TX: session start conn=1 mtu=517 sid=2a95a9e4-9a92-4f02-b281-07cbe7dbcea4 packets=3[0m
+[0;32mI (2556258) BOX_TX:   notify SID          len= 43 -> ok (rc=0)[0m
+[0;32mI (2556268) BOX_TX:   notify TRM          len= 43 -> ok (rc=0)[0m
+[0;32mI (2556278) BOX_TX:   notify TRM          len= 43 -> ok (rc=0)[0m
+[0;32mI (2556288) E2E: TX session 2a95a9e4-9a92-4f02-b281-07cbe7dbcea4 committed: 3/3 packets delivered[0m
+[0;32mI (2557308) BOX_TX: subscription conn=1 notify=0[0m
+[0;32mI (2557308) BOX_TX: incoming disconnect conn=1 reason=531[0m
+[0;32mI (2589128) BOX_TX: incoming connect status=0 conn=3[0m
+[0;32mI (2589128) BOX_TX: advertising Box UUID as BOX-NODE-01[0m
+[0;32mI (2589808) BOX_TX: mtu conn=3 mtu=517[0m
+[0;32mI (2589848) BOX_TX: subscription conn=3 notify=1[0m
+[0;32mI (2589998) BOX_TX: session start conn=3 mtu=517 sid=21d3b314-fdaf-4541-aeb2-4ea3fa6683d2 packets=3[0m
+[0;32mI (2589998) BOX_TX:   notify SID          len= 43 -> ok (rc=0)[0m
+[0;32mI (2590008) BOX_TX:   notify TRM          len= 43 -> ok (rc=0)[0m
+[0;32mI (2590018) BOX_TX:   notify TRM          len= 43 -> ok (rc=0)[0m
+[0;32mI (2590028) E2E: TX session 21d3b314-fdaf-4541-aeb2-4ea3fa6683d2 committed: 3/3 packets delivered[0m
+[0;32mI (2591118) BOX_TX: subscription conn=3 notify=0[0m
+[0;32mI (2591118) BOX_TX: incoming disconnect conn=3 reason=531[0m
+[0;32mI (2653148) BOX_TX: incoming connect status=0 conn=1[0m
+[0;32mI (2653158) BOX_TX: advertising Box UUID as BOX-NODE-01[0m
+[0;32mI (2653748) BOX_TX: mtu conn=1 mtu=517[0m
+[0;32mI (2653768) BOX_TX: subscription conn=1 notify=1[0m
+[0;32mI (2653918) BOX_TX: session start conn=1 mtu=517 sid=530e12f6-b264-480c-a70c-bc07a122ce11 packets=3[0m
+[0;32mI (2653918) BOX_TX:   notify SID          len= 43 -> ok (rc=0)[0m
+[0;32mI (2653928) BOX_TX:   notify TRM          len= 43 -> ok (rc=0)[0m
+[0;32mI (2653938) BOX_TX:   notify TRM          len= 43 -> ok (rc=0)[0m
+[0;32mI (2653948) E2E: TX session 530e12f6-b264-480c-a70c-bc07a122ce11 committed: 3/3 packets delivered[0m
+[0;32mI (2654948) BOX_TX: subscription conn=1 notify=0[0m
+[0;32mI (2654948) BOX_TX: incoming disconnect conn=1 reason=531[0m
+[0;32mI (2687388) BOX_TX: incoming connect status=0 conn=3[0m
+[0;32mI (2687388) BOX_TX: advertising Box UUID as BOX-NODE-01[0m
+[0;32mI (2688028) BOX_TX: mtu conn=3 mtu=517[0m
+[0;32mI (2688078) BOX_TX: subscription conn=3 notify=1[0m
+[0;32mI (2688228) BOX_TX: session start conn=3 mtu=517 sid=50d09435-1819-42df-a495-de0f7231255e packets=3[0m
+[0;32mI (2688228) BOX_TX:   notify SID          len= 43 -> ok (rc=0)[0m
+[0;32mI (2688238) BOX_TX:   notify TRM          len= 43 -> ok (rc=0)[0m
+[0;32mI (2688248) BOX_TX:   notify TRM          len= 43 -> ok (rc=0)[0m
+[0;32mI (2688258) E2E: TX session 50d09435-1819-42df-a495-de0f7231255e committed: 3/3 packets delivered[0m
+[0;32mI (2689308) BOX_TX: subscription conn=3 notify=0[0m
+[0;32mI (2689308) BOX_TX: incoming disconnect conn=3 reason=531[0m
+[0;32mI (2719698) BOX_TX: incoming connect status=0 conn=1[0m
+[0;32mI (2719698) BOX_TX: advertising Box UUID as BOX-NODE-01[0m
+[0;32mI (2720278) BOX_TX: mtu conn=1 mtu=517[0m
+[0;32mI (2720308) BOX_TX: subscription conn=1 notify=1[0m
+[0;32mI (2720458) BOX_TX: session start conn=1 mtu=517 sid=8692e7d0-5da1-40d8-8f1d-c98c8cd1bc2d packets=3[0m
+[0;32mI (2720458) BOX_TX:   notify SID          len= 43 -> ok (rc=0)[0m
+[0;32mI (2720468) BOX_TX:   notify TRM          len= 43 -> ok (rc=0)[0m
+[0;32mI (2720478) BOX_TX:   notify TRM          len= 43 -> ok (rc=0)[0m
+[0;32mI (2720488) E2E: TX session 8692e7d0-5da1-40d8-8f1d-c98c8cd1bc2d committed: 3/3 packets delivered[0m
+[0;32mI (2721568) BOX_TX: subscription conn=1 notify=0[0m
+[0;32mI (2721568) BOX_TX: incoming disconnect conn=1 reason=531[0m
+[0;32mI (2751678) BOX_TX: incoming connect status=0 conn=3[0m
+[0;32mI (2751678) BOX_TX: advertising Box UUID as BOX-NODE-01[0m
+[0;32mI (2752318) BOX_TX: mtu conn=3 mtu=517[0m
+[0;32mI (2752348) BOX_TX: subscription conn=3 notify=1[0m
+[0;32mI (2752498) BOX_TX: session start conn=3 mtu=517 sid=83d370cf-9db2-4338-b128-f9d0df58fa1d packets=3[0m
+[0;32mI (2752498) BOX_TX:   notify SID          len= 43 -> ok (rc=0)[0m
+[0;32mI (2752508) BOX_TX:   notify TRM          len= 43 -> ok (rc=0)[0m
+[0;32mI (2752518) BOX_TX:   notify TRM          len= 43 -> ok (rc=0)[0m
+[0;32mI (2752528) E2E: TX session 83d370cf-9db2-4338-b128-f9d0df58fa1d committed: 3/3 packets delivered[0m
+[0;32mI (2753578) BOX_TX: subscription conn=3 notify=0[0m
+[0;32mI (2753578) BOX_TX: incoming disconnect conn=3 reason=531[0m
+[0;32mI (2782188) BOX_TX: incoming connect status=0 conn=1[0m
+[0;32mI (2782188) BOX_TX: advertising Box UUID as BOX-NODE-01[0m
+[0;32mI (2782818) BOX_TX: mtu conn=1 mtu=517[0m
+[0;32mI (2782848) BOX_TX: subscription conn=1 notify=1[0m
+[0;32mI (2782998) BOX_TX: session start conn=1 mtu=517 sid=265b9029-953d-4f96-89cb-7bd6ad790fbb packets=3[0m
+[0;32mI (2782998) BOX_TX:   notify SID          len= 43 -> ok (rc=0)[0m
+[0;32mI (2783008) BOX_TX:   notify TRM          len= 43 -> ok (rc=0)[0m
+[0;32mI (2783018) BOX_TX:   notify TRM          len= 43 -> ok (rc=0)[0m
+[0;32mI (2783028) E2E: TX session 265b9029-953d-4f96-89cb-7bd6ad790fbb committed: 3/3 packets delivered[0m
+[0;32mI (2784088) BOX_TX: subscription conn=1 notify=0[0m
+[0;32mI (2784088) BOX_TX: incoming disconnect conn=1 reason=531[0m
+[0;32mI (2810688) BOX_TX: incoming connect status=0 conn=3[0m
+[0;32mI (2810688) BOX_TX: advertising Box UUID as BOX-NODE-01[0m
+[0;32mI (2811378) BOX_TX: mtu conn=3 mtu=517[0m
+[0;32mI (2811398) BOX_TX: subscription conn=3 notify=1[0m
+[0;32mI (2811548) BOX_TX: session start conn=3 mtu=517 sid=f1657abf-512b-4b64-9399-3334a0b03b45 packets=3[0m
+[0;32mI (2811548) BOX_TX:   notify SID          len= 43 -> ok (rc=0)[0m
+[0;32mI (2811558) BOX_TX:   notify TRM          len= 43 -> ok (rc=0)[0m
+[0;32mI (2811568) BOX_TX:   notify TRM          len= 43 -> ok (rc=0)[0m
+[0;32mI (2811578) E2E: TX session f1657abf-512b-4b64-9399-3334a0b03b45 committed: 3/3 packets delivered[0m
+[0;32mI (2812608) BOX_TX: subscription conn=3 notify=0[0m
+[0;32mI (2812618) BOX_TX: incoming disconnect conn=3 reason=531[0m
+[0;32mI (2839308) BOX_TX: incoming connect status=0 conn=1[0m
+[0;32mI (2839308) BOX_TX: advertising Box UUID as BOX-NODE-01[0m
+[0;32mI (2839948) BOX_TX: mtu conn=1 mtu=517[0m
+[0;32mI (2839978) BOX_TX: subscription conn=1 notify=1[0m
+[0;32mI (2840128) BOX_TX: session start conn=1 mtu=517 sid=de5f70c9-696b-4602-8add-615ad31478a0 packets=3[0m
+[0;32mI (2840128) BOX_TX:   notify SID          len= 43 -> ok (rc=0)[0m
+[0;32mI (2840138) BOX_TX:   notify TRM          len= 43 -> ok (rc=0)[0m
+[0;32mI (2840148) BOX_TX:   notify TRM          len= 43 -> ok (rc=0)[0m
+[0;32mI (2840158) E2E: TX session de5f70c9-696b-4602-8add-615ad31478a0 committed: 3/3 packets delivered[0m
+[0;32mI (2841178) BOX_TX: subscription conn=1 notify=0[0m
+[0;32mI (2841178) BOX_TX: incoming disconnect conn=1 reason=531[0m
+[0;32mI (2861808) BOX_TX: incoming connect status=0 conn=3[0m
+[0;32mI (2861808) BOX_TX: advertising Box UUID as BOX-NODE-01[0m
+[0;32mI (2862388) BOX_TX: mtu conn=3 mtu=517[0m
+[0;32mI (2862418) BOX_TX: subscription conn=3 notify=1[0m
+[0;32mI (2862568) BOX_TX: session start conn=3 mtu=517 sid=166a4270-c390-43ea-b8ed-eba6c4bc5c16 packets=3[0m
+[0;32mI (2862568) BOX_TX:   notify SID          len= 43 -> ok (rc=0)[0m
+[0;32mI (2862578) BOX_TX:   notify TRM          len= 43 -> ok (rc=0)[0m
+[0;32mI (2862588) BOX_TX:   notify TRM          len= 43 -> ok (rc=0)[0m
+[0;32mI (2862598) E2E: TX session 166a4270-c390-43ea-b8ed-eba6c4bc5c16 committed: 3/3 packets delivered[0m
+[0;32mI (2863608) BOX_TX: subscription conn=3 notify=0[0m
+[0;32mI (2863608) BOX_TX: incoming disconnect conn=3 reason=531[0m
+[0;32mI (2965348) BOX_TX: incoming connect status=0 conn=1[0m
+[0;32mI (2965348) BOX_TX: advertising Box UUID as BOX-NODE-01[0m
+[0;32mI (2966018) BOX_TX: mtu conn=1 mtu=517[0m
+[0;32mI (2966068) BOX_TX: subscription conn=1 notify=1[0m
+[0;32mI (2966218) BOX_TX: session start conn=1 mtu=517 sid=d1871c50-cfe9-44ff-8f42-5117fadd0de6 packets=3[0m
+[0;32mI (2966218) BOX_TX:   notify SID          len= 43 -> ok (rc=0)[0m
+[0;32mI (2966228) BOX_TX:   notify TRM          len= 43 -> ok (rc=0)[0m
+[0;32mI (2966238) BOX_TX:   notify TRM          len= 43 -> ok (rc=0)[0m
+[0;32mI (2966248) E2E: TX session d1871c50-cfe9-44ff-8f42-5117fadd0de6 committed: 3/3 packets delivered[0m
+[0;32mI (2967258) BOX_TX: subscription conn=1 notify=0[0m
+[0;32mI (2967258) BOX_TX: incoming disconnect conn=1 reason=531[0m
+[0;32mI (2999128) BOX_TX: incoming connect status=0 conn=3[0m
+[0;32mI (2999128) BOX_TX: advertising Box UUID as BOX-NODE-01[0m
+[0;32mI (2999868) BOX_TX: mtu conn=3 mtu=517[0m
+[0;32mI (2999898) BOX_TX: subscription conn=3 notify=1[0m
+[0;32mI (3000048) BOX_TX: session start conn=3 mtu=517 sid=27bb9207-0dcd-4cce-8a33-b3fa87366b62 packets=3[0m
+[0;32mI (3000048) BOX_TX:   notify SID          len= 43 -> ok (rc=0)[0m
+[0;32mI (3000058) BOX_TX:   notify TRM          len= 43 -> ok (rc=0)[0m
+[0;32mI (3000068) BOX_TX:   notify TRM          len= 43 -> ok (rc=0)[0m
+[0;32mI (3000078) E2E: TX session 27bb9207-0dcd-4cce-8a33-b3fa87366b62 committed: 3/3 packets delivered[0m
+[0;32mI (3001098) BOX_TX: subscription conn=3 notify=0[0m
+[0;32mI (3001098) BOX_TX: incoming disconnect conn=3 reason=531[0m
+[0;32mI (3029578) BOX_TX: incoming connect status=0 conn=1[0m
+[0;32mI (3029578) BOX_TX: advertising Box UUID as BOX-NODE-01[0m
+[0;32mI (3030198) BOX_TX: mtu conn=1 mtu=517[0m
+[0;32mI (3030238) BOX_TX: subscription conn=1 notify=1[0m
+[0;32mI (3030388) BOX_TX: session start conn=1 mtu=517 sid=8af5133f-12d7-4c7f-b875-84b64f641c8c packets=3[0m
+[0;32mI (3030388) BOX_TX:   notify SID          len= 43 -> ok (rc=0)[0m
+[0;32mI (3030398) BOX_TX:   notify TRM          len= 43 -> ok (rc=0)[0m
+[0;32mI (3030408) BOX_TX:   notify TRM          len= 43 -> ok (rc=0)[0m
+[0;32mI (3030418) E2E: TX session 8af5133f-12d7-4c7f-b875-84b64f641c8c committed: 3/3 packets delivered[0m
+[0;32mI (3031468) BOX_TX: subscription conn=1 notify=0[0m
+[0;32mI (3031468) BOX_TX: incoming disconnect conn=1 reason=531[0m
+[0;32mI (3059578) BOX_TX: incoming connect status=0 conn=3[0m
+[0;32mI (3059578) BOX_TX: advertising Box UUID as BOX-NODE-01[0m
+[0;32mI (3060198) BOX_TX: mtu conn=3 mtu=517[0m
+[0;32mI (3060228) BOX_TX: subscription conn=3 notify=1[0m
+[0;32mI (3060388) BOX_TX: session start conn=3 mtu=517 sid=80b10601-5473-4611-bca8-1f355b1530a3 packets=3[0m
+[0;32mI (3060388) BOX_TX:   notify SID          len= 43 -> ok (rc=0)[0m
+[0;32mI (3060398) BOX_TX:   notify TRM          len= 43 -> ok (rc=0)[0m
+[0;32mI (3060408) BOX_TX:   notify TRM          len= 43 -> ok (rc=0)[0m
+[0;32mI (3060418) E2E: TX session 80b10601-5473-4611-bca8-1f355b1530a3 committed: 3/3 packets delivered[0m
+[0;32mI (3061438) BOX_TX: subscription conn=3 notify=0[0m
+[0;32mI (3061438) BOX_TX: incoming disconnect conn=3 reason=531[0m
+[0;32mI (3088348) BOX_TX: incoming connect status=0 conn=1[0m
+[0;32mI (3088348) BOX_TX: advertising Box UUID as BOX-NODE-01[0m
+[0;32mI (3089408) BOX_TX: mtu conn=1 mtu=517[0m
+[0;32mI (3089468) BOX_TX: subscription conn=1 notify=1[0m
+[0;32mI (3089618) BOX_TX: session start conn=1 mtu=517 sid=490a3414-e6c2-4546-8813-c715f3b5216e packets=3[0m
+[0;32mI (3089618) BOX_TX:   notify SID          len= 43 -> ok (rc=0)[0m
+[0;32mI (3089628) BOX_TX:   notify TRM          len= 43 -> ok (rc=0)[0m
+[0;32mI (3089638) BOX_TX:   notify TRM          len= 43 -> ok (rc=0)[0m
+[0;32mI (3089648) E2E: TX session 490a3414-e6c2-4546-8813-c715f3b5216e committed: 3/3 packets delivered[0m
+[0;32mI (3090648) BOX_TX: subscription conn=1 notify=0[0m
+[0;32mI (3090658) BOX_TX: incoming disconnect conn=1 reason=531[0m
+[0;32mI (3128098) BOX_TX: incoming connect status=0 conn=3[0m
+[0;32mI (3128098) BOX_TX: advertising Box UUID as BOX-NODE-01[0m
+[0;32mI (3128768) BOX_TX: mtu conn=3 mtu=517[0m
+[0;32mI (3128808) BOX_TX: subscription conn=3 notify=1[0m
+[0;32mI (3128958) BOX_TX: session start conn=3 mtu=517 sid=5ad786fa-a41e-4136-a590-4d52a18e1592 packets=3[0m
+[0;32mI (3128958) BOX_TX:   notify SID          len= 43 -> ok (rc=0)[0m
+[0;32mI (3128968) BOX_TX:   notify TRM          len= 43 -> ok (rc=0)[0m
+[0;32mI (3128978) BOX_TX:   notify TRM          len= 43 -> ok (rc=0)[0m
+[0;32mI (3128988) E2E: TX session 5ad786fa-a41e-4136-a590-4d52a18e1592 committed: 3/3 packets delivered[0m
+[0;32mI (3130018) BOX_TX: subscription conn=3 notify=0[0m
+[0;32mI (3130018) BOX_TX: incoming disconnect conn=3 reason=531[0m
+[0;32mI (3192538) BOX_TX: incoming connect status=0 conn=1[0m
+[0;32mI (3192548) BOX_TX: advertising Box UUID as BOX-NODE-01[0m
+[0;32mI (3193188) BOX_TX: mtu conn=1 mtu=517[0m
+[0;32mI (3193218) BOX_TX: subscription conn=1 notify=1[0m
+[0;32mI (3193368) BOX_TX: session start conn=1 mtu=517 sid=5e633d72-ef0d-4a67-b39c-94422b3056d3 packets=3[0m
+[0;32mI (3193368) BOX_TX:   notify SID          len= 43 -> ok (rc=0)[0m
+[0;32mI (3193378) BOX_TX:   notify TRM          len= 43 -> ok (rc=0)[0m
+[0;32mI (3193388) BOX_TX:   notify TRM          len= 43 -> ok (rc=0)[0m
+[0;32mI (3193398) E2E: TX session 5e633d72-ef0d-4a67-b39c-94422b3056d3 committed: 3/3 packets delivered[0m
+[0;32mI (3194508) BOX_TX: subscription conn=1 notify=0[0m
+[0;32mI (3194518) BOX_TX: incoming disconnect conn=1 reason=531[0m
+[0;32mI (3230188) BOX_TX: incoming connect status=0 conn=3[0m
+[0;32mI (3230198) BOX_TX: advertising Box UUID as BOX-NODE-01[0m
+[0;32mI (3231208) BOX_TX: mtu conn=3 mtu=517[0m
+[0;32mI (3231258) BOX_TX: subscription conn=3 notify=1[0m
+[0;32mI (3231408) BOX_TX: session start conn=3 mtu=517 sid=f7dd3e08-d2f1-4dcf-8bab-2f61948174e5 packets=3[0m
+[0;32mI (3231408) BOX_TX:   notify SID          len= 43 -> ok (rc=0)[0m
+[0;32mI (3231418) BOX_TX:   notify TRM          len= 43 -> ok (rc=0)[0m
+[0;32mI (3231428) BOX_TX:   notify TRM          len= 43 -> ok (rc=0)[0m
+[0;32mI (3231438) E2E: TX session f7dd3e08-d2f1-4dcf-8bab-2f61948174e5 committed: 3/3 packets delivered[0m
+[0;32mI (3232458) BOX_TX: subscription conn=3 notify=0[0m
+[0;32mI (3232468) BOX_TX: incoming disconnect conn=3 reason=531[0m
+[0;32mI (3256748) BOX_TX: incoming connect status=0 conn=1[0m
+[0;32mI (3256748) BOX_TX: advertising Box UUID as BOX-NODE-01[0m
+[0;32mI (3257398) BOX_TX: mtu conn=1 mtu=517[0m
+[0;32mI (3257438) BOX_TX: subscription conn=1 notify=1[0m
+[0;32mI (3257588) BOX_TX: session start conn=1 mtu=517 sid=10f03605-0f41-4596-8921-8b64f193687d packets=3[0m
+[0;32mI (3257588) BOX_TX:   notify SID          len= 43 -> ok (rc=0)[0m
+[0;32mI (3257598) BOX_TX:   notify TRM          len= 43 -> ok (rc=0)[0m
+[0;32mI (3257608) BOX_TX:   notify TRM          len= 43 -> ok (rc=0)[0m
+[0;32mI (3257618) E2E: TX session 10f03605-0f41-4596-8921-8b64f193687d committed: 3/3 packets delivered[0m
+[0;32mI (3258658) BOX_TX: subscription conn=1 notify=0[0m
+[0;32mI (3258658) BOX_TX: incoming disconnect conn=1 reason=531[0m
+[0;32mI (3294338) BOX_TX: incoming connect status=0 conn=3[0m
+[0;32mI (3294338) BOX_TX: advertising Box UUID as BOX-NODE-01[0m
+[0;32mI (3294928) BOX_TX: mtu conn=3 mtu=517[0m
+[0;32mI (3294948) BOX_TX: subscription conn=3 notify=1[0m
+[0;32mI (3295098) BOX_TX: session start conn=3 mtu=517 sid=a2b97614-4278-471f-8bb4-9dd529b075ba packets=3[0m
+[0;32mI (3295098) BOX_TX:   notify SID          len= 43 -> ok (rc=0)[0m
+[0;32mI (3295108) BOX_TX:   notify TRM          len= 43 -> ok (rc=0)[0m
+[0;32mI (3295118) BOX_TX:   notify TRM          len= 43 -> ok (rc=0)[0m
+[0;32mI (3295128) E2E: TX session a2b97614-4278-471f-8bb4-9dd529b075ba committed: 3/3 packets delivered[0m
+[0;32mI (3296148) BOX_TX: subscription conn=3 notify=0[0m
+[0;32mI (3296158) BOX_TX: incoming disconnect conn=3 reason=531[0m
+[0;32mI (3317078) BOX_TX: incoming connect status=0 conn=1[0m
+[0;32mI (3317078) BOX_TX: advertising Box UUID as BOX-NODE-01[0m
+[0;32mI (3317898) BOX_TX: mtu conn=1 mtu=517[0m
+[0;32mI (3317918) BOX_TX: subscription conn=1 notify=1[0m
+[0;32mI (3318068) BOX_TX: session start conn=1 mtu=517 sid=8a47dc02-6a9f-449a-aaef-aa9c99db6c5d packets=3[0m
+[0;32mI (3318068) BOX_TX:   notify SID          len= 43 -> ok (rc=0)[0m
+[0;32mI (3318078) BOX_TX:   notify TRM          len= 43 -> ok (rc=0)[0m
+[0;32mI (3318088) BOX_TX:   notify TRM          len= 43 -> ok (rc=0)[0m
+[0;32mI (3318098) E2E: TX session 8a47dc02-6a9f-449a-aaef-aa9c99db6c5d committed: 3/3 packets delivered[0m
+[0;32mI (3319098) BOX_TX: subscription conn=1 notify=0[0m
+[0;32mI (3319098) BOX_TX: incoming disconnect conn=1 reason=531[0m
+[0;32mI (3342008) BOX_TX: incoming connect status=0 conn=3[0m
+[0;32mI (3342008) BOX_TX: advertising Box UUID as BOX-NODE-01[0m
+[0;32mI (3342628) BOX_TX: mtu conn=3 mtu=517[0m
+[0;32mI (3342648) BOX_TX: subscription conn=3 notify=1[0m
+[0;32mI (3342798) BOX_TX: session start conn=3 mtu=517 sid=8843ddf2-1cca-4ede-b811-ade92bf0286f packets=3[0m
+[0;32mI (3342798) BOX_TX:   notify SID          len= 43 -> ok (rc=0)[0m
+[0;32mI (3342808) BOX_TX:   notify TRM          len= 43 -> ok (rc=0)[0m
+[0;32mI (3342818) BOX_TX:   notify TRM          len= 43 -> ok (rc=0)[0m
+[0;32mI (3342828) E2E: TX session 8843ddf2-1cca-4ede-b811-ade92bf0286f committed: 3/3 packets delivered[0m
+[0;32mI (3343858) BOX_TX: subscription conn=3 notify=0[0m
+[0;32mI (3343858) BOX_TX: incoming disconnect conn=3 reason=531[0m
+[0;32mI (3575178) BOX_TX: incoming connect status=0 conn=1[0m
+[0;32mI (3575178) BOX_TX: advertising Box UUID as BOX-NODE-01[0m
+[0;32mI (3575898) BOX_TX: mtu conn=1 mtu=517[0m
+[0;32mI (3575948) BOX_TX: subscription conn=1 notify=1[0m
+[0;32mI (3576098) BOX_TX: session start conn=1 mtu=517 sid=6f308a58-90d6-4e03-92bf-98048a58ec59 packets=3[0m
+[0;32mI (3576098) BOX_TX:   notify SID          len= 43 -> ok (rc=0)[0m
+[0;32mI (3576108) BOX_TX:   notify TRM          len= 43 -> ok (rc=0)[0m
+[0;32mI (3576118) BOX_TX:   notify TRM          len= 43 -> ok (rc=0)[0m
+[0;32mI (3576128) E2E: TX session 6f308a58-90d6-4e03-92bf-98048a58ec59 committed: 3/3 packets delivered[0m
+[0;32mI (3577208) BOX_TX: subscription conn=1 notify=0[0m
+[0;32mI (3577208) BOX_TX: incoming disconnect conn=1 reason=531[0m
+[0;32mI (3614838) BOX_TX: incoming connect status=0 conn=3[0m
+[0;32mI (3614838) BOX_TX: advertising Box UUID as BOX-NODE-01[0m
+[0;32mI (3615528) BOX_TX: mtu conn=3 mtu=517[0m
+[0;32mI (3615558) BOX_TX: subscription conn=3 notify=1[0m
+[0;32mI (3615708) BOX_TX: session start conn=3 mtu=517 sid=7c8d9f21-6f6f-4ccd-aaa3-b9798f5a5b65 packets=3[0m
+[0;32mI (3615708) BOX_TX:   notify SID          len= 43 -> ok (rc=0)[0m
+[0;32mI (3615718) BOX_TX:   notify TRM          len= 43 -> ok (rc=0)[0m
+[0;32mI (3615728) BOX_TX:   notify TRM          len= 43 -> ok (rc=0)[0m
+[0;32mI (3615738) E2E: TX session 7c8d9f21-6f6f-4ccd-aaa3-b9798f5a5b65 committed: 3/3 packets delivered[0m
+[0;32mI (3616788) BOX_TX: subscription conn=3 notify=0[0m
+[0;32mI (3616788) BOX_TX: incoming disconnect conn=3 reason=531[0m
+[0;32mI (3665568) BOX_TX: incoming connect status=0 conn=1[0m
+[0;32mI (3665568) BOX_TX: advertising Box UUID as BOX-NODE-01[0m
+[0;32mI (3666238) BOX_TX: mtu conn=1 mtu=517[0m
+[0;32mI (3666288) BOX_TX: subscription conn=1 notify=1[0m
+[0;32mI (3666438) BOX_TX: session start conn=1 mtu=517 sid=664c7df6-55ee-4614-b1ba-fbb1fc373ba9 packets=3[0m
+[0;32mI (3666438) BOX_TX:   notify SID          len= 43 -> ok (rc=0)[0m
+[0;32mI (3666448) BOX_TX:   notify TRM          len= 43 -> ok (rc=0)[0m
+[0;32mI (3666458) BOX_TX:   notify TRM          len= 43 -> ok (rc=0)[0m
+[0;32mI (3666468) E2E: TX session 664c7df6-55ee-4614-b1ba-fbb1fc373ba9 committed: 3/3 packets delivered[0m
+[0;32mI (3667528) BOX_TX: subscription conn=1 notify=0[0m
+[0;32mI (3667528) BOX_TX: incoming disconnect conn=1 reason=531[0m
+[0;32mI (3730218) BOX_TX: incoming connect status=0 conn=3[0m
+[0;32mI (3730228) BOX_TX: advertising Box UUID as BOX-NODE-01[0m
+[0;32mI (3730888) BOX_TX: mtu conn=3 mtu=517[0m
+[0;32mI (3730908) BOX_TX: subscription conn=3 notify=1[0m
+[0;32mI (3731058) BOX_TX: session start conn=3 mtu=517 sid=5cd956b4-a609-4976-9a5b-5f7a327eabbe packets=3[0m
+[0;32mI (3731058) BOX_TX:   notify SID          len= 43 -> ok (rc=0)[0m
+[0;32mI (3731068) BOX_TX:   notify TRM          len= 43 -> ok (rc=0)[0m
+[0;32mI (3731078) BOX_TX:   notify TRM          len= 43 -> ok (rc=0)[0m
+[0;32mI (3731088) E2E: TX session 5cd956b4-a609-4976-9a5b-5f7a327eabbe committed: 3/3 packets delivered[0m
+[0;32mI (3732108) BOX_TX: subscription conn=3 notify=0[0m
+[0;32mI (3732118) BOX_TX: incoming disconnect conn=3 reason=531[0m
+[0;32mI (3763548) BOX_TX: incoming connect status=0 conn=1[0m
+[0;32mI (3763558) BOX_TX: advertising Box UUID as BOX-NODE-01[0m
+[0;32mI (3764148) BOX_TX: mtu conn=1 mtu=517[0m
+[0;32mI (3764168) BOX_TX: subscription conn=1 notify=1[0m
+[0;32mI (3764318) BOX_TX: session start conn=1 mtu=517 sid=a1509153-5ec6-49a4-851b-4d26170a1e51 packets=3[0m
+[0;32mI (3764318) BOX_TX:   notify SID          len= 43 -> ok (rc=0)[0m
+[0;32mI (3764328) BOX_TX:   notify TRM          len= 43 -> ok (rc=0)[0m
+[0;32mI (3764338) BOX_TX:   notify TRM          len= 43 -> ok (rc=0)[0m
+[0;32mI (3764348) E2E: TX session a1509153-5ec6-49a4-851b-4d26170a1e51 committed: 3/3 packets delivered[0m
+[0;32mI (3765408) BOX_TX: subscription conn=1 notify=0[0m
+[0;32mI (3765418) BOX_TX: incoming disconnect conn=1 reason=531[0m
+[0;32mI (3788248) BOX_TX: incoming connect status=0 conn=3[0m
+[0;32mI (3788248) BOX_TX: advertising Box UUID as BOX-NODE-01[0m
+[0;32mI (3788848) BOX_TX: mtu conn=3 mtu=517[0m
+[0;32mI (3788878) BOX_TX: subscription conn=3 notify=1[0m
+[0;32mI (3789028) BOX_TX: session start conn=3 mtu=517 sid=00cbe211-c3a2-4368-8f96-5e3f56a2a186 packets=3[0m
+[0;32mI (3789028) BOX_TX:   notify SID          len= 43 -> ok (rc=0)[0m
+[0;32mI (3789038) BOX_TX:   notify TRM          len= 43 -> ok (rc=0)[0m
+[0;32mI (3789048) BOX_TX:   notify TRM          len= 43 -> ok (rc=0)[0m
+[0;32mI (3789058) E2E: TX session 00cbe211-c3a2-4368-8f96-5e3f56a2a186 committed: 3/3 packets delivered[0m
+[0;32mI (3790078) BOX_TX: subscription conn=3 notify=0[0m
+[0;32mI (3790078) BOX_TX: incoming disconnect conn=3 reason=531[0m
+[0;32mI (3818908) BOX_TX: incoming connect status=0 conn=1[0m
+[0;32mI (3818908) BOX_TX: advertising Box UUID as BOX-NODE-01[0m
+[0;32mI (3819558) BOX_TX: mtu conn=1 mtu=517[0m
+[0;32mI (3819588) BOX_TX: subscription conn=1 notify=1[0m
+[0;32mI (3819738) BOX_TX: session start conn=1 mtu=517 sid=1ba7bb58-bc4a-4271-8ecd-acbdfad7a86f packets=3[0m
+[0;32mI (3819738) BOX_TX:   notify SID          len= 43 -> ok (rc=0)[0m
+[0;32mI (3819748) BOX_TX:   notify TRM          len= 43 -> ok (rc=0)[0m
+[0;32mI (3819758) BOX_TX:   notify TRM          len= 43 -> ok (rc=0)[0m
+[0;32mI (3819768) E2E: TX session 1ba7bb58-bc4a-4271-8ecd-acbdfad7a86f committed: 3/3 packets delivered[0m
+[0;32mI (3820788) BOX_TX: subscription conn=1 notify=0[0m
+[0;32mI (3820788) BOX_TX: incoming disconnect conn=1 reason=531[0m
+[0;32mI (3854638) BOX_TX: incoming connect status=0 conn=3[0m
+[0;32mI (3854638) BOX_TX: advertising Box UUID as BOX-NODE-01[0m
+[0;32mI (3855268) BOX_TX: mtu conn=3 mtu=517[0m
+[0;32mI (3855288) BOX_TX: subscription conn=3 notify=1[0m
+[0;32mI (3855438) BOX_TX: session start conn=3 mtu=517 sid=fec425b1-d9e0-4a86-a6a2-fbd4548265bd packets=3[0m
+[0;32mI (3855438) BOX_TX:   notify SID          len= 43 -> ok (rc=0)[0m
+[0;32mI (3855448) BOX_TX:   notify TRM          len= 43 -> ok (rc=0)[0m
+[0;32mI (3855458) BOX_TX:   notify TRM          len= 43 -> ok (rc=0)[0m
+[0;32mI (3855468) E2E: TX session fec425b1-d9e0-4a86-a6a2-fbd4548265bd committed: 3/3 packets delivered[0m
+[0;32mI (3856498) BOX_TX: subscription conn=3 notify=0[0m
+[0;32mI (3856498) BOX_TX: incoming disconnect conn=3 reason=531[0m
+[0;32mI (3961198) BOX_TX: incoming connect status=0 conn=1[0m
+[0;32mI (3961198) BOX_TX: advertising Box UUID as BOX-NODE-01[0m
+[0;32mI (3961898) BOX_TX: mtu conn=1 mtu=517[0m
+[0;32mI (3961928) BOX_TX: subscription conn=1 notify=1[0m
+[0;32mI (3962078) BOX_TX: session start conn=1 mtu=517 sid=e90d5e9e-2964-4d71-b7ff-ef58a5d53e4a packets=3[0m
+[0;32mI (3962078) BOX_TX:   notify SID          len= 43 -> ok (rc=0)[0m
+[0;32mI (3962088) BOX_TX:   notify TRM          len= 43 -> ok (rc=0)[0m
+[0;32mI (3962098) BOX_TX:   notify TRM          len= 43 -> ok (rc=0)[0m
+[0;32mI (3962108) E2E: TX session e90d5e9e-2964-4d71-b7ff-ef58a5d53e4a committed: 3/3 packets delivered[0m
+[0;32mI (3963148) BOX_TX: subscription conn=1 notify=0[0m
+[0;32mI (3963148) BOX_TX: incoming disconnect conn=1 reason=531[0m
+[0;32mI (3997048) BOX_TX: incoming connect status=0 conn=3[0m
+[0;32mI (3997058) BOX_TX: advertising Box UUID as BOX-NODE-01[0m
+[0;32mI (3997738) BOX_TX: mtu conn=3 mtu=517[0m
+[0;32mI (3997768) BOX_TX: subscription conn=3 notify=1[0m
+[0;32mI (3997918) BOX_TX: session start conn=3 mtu=517 sid=638a3b58-db2e-465a-a9da-7c221b6a21f4 packets=3[0m
+[0;32mI (3997918) BOX_TX:   notify SID          len= 43 -> ok (rc=0)[0m
+[0;32mI (3997928) BOX_TX:   notify TRM          len= 43 -> ok (rc=0)[0m
+[0;32mI (3997938) BOX_TX:   notify TRM          len= 43 -> ok (rc=0)[0m
+[0;32mI (3997948) E2E: TX session 638a3b58-db2e-465a-a9da-7c221b6a21f4 committed: 3/3 packets delivered[0m
+[0;32mI (3999048) BOX_TX: subscription conn=3 notify=0[0m
+[0;32mI (3999058) BOX_TX: incoming disconnect conn=3 reason=531[0m
+[0;32mI (4025488) BOX_TX: incoming connect status=0 conn=1[0m
+[0;32mI (4025498) BOX_TX: advertising Box UUID as BOX-NODE-01[0m
+[0;32mI (4026188) BOX_TX: mtu conn=1 mtu=517[0m
+[0;32mI (4026228) BOX_TX: subscription conn=1 notify=1[0m
+[0;32mI (4026378) BOX_TX: session start conn=1 mtu=517 sid=9a00ae8f-790c-4c22-ae16-1fa43655f2f6 packets=3[0m
+[0;32mI (4026378) BOX_TX:   notify SID          len= 43 -> ok (rc=0)[0m
+[0;32mI (4026388) BOX_TX:   notify TRM          len= 43 -> ok (rc=0)[0m
+[0;32mI (4026398) BOX_TX:   notify TRM          len= 43 -> ok (rc=0)[0m
+[0;32mI (4026408) E2E: TX session 9a00ae8f-790c-4c22-ae16-1fa43655f2f6 committed: 3/3 packets delivered[0m
+[0;32mI (4027468) BOX_TX: subscription conn=1 notify=0[0m
+[0;32mI (4027468) BOX_TX: incoming disconnect conn=1 reason=531[0m
+[0;32mI (4061408) BOX_TX: incoming connect status=0 conn=3[0m
+[0;32mI (4061408) BOX_TX: advertising Box UUID as BOX-NODE-01[0m
+[0;32mI (4062088) BOX_TX: mtu conn=3 mtu=517[0m
+[0;32mI (4062138) BOX_TX: subscription conn=3 notify=1[0m
+[0;32mI (4062288) BOX_TX: session start conn=3 mtu=517 sid=3ddb1f1c-5f94-4187-acc0-ffdd234754ca packets=3[0m
+[0;32mI (4062288) BOX_TX:   notify SID          len= 43 -> ok (rc=0)[0m
+[0;32mI (4062298) BOX_TX:   notify TRM          len= 43 -> ok (rc=0)[0m
+[0;32mI (4062308) BOX_TX:   notify TRM          len= 43 -> ok (rc=0)[0m
+[0;32mI (4062318) E2E: TX session 3ddb1f1c-5f94-4187-acc0-ffdd234754ca committed: 3/3 packets delivered[0m
+[0;32mI (4063348) BOX_TX: subscription conn=3 notify=0[0m
+[0;32mI (4063348) BOX_TX: incoming disconnect conn=3 reason=531[0m
+[0;32mI (4108568) BOX_TX: incoming connect status=0 conn=1[0m
+[0;32mI (4108568) BOX_TX: advertising Box UUID as BOX-NODE-01[0m
+[0;32mI (4109188) BOX_TX: mtu conn=1 mtu=517[0m
+[0;32mI (4109228) BOX_TX: subscription conn=1 notify=1[0m
+[0;32mI (4109378) BOX_TX: session start conn=1 mtu=517 sid=d4fee30a-8428-4e41-901a-08e3bee52616 packets=3[0m
+[0;32mI (4109378) BOX_TX:   notify SID          len= 43 -> ok (rc=0)[0m
+[0;32mI (4109388) BOX_TX:   notify TRM          len= 43 -> ok (rc=0)[0m
+[0;32mI (4109398) BOX_TX:   notify TRM          len= 43 -> ok (rc=0)[0m
+[0;32mI (4109408) E2E: TX session d4fee30a-8428-4e41-901a-08e3bee52616 committed: 3/3 packets delivered[0m
+[0;32mI (4110448) BOX_TX: subscription conn=1 notify=0[0m
+[0;32mI (4110448) BOX_TX: incoming disconnect conn=1 reason=531[0m
+[0;32mI (4157348) BOX_TX: incoming connect status=0 conn=3[0m
+[0;32mI (4157348) BOX_TX: advertising Box UUID as BOX-NODE-01[0m
+[0;32mI (4157968) BOX_TX: mtu conn=3 mtu=517[0m
+[0;32mI (4157988) BOX_TX: subscription conn=3 notify=1[0m
+[0;32mI (4158138) BOX_TX: session start conn=3 mtu=517 sid=09d95ded-327d-42d0-8728-76589146d87d packets=3[0m
+[0;32mI (4158138) BOX_TX:   notify SID          len= 43 -> ok (rc=0)[0m
+[0;32mI (4158148) BOX_TX:   notify TRM          len= 43 -> ok (rc=0)[0m
+[0;32mI (4158158) BOX_TX:   notify TRM          len= 43 -> ok (rc=0)[0m
+[0;32mI (4158168) E2E: TX session 09d95ded-327d-42d0-8728-76589146d87d committed: 3/3 packets delivered[0m
+[0;32mI (4159198) BOX_TX: subscription conn=3 notify=0[0m
+[0;32mI (4159198) BOX_TX: incoming disconnect conn=3 reason=531[0m
+[0;32mI (4213718) BOX_TX: incoming connect status=0 conn=1[0m
+[0;32mI (4213718) BOX_TX: advertising Box UUID as BOX-NODE-01[0m
+[0;32mI (4214358) BOX_TX: mtu conn=1 mtu=517[0m
+[0;32mI (4214398) BOX_TX: subscription conn=1 notify=1[0m
+[0;32mI (4214548) BOX_TX: session start conn=1 mtu=517 sid=86b5e4af-546f-4c3e-b8cc-f4341ff829f7 packets=3[0m
+[0;32mI (4214548) BOX_TX:   notify SID          len= 43 -> ok (rc=0)[0m
+[0;32mI (4214558) BOX_TX:   notify TRM          len= 43 -> ok (rc=0)[0m
+[0;32mI (4214568) BOX_TX:   notify TRM          len= 43 -> ok (rc=0)[0m
+[0;32mI (4214578) E2E: TX session 86b5e4af-546f-4c3e-b8cc-f4341ff829f7 committed: 3/3 packets delivered[0m
+[0;32mI (4215628) BOX_TX: subscription conn=1 notify=0[0m
+[0;32mI (4215628) BOX_TX: incoming disconnect conn=1 reason=531[0m
+[0;32mI (4251608) BOX_TX: incoming connect status=0 conn=3[0m
+[0;32mI (4251608) BOX_TX: advertising Box UUID as BOX-NODE-01[0m
+[0;32mI (4252288) BOX_TX: mtu conn=3 mtu=517[0m
+[0;32mI (4252328) BOX_TX: subscription conn=3 notify=1[0m
+[0;32mI (4252478) BOX_TX: session start conn=3 mtu=517 sid=db5864ce-310e-4b95-876d-d267effeea3b packets=3[0m
+[0;32mI (4252478) BOX_TX:   notify SID          len= 43 -> ok (rc=0)[0m
+[0;32mI (4252488) BOX_TX:   notify TRM          len= 43 -> ok (rc=0)[0m
+[0;32mI (4252498) BOX_TX:   notify TRM          len= 43 -> ok (rc=0)[0m
+[0;32mI (4252508) E2E: TX session db5864ce-310e-4b95-876d-d267effeea3b committed: 3/3 packets delivered[0m
+[0;32mI (4253568) BOX_TX: subscription conn=3 notify=0[0m
+[0;32mI (4253578) BOX_TX: incoming disconnect conn=3 reason=531[0m
+[0;32mI (4290908) BOX_TX: incoming connect status=0 conn=1[0m
+[0;32mI (4290918) BOX_TX: advertising Box UUID as BOX-NODE-01[0m
+[0;32mI (4291528) BOX_TX: mtu conn=1 mtu=517[0m
+[0;32mI (4291568) BOX_TX: subscription conn=1 notify=1[0m
+[0;32mI (4291718) BOX_TX: session start conn=1 mtu=517 sid=d1eefc90-13a8-4e63-9320-6c350fcb080e packets=3[0m
+[0;32mI (4291718) BOX_TX:   notify SID          len= 43 -> ok (rc=0)[0m
+[0;32mI (4291728) BOX_TX:   notify TRM          len= 43 -> ok (rc=0)[0m
+[0;32mI (4291738) BOX_TX:   notify TRM          len= 43 -> ok (rc=0)[0m
+[0;32mI (4291748) E2E: TX session d1eefc90-13a8-4e63-9320-6c350fcb080e committed: 3/3 packets delivered[0m
+[0;32mI (4292778) BOX_TX: subscription conn=1 notify=0[0m
+[0;32mI (4292778) BOX_TX: incoming disconnect conn=1 reason=531[0m
+[0;32mI (4349238) BOX_TX: incoming connect status=0 conn=3[0m
+[0;32mI (4349238) BOX_TX: advertising Box UUID as BOX-NODE-01[0m
+[0;32mI (4349968) BOX_TX: mtu conn=3 mtu=517[0m
+[0;32mI (4350018) BOX_TX: subscription conn=3 notify=1[0m
+[0;32mI (4350168) BOX_TX: session start conn=3 mtu=517 sid=48acffd1-052b-4ade-b932-be068c064983 packets=3[0m
+[0;32mI (4350168) BOX_TX:   notify SID          len= 43 -> ok (rc=0)[0m
+[0;32mI (4350178) BOX_TX:   notify TRM          len= 43 -> ok (rc=0)[0m
+[0;32mI (4350188) BOX_TX:   notify TRM          len= 43 -> ok (rc=0)[0m
+[0;32mI (4350198) E2E: TX session 48acffd1-052b-4ade-b932-be068c064983 committed: 3/3 packets delivered[0m
+[0;32mI (4351258) BOX_TX: subscription conn=3 notify=0[0m
+[0;32mI (4351258) BOX_TX: incoming disconnect conn=3 reason=531[0m
+[0;32mI (4418718) BOX_TX: incoming connect status=0 conn=1[0m
+[0;32mI (4418718) BOX_TX: advertising Box UUID as BOX-NODE-01[0m
+[0;32mI (4419448) BOX_TX: mtu conn=1 mtu=517[0m
+[0;32mI (4419498) BOX_TX: subscription conn=1 notify=1[0m
+[0;32mI (4419648) BOX_TX: session start conn=1 mtu=517 sid=12875bd1-d455-4c63-95e2-77556a760ade packets=3[0m
+[0;32mI (4419648) BOX_TX:   notify SID          len= 43 -> ok (rc=0)[0m
+[0;32mI (4419658) BOX_TX:   notify TRM          len= 43 -> ok (rc=0)[0m
+[0;32mI (4419668) BOX_TX:   notify TRM          len= 43 -> ok (rc=0)[0m
+[0;32mI (4419678) E2E: TX session 12875bd1-d455-4c63-95e2-77556a760ade committed: 3/3 packets delivered[0m
+[0;32mI (4420708) BOX_TX: subscription conn=1 notify=0[0m
+[0;32mI (4420708) BOX_TX: incoming disconnect conn=1 reason=531[0m
+[0;32mI (4511118) BOX_TX: incoming connect status=0 conn=3[0m
+[0;32mI (4511118) BOX_TX: advertising Box UUID as BOX-NODE-01[0m
+[0;32mI (4511798) BOX_TX: mtu conn=3 mtu=517[0m
+[0;32mI (4511828) BOX_TX: subscription conn=3 notify=1[0m
+[0;32mI (4511988) BOX_TX: session start conn=3 mtu=517 sid=e3eb339f-ab10-4315-89d0-5148a5abed43 packets=3[0m
+[0;32mI (4511988) BOX_TX:   notify SID          len= 43 -> ok (rc=0)[0m
+[0;32mI (4511998) BOX_TX:   notify TRM          len= 43 -> ok (rc=0)[0m
+[0;32mI (4512008) BOX_TX:   notify TRM          len= 43 -> ok (rc=0)[0m
+[0;32mI (4512018) E2E: TX session e3eb339f-ab10-4315-89d0-5148a5abed43 committed: 3/3 packets delivered[0m
+[0;32mI (4513038) BOX_TX: subscription conn=3 notify=0[0m
+[0;32mI (4513048) BOX_TX: incoming disconnect conn=3 reason=531[0m
+[0;32mI (4549038) BOX_TX: incoming connect status=0 conn=1[0m
+[0;32mI (4549048) BOX_TX: advertising Box UUID as BOX-NODE-01[0m
+[0;32mI (4549708) BOX_TX: mtu conn=1 mtu=517[0m
+[0;32mI (4549758) BOX_TX: subscription conn=1 notify=1[0m
+[0;32mI (4549908) BOX_TX: session start conn=1 mtu=517 sid=5da1505c-0d2f-4ada-a92f-6a0afc23e966 packets=3[0m
+[0;32mI (4549908) BOX_TX:   notify SID          len= 43 -> ok (rc=0)[0m
+[0;32mI (4549918) BOX_TX:   notify TRM          len= 43 -> ok (rc=0)[0m
+[0;32mI (4549928) BOX_TX:   notify TRM          len= 43 -> ok (rc=0)[0m
+[0;32mI (4549938) E2E: TX session 5da1505c-0d2f-4ada-a92f-6a0afc23e966 committed: 3/3 packets delivered[0m
+[0;32mI (4550978) BOX_TX: subscription conn=1 notify=0[0m
+[0;32mI (4550978) BOX_TX: incoming disconnect conn=1 reason=531[0m
+[0;32mI (4592308) BOX_TX: incoming connect status=0 conn=3[0m
+[0;32mI (4592308) BOX_TX: advertising Box UUID as BOX-NODE-01[0m
+[0;32mI (4592928) BOX_TX: mtu conn=3 mtu=517[0m
+[0;32mI (4592968) BOX_TX: subscription conn=3 notify=1[0m
+[0;32mI (4593118) BOX_TX: session start conn=3 mtu=517 sid=c6210590-162a-4acd-8800-e1ca849ddfc8 packets=3[0m
+[0;32mI (4593118) BOX_TX:   notify SID          len= 43 -> ok (rc=0)[0m
+[0;32mI (4593128) BOX_TX:   notify TRM          len= 43 -> ok (rc=0)[0m
+[0;32mI (4593138) BOX_TX:   notify TRM          len= 43 -> ok (rc=0)[0m
+[0;32mI (4593148) E2E: TX session c6210590-162a-4acd-8800-e1ca849ddfc8 committed: 3/3 packets delivered[0m
+[0;32mI (4594188) BOX_TX: subscription conn=3 notify=0[0m
+[0;32mI (4594188) BOX_TX: incoming disconnect conn=3 reason=531[0m
+[0;32mI (4654828) BOX_TX: incoming connect status=0 conn=1[0m
+[0;32mI (4654828) BOX_TX: advertising Box UUID as BOX-NODE-01[0m
+[0;32mI (4655488) BOX_TX: mtu conn=1 mtu=517[0m
+[0;32mI (4655528) BOX_TX: subscription conn=1 notify=1[0m
+[0;32mI (4655678) BOX_TX: session start conn=1 mtu=517 sid=09376aa8-99d1-499f-b29a-585d36c75752 packets=3[0m
+[0;32mI (4655678) BOX_TX:   notify SID          len= 43 -> ok (rc=0)[0m
+[0;32mI (4655688) BOX_TX:   notify TRM          len= 43 -> ok (rc=0)[0m
+[0;32mI (4655698) BOX_TX:   notify TRM          len= 43 -> ok (rc=0)[0m
+[0;32mI (4655708) E2E: TX session 09376aa8-99d1-499f-b29a-585d36c75752 committed: 3/3 packets delivered[0m
+[0;32mI (4656748) BOX_TX: subscription conn=1 notify=0[0m
+[0;32mI (4656748) BOX_TX: incoming disconnect conn=1 reason=531[0m
+[0;32mI (4705708) BOX_TX: incoming connect status=0 conn=3[0m
+[0;32mI (4705708) BOX_TX: advertising Box UUID as BOX-NODE-01[0m
+[0;32mI (4706378) BOX_TX: mtu conn=3 mtu=517[0m
+[0;32mI (4706418) BOX_TX: subscription conn=3 notify=1[0m
+[0;32mI (4706568) BOX_TX: session start conn=3 mtu=517 sid=26c00598-e07a-4a32-92cc-f56f455551a8 packets=3[0m
+[0;32mI (4706568) BOX_TX:   notify SID          len= 43 -> ok (rc=0)[0m
+[0;32mI (4706578) BOX_TX:   notify TRM          len= 43 -> ok (rc=0)[0m
+[0;32mI (4706588) BOX_TX:   notify TRM          len= 43 -> ok (rc=0)[0m
+[0;32mI (4706598) E2E: TX session 26c00598-e07a-4a32-92cc-f56f455551a8 committed: 3/3 packets delivered[0m
+[0;32mI (4707628) BOX_TX: subscription conn=3 notify=0[0m
+[0;32mI (4707628) BOX_TX: incoming disconnect conn=3 reason=531[0m
+[0;32mI (4750948) BOX_TX: incoming connect status=0 conn=1[0m
+[0;32mI (4750948) BOX_TX: advertising Box UUID as BOX-NODE-01[0m
+[0;32mI (4751548) BOX_TX: mtu conn=1 mtu=517[0m
+[0;32mI (4751608) BOX_TX: subscription conn=1 notify=1[0m
+[0;32mI (4751758) BOX_TX: session start conn=1 mtu=517 sid=1fb19a9b-0d7a-4c55-99fa-ce0baf3974b3 packets=3[0m
+[0;32mI (4751758) BOX_TX:   notify SID          len= 43 -> ok (rc=0)[0m
+[0;32mI (4751768) BOX_TX:   notify TRM          len= 43 -> ok (rc=0)[0m
+[0;32mI (4751778) BOX_TX:   notify TRM          len= 43 -> ok (rc=0)[0m
+[0;32mI (4751788) E2E: TX session 1fb19a9b-0d7a-4c55-99fa-ce0baf3974b3 committed: 3/3 packets delivered[0m
+[0;32mI (4752828) BOX_TX: subscription conn=1 notify=0[0m
+[0;32mI (4752838) BOX_TX: incoming disconnect conn=1 reason=531[0m
+[0;32mI (4779478) BOX_TX: incoming connect status=0 conn=3[0m
+[0;32mI (4779478) BOX_TX: advertising Box UUID as BOX-NODE-01[0m
+[0;32mI (4780138) BOX_TX: mtu conn=3 mtu=517[0m
+[0;32mI (4780168) BOX_TX: subscription conn=3 notify=1[0m
+[0;32mI (4780318) BOX_TX: session start conn=3 mtu=517 sid=0bbf8dbe-44dc-4bbe-97f5-eacc7ea60488 packets=3[0m
+[0;32mI (4780318) BOX_TX:   notify SID          len= 43 -> ok (rc=0)[0m
+[0;32mI (4780328) BOX_TX:   notify TRM          len= 43 -> ok (rc=0)[0m
+[0;32mI (4780338) BOX_TX:   notify TRM          len= 43 -> ok (rc=0)[0m
+[0;32mI (4780348) E2E: TX session 0bbf8dbe-44dc-4bbe-97f5-eacc7ea60488 committed: 3/3 packets delivered[0m
+[0;32mI (4781398) BOX_TX: subscription conn=3 notify=0[0m
+[0;32mI (4781398) BOX_TX: incoming disconnect conn=3 reason=531[0m
+[0;32mI (4811308) BOX_TX: incoming connect status=0 conn=1[0m
+[0;32mI (4811318) BOX_TX: advertising Box UUID as BOX-NODE-01[0m
+[0;32mI (4811998) BOX_TX: mtu conn=1 mtu=517[0m
+[0;32mI (4812068) BOX_TX: subscription conn=1 notify=1[0m
+[0;32mI (4812218) BOX_TX: session start conn=1 mtu=517 sid=05f2b503-5ad4-4695-8c31-ce10ca801f42 packets=3[0m
+[0;32mI (4812218) BOX_TX:   notify SID          len= 43 -> ok (rc=0)[0m
+[0;32mI (4812228) BOX_TX:   notify TRM          len= 43 -> ok (rc=0)[0m
+[0;32mI (4812238) BOX_TX:   notify TRM          len= 43 -> ok (rc=0)[0m
+[0;32mI (4812248) E2E: TX session 05f2b503-5ad4-4695-8c31-ce10ca801f42 committed: 3/3 packets delivered[0m
+[0;32mI (4813288) BOX_TX: subscription conn=1 notify=0[0m
+[0;32mI (4813288) BOX_TX: incoming disconnect conn=1 reason=531[0m
+[0;32mI (4832248) BOX_TX: incoming connect status=0 conn=3[0m
+[0;32mI (4832258) BOX_TX: advertising Box UUID as BOX-NODE-01[0m
+[0;32mI (4832848) BOX_TX: mtu conn=3 mtu=517[0m
+[0;32mI (4832878) BOX_TX: subscription conn=3 notify=1[0m
+[0;32mI (4833028) BOX_TX: session start conn=3 mtu=517 sid=f63536a7-9049-43bf-9319-41b185c179c2 packets=3[0m
+[0;32mI (4833028) BOX_TX:   notify SID          len= 43 -> ok (rc=0)[0m
+[0;32mI (4833038) BOX_TX:   notify TRM          len= 43 -> ok (rc=0)[0m
+[0;32mI (4833048) BOX_TX:   notify TRM          len= 43 -> ok (rc=0)[0m
+[0;32mI (4833058) E2E: TX session f63536a7-9049-43bf-9319-41b185c179c2 committed: 3/3 packets delivered[0m
+[0;32mI (4834108) BOX_TX: subscription conn=3 notify=0[0m
+[0;32mI (4834108) BOX_TX: incoming disconnect conn=3 reason=531[0m
+[0;32mI (4860628) BOX_TX: incoming connect status=0 conn=1[0m
+[0;32mI (4860638) BOX_TX: advertising Box UUID as BOX-NODE-01[0m
+[0;32mI (4861378) BOX_TX: mtu conn=1 mtu=517[0m
+[0;32mI (4861408) BOX_TX: subscription conn=1 notify=1[0m
+[0;32mI (4861558) BOX_TX: session start conn=1 mtu=517 sid=059f11fb-8eeb-41a0-8f45-7d0c3956f4fc packets=3[0m
+[0;32mI (4861558) BOX_TX:   notify SID          len= 43 -> ok (rc=0)[0m
+[0;32mI (4861568) BOX_TX:   notify TRM          len= 43 -> ok (rc=0)[0m
+[0;32mI (4861578) BOX_TX:   notify TRM          len= 43 -> ok (rc=0)[0m
+[0;32mI (4861588) E2E: TX session 059f11fb-8eeb-41a0-8f45-7d0c3956f4fc committed: 3/3 packets delivered[0m
+[0;32mI (4862668) BOX_TX: subscription conn=1 notify=0[0m
+[0;32mI (4862668) BOX_TX: incoming disconnect conn=1 reason=531[0m
+[0;32mI (4889318) BOX_TX: incoming connect status=0 conn=3[0m
+[0;32mI (4889318) BOX_TX: advertising Box UUID as BOX-NODE-01[0m
+[0;32mI (4889948) BOX_TX: mtu conn=3 mtu=517[0m
+[0;32mI (4889998) BOX_TX: subscription conn=3 notify=1[0m
+[0;32mI (4890148) BOX_TX: session start conn=3 mtu=517 sid=12f2618d-9ca4-4b38-b7aa-0f1c54557c1e packets=3[0m
+[0;32mI (4890148) BOX_TX:   notify SID          len= 43 -> ok (rc=0)[0m
+[0;32mI (4890158) BOX_TX:   notify TRM          len= 43 -> ok (rc=0)[0m
+[0;32mI (4890168) BOX_TX:   notify TRM          len= 43 -> ok (rc=0)[0m
+[0;32mI (4890178) E2E: TX session 12f2618d-9ca4-4b38-b7aa-0f1c54557c1e committed: 3/3 packets delivered[0m
+[0;32mI (4891248) BOX_TX: subscription conn=3 notify=0[0m
+[0;32mI (4891258) BOX_TX: incoming disconnect conn=3 reason=531[0m
+[0;32mI (4919378) BOX_TX: incoming connect status=0 conn=1[0m
+[0;32mI (4919378) BOX_TX: advertising Box UUID as BOX-NODE-01[0m
+[0;32mI (4920268) BOX_TX: mtu conn=1 mtu=517[0m
+[0;32mI (4920308) BOX_TX: subscription conn=1 notify=1[0m
+[0;32mI (4920458) BOX_TX: session start conn=1 mtu=517 sid=3679b548-84bc-4efd-b1a5-f02810a9c392 packets=3[0m
+[0;32mI (4920458) BOX_TX:   notify SID          len= 43 -> ok (rc=0)[0m
+[0;32mI (4920468) BOX_TX:   notify TRM          len= 43 -> ok (rc=0)[0m
+[0;32mI (4920478) BOX_TX:   notify TRM          len= 43 -> ok (rc=0)[0m
+[0;32mI (4920488) E2E: TX session 3679b548-84bc-4efd-b1a5-f02810a9c392 committed: 3/3 packets delivered[0m
+[0;32mI (4921498) BOX_TX: subscription conn=1 notify=0[0m
+[0;32mI (4921498) BOX_TX: incoming disconnect conn=1 reason=531[0m
+[0;32mI (5004398) BOX_TX: incoming connect status=0 conn=3[0m
+[0;32mI (5004398) BOX_TX: advertising Box UUID as BOX-NODE-01[0m
+[0;32mI (5005018) BOX_TX: mtu conn=3 mtu=517[0m
+[0;32mI (5005048) BOX_TX: subscription conn=3 notify=1[0m
+[0;32mI (5005198) BOX_TX: session start conn=3 mtu=517 sid=e2aa23df-3a9a-4649-aac3-aa6e824db1a0 packets=3[0m
+[0;32mI (5005198) BOX_TX:   notify SID          len= 43 -> ok (rc=0)[0m
+[0;32mI (5005208) BOX_TX:   notify TRM          len= 43 -> ok (rc=0)[0m
+[0;32mI (5005218) BOX_TX:   notify TRM          len= 43 -> ok (rc=0)[0m
+[0;32mI (5005228) E2E: TX session e2aa23df-3a9a-4649-aac3-aa6e824db1a0 committed: 3/3 packets delivered[0m
+[0;32mI (5006308) BOX_TX: subscription conn=3 notify=0[0m
+[0;32mI (5006308) BOX_TX: incoming disconnect conn=3 reason=531[0m
+[0;32mI (5032658) BOX_TX: incoming connect status=0 conn=1[0m
+[0;32mI (5032658) BOX_TX: advertising Box UUID as BOX-NODE-01[0m
+[0;32mI (5033328) BOX_TX: mtu conn=1 mtu=517[0m
+[0;32mI (5033358) BOX_TX: subscription conn=1 notify=1[0m
+[0;32mI (5033518) BOX_TX: session start conn=1 mtu=517 sid=671beac2-83f9-41da-9439-1ae84f3feee0 packets=3[0m
+[0;32mI (5033518) BOX_TX:   notify SID          len= 43 -> ok (rc=0)[0m
+[0;32mI (5033528) BOX_TX:   notify TRM          len= 43 -> ok (rc=0)[0m
+[0;32mI (5033538) BOX_TX:   notify TRM          len= 43 -> ok (rc=0)[0m
+[0;32mI (5033548) E2E: TX session 671beac2-83f9-41da-9439-1ae84f3feee0 committed: 3/3 packets delivered[0m
+[0;32mI (5034618) BOX_TX: subscription conn=1 notify=0[0m
+[0;32mI (5034628) BOX_TX: incoming disconnect conn=1 reason=531[0m
+[0;32mI (5116118) BOX_TX: incoming connect status=0 conn=3[0m
+[0;32mI (5116128) BOX_TX: advertising Box UUID as BOX-NODE-01[0m
+[0;32mI (5116818) BOX_TX: mtu conn=3 mtu=517[0m
+[0;32mI (5116868) BOX_TX: subscription conn=3 notify=1[0m
+[0;32mI (5117018) BOX_TX: session start conn=3 mtu=517 sid=dc56b58c-77e4-4fe9-aa42-0183f794aa28 packets=3[0m
+[0;32mI (5117018) BOX_TX:   notify SID          len= 43 -> ok (rc=0)[0m
+[0;32mI (5117028) BOX_TX:   notify TRM          len= 43 -> ok (rc=0)[0m
+[0;32mI (5117038) BOX_TX:   notify TRM          len= 43 -> ok (rc=0)[0m
+[0;32mI (5117048) E2E: TX session dc56b58c-77e4-4fe9-aa42-0183f794aa28 committed: 3/3 packets delivered[0m
+[0;32mI (5118078) BOX_TX: subscription conn=3 notify=0[0m
+[0;32mI (5118078) BOX_TX: incoming disconnect conn=3 reason=531[0m
+[0;32mI (5180118) BOX_TX: incoming connect status=0 conn=1[0m
+[0;32mI (5180118) BOX_TX: advertising Box UUID as BOX-NODE-01[0m
+[0;32mI (5180768) BOX_TX: mtu conn=1 mtu=517[0m
+[0;32mI (5180808) BOX_TX: subscription conn=1 notify=1[0m
+[0;32mI (5180958) BOX_TX: session start conn=1 mtu=517 sid=92c95516-3e3e-4a74-9fd8-724a29e98523 packets=3[0m
+[0;32mI (5180958) BOX_TX:   notify SID          len= 43 -> ok (rc=0)[0m
+[0;32mI (5180968) BOX_TX:   notify TRM          len= 43 -> ok (rc=0)[0m
+[0;32mI (5180978) BOX_TX:   notify TRM          len= 43 -> ok (rc=0)[0m
+[0;32mI (5180988) E2E: TX session 92c95516-3e3e-4a74-9fd8-724a29e98523 committed: 3/3 packets delivered[0m
+[0;32mI (5182018) BOX_TX: subscription conn=1 notify=0[0m
+[0;32mI (5182018) BOX_TX: incoming disconnect conn=1 reason=531[0m
+[0;32mI (5227188) BOX_TX: incoming connect status=0 conn=3[0m
+[0;32mI (5227188) BOX_TX: advertising Box UUID as BOX-NODE-01[0m
+[0;32mI (5227858) BOX_TX: mtu conn=3 mtu=517[0m
+[0;32mI (5227898) BOX_TX: subscription conn=3 notify=1[0m
+[0;32mI (5228048) BOX_TX: session start conn=3 mtu=517 sid=0c2d1619-20d5-44c3-bdc9-6642d0e0521d packets=3[0m
+[0;32mI (5228048) BOX_TX:   notify SID          len= 43 -> ok (rc=0)[0m
+[0;32mI (5228058) BOX_TX:   notify TRM          len= 43 -> ok (rc=0)[0m
+[0;32mI (5228068) BOX_TX:   notify TRM          len= 43 -> ok (rc=0)[0m
+[0;32mI (5228078) E2E: TX session 0c2d1619-20d5-44c3-bdc9-6642d0e0521d committed: 3/3 packets delivered[0m
+[0;32mI (5229148) BOX_TX: subscription conn=3 notify=0[0m
+[0;32mI (5229148) BOX_TX: incoming disconnect conn=3 reason=531[0m
+[0;32mI (5272668) BOX_TX: incoming connect status=0 conn=1[0m
+[0;32mI (5272668) BOX_TX: advertising Box UUID as BOX-NODE-01[0m
+[0;32mI (5273378) BOX_TX: mtu conn=1 mtu=517[0m
+[0;32mI (5273418) BOX_TX: subscription conn=1 notify=1[0m
+[0;32mI (5273578) BOX_TX: session start conn=1 mtu=517 sid=fbd56839-4ae7-4721-8a8f-41a8a97af1bf packets=3[0m
+[0;32mI (5273578) BOX_TX:   notify SID          len= 43 -> ok (rc=0)[0m
+[0;32mI (5273588) BOX_TX:   notify TRM          len= 43 -> ok (rc=0)[0m
+[0;32mI (5273598) BOX_TX:   notify TRM          len= 43 -> ok (rc=0)[0m
+[0;32mI (5273608) E2E: TX session fbd56839-4ae7-4721-8a8f-41a8a97af1bf committed: 3/3 packets delivered[0m
+[0;32mI (5274628) BOX_TX: subscription conn=1 notify=0[0m
+[0;32mI (5274628) BOX_TX: incoming disconnect conn=1 reason=531[0m
+[0;32mI (5332578) BOX_TX: incoming connect status=0 conn=3[0m
+[0;32mI (5332578) BOX_TX: advertising Box UUID as BOX-NODE-01[0m
+[0;32mI (5333218) BOX_TX: mtu conn=3 mtu=517[0m
+[0;32mI (5333248) BOX_TX: subscription conn=3 notify=1[0m
+[0;32mI (5333398) BOX_TX: session start conn=3 mtu=517 sid=b9f93d2a-9c86-4d4b-b45e-c6a67868b387 packets=3[0m
+[0;32mI (5333398) BOX_TX:   notify SID          len= 43 -> ok (rc=0)[0m
+[0;32mI (5333408) BOX_TX:   notify TRM          len= 43 -> ok (rc=0)[0m
+[0;32mI (5333418) BOX_TX:   notify TRM          len= 43 -> ok (rc=0)[0m
+[0;32mI (5333428) E2E: TX session b9f93d2a-9c86-4d4b-b45e-c6a67868b387 committed: 3/3 packets delivered[0m
+[0;32mI (5334508) BOX_TX: subscription conn=3 notify=0[0m
+[0;32mI (5334508) BOX_TX: incoming disconnect conn=3 reason=531[0m
+[0;32mI (5368568) BOX_TX: incoming connect status=0 conn=1[0m
+[0;32mI (5368568) BOX_TX: advertising Box UUID as BOX-NODE-01[0m
+[0;32mI (5369688) BOX_TX: mtu conn=1 mtu=517[0m
+[0;32mI (5369718) BOX_TX: subscription conn=1 notify=1[0m
+[0;32mI (5369868) BOX_TX: session start conn=1 mtu=517 sid=90fe9bbd-8646-45fc-a5cd-334ddc63df5a packets=3[0m
+[0;32mI (5369868) BOX_TX:   notify SID          len= 43 -> ok (rc=0)[0m
+[0;32mI (5369878) BOX_TX:   notify TRM          len= 43 -> ok (rc=0)[0m
+[0;32mI (5369888) BOX_TX:   notify TRM          len= 43 -> ok (rc=0)[0m
+[0;32mI (5369898) E2E: TX session 90fe9bbd-8646-45fc-a5cd-334ddc63df5a committed: 3/3 packets delivered[0m
+[0;32mI (5370968) BOX_TX: subscription conn=1 notify=0[0m
+[0;32mI (5370968) BOX_TX: incoming disconnect conn=1 reason=531[0m
+[0;32mI (5393008) BOX_TX: incoming connect status=0 conn=3[0m
+[0;32mI (5393018) BOX_TX: advertising Box UUID as BOX-NODE-01[0m
+[0;32mI (5393658) BOX_TX: mtu conn=3 mtu=517[0m
+[0;32mI (5393708) BOX_TX: subscription conn=3 notify=1[0m
+[0;32mI (5393858) BOX_TX: session start conn=3 mtu=517 sid=350ccb07-2c71-494e-a783-f8170f04ca1b packets=3[0m
+[0;32mI (5393858) BOX_TX:   notify SID          len= 43 -> ok (rc=0)[0m
+[0;32mI (5393868) BOX_TX:   notify TRM          len= 43 -> ok (rc=0)[0m
+[0;32mI (5393878) BOX_TX:   notify TRM          len= 43 -> ok (rc=0)[0m
+[0;32mI (5393888) E2E: TX session 350ccb07-2c71-494e-a783-f8170f04ca1b committed: 3/3 packets delivered[0m
+[0;32mI (5394918) BOX_TX: subscription conn=3 notify=0[0m
+[0;32mI (5394918) BOX_TX: incoming disconnect conn=3 reason=531[0m
+[0;32mI (5460328) BOX_TX: incoming connect status=0 conn=1[0m
+[0;32mI (5460328) BOX_TX: advertising Box UUID as BOX-NODE-01[0m
+[0;32mI (5461018) BOX_TX: mtu conn=1 mtu=517[0m
+[0;32mI (5461068) BOX_TX: subscription conn=1 notify=1[0m
+[0;32mI (5461218) BOX_TX: session start conn=1 mtu=517 sid=d265c18e-23c8-4df6-bdaa-6bd299cdf06a packets=3[0m
+[0;32mI (5461218) BOX_TX:   notify SID          len= 43 -> ok (rc=0)[0m
+[0;32mI (5461228) BOX_TX:   notify TRM          len= 43 -> ok (rc=0)[0m
+[0;32mI (5461238) BOX_TX:   notify TRM          len= 43 -> ok (rc=0)[0m
+[0;32mI (5461248) E2E: TX session d265c18e-23c8-4df6-bdaa-6bd299cdf06a committed: 3/3 packets delivered[0m
+[0;32mI (5462308) BOX_TX: subscription conn=1 notify=0[0m
+[0;32mI (5462308) BOX_TX: incoming disconnect conn=1 reason=531[0m
+[0;32mI (5485798) BOX_TX: incoming connect status=0 conn=3[0m
+[0;32mI (5485798) BOX_TX: advertising Box UUID as BOX-NODE-01[0m
+[0;32mI (5486758) BOX_TX: mtu conn=3 mtu=517[0m
+[0;32mI (5486808) BOX_TX: subscription conn=3 notify=1[0m
+[0;32mI (5486958) BOX_TX: session start conn=3 mtu=517 sid=7d701cfa-01d1-4291-8fd4-e4a4bc7abc6b packets=3[0m
+[0;32mI (5486958) BOX_TX:   notify SID          len= 43 -> ok (rc=0)[0m
+[0;32mI (5486968) BOX_TX:   notify TRM          len= 43 -> ok (rc=0)[0m
+[0;32mI (5486978) BOX_TX:   notify TRM          len= 43 -> ok (rc=0)[0m
+[0;32mI (5486988) E2E: TX session 7d701cfa-01d1-4291-8fd4-e4a4bc7abc6b committed: 3/3 packets delivered[0m
+[0;32mI (5488008) BOX_TX: subscription conn=3 notify=0[0m
+[0;32mI (5488008) BOX_TX: incoming disconnect conn=3 reason=531[0m
+[0;32mI (5495558) BOX_TX: incoming connect status=0 conn=1[0m
+[0;32mI (5495558) BOX_TX: advertising Box UUID as BOX-NODE-01[0m
+[0;32mI (5496258) BOX_TX: mtu conn=1 mtu=517[0m
+[0;32mI (5496308) BOX_TX: subscription conn=1 notify=1[0m
+[0;32mI (5496458) BOX_TX: session start conn=1 mtu=517 sid=d8c1bda7-461c-4286-9fa8-1222de3d875e packets=3[0m
+[0;32mI (5496458) BOX_TX:   notify SID          len= 43 -> ok (rc=0)[0m
+[0;32mI (5496468) BOX_TX:   notify TRM          len= 43 -> ok (rc=0)[0m
+[0;32mI (5496478) BOX_TX:   notify TRM          len= 43 -> ok (rc=0)[0m
+[0;32mI (5496488) E2E: TX session d8c1bda7-461c-4286-9fa8-1222de3d875e committed: 3/3 packets delivered[0m
+[0;32mI (5497578) BOX_TX: subscription conn=1 notify=0[0m
+[0;32mI (5497588) BOX_TX: incoming disconnect conn=1 reason=531[0m
+[0;32mI (5524548) BOX_TX: incoming connect status=0 conn=3[0m
+[0;32mI (5524548) BOX_TX: advertising Box UUID as BOX-NODE-01[0m
+[0;32mI (5525348) BOX_TX: mtu conn=3 mtu=517[0m
+[0;32mI (5525418) BOX_TX: subscription conn=3 notify=1[0m
+[0;32mI (5525568) BOX_TX: session start conn=3 mtu=517 sid=491470e2-ced4-4183-a607-bc0bf47d97ad packets=3[0m
+[0;32mI (5525568) BOX_TX:   notify SID          len= 43 -> ok (rc=0)[0m
+[0;32mI (5525578) BOX_TX:   notify TRM          len= 43 -> ok (rc=0)[0m
+[0;32mI (5525588) BOX_TX:   notify TRM          len= 43 -> ok (rc=0)[0m
+[0;32mI (5525598) E2E: TX session 491470e2-ced4-4183-a607-bc0bf47d97ad committed: 3/3 packets delivered[0m
+[0;32mI (5526668) BOX_TX: subscription conn=3 notify=0[0m
+[0;32mI (5526668) BOX_TX: incoming disconnect conn=3 reason=531[0m
+[0;32mI (5620798) BOX_TX: incoming connect status=0 conn=1[0m
+[0;32mI (5620798) BOX_TX: advertising Box UUID as BOX-NODE-01[0m
+[0;32mI (5621548) BOX_TX: mtu conn=1 mtu=517[0m
+[0;32mI (5621588) BOX_TX: subscription conn=1 notify=1[0m
+[0;32mI (5621738) BOX_TX: session start conn=1 mtu=517 sid=e45c6984-4a63-44b2-9042-af1353e031cc packets=3[0m
+[0;32mI (5621738) BOX_TX:   notify SID          len= 43 -> ok (rc=0)[0m
+[0;32mI (5621748) BOX_TX:   notify TRM          len= 43 -> ok (rc=0)[0m
+[0;32mI (5621758) BOX_TX:   notify TRM          len= 43 -> ok (rc=0)[0m
+[0;32mI (5621768) E2E: TX session e45c6984-4a63-44b2-9042-af1353e031cc committed: 3/3 packets delivered[0m
+[0;32mI (5622868) BOX_TX: subscription conn=1 notify=0[0m
+[0;32mI (5622868) BOX_TX: incoming disconnect conn=1 reason=531[0m
+[0;32mI (5664598) BOX_TX: incoming connect status=0 conn=3[0m
+[0;32mI (5664608) BOX_TX: advertising Box UUID as BOX-NODE-01[0m
+[0;32mI (5665438) BOX_TX: mtu conn=3 mtu=517[0m
+[0;32mI (5665488) BOX_TX: subscription conn=3 notify=1[0m
+[0;32mI (5665638) BOX_TX: session start conn=3 mtu=517 sid=609e549c-c86b-4524-a84a-4581b2d36d2e packets=3[0m
+[0;32mI (5665638) BOX_TX:   notify SID          len= 43 -> ok (rc=0)[0m
+[0;32mI (5665648) BOX_TX:   notify TRM          len= 43 -> ok (rc=0)[0m
+[0;32mI (5665658) BOX_TX:   notify TRM          len= 43 -> ok (rc=0)[0m
+[0;32mI (5665668) E2E: TX session 609e549c-c86b-4524-a84a-4581b2d36d2e committed: 3/3 packets delivered[0m
+[0;32mI (5666758) BOX_TX: subscription conn=3 notify=0[0m
+[0;32mI (5666758) BOX_TX: incoming disconnect conn=3 reason=531[0m
+[0;32mI (5696938) BOX_TX: incoming connect status=0 conn=1[0m
+[0;32mI (5696948) BOX_TX: advertising Box UUID as BOX-NODE-01[0m
+[0;32mI (5697668) BOX_TX: mtu conn=1 mtu=517[0m
+[0;32mI (5697718) BOX_TX: subscription conn=1 notify=1[0m
+[0;32mI (5697868) BOX_TX: session start conn=1 mtu=517 sid=40ff43da-6c0b-4908-b3ac-1a42be9262a0 packets=3[0m
+[0;32mI (5697868) BOX_TX:   notify SID          len= 43 -> ok (rc=0)[0m
+[0;32mI (5697878) BOX_TX:   notify TRM          len= 43 -> ok (rc=0)[0m
+[0;32mI (5697888) BOX_TX:   notify TRM          len= 43 -> ok (rc=0)[0m
+[0;32mI (5697898) E2E: TX session 40ff43da-6c0b-4908-b3ac-1a42be9262a0 committed: 3/3 packets delivered[0m
+[0;32mI (5698948) BOX_TX: subscription conn=1 notify=0[0m
+[0;32mI (5698948) BOX_TX: incoming disconnect conn=1 reason=531[0m
+[0;32mI (5741378) BOX_TX: incoming connect status=0 conn=3[0m
+[0;32mI (5741378) BOX_TX: advertising Box UUID as BOX-NODE-01[0m
+[0;32mI (5742048) BOX_TX: mtu conn=3 mtu=5

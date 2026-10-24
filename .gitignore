@@ -54,4 +54,8 @@ dkms.conf
 # debug information files
 *.dwo
 
+.DS_Store
 tx/build/
+tx/backup-*
+tx/box-*
+tx/.DS_Store
