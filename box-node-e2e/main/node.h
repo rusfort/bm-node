@@ -23,7 +23,14 @@ extern uint8_t g_own_addr_type;
 
 uint32_t node_now_ms(void);
 
+struct ble_gap_event;
+
 /* Периферия: GATT server Box + передающие сессии. */
+/* События GATT server, пришедшие по соединению, которое инициировал Node (central):
+ * Android может открыть GATT client поверх той же BLE-связи. */
+int  periph_conn_event(struct ble_gap_event *event);
+/* Есть подписчик на conn, которому ещё не отдана сессия, или сессия идёт сейчас. */
+bool periph_conn_busy(uint16_t conn);
 int  periph_gatt_init(void);
 void periph_start(void);          /* вызывать из sync_cb */
 void periph_task_start(void);

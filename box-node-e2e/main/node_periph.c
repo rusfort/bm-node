@@ -40,6 +40,7 @@ static uint16_t chr_val_handle;
 static struct {
     uint16_t conn;
     bool     subscribed;
+    bool     served;        /* сессия для этой подписки уже отправлена */
 } subs[MAX_SUBS];
 
 static QueueHandle_t tx_q;           /* conn_handle для запуска сессии */
@@ -140,6 +141,7 @@ static void sub_set(uint16_t conn, bool on)
     for (int i = 0; i < MAX_SUBS; i++) {
         if (subs[i].subscribed && subs[i].conn == conn) {
             subs[i].subscribed = on;
+            if (on) subs[i].served = false;
             return;
         }
         if (!subs[i].subscribed && free_i < 0) free_i = i;
@@ -147,7 +149,22 @@ static void sub_set(uint16_t conn, bool on)
     if (on && free_i >= 0) {
         subs[free_i].conn = conn;
         subs[free_i].subscribed = true;
+        subs[free_i].served = false;
     }
+}
+
+static void sub_mark_served(uint16_t conn)
+{
+    for (int i = 0; i < MAX_SUBS; i++)
+        if (subs[i].subscribed && subs[i].conn == conn) subs[i].served = true;
+}
+
+bool periph_conn_busy(uint16_t conn)
+{
+    if (tx_conn == conn) return true;
+    for (int i = 0; i < MAX_SUBS; i++)
+        if (subs[i].subscribed && subs[i].conn == conn && !subs[i].served) return true;
+    return false;
 }
 
 static bool sub_is(uint16_t conn)
@@ -184,6 +201,18 @@ static int periph_gap_event(struct ble_gap_event *event, void *arg)
         return 0;
 
     case BLE_GAP_EVENT_SUBSCRIBE:
+    case BLE_GAP_EVENT_NOTIFY_TX:
+        return periph_conn_event(event);
+
+    default:
+        return 0;
+    }
+}
+
+int periph_conn_event(struct ble_gap_event *event)
+{
+    switch (event->type) {
+    case BLE_GAP_EVENT_SUBSCRIBE:
         if (event->subscribe.attr_handle == chr_val_handle) {
             uint16_t c = event->subscribe.conn_handle;
             bool on = event->subscribe.cur_notify;
@@ -199,6 +228,10 @@ static int periph_gap_event(struct ble_gap_event *event, void *arg)
             tx_status = event->notify_tx.status;
             xSemaphoreGive(tx_done);
         }
+        return 0;
+
+    case BLE_GAP_EVENT_DISCONNECT:
+        sub_set(event->disconnect.conn.conn_handle, false);
         return 0;
 
     default:
@@ -259,6 +292,8 @@ static void tx_task(void *arg)
             vTaskDelay(pdMS_TO_TICKS(10));    /* GATT_SEND_INTERVAL_MS, как в Android */
         }
         tx_conn = BLE_HS_CONN_HANDLE_NONE;
+
+        sub_mark_served(conn);
 
         E2E_LOCK();
         e2e_commit_session(&s, delivered);

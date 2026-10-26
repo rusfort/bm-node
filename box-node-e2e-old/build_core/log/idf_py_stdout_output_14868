@@ -1,0 +1,393 @@
+Command: /Users/nickrusfort/.espressif/python_env/idf5.5_py3.13_env/bin/python /Users/nickrusfort/esp/esp-idf-v5.5.5/tools/idf_monitor.py -p /dev/cu.usbmodem5CCD0111651 -b 115200 --toolchain-prefix xtensa-esp32s3-elf- --target esp32s3 --revision 0 /Users/nickrusfort/Desktop/dev/bm-node/box-node-e2e-old/build_core/box_node_e2e.elf /Users/nickrusfort/Desktop/dev/bm-node/box-node-e2e-old/build_core/bootloader/bootloader.elf -m '/Users/nickrusfort/.espressif/python_env/idf5.5_py3.13_env/bin/python' '/Users/nickrusfort/esp/esp-idf-v5.5.5/tools/idf.py' '-B' 'build_core' '-D' 'NODE_ROLE=CORE' '-p' '/dev/cu.usbmodem5CCD0111651'
+���	
+��}����� ELF file SHA256:  79be852d8...
+ESP-ROM:esp32s3-20210327
+Build:Mar 27 2021
+rst:0x1 (POWERON),boot:0x8 (SPI_FAST_FLASH_BOOT)
+SPIWP:0xee
+mode:DIO, clock div:1
+load:0x3fce2820,len:0x14f0
+load:0x403c8700,len:0xd24
+load:0x403cb700,len:0x2eec
+entry 0x403c8924
+[0;32mI (24) boot: ESP-IDF v5.5.5 2nd stage bootloader[0m
+[0;32mI (25) boot: compile time Oct 25 2026 22:31:02[0m
+[0;32mI (25) boot: Multicore bootloader[0m
+[0;32mI (25) boot: chip revision: v0.2[0m
+[0;32mI (28) boot: efuse block revision: v1.3[0m
+[0;32mI (31) boot.esp32s3: Boot SPI Speed : 80MHz[0m
+[0;32mI (35) boot.esp32s3: SPI Mode       : DIO[0m
+[0;32mI (39) boot.esp32s3: SPI Flash Size : 8MB[0m
+[0;32mI (43) boot: Enabling RNG early entropy source...[0m
+[0;32mI (47) boot: Partition Table:[0m
+[0;32mI (50) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (56) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (63) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (69) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (76) boot: End of partition table[0m
+[0;32mI (79) esp_image: segment 0: paddr=00010020 vaddr=3c050020 size=13d2ch ( 81196) map[0m
+[0;32mI (101) esp_image: segment 1: paddr=00023d54 vaddr=3fc9a200 size=041ech ( 16876) load[0m
+[0;32mI (105) esp_image: segment 2: paddr=00027f48 vaddr=40374000 size=080d0h ( 32976) load[0m
+[0;32mI (113) esp_image: segment 3: paddr=00030020 vaddr=42000020 size=4eef0h (323312) map[0m
+[0;32mI (172) esp_image: segment 4: paddr=0007ef18 vaddr=4037c0d0 size=0e120h ( 57632) load[0m
+[0;32mI (186) esp_image: segment 5: paddr=0008d040 vaddr=50000000 size=00020h (    32) load[0m
+[0;32mI (195) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (195) boot: Disabling RNG early entropy source...[0m
+[0;32mI (205) cpu_start: Multicore app[0m
+[0;32mI (213) cpu_start: GPIO 44 and 43 are used as console UART I/O pins[0m
+[0;32mI (214) cpu_start: Pro cpu start user code[0m
+[0;32mI (214) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (216) app_init: Application information:[0m
+[0;32mI (219) app_init: Project name:     box_node_e2e[0m
+[0;32mI (224) app_init: App version:      85c9137-dirty[0m
+[0;32mI (228) app_init: Compile time:     Oct 25 2026 22:30:51[0m
+[0;32mI (233) app_init: ELF file SHA256:  79be852d8...[0m
+[0;32mI (238) app_init: ESP-IDF:          v5.5.5[0m
+[0;32mI (241) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (245) efuse_init: Max chip rev:     v0.99 [0m
+[0;32mI (249) efuse_init: Chip rev:         v0.2[0m
+[0;32mI (253) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (259) heap_init: At 3FCA36F8 len 00046018 (280 KiB): RAM[0m
+[0;32mI (264) heap_init: At 3FCE9710 len 00005724 (21 KiB): RAM[0m
+[0;32mI (270) heap_init: At 3FCF0000 len 00008000 (32 KiB): DRAM[0m
+[0;32mI (275) heap_init: At 600FE000 len 00001FE8 (7 KiB): RTCRAM[0m
+[0;32mI (281) spi_flash: detected chip: generic[0m
+[0;32mI (284) spi_flash: flash io: dio[0m
+[0;32mI (287) sleep_gpio: Configure to isolate all GPIO pins in sleep state[0m
+[0;32mI (293) sleep_gpio: Enable automatic switching of GPIO sleep configuration[0m
+[0;32mI (300) coexist: coex firmware version: 6f3d08c[0m
+[0;32mI (304) coexist: coexist rom version e7ae62f[0m
+[0;32mI (308) main_task: Started on CPU0[0m
+[0;32mI (328) main_task: Calling app_main()[0m
+[0;32mI (338) E2E: E2E init: run=4f576a27 node_suffix=aabbccddeeff ttl="2026-12-31 23:59:59"[0m
+[0;32mI (338) E2E: E2E ids: M1=4f576a27-f0dd-4a81-8d93-22bf3684892e X1=ad13d569-b7b9-4958-b3b9-ea5173857b05 X2=562ae32f-13f0-4949-bdfc-3934f47a8c7d[0m
+[0;32mI (348) BLE_INIT: BT controller compile version [51d9dfd][0m
+[0;32mI (348) BLE_INIT: Using main XTAL as clock source[0m
+[0;32mI (358) BLE_INIT: Feature Config, ADV:1, BLE_50:1, DTM:1, SCAN:1, CCA:0, SMP:1, CONNECT:1[0m
+[0;32mI (368) BLE_INIT: Bluetooth MAC: 10:00:3b:6b:c4:76[0m
+[0;32mI (368) phy_init: phy_version 712,87e8c20e,Apr 13 2026,18:51:10[0m
+[0;32mI (418) BOX_NODE: Own BLE address 10:00:3b:6b:c4:76 type=0[0m
+[0;32mI (418) BOX_TX: advertising Box UUID as BOX-NODE-01[0m
+[0;32mI (428) BOX_NODE: Box Node E2E firmware started[0m
+[0;32mI (428) main_task: Returned from app_main()[0m
+[0;32mI (20418) E2E: ==== E2E run 4f576a27  t=20s  result=RUNNING ====[0m
+[0;32mI (20418) E2E:   [..] 1 NEW: BOX X1 -> Android           ad13d569-b7b9-4958-b3b9-ea5173857b05[0m
+[0;32mI (20418) E2E:   [..] 2 Android CBB(X1) received         [0m
+[0;32mI (20418) E2E:   [..] 2 ACB(CBB X1) delivered  [A+1]     [0m
+[0;32mI (20428) E2E:   [..] 3 DUP: BOX X2 (same M1) -> Android 562ae32f-13f0-4949-bdfc-3934f47a8c7d[0m
+[0;32mI (20438) E2E:   [..] 4 Android CDB(X2) received         [0m
+[0;32mI (20438) E2E:   [..] 4 ACB(CDB X2) delivered  [A+1]     [0m
+[0;32mI (20448) E2E:   [..] 5 Node CBB(new box) delivered [C+1] waiting Android BOX with new msg (send any chat msg on phone)[0m
+[0;32mI (20458) E2E:   [..] 6 Node CDB(dup box) delivered [D+1] waiting Android BOX with known msg[0m
+[0;32mI (20468) E2E:   [..] i Android ACB for Node CBB         (info)[0m
+[0;32mI (20468) E2E:   [..] i Android ACB for Node CDB         (info)[0m
+[0;32mI (20478) E2E:   rx: SID=0 TRM=0 BOX=0 CBB=0 CDB=0 ACB=0 | msgs new=0 dup=0 ignored_boxes=0[0m
+[0;32mI (20488) E2E:   tx: sessions=0 pkts_ok=0 pending_acb=0[0m
+[0;32mI (20488) E2E:   Expected Android delta: B+1 C+1 D+1 A+2[0m
+[0;32mI (40498) E2E: ==== E2E run 4f576a27  t=40s  result=RUNNING ====[0m
+[0;32mI (40498) E2E:   [..] 1 NEW: BOX X1 -> Android           ad13d569-b7b9-4958-b3b9-ea5173857b05[0m
+[0;32mI (40498) E2E:   [..] 2 Android CBB(X1) received         [0m
+[0;32mI (40498) E2E:   [..] 2 ACB(CBB X1) delivered  [A+1]     [0m
+[0;32mI (40508) E2E:   [..] 3 DUP: BOX X2 (same M1) -> Android 562ae32f-13f0-4949-bdfc-3934f47a8c7d[0m
+[0;32mI (40518) E2E:   [..] 4 Android CDB(X2) received         [0m
+[0;32mI (40518) E2E:   [..] 4 ACB(CDB X2) delivered  [A+1]     [0m
+[0;32mI (40528) E2E:   [..] 5 Node CBB(new box) delivered [C+1] waiting Android BOX with new msg (send any chat msg on phone)[0m
+[0;32mI (40538) E2E:   [..] 6 Node CDB(dup box) delivered [D+1] waiting Android BOX with known msg[0m
+[0;32mI (40548) E2E:   [..] i Android ACB for Node CBB         (info)[0m
+[0;32mI (40548) E2E:   [..] i Android ACB for Node CDB         (info)[0m
+[0;32mI (40558) E2E:   rx: SID=0 TRM=0 BOX=0 CBB=0 CDB=0 ACB=0 | msgs new=0 dup=0 ignored_boxes=0[0m
+[0;32mI (40568) E2E:   tx: sessions=0 pkts_ok=0 pending_acb=0[0m
+[0;32mI (40568) E2E:   Expected Android delta: B+1 C+1 D+1 A+2[0m
+[0;32mI (60578) E2E: ==== E2E run 4f576a27  t=60s  result=RUNNING ====[0m
+[0;32mI (60578) E2E:   [..] 1 NEW: BOX X1 -> Android           ad13d569-b7b9-4958-b3b9-ea5173857b05[0m
+[0;32mI (60578) E2E:   [..] 2 Android CBB(X1) received         [0m
+[0;32mI (60578) E2E:   [..] 2 ACB(CBB X1) delivered  [A+1]     [0m
+[0;32mI (60588) E2E:   [..] 3 DUP: BOX X2 (same M1) -> Android 562ae32f-13f0-4949-bdfc-3934f47a8c7d[0m
+[0;32mI (60598) E2E:   [..] 4 Android CDB(X2) received         [0m
+[0;32mI (60598) E2E:   [..] 4 ACB(CDB X2) delivered  [A+1]     [0m
+[0;32mI (60608) E2E:   [..] 5 Node CBB(new box) delivered [C+1] waiting Android BOX with new msg (send any chat msg on phone)[0m
+[0;32mI (60618) E2E:   [..] 6 Node CDB(dup box) delivered [D+1] waiting Android BOX with known msg[0m
+[0;32mI (60628) E2E:   [..] i Android ACB for Node CBB         (info)[0m
+[0;32mI (60628) E2E:   [..] i Android ACB for Node CDB         (info)[0m
+[0;32mI (60638) E2E:   rx: SID=0 TRM=0 BOX=0 CBB=0 CDB=0 ACB=0 | msgs new=0 dup=0 ignored_boxes=0[0m
+[0;32mI (60648) E2E:   tx: sessions=0 pkts_ok=0 pending_acb=0[0m
+[0;32mI (60648) E2E:   Expected Android delta: B+1 C+1 D+1 A+2[0m
+[0;32mI (80658) E2E: ==== E2E run 4f576a27  t=80s  result=RUNNING ====[0m
+[0;32mI (80658) E2E:   [..] 1 NEW: BOX X1 -> Android           ad13d569-b7b9-4958-b3b9-ea5173857b05[0m
+[0;32mI (80658) E2E:   [..] 2 Android CBB(X1) received         [0m
+[0;32mI (80658) E2E:   [..] 2 ACB(CBB X1) delivered  [A+1]     [0m
+[0;32mI (80668) E2E:   [..] 3 DUP: BOX X2 (same M1) -> Android 562ae32f-13f0-4949-bdfc-3934f47a8c7d[0m
+[0;32mI (80678) E2E:   [..] 4 Android CDB(X2) received         [0m
+[0;32mI (80678) E2E:   [..] 4 ACB(CDB X2) delivered  [A+1]     [0m
+[0;32mI (80688) E2E:   [..] 5 Node CBB(new box) delivered [C+1] waiting Android BOX with new msg (send any chat msg on phone)[0m
+[0;32mI (80698) E2E:   [..] 6 Node CDB(dup box) delivered [D+1] waiting Android BOX with known msg[0m
+[0;32mI (80708) E2E:   [..] i Android ACB for Node CBB         (info)[0m
+[0;32mI (80708) E2E:   [..] i Android ACB for Node CDB         (info)[0m
+[0;32mI (80718) E2E:   rx: SID=0 TRM=0 BOX=0 CBB=0 CDB=0 ACB=0 | msgs new=0 dup=0 ignored_boxes=0[0m
+[0;32mI (80728) E2E:   tx: sessions=0 pkts_ok=0 pending_acb=0[0m
+[0;32mI (80728) E2E:   Expected Android delta: B+1 C+1 D+1 A+2[0m
+[0;32mI (91298) BOX_RX: Box device 62:00:82:a3:0c:5b rssi=-49 -> connect[0m
+[0;32mI (91798) BOX_RX: connected to Android GATT server conn=3[0m
+[0;32mI (91908) BOX_RX: MTU exchange status=0 mtu=517[0m
+[0;32mI (92298) BOX_RX: Box characteristic found: peer_id=545e05cfd599 val_handle=156[0m
+[0;32mI (92598) BOX_RX: subscribed to Android 545e05cfd599 (conn=3 val=156 cccd=157), waiting for its session[0m
+[0;32mI (93148) E2E: RX invalid packet len=7 rc=-4[0m
+[0;32mI (93158) E2E:   msg e75a6d68-7753-4299-9fd4-a3d88b81847d ttl="2026-11-23 21:12:11" units=0 type=text len=24 -> NEW[0m
+[0;32mI (93158) E2E: RX BOX id=424f6091-4b8f-4801-ba96-41e5d0bc2ced msgs=1 new=1 dup=0[0m
+[0;32mI (93168) E2E: STEP 5: Node CBB prepared: callback=77c3371b-fd4e-49dc-8e19-aabbccddeeff box=424f6091-4b8f-4801-ba96-41e5d0bc2ced[0m
+[0;32mI (93208) E2E:   msg 20000000-0000-4000-8000-aabbccddeeff ttl="2099-12-31 23:59:59" units=1 type=text len=14 -> NEW[0m
+[0;32mI (93208) E2E: RX BOX id=9674da25-9057-49dc-9dec-9f25a89f629c msgs=1 new=1 dup=0[0m
+[0;32mI (93208) E2E:   no callback for this box (test sends exactly one CBB and one CDB)[0m
+[0;32mI (93218) E2E:   msg 9cd5c954-5ce5-4c84-b3c8-37e446e2dfd1 ttl="2026-12-31 23:59:59" units=1 type=text len=18 -> NEW[0m
+[0;32mI (93228) E2E: RX BOX id=c8426afd-dd3e-4e73-9345-a3998b283aa1 msgs=1 new=1 dup=0[0m
+[0;32mI (93238) E2E:   no callback for this box (test sends exactly one CBB and one CDB)[0m
+[0;32mI (93238) E2E:   msg 89ef027e-b882-4e67-b707-c7f442b9cb40 ttl="2026-12-31 23:59:59" units=1 type=text len=18 -> NEW[0m
+[0;32mI (93248) E2E: RX BOX id=57a9933a-3781-486b-b75d-a4e792584177 msgs=1 new=1 dup=0[0m
+[0;32mI (93258) E2E:   no callback for this box (test sends exactly one CBB and one CDB)[0m
+[0;32mI (93268) E2E: RX invalid packet len=7 rc=-4[0m
+[0;32mI (93268) E2E: RX invalid packet len=7 rc=-4[0m
+[0;32mI (94148) E2E: RX invalid packet len=7 rc=-4[0m
+[0;32mI (94158) E2E: RX BOX 424f6091-4b8f-4801-ba96-41e5d0bc2ced already processed -> skipped[0m
+[0;32mI (94158) E2E: RX BOX 9674da25-9057-49dc-9dec-9f25a89f629c already processed -> skipped[0m
+[0;32mI (94158) E2E: RX BOX c8426afd-dd3e-4e73-9345-a3998b283aa1 already processed -> skipped[0m
+[0;32mI (94208) E2E: RX BOX 57a9933a-3781-486b-b75d-a4e792584177 already processed -> skipped[0m
+[0;32mI (94208) E2E: RX invalid packet len=7 rc=-4[0m
+[0;32mI (94208) E2E: RX invalid packet len=7 rc=-4[0m
+[0;32mI (95148) E2E: RX invalid packet len=7 rc=-4[0m
+[0;32mI (95158) E2E: RX BOX 424f6091-4b8f-4801-ba96-41e5d0bc2ced already processed -> skipped[0m
+[0;32mI (95208) E2E: RX BOX 9674da25-9057-49dc-9dec-9f25a89f629c already processed -> skipped[0m
+[0;32mI (95208) E2E: RX BOX c8426afd-dd3e-4e73-9345-a3998b283aa1 already processed -> skipped[0m
+[0;32mI (95208) E2E: RX BOX 57a9933a-3781-486b-b75d-a4e792584177 already processed -> skipped[0m
+[0;32mI (95218) E2E: RX invalid packet len=7 rc=-4[0m
+[0;32mI (95218) E2E: RX invalid packet len=7 rc=-4[0m
+[0;32mI (96148) E2E: RX invalid packet len=7 rc=-4[0m
+[0;32mI (96158) E2E: RX BOX 424f6091-4b8f-4801-ba96-41e5d0bc2ced already processed -> skipped[0m
+[0;32mI (96208) E2E: RX BOX 9674da25-9057-49dc-9dec-9f25a89f629c already processed -> skipped[0m
+[0;32mI (96208) E2E: RX BOX c8426afd-dd3e-4e73-9345-a3998b283aa1 already processed -> skipped[0m
+[0;32mI (96208) E2E: RX BOX 57a9933a-3781-486b-b75d-a4e792584177 already processed -> skipped[0m
+[0;32mI (96218) E2E: RX invalid packet len=7 rc=-4[0m
+[0;32mI (96248) E2E: RX invalid packet len=7 rc=-4[0m
+[0;32mI (97148) E2E: RX invalid packet len=7 rc=-4[0m
+[0;32mI (97158) E2E: RX BOX 424f6091-4b8f-4801-ba96-41e5d0bc2ced already processed -> skipped[0m
+[0;32mI (97208) E2E: RX BOX 9674da25-9057-49dc-9dec-9f25a89f629c already processed -> skipped[0m
+[0;32mI (97208) E2E: RX BOX c8426afd-dd3e-4e73-9345-a3998b283aa1 already processed -> skipped[0m
+[0;32mI (97208) E2E: RX BOX 57a9933a-3781-486b-b75d-a4e792584177 already processed -> skipped[0m
+[0;32mI (97218) E2E: RX invalid packet len=7 rc=-4[0m
+[0;32mI (97248) E2E: RX invalid packet len=7 rc=-4[0m
+[0;32mI (98148) E2E: RX invalid packet len=7 rc=-4[0m
+[0;32mI (98208) E2E: RX BOX 424f6091-4b8f-4801-ba96-41e5d0bc2ced already processed -> skipped[0m
+[0;32mI (98208) E2E: RX BOX 9674da25-9057-49dc-9dec-9f25a89f629c already processed -> skipped[0m
+[0;32mI (98208) E2E: RX BOX c8426afd-dd3e-4e73-9345-a3998b283aa1 already processed -> skipped[0m
+[0;32mI (98248) E2E: RX BOX 57a9933a-3781-486b-b75d-a4e792584177 already processed -> skipped[0m
+[0;32mI (98258) E2E: RX invalid packet len=7 rc=-4[0m
+[0;32mI (98258) E2E: RX invalid packet len=7 rc=-4[0m
+[0;32mI (99148) E2E: RX invalid packet len=7 rc=-4[0m
+[0;32mI (99208) E2E: RX BOX 424f6091-4b8f-4801-ba96-41e5d0bc2ced already processed -> skipped[0m
+[0;32mI (99208) E2E: RX BOX 9674da25-9057-49dc-9dec-9f25a89f629c already processed -> skipped[0m
+[0;32mI (99208) E2E: RX BOX c8426afd-dd3e-4e73-9345-a3998b283aa1 already processed -> skipped[0m
+[0;32mI (99218) E2E: RX BOX 57a9933a-3781-486b-b75d-a4e792584177 already processed -> skipped[0m
+[0;32mI (99248) E2E: RX invalid packet len=7 rc=-4[0m
+[0;32mI (99258) E2E: RX invalid packet len=7 rc=-4[0m
+[0;32mI (100198) E2E: RX invalid packet len=7 rc=-4[0m
+[0;32mI (100208) E2E: RX BOX 424f6091-4b8f-4801-ba96-41e5d0bc2ced already processed -> skipped[0m
+[0;32mI (100208) E2E: RX BOX 9674da25-9057-49dc-9dec-9f25a89f629c already processed -> skipped[0m
+[0;32mI (100208) E2E: RX BOX c8426afd-dd3e-4e73-9345-a3998b283aa1 already processed -> skipped[0m
+[0;32mI (100218) E2E: RX BOX 57a9933a-3781-486b-b75d-a4e792584177 already processed -> skipped[0m
+[0;32mI (100248) E2E: RX invalid packet len=7 rc=-4[0m
+[0;32mI (100258) E2E: RX invalid packet len=7 rc=-4[0m
+[0;32mI (100678) E2E: ==== E2E run 4f576a27  t=100s  result=RUNNING ====[0m
+[0;32mI (100678) E2E:   [..] 1 NEW: BOX X1 -> Android           ad13d569-b7b9-4958-b3b9-ea5173857b05[0m
+[0;32mI (100678) E2E:   [..] 2 Android CBB(X1) received         [0m
+[0;32mI (100678) E2E:   [..] 2 ACB(CBB X1) delivered  [A+1]     [0m
+[0;32mI (100688) E2E:   [..] 3 DUP: BOX X2 (same M1) -> Android 562ae32f-13f0-4949-bdfc-3934f47a8c7d[0m
+[0;32mI (100698) E2E:   [..] 4 Android CDB(X2) received         [0m
+[0;32mI (100698) E2E:   [..] 4 ACB(CDB X2) delivered  [A+1]     [0m
+[0;32mI (100708) E2E:   [..] 5 Node CBB(new box) delivered [C+1] 424f6091-4b8f-4801-ba96-41e5d0bc2ced[0m
+[0;32mI (100718) E2E:   [..] 6 Node CDB(dup box) delivered [D+1] waiting Android BOX with known msg[0m
+[0;32mI (100718) E2E:   [..] i Android ACB for Node CBB         (info)[0m
+[0;32mI (100728) E2E:   [..] i Android ACB for Node CDB         (info)[0m
+[0;32mI (100738) E2E:   rx: SID=0 TRM=0 BOX=32 CBB=0 CDB=0 ACB=0 | msgs new=4 dup=0 ignored_boxes=3[0m
+[0;32mI (100738) E2E:   tx: sessions=0 pkts_ok=0 pending_acb=0[0m
+[0;32mI (100748) E2E:   Expected Android delta: B+1 C+1 D+1 A+2[0m
+[0;32mI (101198) E2E: RX invalid packet len=7 rc=-4[0m
+[0;32mI (101208) E2E: RX BOX 424f6091-4b8f-4801-ba96-41e5d0bc2ced already processed -> skipped[0m
+[0;32mI (101208) E2E: RX BOX 9674da25-9057-49dc-9dec-9f25a89f629c already processed -> skipped[0m
+[0;32mI (101208) E2E: RX BOX c8426afd-dd3e-4e73-9345-a3998b283aa1 already processed -> skipped[0m
+[0;32mI (101258) E2E: RX BOX 57a9933a-3781-486b-b75d-a4e792584177 already processed -> skipped[0m
+[0;32mI (101298) E2E: RX invalid packet len=7 rc=-4[0m
+[0;32mI (101308) E2E: RX invalid packet len=7 rc=-4[0m
+[0;32mI (102198) E2E: RX invalid packet len=7 rc=-4[0m
+[0;32mI (102208) E2E: RX BOX 424f6091-4b8f-4801-ba96-41e5d0bc2ced already processed -> skipped[0m
+[0;32mI (102258) E2E: RX BOX 9674da25-9057-49dc-9dec-9f25a89f629c already processed -> skipped[0m
+[0;32mI (102358) E2E: RX BOX c8426afd-dd3e-4e73-9345-a3998b283aa1 already processed -> skipped[0m
+[0;32mI (102358) E2E: RX BOX 57a9933a-3781-486b-b75d-a4e792584177 already processed -> skipped[0m
+[0;32mI (102358) E2E: RX invalid packet len=7 rc=-4[0m
+[0;32mI (102358) E2E: RX invalid packet len=7 rc=-4[0m
+[0;32mI (103348) E2E: RX invalid packet len=7 rc=-4[0m
+[0;32mI (103408) E2E: RX BOX 424f6091-4b8f-4801-ba96-41e5d0bc2ced already processed -> skipped[0m
+[0;32mI (103408) E2E: RX BOX 9674da25-9057-49dc-9dec-9f25a89f629c already processed -> skipped[0m
+[0;32mI (103408) E2E: RX BOX c8426afd-dd3e-4e73-9345-a3998b283aa1 already processed -> skipped[0m
+[0;32mI (103418) E2E: RX BOX 57a9933a-3781-486b-b75d-a4e792584177 already processed -> skipped[0m
+[0;32mI (103428) E2E: RX invalid packet len=7 rc=-4[0m
+[0;32mI (103428) E2E: RX invalid packet len=7 rc=-4[0m
+[0;32mI (104348) E2E: RX invalid packet len=7 rc=-4[0m
+[0;32mI (104358) E2E: RX BOX 424f6091-4b8f-4801-ba96-41e5d0bc2ced already processed -> skipped[0m
+[0;32mI (104408) E2E: RX BOX 9674da25-9057-49dc-9dec-9f25a89f629c already processed -> skipped[0m
+[0;32mI (104408) E2E: RX BOX c8426afd-dd3e-4e73-9345-a3998b283aa1 already processed -> skipped[0m
+[0;32mI (104408) E2E: RX BOX 57a9933a-3781-486b-b75d-a4e792584177 already processed -> skipped[0m
+[0;32mI (104418) E2E: RX invalid packet len=7 rc=-4[0m
+[0;32mI (104448) E2E: RX invalid packet len=7 rc=-4[0m
+[0;32mI (105348) E2E: RX invalid packet len=7 rc=-4[0m
+[0;32mI (105408) E2E: RX BOX 424f6091-4b8f-4801-ba96-41e5d0bc2ced already processed -> skipped[0m
+[0;32mI (105408) E2E: RX BOX 9674da25-9057-49dc-9dec-9f25a89f629c already processed -> skipped[0m
+[0;32mI (105408) E2E: RX BOX c8426afd-dd3e-4e73-9345-a3998b283aa1 already processed -> skipped[0m
+[0;32mI (105418) E2E: RX BOX 57a9933a-3781-486b-b75d-a4e792584177 already processed -> skipped[0m
+[0;32mI (105448) E2E: RX invalid packet len=7 rc=-4[0m
+[0;32mI (105458) E2E: RX invalid packet len=7 rc=-4[0m
+[0;32mI (106398) E2E: RX invalid packet len=7 rc=-4[0m
+[0;32mI (106408) E2E: RX BOX 424f6091-4b8f-4801-ba96-41e5d0bc2ced already processed -> skipped[0m
+[0;32mI (106408) E2E: RX BOX 9674da25-9057-49dc-9dec-9f25a89f629c already processed -> skipped[0m
+[0;32mI (106408) E2E: RX BOX c8426afd-dd3e-4e73-9345-a3998b283aa1 already processed -> skipped[0m
+[0;32mI (106418) E2E: RX BOX 57a9933a-3781-486b-b75d-a4e792584177 already processed -> skipped[0m
+[0;32mI (106448) E2E: RX invalid packet len=7 rc=-4[0m
+[0;32mI (106458) E2E: RX invalid packet len=7 rc=-4[0m
+[0;32mI (107398) E2E: RX invalid packet len=7 rc=-4[0m
+[0;32mI (107408) E2E: RX BOX 424f6091-4b8f-4801-ba96-41e5d0bc2ced already processed -> skipped[0m
+[0;32mI (107408) E2E: RX BOX 9674da25-9057-49dc-9dec-9f25a89f629c already processed -> skipped[0m
+[0;32mI (107408) E2E: RX BOX c8426afd-dd3e-4e73-9345-a3998b283aa1 already processed -> skipped[0m
+[0;32mI (107418) E2E: RX BOX 57a9933a-3781-486b-b75d-a4e792584177 already processed -> skipped[0m
+[0;32mI (107448) E2E: RX invalid packet len=7 rc=-4[0m
+[0;32mI (107458) E2E: RX invalid packet len=7 rc=-4[0m
+[0;32mI (108398) E2E: RX invalid packet len=7 rc=-4[0m
+[0;32mI (108408) E2E: RX BOX 424f6091-4b8f-4801-ba96-41e5d0bc2ced already processed -> skipped[0m
+[0;32mI (108408) E2E: RX BOX 9674da25-9057-49dc-9dec-9f25a89f629c already processed -> skipped[0m
+[0;32mI (108408) E2E: RX BOX c8426afd-dd3e-4e73-9345-a3998b283aa1 already processed -> skipped[0m
+[0;32mI (108458) E2E: RX BOX 57a9933a-3781-486b-b75d-a4e792584177 already processed -> skipped[0m
+[0;32mI (108458) E2E: RX invalid packet len=7 rc=-4[0m
+[0;32mI (108458) E2E: RX invalid packet len=7 rc=-4[0m
+[0;32mI (109398) E2E: RX invalid packet len=7 rc=-4[0m
+[0;32mI (109408) E2E: RX BOX 424f6091-4b8f-4801-ba96-41e5d0bc2ced already processed -> skipped[0m
+[0;32mI (109458) E2E: RX BOX 9674da25-9057-49dc-9dec-9f25a89f629c already processed -> skipped[0m
+[0;32mI (109458) E2E: RX BOX c8426afd-dd3e-4e73-9345-a3998b283aa1 already processed -> skipped[0m
+[0;32mI (109458) E2E: RX BOX 57a9933a-3781-486b-b75d-a4e792584177 already processed -> skipped[0m
+[0;32mI (109468) E2E: RX invalid packet len=7 rc=-4[0m
+[0;32mI (109468) E2E: RX invalid packet len=7 rc=-4[0m
+[0;32mI (110398) E2E: RX invalid packet len=7 rc=-4[0m
+[0;32mI (110458) E2E: RX BOX 424f6091-4b8f-4801-ba96-41e5d0bc2ced already processed -> skipped[0m
+[0;32mI (110458) E2E: RX BOX 9674da25-9057-49dc-9dec-9f25a89f629c already processed -> skipped[0m
+[0;32mI (110458) E2E: RX BOX c8426afd-dd3e-4e73-9345-a3998b283aa1 already processed -> skipped[0m
+[0;32mI (110468) E2E: RX BOX 57a9933a-3781-486b-b75d-a4e792584177 already processed -> skipped[0m
+[0;32mI (110498) E2E: RX invalid packet len=7 rc=-4[0m
+[0;32mI (110508) E2E: RX invalid packet len=7 rc=-4[0m
+[0;32mI (120748) E2E: ==== E2E run 4f576a27  t=120s  result=RUNNING ====[0m
+[0;32mI (120748) E2E:   [..] 1 NEW: BOX X1 -> Android           ad13d569-b7b9-4958-b3b9-ea5173857b05[0m
+[0;32mI (120748) E2E:   [..] 2 Android CBB(X1) received         [0m
+[0;32mI (120748) E2E:   [..] 2 ACB(CBB X1) delivered  [A+1]     [0m
+[0;32mI (120758) E2E:   [..] 3 DUP: BOX X2 (same M1) -> Android 562ae32f-13f0-4949-bdfc-3934f47a8c7d[0m
+[0;32mI (120768) E2E:   [..] 4 Android CDB(X2) received         [0m
+[0;32mI (120768) E2E:   [..] 4 ACB(CDB X2) delivered  [A+1]     [0m
+[0;32mI (120778) E2E:   [..] 5 Node CBB(new box) delivered [C+1] 424f6091-4b8f-4801-ba96-41e5d0bc2ced[0m
+[0;32mI (120788) E2E:   [..] 6 Node CDB(dup box) delivered [D+1] waiting Android BOX with known msg[0m
+[0;32mI (120788) E2E:   [..] i Android ACB for Node CBB         (info)[0m
+[0;32mI (120798) E2E:   [..] i Android ACB for Node CDB         (info)[0m
+[0;32mI (120808) E2E:   rx: SID=0 TRM=0 BOX=72 CBB=0 CDB=0 ACB=0 | msgs new=4 dup=0 ignored_boxes=3[0m
+[0;32mI (120808) E2E:   tx: sessions=0 pkts_ok=0 pending_acb=0[0m
+[0;32mI (120818) E2E:   Expected Android delta: B+1 C+1 D+1 A+2[0m
+[0;32mI (131818) BOX_RX: hold timeout without TRM -> disconnect[0m
+[0;32mI (131828) BOX_RX: disconnected from Android conn=3 reason=534[0m
+[0;32mI (133468) BOX_RX: Box device 62:00:82:a3:0c:5b rssi=-56 -> connect[0m
+[0;32mI (133798) BOX_RX: connected to Android GATT server conn=3[0m
+[0;32mI (133908) BOX_RX: MTU exchange status=0 mtu=517[0m
+[0;32mI (134298) BOX_RX: Box characteristic found: peer_id=545e05cfd599 val_handle=156[0m
+[0;32mI (134598) BOX_RX: subscribed to Android 545e05cfd599 (conn=3 val=156 cccd=157), waiting for its session[0m
+[0;32mI (135048) E2E: RX invalid packet len=7 rc=-4[0m
+[0;32mI (135058) E2E: RX BOX 424f6091-4b8f-4801-ba96-41e5d0bc2ced already processed -> skipped[0m
+[0;32mI (135058) E2E: RX BOX 9674da25-9057-49dc-9dec-9f25a89f629c already processed -> skipped[0m
+[0;32mI (135108) E2E: RX BOX c8426afd-dd3e-4e73-9345-a3998b283aa1 already processed -> skipped[0m
+[0;32mI (135108) E2E: RX BOX 57a9933a-3781-486b-b75d-a4e792584177 already processed -> skipped[0m
+[0;32mI (135108) E2E: RX invalid packet len=7 rc=-4[0m
+[0;32mI (135108) E2E: RX invalid packet len=7 rc=-4[0m
+[0;32mI (136048) E2E: RX invalid packet len=7 rc=-4[0m
+[0;32mI (136108) E2E: RX BOX 424f6091-4b8f-4801-ba96-41e5d0bc2ced already processed -> skipped[0m
+[0;32mI (136108) E2E: RX BOX 9674da25-9057-49dc-9dec-9f25a89f629c already processed -> skipped[0m
+[0;32mI (136108) E2E: RX BOX c8426afd-dd3e-4e73-9345-a3998b283aa1 already processed -> skipped[0m
+[0;32mI (136118) E2E: RX BOX 57a9933a-3781-486b-b75d-a4e792584177 already processed -> skipped[0m
+[0;32mI (136128) E2E: RX invalid packet len=7 rc=-4[0m
+[0;32mI (136148) E2E: RX invalid packet len=7 rc=-4[0m
+[0;32mI (137098) E2E: RX invalid packet len=7 rc=-4[0m
+[0;32mI (137108) E2E: RX BOX 424f6091-4b8f-4801-ba96-41e5d0bc2ced already processed -> skipped[0m
+[0;32mI (137108) E2E: RX BOX 9674da25-9057-49dc-9dec-9f25a89f629c already processed -> skipped[0m
+[0;32mI (137108) E2E: RX BOX c8426afd-dd3e-4e73-9345-a3998b283aa1 already processed -> skipped[0m
+[0;32mI (137118) E2E: RX BOX 57a9933a-3781-486b-b75d-a4e792584177 already processed -> skipped[0m
+[0;32mI (137148) E2E: RX invalid packet len=7 rc=-4[0m
+[0;32mI (137158) E2E: RX invalid packet len=7 rc=-4[0m
+[0;32mI (138098) E2E: RX invalid packet len=7 rc=-4[0m
+[0;32mI (138108) E2E: RX BOX 424f6091-4b8f-4801-ba96-41e5d0bc2ced already processed -> skipped[0m
+[0;32mI (138158) E2E: RX BOX 9674da25-9057-49dc-9dec-9f25a89f629c already processed -> skipped[0m
+[0;32mI (138208) E2E: RX BOX c8426afd-dd3e-4e73-9345-a3998b283aa1 already processed -> skipped[0m
+[0;32mI (138208) E2E: RX BOX 57a9933a-3781-486b-b75d-a4e792584177 already processed -> skipped[0m
+[0;32mI (138208) E2E: RX invalid packet len=7 rc=-4[0m
+[0;32mI (138208) E2E: RX invalid packet len=7 rc=-4[0m
+[0;32mI (139098) E2E: RX invalid packet len=7 rc=-4[0m
+[0;32mI (139108) E2E: RX BOX 424f6091-4b8f-4801-ba96-41e5d0bc2ced already processed -> skipped[0m
+[0;32mI (139158) E2E: RX BOX 9674da25-9057-49dc-9dec-9f25a89f629c already processed -> skipped[0m
+[0;32mI (139158) E2E: RX BOX c8426afd-dd3e-4e73-9345-a3998b283aa1 already processed -> skipped[0m
+[0;32mI (139158) E2E: RX BOX 57a9933a-3781-486b-b75d-a4e792584177 already processed -> skipped[0m
+[0;32mI (139168) E2E: RX invalid packet len=7 rc=-4[0m
+[0;32mI (139168) E2E: RX invalid packet len=7 rc=-4[0m
+[0;32mI (140098) E2E: RX invalid packet len=7 rc=-4[0m
+[0;32mI (140158) E2E: RX BOX 424f6091-4b8f-4801-ba96-41e5d0bc2ced already processed -> skipped[0m
+[0;32mI (140158) E2E: RX BOX 9674da25-9057-49dc-9dec-9f25a89f629c already processed -> skipped[0m
+[0;32mI (140158) E2E: RX BOX c8426afd-dd3e-4e73-9345-a3998b283aa1 already processed -> skipped[0m
+[0;32mI (140168) E2E: RX BOX 57a9933a-3781-486b-b75d-a4e792584177 already processed -> skipped[0m
+[0;32mI (140198) E2E: RX invalid packet len=7 rc=-4[0m
+[0;32mI (140208) E2E: RX invalid packet len=7 rc=-4[0m
+[0;32mI (140828) E2E: ==== E2E run 4f576a27  t=140s  result=RUNNING ====[0m
+[0;32mI (140828) E2E:   [..] 1 NEW: BOX X1 -> Android           ad13d569-b7b9-4958-b3b9-ea5173857b05[0m
+[0;32mI (140828) E2E:   [..] 2 Android CBB(X1) received         [0m
+[0;32mI (140828) E2E:   [..] 2 ACB(CBB X1) delivered  [A+1]     [0m
+[0;32mI (140838) E2E:   [..] 3 DUP: BOX X2 (same M1) -> Android 562ae32f-13f0-4949-bdfc-3934f47a8c7d[0m
+[0;32mI (140848) E2E:   [..] 4 Android CDB(X2) received         [0m
+[0;32mI (140848) E2E:   [..] 4 ACB(CDB X2) delivered  [A+1]     [0m
+[0;32mI (140858) E2E:   [..] 5 Node CBB(new box) delivered [C+1] 424f6091-4b8f-4801-ba96-41e5d0bc2ced[0m
+[0;32mI (140868) E2E:   [..] 6 Node CDB(dup box) delivered [D+1] waiting Android BOX with known msg[0m
+[0;32mI (140868) E2E:   [..] i Android ACB for Node CBB         (info)[0m
+[0;32mI (140878) E2E:   [..] i Android ACB for Node CDB         (info)[0m
+[0;32mI (140888) E2E:   rx: SID=0 TRM=0 BOX=96 CBB=0 CDB=0 ACB=0 | msgs new=4 dup=0 ignored_boxes=3[0m
+[0;32mI (140888) E2E:   tx: sessions=0 pkts_ok=0 pending_acb=0[0m
+[0;32mI (140898) E2E:   Expected Android delta: B+1 C+1 D+1 A+2[0m
+[0;32mI (141148) E2E: RX invalid packet len=7 rc=-4[0m
+[0;32mI (141158) E2E: RX BOX 424f6091-4b8f-4801-ba96-41e5d0bc2ced already processed -> skipped[0m
+[0;32mI (141158) E2E: RX BOX 9674da25-9057-49dc-9dec-9f25a89f629c already processed -> skipped[0m
+[0;32mI (141158) E2E: RX BOX c8426afd-dd3e-4e73-9345-a3998b283aa1 already processed -> skipped[0m
+[0;32mI (141168) E2E: RX BOX 57a9933a-3781-486b-b75d-a4e792584177 already processed -> skipped[0m
+[0;32mI (141198) E2E: RX invalid packet len=7 rc=-4[0m
+[0;32mI (141208) E2E: RX invalid packet len=7 rc=-4[0m
+[0;32mI (142148) E2E: RX invalid packet len=7 rc=-4[0m
+[0;32mI (142158) E2E: RX BOX 424f6091-4b8f-4801-ba96-41e5d0bc2ced already processed -> skipped[0m
+[0;32mI (142158) E2E: RX BOX 9674da25-9057-49dc-9dec-9f25a89f629c already processed -> skipped[0m
+[0;32mI (142208) E2E: RX BOX c8426afd-dd3e-4e73-9345-a3998b283aa1 already processed -> skipped[0m
+[0;32mI (142258) E2E: RX BOX 57a9933a-3781-486b-b75d-a4e792584177 already processed -> skipped[0m
+[0;32mI (142258) E2E: RX invalid packet len=7 rc=-4[0m
+[0;32mI (142258) E2E: RX invalid packet len=7 rc=-4[0m
+[0;32mI (143148) E2E: RX invalid packet len=7 rc=-4[0m
+[0;32mI (143208) E2E: RX BOX 424f6091-4b8f-4801-ba96-41e5d0bc2ced already processed -> skipped[0m
+[0;32mI (143208) E2E: RX BOX 9674da25-9057-49dc-9dec-9f25a89f629c already processed -> skipped[0m
+[0;32mI (143208) E2E: RX BOX c8426afd-dd3e-4e73-9345-a3998b283aa1 already processed -> skipped[0m
+[0;32mI (143218) E2E: RX BOX 57a9933a-3781-486b-b75d-a4e792584177 already processed -> skipped[0m
+[0;32mI (143228) E2E: RX invalid packet len=7 rc=-4[0m
+[0;32mI (143248) E2E: RX invalid packet len=7 rc=-4[0m
+[0;32mI (144298) E2E: RX invalid packet len=7 rc=-4[0m
+[0;32mI (144308) E2E: RX BOX 424f6091-4b8f-4801-ba96-41e5d0bc2ced already processed -> skipped[0m
+[0;32mI (144358) E2E: RX BOX 9674da25-9057-49dc-9dec-9f25a89f629c already processed -> skipped[0m
+[0;32mI (144358) E2E: RX BOX c8426afd-dd3e-4e73-9345-a3998b283aa1 already processed -> skipped[0m
+[0;32mI (144358) E2E: RX BOX 57a9933a-3781-486b-b75d-a4e792584177 already processed -> skipped[0m
+[0;32mI (144368) E2E: RX invalid packet len=7 rc=-4[0m
+[0;32mI (144398) E2E: RX invalid packet len=7 rc=-4[0m
+[0;32mI (145298) E2E: RX invalid packet len=7 rc=-4[0m
+[0;32mI (145358) E2E: RX BOX 424f6091-4b8f-4801-ba96-41e5d0bc2ced already processed -> skipped[0m
+[0;32mI (145408) E2E: RX BOX 9674da25-9057-49dc-9dec-9f25a89f629c already processed -> skipped[0m
+[0;32mI (145408) E2E: RX BOX c8426afd-dd3e-4e73-9345-a3998b283aa1 already processed -> skipped[0m
+[0;32mI (145408) E2E: RX BOX 57a9933a-3781-486b-b75d-a4e792584177 already processed -> skipped[0m
+[0;32mI (145448) E2E: RX invalid packet len=7 rc=-4[0m
+[0;32mI (145458) E2E: RX invalid packet len=7 rc=-4[0m

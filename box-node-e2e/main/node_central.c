@@ -19,9 +19,13 @@
 static const char *TAG = "BOX_RX";
 
 #define SCAN_MS           8000
-#define HOLD_MAX_MS       40000   /* максимум удержания соединения без TRM */
+#define HOLD_MAX_MS       20000   /* максимум удержания соединения без TRM */
 #define CLOSE_DELAY_MS    250     /* после TRM: дать дойти второму TRM */
+#define BUSY_EXTRA_MS     10000   /* сколько ещё ждать передающую сессию Node по этой же связи */
 #define COOLDOWN_MS       1500
+/* Пока тест идёт, Node делает паузу между своими подключениями, чтобы Android
+ * успел подключиться к GATT server узла как клиент (передача Node -> Android). */
+#define COOLDOWN_TEST_MS  5000
 
 /* Advertising UUID Box Messenger: 12345678-1234-5678-9012-123456789abc */
 static const ble_uuid128_t adv_uuid = BLE_UUID128_INIT(
@@ -63,6 +67,14 @@ static bool uuid_has_prefix(const ble_uuid_any_t *u, const char *prefix, char su
     return true;
 }
 
+static uint32_t cooldown_ms(void)
+{
+    E2E_LOCK();
+    bool running = e2e_result() == E2E_RUNNING;
+    E2E_UNLOCK();
+    return running ? COOLDOWN_TEST_MS : COOLDOWN_MS;
+}
+
 static void drop(const char *why, int rc)
 {
     ESP_LOGW(TAG, "%s rc=%d -> disconnect", why, rc);
@@ -76,7 +88,13 @@ static int on_subscribed(uint16_t conn, const struct ble_gatt_error *err,
                          struct ble_gatt_attr *attr, void *arg)
 {
     (void)attr; (void)arg;
-    if (err->status != 0) { drop("CCCD write failed", err->status); return 0; }
+    if (err->status != 0) {
+        /* Android шлёт notifications всем подключённым клиентам и без CCCD,
+         * поэтому соединение не рвём — продолжаем слушать. */
+        ESP_LOGW(TAG, "CCCD write failed rc=%d, keep listening", err->status);
+        c_subscribed = true;
+        return 0;
+    }
     c_subscribed = true;
     ESP_LOGI(TAG, "subscribed to Android %s (conn=%u val=%u cccd=%u), waiting for its session",
              peer_suffix, conn, chr_val, cccd);
@@ -242,14 +260,25 @@ static int central_gap_event(struct ble_gap_event *event, void *arg)
         return 0;
 
     case BLE_GAP_EVENT_DISCONNECT:
+        periph_conn_event(event);
         if (event->disconnect.conn.conn_handle == c_conn) {
             ESP_LOGI(TAG, "disconnected from Android conn=%u reason=%d",
                      c_conn, event->disconnect.reason);
             c_conn = BLE_HS_CONN_HANDLE_NONE;
             cstate = C_IDLE;
-            c_next_scan_at = node_now_ms() + COOLDOWN_MS;
+            c_next_scan_at = node_now_ms() + cooldown_ms();
         }
         return 0;
+
+    /* Android открыл GATT client поверх связи, которую инициировал Node:
+     * подписка и подтверждения notifications приходят сюда — передаём периферии. */
+    case BLE_GAP_EVENT_SUBSCRIBE:
+        ESP_LOGI(TAG, "Android subscribed to Node GATT over Node-initiated link conn=%u",
+                 event->subscribe.conn_handle);
+        return periph_conn_event(event);
+
+    case BLE_GAP_EVENT_NOTIFY_TX:
+        return periph_conn_event(event);
 
     case BLE_GAP_EVENT_NOTIFY_RX: {
         if (event->notify_rx.conn_handle != c_conn) return 0;
@@ -306,17 +335,21 @@ static void central_mgr(void *arg)
         case C_IDLE:
             if ((int32_t)(now - c_next_scan_at) >= 0) start_scan();
             break;
-        case C_CONNECTED:
+        case C_CONNECTED: {
+            /* Не рвать связь, пока по ней идёт или ожидается сессия Node -> Android. */
+            bool busy = periph_conn_busy(c_conn);
             if (c_close_at && (int32_t)(now - c_close_at) >= 0) {
-                ESP_LOGI(TAG, "Android session done -> disconnect");
+                if (busy && (int32_t)(now - c_close_at) < BUSY_EXTRA_MS) break;
+                ESP_LOGI(TAG, "Android session done -> disconnect%s", busy ? " (tx wait expired)" : "");
                 c_close_at = 0;
                 ble_gap_terminate(c_conn, BLE_ERR_REM_USER_CONN_TERM);
-            } else if (now - c_conn_at > HOLD_MAX_MS) {
+            } else if (now - c_conn_at > HOLD_MAX_MS + (busy ? BUSY_EXTRA_MS : 0)) {
                 ESP_LOGI(TAG, "hold timeout without TRM -> disconnect");
                 c_conn_at = now;
                 ble_gap_terminate(c_conn, BLE_ERR_REM_USER_CONN_TERM);
             }
             break;
+        }
         default:
             break;
         }
