@@ -1,8 +1,0 @@
-{
-  "main/main.c": true,
-  "main/CMakeLists.txt": true,
-  "main/box_reverse.c": false,
-  "main/box_reverse.h": false,
-  "main/box_protocol.c": false,
-  "main/box_protocol.h": false
-}
