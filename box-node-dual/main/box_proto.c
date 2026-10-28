@@ -70,10 +70,19 @@ int box_parse(const uint8_t *data, size_t len, box_pkt_t *out)
         if (l > 0 && out->lines[i][l - 1] == '\r') out->lines[i][l - 1] = '\0';
     }
 
-    if (out->n_lines < 3) return -4;
+    if (out->n_lines < 2) return -4;
     if (strcmp(out->lines[0], BOX_VERSION) != 0) return -5;
 
     box_pkt_type_t t = type_from_str(out->lines[1]);
+    /* SID/TRM без id: Android шлёт "V1\nSID\n" и "V1\nTRM\n" (7 байт), пока
+     * LocalCache.currentSessionID == "" (так он инициализирован до первого
+     * needToRefreshBoxQueue(…, true)). Принимаем как сессию без id. */
+    static char empty_id[1];
+    if (out->n_lines == 2 && (t == BOX_PKT_SID || t == BOX_PKT_TRM)) {
+        empty_id[0] = '\0';
+        out->lines[out->n_lines++] = empty_id;
+    }
+    if (out->n_lines < 3) return -4;
     switch (t) {
     case BOX_PKT_SID:
     case BOX_PKT_TRM:
@@ -211,7 +220,11 @@ int box_build_box(char *out, size_t cap, const char *box_id, const box_msg_t *ms
         const char *f[6] = { msgs[i].message_id, msgs[i].ttl, num,
                              msgs[i].receiver, msgs[i].type, msgs[i].bytes };
         for (int k = 0; k < 6; k++) {
-            if (f[k] == NULL || f[k][0] == '\0' || strchr(f[k], '\n')) return -1;
+            /* ttl, receiver, type могут быть пустыми (Java split сохраняет внутренние пустые
+             * строки); id, unit_count и последнее поле bytes — нет. */
+            bool may_be_empty = (k == 1 || k == 3 || k == 4);
+            if (f[k] == NULL) { if (!may_be_empty) return -1; f[k] = ""; }
+            if ((f[k][0] == '\0' && !may_be_empty) || strchr(f[k], '\n')) return -1;
             sb_add(&b, f[k]);
             sb_add(&b, "\n");          /* как StringBuilder в Android: '\n' после каждого поля */
         }

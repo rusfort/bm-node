@@ -179,8 +179,15 @@ static void t_validation(void)
     box_msg_t m;
     mk_msg(&t, 5, &m);
     box_msg_t bad = m;
-    bad.message_id = "not-a-uuid";
+    bad.message_id = "";
     assert(st_put(&bad, NULL) == ST_REJECT_SIZE);
+    static char longid[ST_MAX_ID_LEN + 2];
+    memset(longid, 'a', sizeof(longid) - 1);
+    bad.message_id = longid;
+    assert(st_put(&bad, NULL) == ST_REJECT_SIZE);
+    assert(strstr(st_reject_detail(), "id length") != NULL);
+    bad.message_id = "not-a-uuid";               /* формат id больше не навязываем */
+    assert(st_put(&bad, NULL) == ST_NEW);
     bad = m; bad.bytes = "";
     assert(st_put(&bad, NULL) == ST_REJECT_SIZE);
     bad = m; bad.receiver = "a\nb";
@@ -192,10 +199,28 @@ static void t_validation(void)
     big[ST_MAX_FIELD] = '\0';
     bad = m; bad.bytes = big;
     assert(st_put(&bad, NULL) == ST_NEW);      /* ровно предел — можно */
+    /* пустые ttl / receiver / type допустимы (Android их не проверяет) */
     bad = m; bad.ttl = NULL; bad.message_id = "00000000-0000-4000-8000-000000000001";
+    assert(st_put(&bad, NULL) == ST_NEW);
+    bad = m; bad.ttl = ""; bad.receiver = ""; bad.type = "";
+    bad.message_id = "00000000-0000-4000-8000-000000000002";
+    assert(st_put(&bad, NULL) == ST_NEW);
+    static st_msg_t r;
+    assert(st_read(st_find_msg("00000000-0000-4000-8000-000000000002"), &r) == 0);
+    assert(r.msg.ttl[0] == 0 && r.msg.receiver[0] == 0 && r.msg.type[0] == 0);
+    assert(strcmp(r.msg.bytes, m.bytes) == 0);
+    /* такую запись можно собрать обратно в BOX и разобрать */
+    static char pkt[600];
+    int n = box_build_box(pkt, sizeof(pkt), "11111111-1111-4111-8111-111111111111", &r.msg, 1);
+    assert(n > 0);
+    box_pkt_t p;
+    assert(box_parse((const uint8_t *)pkt, (size_t)n, &p) == 0 && p.type == BOX_PKT_BOX && box_pkt_msg_count(&p) == 1);
+    box_msg_t back;
+    assert(box_pkt_msg_at(&p, 0, &back) == 0 && back.ttl[0] == 0 && back.receiver[0] == 0 &&
+           strcmp(back.bytes, m.bytes) == 0);
+    bad = m; bad.bytes = NULL; bad.message_id = "00000000-0000-4000-8000-000000000003";
     assert(st_put(&bad, NULL) == ST_REJECT_SIZE);
-    bad.ttl = ""; 
-    assert(st_put(&bad, NULL) == ST_REJECT_SIZE);
+    assert(strstr(st_reject_detail(), "bytes empty") != NULL);
     printf("validation             ok\n");
 }
 
@@ -438,6 +463,62 @@ static void t_garbage(void)
     printf("garbage flash x300     ok\n");
 }
 
+static void t_multipart(void)
+{
+    /* Большое сообщение: Android режет его на части с id «uuid_<всего>_<номер>», каждая в своём BOX. */
+    clk = 20000;
+    flash_new(16, 300);
+    const char *base = "47519810-1111-4222-8333-444455556666";
+    static char pid[6][64];
+    static tmsg_t t[20];
+    box_msg_t m;
+    for (int i = 0; i < 6; i++) snprintf(pid[i], sizeof(pid[i]), "%s_6_%d", base, i);   /* как BoxChatActivity.createMultipart */
+    /* части вперемешку с обычными сообщениями, часы идут */
+    int r = 0;
+    for (int i = 0; i < 6; i++) {
+        mk_msg(&t[0], 900 + (uint32_t)i, &m);
+        m.message_id = pid[i];
+        assert(st_put(&m, "aaaaaaaaaaaa") == ST_NEW);
+        clk++;
+        for (int k = 0; k < 2; k++, r++) {
+            mk_msg(&t[1 + r], 950 + (uint32_t)r, &m);
+            assert(st_put(&m, "bbbbbbbbbbbb") == ST_NEW);
+            clk++;
+        }
+    }
+    assert(st_stats()->entries == 18);  /* 6 частей + 12 обычных */
+    /* каждая часть — отдельная запись со своим box_id, дубли — по полному id */
+    for (int i = 0; i < 6; i++) {
+        int idx = st_find_msg(pid[i]);
+        assert(idx >= 0 && st_entry(idx)->grp == st_group_of(pid[0]));
+        for (int j = 0; j < i; j++) assert(st_entry(idx)->boxh != st_entry(st_find_msg(pid[j]))->boxh);
+    }
+    assert(st_group_of(base) == 0);
+    /* самый длинный id: 9999 частей -> uuid_9999_9998 (46 символов) */
+    static char longest[64];
+    snprintf(longest, sizeof(longest), "%s_9999_9998", base);
+    assert(strlen(longest) == 46);
+    mk_msg(&t[0], 990, &m); m.message_id = longest;
+    assert(st_put(&m, NULL) == ST_NEW && st_entry(st_find_msg(longest))->grp == st_group_of(pid[0]));
+    mk_msg(&t[0], 900, &m); m.message_id = pid[0];
+    assert(st_put(&m, "cccccccccccc") == ST_DUP);
+    /* выбор: самое новое — обычное, затем часть 6 и сразу за ней остальные 5 частей */
+    int out[12];
+    st_mark_sent(st_find_msg(longest));            /* уже отдавали — в выборку не первой */
+    int n = st_select(NULL, out, 10);
+    assert(n == 10);
+    int first = -1, cnt = 0;
+    for (int k = 0; k < n; k++) {
+        if (st_entry(out[k])->grp) { if (first < 0) first = k; cnt++; }
+    }
+    assert(cnt == 7);
+    for (int k = first; k < first + 7; k++) assert(st_entry(out[k])->grp);
+    /* после перезагрузки группы восстанавливаются */
+    assert(mount() == 0);
+    for (int i = 0; i < 6; i++) assert(st_entry(st_find_msg(pid[i]))->grp == st_group_of(pid[i]));
+    printf("multipart uuid_T_N     ok\n");
+}
+
 int main(int argc, char **argv)
 {
     (void)argv;
@@ -447,6 +528,7 @@ int main(int argc, char **argv)
     t_validation();
     t_expiry();
     t_select();
+    t_multipart();
     t_quota();
     t_fill();
     t_ring();

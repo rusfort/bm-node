@@ -167,12 +167,22 @@ static void on_box(const box_pkt_t *p)
     R.st.rx_boxes++;
     for (int i = 0; i < n; i++) {
         box_msg_t m;
-        if (box_pkt_msg_at(p, i, &m) || m.unit_count < 0) { R.st.rx_msgs_rej++; continue; }
+        if (box_pkt_msg_at(p, i, &m)) { R.st.rx_msgs_rej++; continue; }
+        if (m.unit_count < 0) {
+            R.st.rx_msgs_rej++;
+            nlog("NODE: msg %s rejected: unit_count is not a number", m.message_id);
+            continue;
+        }
         m.unit_count += 1;                                       /* как Box.getBoxContent */
         st_put_t r = st_put(&m, ph);
         if (r == ST_NEW) { any_new = true; R.st.rx_msgs_new++; }
         else if (r == ST_DUP) { any_dup = true; R.st.rx_msgs_dup++; }
-        else { R.st.rx_msgs_rej++; nlog("NODE: msg %.8s rejected (%d)", m.message_id, (int)r); }
+        else {
+            R.st.rx_msgs_rej++;
+            if (r == ST_REJECT_SIZE) nlog("NODE: msg %s rejected, bad fields: %s", m.message_id, st_reject_detail());
+            else if (r == ST_REJECT_QUOTA) nlog("NODE: msg %s rejected: source quota (20%%) reached", m.message_id);
+            else nlog("NODE: msg %s rejected: flash error", m.message_id);
+        }
     }
     if (any_new) cb_add(BOX_PKT_CBB, R.rx_phone, box_id);
     if (any_dup) cb_add(BOX_PKT_CDB, R.rx_phone, box_id);
@@ -216,15 +226,27 @@ e2e_rx_action_t rn_on_rx(const uint8_t *data, size_t len)
     if (box_parse(data, len, p) != 0) return E2E_RX_CONTINUE;
     switch (p->type) {
     case BOX_PKT_SID: {
-        uint64_t h = st_hash64(box_pkt_primary_id(p));
+        const char *sid = box_pkt_primary_id(p);
+        if (!sid[0]) {
+            R.st.rx_sessions++;
+            /* сессия без id (Android с пустым currentSessionID): повтор не распознать,
+             * принимаем целиком — дубли отсеет хранилище */
+            R.rx_sid = 0;
+            R.st.rx_sessions_noid++;
+            nlog("NODE: rx SID without id (Android currentSessionID is empty) -> accept");
+            break;
+        }
+        uint64_t h = st_hash64(sid);
         if (recent_has(h)) { R.st.rx_known_sessions++; return E2E_RX_CLOSE; }
         R.rx_sid = h;
         R.st.rx_sessions++;
         break;
     }
-    case BOX_PKT_TRM:
-        recent_add(st_hash64(box_pkt_primary_id(p)));
+    case BOX_PKT_TRM: {
+        const char *sid = box_pkt_primary_id(p);
+        if (sid[0]) recent_add(st_hash64(sid));
         return E2E_RX_CLOSE;
+    }
     case BOX_PKT_BOX: on_box(p); break;
     case BOX_PKT_CBB:
     case BOX_PKT_CDB: on_callback(p); break;
@@ -409,8 +431,9 @@ void rn_status_line(char *out, size_t cap)
 {
     const rn_stats_t *t = &R.st;
     snprintf(out, cap,
-             "node: rx sess=%u known=%u boxes=%u msgs new=%u dup=%u rej=%u cbb=%u cdb=%u acb=%u | tx sess=%u msgs=%u pkts=%u | wait cb=%d acb=%d acked=%u gaveup=%u",
-             (unsigned)t->rx_sessions, (unsigned)t->rx_known_sessions, (unsigned)t->rx_boxes,
+             "node: rx sess=%u (no id %u) known=%u boxes=%u msgs new=%u dup=%u rej=%u cbb=%u cdb=%u acb=%u | tx sess=%u msgs=%u pkts=%u | wait cb=%d acb=%d acked=%u gaveup=%u",
+             (unsigned)t->rx_sessions, (unsigned)t->rx_sessions_noid, (unsigned)t->rx_known_sessions,
+             (unsigned)t->rx_boxes,
              (unsigned)t->rx_msgs_new, (unsigned)t->rx_msgs_dup, (unsigned)t->rx_msgs_rej,
              (unsigned)t->rx_cbb, (unsigned)t->rx_cdb, (unsigned)t->rx_acb, (unsigned)t->tx_sessions,
              (unsigned)t->tx_msgs, (unsigned)t->tx_pkts, rn_pending_callbacks(), rn_pending_acbs(),

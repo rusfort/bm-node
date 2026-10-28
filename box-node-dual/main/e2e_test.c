@@ -406,7 +406,9 @@ e2e_rx_action_t e2e_on_rx(const uint8_t *data, size_t len)
         const char *sid = box_pkt_primary_id(&p);
         copy_id(S.rx_sid, sid);
         S.rx_has_sid = true;
-        if (ring_has(S.ksid, S.n_ksid, sid)) {
+        if (!sid[0]) {
+            logf_("RX SID without id (Android currentSessionID is empty)");
+        } else if (ring_has(S.ksid, S.n_ksid, sid)) {
             logf_("RX SID %s already fully received -> close", sid);
             act = E2E_RX_CLOSE;
         } else {
@@ -417,11 +419,11 @@ e2e_rx_action_t e2e_on_rx(const uint8_t *data, size_t len)
     case BOX_PKT_TRM: {
         const char *sid = box_pkt_primary_id(&p);
         if (S.rx_has_sid && strcmp(sid, S.rx_sid) == 0) {
-            if (!ring_has(S.ksid, S.n_ksid, sid))
+            if (sid[0] && !ring_has(S.ksid, S.n_ksid, sid))
                 ring_add(S.ksid, MAX_KNOWN_SIDS, &S.n_ksid, &S.ksid_next, sid);
-            logf_("RX TRM %s (session complete)", sid);
+            logf_("RX TRM %s (session complete)", sid[0] ? sid : "<no id>");
         } else {
-            logf_("RX TRM %s without matching SID", sid);
+            logf_("RX TRM %s without matching SID", sid[0] ? sid : "<no id>");
         }
         act = E2E_RX_CLOSE;
         break;

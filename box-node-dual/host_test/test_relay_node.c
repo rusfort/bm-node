@@ -46,7 +46,7 @@ static void node_boot(void)
 
 #define PH_MAX_MSG 300
 typedef struct {
-    char id[37], ttl[24], recv[40], type[8], bytes[120];
+    char id[64], ttl[24], recv[40], type[8], bytes[120];
     int  uc;
     char box[37];            /* box_id в очереди телефона (стабилен) */
     bool node_has;           /* узел подтвердил CBB/CDB */
@@ -336,6 +336,77 @@ static void t_callback_giveup(void)
     printf("callback give-up       ok\n");
 }
 
+static void t_empty_fields(void)
+{
+    /* Сообщение с пустыми ttl/receiver/type (как может прислать Android) проходит через узел. */
+    node_boot();
+    static phone_t E, F;
+    setup_phone(&E, "eeee00001111");
+    setup_phone(&F, "ffff00002222");
+    ph_new_msg(&E, "hello-empty");
+    E.m[0].ttl[0] = 0; E.m[0].recv[0] = 0; E.m[0].type[0] = 0;
+    uint32_t rej0 = rn_stats()->rx_msgs_rej;
+    assert(phone_serve(&E) == 1);
+    assert(rn_stats()->rx_msgs_rej == rej0 && st_find_msg(E.m[0].id) >= 0);
+    got_t g = node_serve(&F, false, -1);
+    int j = ph_find(&F, E.m[0].id);
+    assert(g.new_msgs >= 1 && j >= 0);
+    assert(F.m[j].ttl[0] == 0 && F.m[j].recv[0] == 0 && !strcmp(F.m[j].bytes, "hello-empty"));
+    printf("empty ttl/receiver     ok\n");
+}
+
+static void t_multipart(void)
+{
+    /* Большое сообщение A: части «uuid_4_0..uuid_4_3» (BoxChatActivity.createMultipart), каждая в своём BOX — так, как в прошлом
+     * тесте пришло 47519810 (в dual-0.4 такие id отклонялись как «не UUID»). */
+    node_boot();
+    static phone_t P, Q;
+    setup_phone(&P, "0a0a0a0a0a0a");
+    setup_phone(&Q, "0b0b0b0b0b0b");
+    char base[37];
+    box_uuid_v4(base, rnd);
+    uint32_t new0 = rn_stats()->rx_msgs_new;
+    for (int i = 0; i < 4; i++) {
+        ph_new_msg(&P, "part");
+        snprintf(P.m[i].id, sizeof(P.m[i].id), "%s_4_%d", base, i);
+    }
+    assert(phone_serve(&P) == 4);
+    assert(rn_stats()->rx_msgs_new - new0 == 4);
+    for (int i = 0; i < 4; i++) assert(st_find_msg(P.m[i].id) >= 0);
+    /* Q получает все 4 части за одну сессию, unit_count +1 */
+    got_t g = node_serve(&Q, false, -1);
+    assert(g.boxes == (int)st_stats()->entries && g.new_msgs == g.boxes);   /* + 2 от прошлых тестов */
+    for (int i = 0; i < 4; i++) { int j = ph_find(&Q, P.m[i].id); assert(j >= 0 && Q.m[j].uc == 2); }
+    printf("multipart A->node->B   ok\n");
+}
+
+static void t_session_without_id(void)
+{
+    /* S24: LocalCache.currentSessionID == "" -> SID "V1\nSID\n" и TRM "V1\nTRM\n" (7 байт). */
+    node_boot();
+    static phone_t S;
+    setup_phone(&S, "545e05cfd599");
+    ph_new_msg(&S, "from-s24");
+    box_pkt_t pk;
+    assert(box_parse((const uint8_t *)"V1\nSID\n", 7, &pk) == 0 && pk.type == BOX_PKT_SID &&
+           box_pkt_primary_id(&pk)[0] == 0);
+    assert(box_parse((const uint8_t *)"V1\nTRM", 6, &pk) == 0 && pk.type == BOX_PKT_TRM);
+    assert(box_parse((const uint8_t *)"V1\nCBB\n", 7, &pk) != 0);      /* остальным id нужен */
+    for (int round = 0; round < 2; round++) {          /* дважды подряд: без id повтор не закрываем */
+        uint32_t s0 = rn_stats()->rx_sessions;
+        rn_rx_begin(S.id);
+        assert(feed("V1\nSID\n") == E2E_RX_CONTINUE);
+        static char b[BOX_MAX_PACKET + 1];
+        box_msg_t bm = { S.m[0].id, S.m[0].ttl, 0, S.m[0].recv, S.m[0].type, S.m[0].bytes };
+        assert(box_build_box(b, sizeof(b), S.m[0].box, &bm, 1) > 0);
+        assert(feed(b) == E2E_RX_CONTINUE);
+        assert(feed("V1\nTRM\n") == E2E_RX_CLOSE);
+        assert(rn_stats()->rx_sessions == s0 + 1);
+    }
+    assert(rn_stats()->rx_sessions_noid >= 2 && st_find_msg(S.m[0].id) >= 0);
+    printf("SID/TRM without id     ok\n");
+}
+
 int main(int argc, char **argv)
 {
     (void)argv;
@@ -349,6 +420,9 @@ int main(int argc, char **argv)
     t_many();
     t_expiry();
     t_callback_giveup();
+    t_empty_fields();
+    t_multipart();
+    t_session_without_id();
     printf("ALL RELAY NODE TESTS PASSED\n");
     return 0;
 }

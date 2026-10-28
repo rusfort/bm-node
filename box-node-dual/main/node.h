@@ -17,7 +17,7 @@
 #error "NODE_ROLE_CORE or NODE_ROLE_TX must be defined"
 #endif
 
-#define FW_VERSION        "dual-0.4"
+#define FW_VERSION        "dual-0.4.2"
 
 /* Логический ID узла: 00000000-0000-4000-8000-aabbccddeeff (как в прошлых этапах). */
 #define NODE_SUFFIX       "aabbccddeeff"

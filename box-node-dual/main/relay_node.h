@@ -36,7 +36,7 @@ typedef struct {
 } rn_env_t;
 
 typedef struct {
-    uint32_t rx_sessions, rx_known_sessions, rx_boxes, rx_msgs_new, rx_msgs_dup, rx_msgs_rej;
+    uint32_t rx_sessions, rx_sessions_noid, rx_known_sessions, rx_boxes, rx_msgs_new, rx_msgs_dup, rx_msgs_rej;
     uint32_t rx_cbb, rx_cdb, rx_cb_matched, rx_acb, cb_acked;
     uint32_t tx_sessions, tx_msgs, tx_pkts, cb_given_up, cb_dropped_full, acb_dropped_full;
 } rn_stats_t;

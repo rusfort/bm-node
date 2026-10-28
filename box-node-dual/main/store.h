@@ -25,6 +25,7 @@ extern "C" {
 #define ST_COPY_LIMIT_PCT   80   /* сборка мусора переписывает живое, пока занято ≤ 80% */
 #define ST_SOURCE_PCT       20   /* доля одного источника (телефона) */
 #define ST_MAX_FIELD        480  /* предел строки в сообщении */
+#define ST_MAX_ID_LEN       64   /* предел message_id */
 #define ST_DELETED_RING     4096 /* недавно вытесненные/истёкшие ID */
 
 typedef struct {
@@ -56,6 +57,7 @@ typedef struct {
     uint32_t got_at;       /* когда принято (часы узла) */
     uint32_t src;          /* хеш ID телефона, от которого пришло */
     uint32_t last_sent;
+    uint32_t grp;          /* части одного большого сообщения (uuid_<всего>_<номер>): хеш первых 36 символов, 0 — обычное */
     uint16_t rec_len;
     uint8_t  sends;        /* сколько раз отдали (насыщается на 255) */
     uint8_t  nhave;        /* сколько разных телефонов отметили (приблизительно) */
@@ -94,6 +96,9 @@ void  st_mark_sent(int idx);
 /* Выбрать до max записей для телефона (NULL — неизвестен): сначала те, что отдавали реже,
  * при равенстве — принятые позже. У известного телефона пропускаются те, что у него есть. */
 int   st_select(const char *phone, int *out_idx, int max);
+/* Группа частей: 0 для обычного id (36 символов), иначе хеш первых 36 символов
+ * (Android: части «uuid_<всего>_<номер>» собираются по префиксу — MessageDAO.getParts LIKE id%). */
+uint32_t st_group_of(const char *message_id);
 /* Прочитать сообщение. 0 или <0. */
 int   st_read(int idx, st_msg_t *out);
 const st_ent_t *st_entry(int idx);
@@ -101,6 +106,8 @@ const st_ent_t *st_entry(int idx);
 /* Обслуживание (раз в секунду): истечение срока, сборка мусора (не больше одного сектора). */
 void  st_maintain(void);
 const st_stats_t *st_stats(void);
+/* Почему последнее st_put вернуло ST_REJECT_SIZE (для лога). */
+const char *st_reject_detail(void);
 /* Самое позднее время приёма среди хранимых (для восстановления часов узла), 0 — пусто. */
 uint32_t st_newest(void);
 void  st_status_line(char *out, size_t cap);

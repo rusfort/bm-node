@@ -365,18 +365,33 @@ static int parse_payload(const uint8_t *p, uint32_t plen, uint32_t *got_at, uint
     return i == plen ? 0 : -1;
 }
 
+/* Последний отказ ST_REJECT_SIZE — для лога (какое поле не прошло). */
+static char last_reject[160];
+
 static bool fields_ok(const box_msg_t *m)
 {
-    if (!m || !m->message_id || !box_is_uuid(m->message_id)) return false;
-    if (!m->bytes || !m->bytes[0]) return false;              /* как insertTransitMessage */
+    if (!m) { snprintf(last_reject, sizeof(last_reject), "no message"); return false; }
     const char *f[5] = { m->message_id, m->ttl, m->receiver, m->type, m->bytes };
-    for (int i = 0; i < 5; i++) {
-        /* пустые поля Android не разберёт (split по '\n'), BOX с ними не собрать */
-        if (!f[i] || !f[i][0] || field_len(f[i]) > ST_MAX_FIELD) return false;
-        if (strchr(f[i], '\n')) return false;
+    static const char *const nm[5] = { "id", "ttl", "receiver", "type", "bytes" };
+    size_t l[5];
+    for (int i = 0; i < 5; i++) l[i] = field_len(f[i]);
+    const char *why = NULL;
+    /* message_id — ключ дедупликации (у Android это UUID, но формат не навязываем). */
+    if (l[0] == 0 || l[0] > ST_MAX_ID_LEN) why = "id length";
+    /* пустые bytes: insertTransitMessage их отвергает, да и в коробке поле потеряется */
+    else if (l[4] == 0) why = "bytes empty";
+    for (int i = 0; i < 5 && !why; i++) {
+        if (l[i] > ST_MAX_FIELD) why = nm[i];
+        else if (f[i] && strchr(f[i], '\n')) why = nm[i];
     }
-    return true;
+    if (!why) return true;
+    snprintf(last_reject, sizeof(last_reject), "%s: id=%u%s ttl=%u receiver=%u type=%u bytes=%u (max %u)",
+             why, (unsigned)l[0], box_is_uuid(m->message_id) ? "(uuid)" : "", (unsigned)l[1],
+             (unsigned)l[2], (unsigned)l[3], (unsigned)l[4], (unsigned)ST_MAX_FIELD);
+    return false;
 }
+
+const char *st_reject_detail(void) { return last_reject; }
 
 st_put_t st_put(const box_msg_t *m, const char *src_phone)
 {
@@ -413,6 +428,7 @@ st_put_t st_put(const box_msg_t *m, const char *src_phone)
     st_ent_t *e = &S.ent[k];
     memset(e, 0, sizeof(*e));
     e->idh = idh;
+    e->grp = st_group_of(m->message_id);
     e->boxh = box_hash_for_msgid(m->message_id);
     e->off = off;
     e->got_at = now;
@@ -473,24 +489,61 @@ static bool better(const st_ent_t *a, const st_ent_t *b)
     return a->got_at > b->got_at;
 }
 
+uint32_t st_group_of(const char *message_id)
+{
+    if (!message_id || strlen(message_id) <= BOX_UUID_STR_LEN) return 0;
+    char base[BOX_UUID_STR_LEN + 1];
+    memcpy(base, message_id, BOX_UUID_STR_LEN);
+    base[BOX_UUID_STR_LEN] = '\0';
+    return st_hash32(base) | 1u;
+}
+
+static bool selectable(const st_ent_t *e, uint32_t h, bool known, uint32_t now)
+{
+    if (!e->idh || expired_at(e->got_at, now)) return false;
+    if (known && bloom_has(e->have, h)) return false;
+    return true;
+}
+
 int st_select(const char *phone, int *out, int max)
 {
     if (max <= 0) return 0;
     uint32_t h = phone ? bloom_bits(phone) : 0, now = now_s();
+    bool known = phone != NULL;
+    /* 1) лучшие max записей по приоритету */
+    static int best[64];
+    int lim = max < 64 ? max : 64;
     int n = 0;
     for (uint32_t i = 0; i < S.hw; i++) {
         const st_ent_t *e = &S.ent[i];
-        if (!e->idh || expired_at(e->got_at, now)) continue;
-        if (phone && bloom_has(e->have, h)) continue;
+        if (!selectable(e, h, known, now)) continue;
         int pos = n;
-        while (pos > 0 && better(e, &S.ent[out[pos - 1]])) pos--;
-        if (pos >= max) continue;
-        int last = n < max ? n : max - 1;
-        for (int k = last; k > pos; k--) out[k] = out[k - 1];
-        out[pos] = (int)i;
-        if (n < max) n++;
+        while (pos > 0 && better(e, &S.ent[best[pos - 1]])) pos--;
+        if (pos >= lim) continue;
+        int last = n < lim ? n : lim - 1;
+        for (int k = last; k > pos; k--) best[k] = best[k - 1];
+        best[pos] = (int)i;
+        if (n < lim) n++;
     }
-    return n;
+    /* 2) части одного сообщения держим вместе: за выбранной частью сразу идут остальные
+     *    части той же группы, чтобы получатель мог собрать сообщение за одну сессию. */
+    int m = 0;
+    for (int a = 0; a < n && m < lim; a++) {
+        int idx = best[a];
+        bool dup = false;
+        for (int k = 0; k < m; k++) if (out[k] == idx) { dup = true; break; }
+        if (dup) continue;
+        out[m++] = idx;
+        uint32_t g = S.ent[idx].grp;
+        if (!g) continue;
+        for (uint32_t i = 0; i < S.hw && m < lim; i++) {
+            if ((int)i == idx || S.ent[i].grp != g || !selectable(&S.ent[i], h, known, now)) continue;
+            bool have = false;
+            for (int k = 0; k < m; k++) if (out[k] == (int)i) { have = true; break; }
+            if (!have) out[m++] = (int)i;
+        }
+    }
+    return m;
 }
 
 int st_read(int idx, st_msg_t *out)
@@ -549,7 +602,7 @@ static void load_sector(uint32_t s, uint32_t now)
         int uc;
         const char *f[5];
         if (parse_payload(S.rec + REC_HDR, plen, &got_at, &src, &uc, strs, sizeof(strs), f) ||
-            !box_is_uuid(f[0])) {
+            !f[0][0] || !f[4][0]) {
             S.st.load_bad++; sc->sealed = 1; break;
         }
         pos += total;
@@ -570,6 +623,7 @@ static void load_sector(uint32_t s, uint32_t now)
             st_ent_t *e = &S.ent[i];
             memset(e, 0, sizeof(*e));
             e->idh = idh;
+            e->grp = st_group_of(f[0]);
             e->boxh = box_hash_for_msgid(f[0]);
             e->off = off;
             e->got_at = got_at;
