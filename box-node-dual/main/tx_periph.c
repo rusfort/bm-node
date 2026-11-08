@@ -5,6 +5,10 @@
  *   телефон подписался  -> RL_SUBSCRIBED(conn, mtu)      -> CORE
  *   CORE                -> RL_SESS_PKT x N (одна сессия) -> TX
  *   TX отправил notifications -> RL_SESS_DONE(delivered)  -> CORE
+ *
+ * dual-0.4.3: пакеты сессии уходят телефону по мере прихода по UART (tx_stream.c).
+ * Раньше TX собирал всю сессию (до 40 x ~500 байт по 115200 бод, stop-and-wait —
+ * 2–3 с) и только потом слал SID; Android ждёт первое сообщение 2 с и отключался.
  */
 #if defined(NODE_ROLE_TX)
 
@@ -24,6 +28,7 @@
 #include "link_glue.h"
 #include "relay.h"
 #include "box_adv.h"
+#include "tx_stream.h"
 
 static const char *TAG = "BOX_TX";
 
@@ -103,12 +108,21 @@ static bool hello_get(uint16_t conn, char id[13])
     return r;
 }
 
+/* Один пакет сессии от CORE (RL_SESS_PKT), уже разобранный. */
+typedef struct {
+    uint16_t token, conn;
+    uint8_t  idx, count, kind;
+    uint16_t len;
+    uint8_t  data[BOX_MAX_PACKET];
+} tx_pkt_t;
+#define PKT_Q_LEN (E2E_MAX_SESSION_PKTS + 2)   /* вся сессия целиком, ~22 КБ */
+
 static QueueHandle_t ctl_q;
-static QueueHandle_t sess_q;          /* rt_session_t, длина 1 */
+static QueueHandle_t pkt_q;           /* tx_pkt_t: пакеты сессий по мере прихода */
 static SemaphoreHandle_t tx_done;
 static volatile int tx_status;
 static volatile uint16_t tx_conn = BLE_HS_CONN_HANDLE_NONE;
-static rt_asm_t asm_;                 /* только из задачи доставки канала */
+static ts_t stream;                   /* только из tx_task */
 
 static int gap_event(struct ble_gap_event *event, void *arg);
 
@@ -326,17 +340,23 @@ static void on_link_frame(uint8_t type, const uint8_t *d, uint16_t len)
         ctl_post(0, CTL_RESYNC);
         break;
     case RL_SESS_PKT: {
-        rt_result_t r = rt_on_pkt(&asm_, d, len);
-        if (r == RT_ERROR) {
-            ESP_LOGW(TAG, "bad session packet len=%u", len);
-            if (len >= 4) send_done((uint16_t)(d[0] | d[1] << 8), (uint16_t)(d[2] | d[3] << 8), 0, 0,
-                                    RL_RC_BAD_SESSION);
-        } else if (r == RT_COMPLETE) {
-            if (xQueueSend(sess_q, &asm_.s, 0) != pdTRUE) {
-                ESP_LOGW(TAG, "session token=%04x rejected: busy", asm_.s.token);
-                send_done(asm_.s.token, asm_.s.conn, 0, asm_.s.count, RL_RC_BUSY);
-            }
+        static tx_pkt_t p;            /* только из задачи доставки канала */
+        if (len < RL_PKT_HDR) { ESP_LOGW(TAG, "bad session packet len=%u", len); break; }
+        p.token = (uint16_t)(d[0] | d[1] << 8);
+        p.conn = (uint16_t)(d[2] | d[3] << 8);
+        p.idx = d[4];
+        p.count = d[5];
+        p.kind = d[6];
+        p.len = (uint16_t)(len - RL_PKT_HDR);
+        if (p.count == 0 || p.count > E2E_MAX_SESSION_PKTS || p.idx >= p.count || p.len > BOX_MAX_PACKET) {
+            ESP_LOGW(TAG, "bad session packet token=%04x idx=%u count=%u len=%u", p.token, p.idx, p.count, len);
+            send_done(p.token, p.conn, 0, 0, RL_RC_BAD_SESSION);
+            break;
         }
+        memcpy(p.data, d + RL_PKT_HDR, p.len);
+        /* Очередь вмещает сессию целиком; при переполнении tx_stream закроет сессию по тайм-ауту. */
+        if (xQueueSend(pkt_q, &p, 0) != pdTRUE)
+            ESP_LOGW(TAG, "session token=%04x pkt %u/%u dropped: queue full", p.token, p.idx, p.count);
         break;
     }
     default:
@@ -408,37 +428,53 @@ static int send_one(uint16_t conn, const uint8_t *data, uint16_t len)
 
 static const char *kind_name(uint8_t k) { return e2e_pkt_kind_name((e2e_pkt_kind_t)k); }
 
-static void run_session(const rt_session_t *s)
+static void emit_done(const ts_done_t *d)
 {
-    if (!sub_is(s->conn)) {
-        ESP_LOGW(TAG, "session token=%04x for conn=%u: not subscribed anymore", s->token, s->conn);
-        send_done(s->token, s->conn, 0, s->count, RL_RC_NOT_SUBSCRIBED);
-        return;
+    if (!d->emit) return;
+    if (d->rc != RL_RC_NOT_SUBSCRIBED) sub_mark_served(d->conn);
+    ESP_LOGI(TAG, "session done token=%04x conn=%u delivered=%u/%u rc=%d",
+             d->token, d->conn, d->delivered, d->count, d->rc);
+    send_done(d->token, d->conn, d->delivered, d->count, d->rc);
+}
+
+/* Пакет сессии: отправить телефону сразу, не дожидаясь остальных. */
+static void on_pkt(const tx_pkt_t *p)
+{
+    ts_done_t prev, done;
+    bool sub = sub_is(p->conn);
+    ts_action_t a = ts_on_pkt(&stream, p->token, p->conn, p->idx, p->count, sub, node_now_ms(), &prev, &done);
+    emit_done(&prev);
+    if (p->idx == 0) {
+        if (sub) ESP_LOGI(TAG, "session start token=%04x conn=%u mtu=%u packets=%u (streaming)",
+                          p->token, p->conn, ble_att_mtu(p->conn), p->count);
+        else ESP_LOGW(TAG, "session token=%04x for conn=%u: not subscribed anymore", p->token, p->conn);
     }
-    ESP_LOGI(TAG, "session start token=%04x conn=%u mtu=%u packets=%u",
-             s->token, s->conn, ble_att_mtu(s->conn), s->count);
-    tx_conn = s->conn;
-    int delivered = 0, last_rc = 0;
-    for (int i = 0; i < s->count; i++) {
-        int rc = send_one(s->conn, s->pkt[i].data, s->pkt[i].len);
-        ESP_LOGI(TAG, "  notify %-12s len=%3u -> %s (rc=%d)", kind_name(s->pkt[i].kind),
-                 s->pkt[i].len, rc == 0 ? "ok" : "FAILED", rc);
-        if (rc != 0) { last_rc = rc; break; }
-        delivered++;
-        vTaskDelay(pdMS_TO_TICKS(10));    /* GATT_SEND_INTERVAL_MS, как в Android */
-    }
+    emit_done(&done);
+    if (a != TS_SEND) return;
+
+    tx_conn = p->conn;
+    int rc = send_one(p->conn, p->data, p->len);
     tx_conn = BLE_HS_CONN_HANDLE_NONE;
-    sub_mark_served(s->conn);
-    send_done(s->token, s->conn, delivered, s->count, last_rc);
+    ESP_LOGI(TAG, "  notify %-12s %u/%u len=%3u -> %s (rc=%d)", kind_name(p->kind), p->idx + 1, p->count,
+             p->len, rc == 0 ? "ok" : "FAILED", rc);
+    ts_on_sent(&stream, rc, node_now_ms(), &done);
+    emit_done(&done);
+    if (rc == 0) vTaskDelay(pdMS_TO_TICKS(10));    /* GATT_SEND_INTERVAL_MS, как в Android */
 }
 
 static void tx_task(void *arg)
 {
     (void)arg;
-    static rt_session_t s;   /* ~4 КБ — статически */
+    static tx_pkt_t p;       /* ~0,5 КБ — статически */
     ctl_t c;
     for (;;) {
-        if (xQueueReceive(sess_q, &s, 0) == pdTRUE) run_session(&s);
+        if (xQueueReceive(pkt_q, &p, 0) == pdTRUE) { on_pkt(&p); continue; }   /* пакеты — в первую очередь */
+
+        ts_done_t d;
+        ts_tick(&stream, node_now_ms(), &d);
+        if (d.emit) ESP_LOGW(TAG, "session token=%04x: CORE stopped sending (%u/%u delivered)",
+                             d.token, d.delivered, d.count);
+        emit_done(&d);
 
         if (xQueueReceive(ctl_q, &c, pdMS_TO_TICKS(20)) != pdTRUE) continue;
         switch (c.what) {
@@ -446,7 +482,7 @@ static void tx_task(void *arg)
             /* Дать Android закончить запись CCCD. Новая версия пишет HELLO до CCCD, и тогда
              * ждать не нужно; старая HELLO не шлёт — ждём до HELLO_WAIT_MS, как раньше. */
             char hid[13];
-            vTaskDelay(pdMS_TO_TICKS(100));
+            if (!hello_get(c.conn, hid)) vTaskDelay(pdMS_TO_TICKS(100));   /* HELLO уже есть — не ждём */
             for (int w = 0; w < (HELLO_WAIT_MS - 100) / 50 && !hello_get(c.conn, hid); w++)
                 vTaskDelay(pdMS_TO_TICKS(50));
             if (!sub_is(c.conn)) break;
@@ -469,10 +505,10 @@ static void tx_task(void *arg)
 void tx_init(void)
 {
     ctl_q = xQueueCreate(16, sizeof(ctl_t));
-    sess_q = xQueueCreate(1, sizeof(rt_session_t));
+    pkt_q = xQueueCreate(PKT_Q_LEN, sizeof(tx_pkt_t));
     tx_done = xSemaphoreCreateBinary();
-    configASSERT(ctl_q && sess_q && tx_done);
-    rt_init(&asm_);
+    configASSERT(ctl_q && pkt_q && tx_done);
+    ts_init(&stream);
     link_set_handlers(on_link_frame, on_link_event);
     xTaskCreate(tx_task, "box_tx", 6144, NULL, 5, NULL);
 }
