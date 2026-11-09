@@ -1,7 +1,7 @@
 {
     "version":            "1.2",
     "project_name":       "box_node_dual",
-    "project_version":    "b8bd2c0-dirty",
+    "project_version":    "a34f006-dirty",
     "project_path":       "/Users/nickrusfort/Desktop/dev/bm-node/box-node-dual",
     "idf_path":           "/Users/nickrusfort/esp/esp-idf-v5.5.5",
     "build_dir":          "/Users/nickrusfort/Desktop/dev/bm-node/box-node-dual/build_core",
@@ -1255,7 +1255,7 @@
             "managed_reqs": [],
             "managed_priv_reqs": [],
             "file": "/Users/nickrusfort/Desktop/dev/bm-node/box-node-dual/build_core/esp-idf/main/libmain.a",
-            "sources": [ "/Users/nickrusfort/Desktop/dev/bm-node/box-node-dual/main/main.c", "/Users/nickrusfort/Desktop/dev/bm-node/box-node-dual/main/link_glue.c", "/Users/nickrusfort/Desktop/dev/bm-node/box-node-dual/main/relay.c", "/Users/nickrusfort/Desktop/dev/bm-node/box-node-dual/main/e2e_test.c", "/Users/nickrusfort/Desktop/dev/bm-node/box-node-dual/main/box_proto.c", "/Users/nickrusfort/Desktop/dev/bm-node/box-node-dual/main/box_adv.c", "/Users/nickrusfort/Desktop/dev/bm-node/box-node-dual/main/store.c", "/Users/nickrusfort/Desktop/dev/bm-node/box-node-dual/main/relay_node.c", "/Users/nickrusfort/Desktop/dev/bm-node/box-node-dual/main/core_main.c", "/Users/nickrusfort/Desktop/dev/bm-node/box-node-dual/main/core_central.c", "/Users/nickrusfort/Desktop/dev/bm-node/box-node-dual/main/tx_periph.c" ],
+            "sources": [ "/Users/nickrusfort/Desktop/dev/bm-node/box-node-dual/main/main.c", "/Users/nickrusfort/Desktop/dev/bm-node/box-node-dual/main/link_glue.c", "/Users/nickrusfort/Desktop/dev/bm-node/box-node-dual/main/relay.c", "/Users/nickrusfort/Desktop/dev/bm-node/box-node-dual/main/e2e_test.c", "/Users/nickrusfort/Desktop/dev/bm-node/box-node-dual/main/box_proto.c", "/Users/nickrusfort/Desktop/dev/bm-node/box-node-dual/main/box_adv.c", "/Users/nickrusfort/Desktop/dev/bm-node/box-node-dual/main/store.c", "/Users/nickrusfort/Desktop/dev/bm-node/box-node-dual/main/relay_node.c", "/Users/nickrusfort/Desktop/dev/bm-node/box-node-dual/main/core_main.c", "/Users/nickrusfort/Desktop/dev/bm-node/box-node-dual/main/core_central.c", "/Users/nickrusfort/Desktop/dev/bm-node/box-node-dual/main/tx_periph.c", "/Users/nickrusfort/Desktop/dev/bm-node/box-node-dual/main/tx_stream.c", "/Users/nickrusfort/Desktop/dev/bm-node/box-node-dual/main/peer_pace.c" ],
             "include_dirs": [ "." ]
         },
         "mbedtls": {

@@ -1,0 +1,1271 @@
+Command: /Users/nickrusfort/.espressif/python_env/idf5.5_py3.13_env/bin/python /Users/nickrusfort/esp/esp-idf-v5.5.5/tools/idf_monitor.py -p /dev/cu.usbmodem5CCD0111651 -b 115200 --toolchain-prefix xtensa-esp32s3-elf- --target esp32s3 --revision 0 /Users/nickrusfort/Desktop/dev/bm-node/box-node-dual/build_core/box_node_dual.elf /Users/nickrusfort/Desktop/dev/bm-node/box-node-dual/build_core/bootloader/bootloader.elf -m '/Users/nickrusfort/.espressif/python_env/idf5.5_py3.13_env/bin/python' '/Users/nickrusfort/esp/esp-idf-v5.5.5/tools/idf.py' '-B' 'build_core' '-D' 'NODE_ROLE=CORE' '-p' '/dev/cu.usbmodem5CCD0111651'
+ESP-ROM:esp32s3-20210327
+Build:Mar 27 2021
+rst:0x1 (POWERON),boot:0x8 (SPI_FAST_FLASH_BOOT)
+SPIWP:0xee
+mode:DIO, clock div:1
+load:0x3fce2820,len:0x14f0
+load:0x403c8700,len:0xd24
+load:0x403cb700,len:0x2eec
+entry 0x403c8924
+[0;32mI (24) boot: ESP-IDF v5.5.5 2nd stage bootloader[0m
+[0;32mI (25) boot: compile time Nov  8 2026 23:17:29[0m
+[0;32mI (25) boot: Multicore bootloader[0m
+[0;32mI (25) boot: chip revision: v0.2[0m
+[0;32mI (28) boot: efuse block revision: v1.3[0m
+[0;32mI (31) boot.esp32s3: Boot SPI Speed : 80MHz[0m
+[0;32mI (35) boot.esp32s3: SPI Mode       : DIO[0m
+[0;32mI (39) boot.esp32s3: SPI Flash Size : 8MB[0m
+[0;32mI (43) boot: Enabling RNG early entropy source...[0m
+[0;32mI (47) boot: Partition Table:[0m
+[0;32mI (50) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (56) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (63) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (69) boot:  2 factory          factory app      00 00 00010000 00300000[0m
+[0;32mI (76) boot:  3 transit          Unknown data     01 40 00310000 004f0000[0m
+[0;32mI (82) boot: End of partition table[0m
+[0;32mI (85) esp_image: segment 0: paddr=00010020 vaddr=3c060020 size=15414h ( 87060) map[0m
+[0;32mI (109) esp_image: segment 1: paddr=0002543c vaddr=3fc9b900 size=042bch ( 17084) load[0m
+[0;32mI (113) esp_image: segment 2: paddr=00029700 vaddr=40374000 size=06918h ( 26904) load[0m
+[0;32mI (119) esp_image: segment 3: paddr=00030020 vaddr=42000020 size=560fch (352508) map[0m
+[0;32mI (184) esp_image: segment 4: paddr=00086124 vaddr=4037a918 size=10efch ( 69372) load[0m
+[0;32mI (200) esp_image: segment 5: paddr=00097028 vaddr=50000000 size=00020h (    32) load[0m
+[0;32mI (210) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (210) boot: Disabling RNG early entropy source...[0m
+[0;32mI (220) esp_psram: Found 2MB PSRAM device[0m
+[0;32mI (220) esp_psram: Speed: 80MHz[0m
+[0;32mI (221) cpu_start: Multicore app[0m
+[0;32mI (450) esp_psram: SPI SRAM memory test OK[0m
+[0;32mI (459) cpu_start: GPIO 44 and 43 are used as console UART I/O pins[0m
+[0;32mI (459) cpu_start: Pro cpu start user code[0m
+[0;32mI (459) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (461) app_init: Application information:[0m
+[0;32mI (465) app_init: Project name:     box_node_dual[0m
+[0;32mI (469) app_init: App version:      a34f006-dirty[0m
+[0;32mI (474) app_init: Compile time:     Nov  8 2026 23:17:20[0m
+[0;32mI (479) app_init: ELF file SHA256:  52818142e...[0m
+[0;32mI (483) app_init: ESP-IDF:          v5.5.5[0m
+[0;32mI (487) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (491) efuse_init: Max chip rev:     v0.99 [0m
+[0;32mI (495) efuse_init: Chip rev:         v0.2[0m
+[0;32mI (499) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (505) heap_init: At 3FCAD770 len 0003BFA0 (239 KiB): RAM[0m
+[0;32mI (510) heap_init: At 3FCE9710 len 00005724 (21 KiB): RAM[0m
+[0;32mI (515) heap_init: At 3FCF0000 len 00008000 (32 KiB): DRAM[0m
+[0;32mI (520) heap_init: At 600FE000 len 00001FE8 (7 KiB): RTCRAM[0m
+[0;32mI (526) esp_psram: Adding pool of 2048K of PSRAM memory to heap allocator[0m
+[0;32mI (533) spi_flash: detected chip: generic[0m
+[0;32mI (536) spi_flash: flash io: dio[0m
+[0;32mI (539) sleep_gpio: Configure to isolate all GPIO pins in sleep state[0m
+[0;32mI (545) sleep_gpio: Enable automatic switching of GPIO sleep configuration[0m
+[0;32mI (552) coexist: coex firmware version: 6f3d08c[0m
+[0;32mI (556) coexist: coexist rom version e7ae62f[0m
+[0;32mI (560) main_task: Started on CPU0[0m
+[0;32mI (580) esp_psram: Reserving pool of 32K of internal memory for DMA/internal allocations[0m
+[0;32mI (580) main_task: Calling app_main()[0m
+[0;32mI (580) BOX_NODE: Box Node Dual role=CORE fw=dual-0.4.3 boot=bf4b bt_mac=10:00:3b:6b:c4:76[0m
+[0;32mI (580) RELAY: node mode: RELAY (transit store, messages kept up to 7 days)[0m
+[0;32mI (590) STORE: partition transit at 0x310000, 5056 KB, 1264 sectors; index 796 KB in PSRAM[0m
+[0;32mI (760) STORE: mounted 1264 sectors, 70 messages (14268 bytes live), records=70 bad=0 expired=0 cap=16001[0m
+[0;32mI (760) STORE: mounted in 165 ms, node clock 459668 s[0m
+[0;32mI (770) LINK: UART1 TX=GPIO17 RX=GPIO18 115200 8N1 role=CORE boot=bf4b[0m
+[0;32mI (770) BLE_INIT: BT controller compile version [51d9dfd][0m
+[0;32mI (780) BLE_INIT: Using main XTAL as clock source[0m
+[0;32mI (780) BLE_INIT: Feature Config, ADV:1, BLE_50:1, DTM:1, SCAN:1, CCA:0, SMP:1, CONNECT:1[0m
+[0;32mI (790) BLE_INIT: Bluetooth MAC: 10:00:3b:6b:c4:76[0m
+[0;33mW (800) LINK: event: link up (peer role=TX boot=efaf)[0m
+[0;32mI (800) phy_init: phy_version 712,87e8c20e,Apr 13 2026,18:51:10[0m
+[0;32mI (800) RELAY: TX BLE address 10:00:3b:6b:b2:b6[0m
+[0;32mI (820) RELAY: TX BLE address 10:00:3b:6b:b2:b6[0m
+[0;32mI (840) RELAY: TX BLE address 10:00:3b:6b:b2:b6[0m
+[0;32mI (840) phy_init: Saving new calibration data due to checksum failure or outdated calibration data, mode(0)[0m
+[0;32mI (860) BOX_NODE: Own BLE address 10:00:3b:6b:c4:76 type=0[0m
+[0;32mI (860) BOX_NODE: Box Node Dual CORE started[0m
+[0;32mI (860) main_task: Returned from app_main()[0m
+[0;32mI (1430) BOX_RX: peer id 6a6dc1733925 flags=06[0m
+[0;32mI (1430) BOX_RX: Box device 4b:e6:47:7f:df:71 rssi=-67 -> connect (SERVING)[0m
+[0;32mI (2080) BOX_RX: connected to Android GATT server conn=1[0m
+[0;32mI (2180) BOX_RX: MTU exchange status=0 mtu=517[0m
+[0;32mI (2580) BOX_RX: Box characteristic found: peer_id=6a6dc1733925 val_handle=149[0m
+[0;32mI (2880) BOX_RX: HELLO sent to Android 6a6dc1733925[0m
+[0;32mI (2980) BOX_RX: subscribed to Android 6a6dc1733925 (conn=1 val=149 cccd=150), waiting for its session[0m
+[0;32mI (3480) NODE: rx BOX e106f446 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (3530) NODE: rx BOX 4e08d040 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (3530) NODE: rx BOX f03c2a6d from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (3540) NODE: rx BOX 8c604125 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (3540) NODE: rx BOX 8bfb6476 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (3550) NODE: rx BOX 5a16770f from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (3550) NODE: rx BOX b63e5b20 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (3580) NODE: rx BOX 668479c6 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (3630) NODE: rx BOX 37c928da from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (3630) NODE: rx BOX 8629262b from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (3640) NODE: rx BOX 53fe8b00 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (3640) NODE: rx BOX ec9df0be from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (3640) NODE: rx BOX 58be8b67 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (3650) NODE: rx BOX fe3e477b from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (3650) NODE: rx BOX bf1b60c9 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (3660) NODE: rx BOX bdb2a26a from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (3670) NODE: rx BOX 58d74274 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (3670) NODE: rx BOX 3ee7d7e1 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (3680) NODE: rx BOX 59ddf233 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (3680) NODE: rx BOX eb357a1e from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (3730) NODE: rx BOX 7c8367c4 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (3730) NODE: rx BOX 4ade3593 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (3740) NODE: rx BOX b5350040 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (3740) NODE: rx BOX d031366b from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (3750) NODE: rx BOX 20cbff2a from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (3750) NODE: rx BOX 6a05fac6 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (3760) NODE: rx BOX 5f908f27 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (3780) NODE: rx BOX bf10f051 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (3780) NODE: rx BOX 60a3b35a from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (3790) NODE: rx BOX 17c6cf30 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (3790) NODE: rx BOX cbb9a17a from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (3830) NODE: rx BOX 71cb69a0 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (3840) NODE: rx BOX bf29f649 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (3840) NODE: rx BOX b407e6da from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (3840) NODE: rx BOX bed2d822 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (3850) NODE: rx BOX d9c23204 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (3880) NODE: rx BOX 6b8fb1a0 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (3880) NODE: rx BOX ceb401ca from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (3890) NODE: rx BOX 2a10227a from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (3890) NODE: rx BOX c94af7a0 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (4280) BOX_RX: Android session done -> disconnect[0m
+[0;32mI (4280) BOX_RX: disconnected from Android conn=1 reason=534[0m
+[0;32mI (7390) BOX_RX: Box device 4b:e6:47:7f:df:71 rssi=0 -> connect (recent, no other phone found)[0m
+[0;32mI (7480) BOX_RX: connected to Android GATT server conn=1[0m
+[0;32mI (7580) BOX_RX: MTU exchange status=0 mtu=517[0m
+[0;32mI (8030) BOX_RX: Box characteristic found: peer_id=6a6dc1733925 val_handle=149[0m
+[0;32mI (8330) BOX_RX: HELLO sent to Android 6a6dc1733925[0m
+[0;32mI (8430) BOX_RX: subscribed to Android 6a6dc1733925 (conn=1 val=149 cccd=150), waiting for its session[0m
+[0;32mI (8930) NODE: rx BOX e106f446 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (8930) NODE: rx BOX 4e08d040 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (8940) NODE: rx BOX f03c2a6d from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (8940) NODE: rx BOX 8c604125 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (8940) NODE: rx BOX 8bfb6476 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (8950) NODE: rx BOX 5a16770f from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (8960) NODE: rx BOX b63e5b20 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (8980) NODE: rx BOX 668479c6 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (8980) NODE: rx BOX 37c928da from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (8990) NODE: rx BOX 8629262b from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (8990) NODE: rx BOX 53fe8b00 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (9030) NODE: rx BOX ec9df0be from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (9030) NODE: rx BOX 58be8b67 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (9040) NODE: rx BOX fe3e477b from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (9040) NODE: rx BOX bf1b60c9 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (9040) NODE: rx BOX bdb2a26a from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (9080) NODE: rx BOX 58d74274 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (9090) NODE: rx BOX 3ee7d7e1 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (9090) NODE: rx BOX 59ddf233 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (9090) NODE: rx BOX eb357a1e from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (9130) NODE: rx BOX 7c8367c4 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (9130) NODE: rx BOX 4ade3593 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (9140) NODE: rx BOX b5350040 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (9140) NODE: rx BOX d031366b from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (9150) NODE: rx BOX 20cbff2a from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (9150) NODE: rx BOX 6a05fac6 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (9180) NODE: rx BOX 5f908f27 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (9180) NODE: rx BOX bf10f051 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (9190) NODE: rx BOX 60a3b35a from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (9190) NODE: rx BOX 17c6cf30 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (9230) NODE: rx BOX cbb9a17a from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (9240) NODE: rx BOX 71cb69a0 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (9240) NODE: rx BOX bf29f649 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (9240) NODE: rx BOX b407e6da from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (9250) NODE: rx BOX bed2d822 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (9280) NODE: rx BOX d9c23204 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (9280) NODE: rx BOX 6b8fb1a0 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (9290) NODE: rx BOX ceb401ca from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (9290) NODE: rx BOX 2a10227a from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (9290) NODE: rx BOX c94af7a0 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (9680) BOX_RX: Android session done -> disconnect[0m
+[0;32mI (9730) BOX_RX: disconnected from Android conn=1 reason=534[0m
+[0;32mI (11290) BOX_RX: phone 6a6dc1733925 is in scan phase (not SERVING) -> wait[0m
+[0;32mI (21310) BOX_RX: phone 6a6dc1733925 is in scan phase (not SERVING) -> wait[0m
+[0;32mI (25420) BOX_RX: Box device 4b:e6:47:7f:df:71 rssi=0 -> connect (recent, no other phone found)[0m
+[0;32mI (25730) BOX_RX: connected to Android GATT server conn=1[0m
+[0;32mI (25880) BOX_RX: MTU exchange status=0 mtu=517[0m
+[0;32mI (26280) BOX_RX: Box characteristic found: peer_id=6a6dc1733925 val_handle=149[0m
+[0;32mI (26580) BOX_RX: HELLO sent to Android 6a6dc1733925[0m
+[0;32mI (26680) BOX_RX: subscribed to Android 6a6dc1733925 (conn=1 val=149 cccd=150), waiting for its session[0m
+[0;32mI (27730) NODE: rx BOX e106f446 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (27730) NODE: rx BOX 4e08d040 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (27740) NODE: rx BOX f03c2a6d from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (27740) NODE: rx BOX 8c604125 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (27740) NODE: rx BOX 8bfb6476 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (27750) NODE: rx BOX 5a16770f from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (27760) NODE: rx BOX b63e5b20 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (27780) NODE: rx BOX 668479c6 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (27780) NODE: rx BOX 37c928da from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (27790) NODE: rx BOX 8629262b from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (27790) NODE: rx BOX 53fe8b00 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (27830) NODE: rx BOX ec9df0be from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (27830) NODE: rx BOX 58be8b67 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (27840) NODE: rx BOX fe3e477b from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (27840) NODE: rx BOX bf1b60c9 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (27840) NODE: rx BOX bdb2a26a from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (27850) NODE: rx BOX 58d74274 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (27880) NODE: rx BOX 3ee7d7e1 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (27880) NODE: rx BOX 59ddf233 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (27890) NODE: rx BOX eb357a1e from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (27930) NODE: rx BOX 7c8367c4 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (27930) NODE: rx BOX 4ade3593 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (27940) NODE: rx BOX b5350040 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (27940) NODE: rx BOX d031366b from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (27950) NODE: rx BOX 20cbff2a from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (27950) NODE: rx BOX 6a05fac6 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (27960) NODE: rx BOX 5f908f27 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (27980) NODE: rx BOX bf10f051 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (27980) NODE: rx BOX 60a3b35a from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (27990) NODE: rx BOX 17c6cf30 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (27990) NODE: rx BOX cbb9a17a from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (28030) NODE: rx BOX 71cb69a0 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (28040) NODE: rx BOX bf29f649 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (28040) NODE: rx BOX b407e6da from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (28040) NODE: rx BOX bed2d822 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (28050) NODE: rx BOX d9c23204 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (28080) NODE: rx BOX 6b8fb1a0 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (28080) NODE: rx BOX ceb401ca from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (28090) NODE: rx BOX 2a10227a from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (28090) NODE: rx BOX c94af7a0 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (28480) BOX_RX: Android session done -> disconnect[0m
+[0;32mI (28480) BOX_RX: disconnected from Android conn=1 reason=534[0m
+[0;32mI (30780) LINK: link=UP peer=TX boot=efaf | rx=63 tx=65 retx=0 dup=0 failed=0 | crc=0 cobs=0 len=0 | restarts=0 ups=1 downs=0 loop=0 drops=0[0m
+[0;32mI (30780) BOX_RX: phone 6a6dc1733925 addr=4b:e6:47:7f:df:71 connects=3 sessions=3 cccd_no_answer=0[0m
+[0;32mI (30790) RELAY: relay: subs=0 (hello=0 addr known=0 unknown=0) sent=0 done=0 pkts=0 | aborted timeout=0 restart=0 send=0 stale=0 | pending=0 active=0[0m
+[0;32mI (30800) NODE: node: rx sess=3 (no id 0) known=0 boxes=120 msgs new=0 dup=120 rej=0 cbb=0 cdb=0 acb=0 | tx sess=0 msgs=0 pkts=0 | wait cb=4 acb=0 acked=0 gaveup=0[0m
+[0;32mI (30810) STORE: store: msgs=70/16001 live=13KB sectors used=4 free=1260 | put new=0 dup=120 rej=0 | gc=0 copied=0 evicted=0 expired=0 io=0 clock=459698s[0m
+[0;32mI (31580) BOX_RX: Box device 4b:e6:47:7f:df:71 rssi=0 -> connect (recent, no other phone found)[0m
+[0;32mI (31780) BOX_RX: connected to Android GATT server conn=1[0m
+[0;32mI (31880) BOX_RX: MTU exchange status=0 mtu=517[0m
+[0;32mI (32280) BOX_RX: Box characteristic found: peer_id=6a6dc1733925 val_handle=149[0m
+[0;32mI (32580) BOX_RX: HELLO sent to Android 6a6dc1733925[0m
+[0;32mI (32680) BOX_RX: subscribed to Android 6a6dc1733925 (conn=1 val=149 cccd=150), waiting for its session[0m
+[0;32mI (33030) NODE: rx BOX e106f446 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (33080) NODE: rx BOX 4e08d040 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (33090) NODE: rx BOX f03c2a6d from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (33090) NODE: rx BOX 8c604125 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (33180) NODE: rx BOX 8bfb6476 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (33180) NODE: rx BOX 5a16770f from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (33190) NODE: rx BOX b63e5b20 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (33190) NODE: rx BOX 668479c6 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (33200) NODE: rx BOX 37c928da from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (33200) NODE: rx BOX 8629262b from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (33210) NODE: rx BOX 53fe8b00 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (33210) NODE: rx BOX ec9df0be from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (33220) NODE: rx BOX 58be8b67 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (33230) NODE: rx BOX fe3e477b from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (33230) NODE: rx BOX bf1b60c9 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (33240) NODE: rx BOX bdb2a26a from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (33240) NODE: rx BOX 58d74274 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (33250) NODE: rx BOX 3ee7d7e1 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (33260) NODE: rx BOX 59ddf233 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (33260) NODE: rx BOX eb357a1e from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (33280) NODE: rx BOX 7c8367c4 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (33280) NODE: rx BOX 4ade3593 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (33290) NODE: rx BOX b5350040 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (33290) NODE: rx BOX d031366b from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (33300) NODE: rx BOX 20cbff2a from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (33300) NODE: rx BOX 6a05fac6 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (33380) NODE: rx BOX 5f908f27 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (33380) NODE: rx BOX bf10f051 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (33390) NODE: rx BOX 60a3b35a from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (33390) NODE: rx BOX 17c6cf30 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (33400) NODE: rx BOX cbb9a17a from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (33400) NODE: rx BOX 71cb69a0 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (33410) NODE: rx BOX bf29f649 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (33410) NODE: rx BOX b407e6da from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (33420) NODE: rx BOX bed2d822 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (33430) NODE: rx BOX d9c23204 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (33430) NODE: rx BOX 6b8fb1a0 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (33440) NODE: rx BOX ceb401ca from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (33440) NODE: rx BOX 2a10227a from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (33480) NODE: rx BOX c94af7a0 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (33790) BOX_RX: Android session done -> disconnect[0m
+[0;32mI (33830) BOX_RX: disconnected from Android conn=1 reason=534[0m
+[0;32mI (36900) BOX_RX: Box device 4b:e6:47:7f:df:71 rssi=0 -> connect (recent, no other phone found)[0m
+[0;32mI (37030) BOX_RX: connected to Android GATT server conn=1[0m
+[0;32mI (37130) BOX_RX: MTU exchange status=0 mtu=517[0m
+[0;32mI (37530) BOX_RX: Box characteristic found: peer_id=6a6dc1733925 val_handle=149[0m
+[0;32mI (37830) BOX_RX: HELLO sent to Android 6a6dc1733925[0m
+[0;32mI (37930) BOX_RX: subscribed to Android 6a6dc1733925 (conn=1 val=149 cccd=150), waiting for its session[0m
+[0;32mI (38180) NODE: rx BOX e106f446 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (38180) NODE: rx BOX 4e08d040 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (38190) NODE: rx BOX f03c2a6d from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (38190) NODE: rx BOX 8c604125 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (38200) NODE: rx BOX 8bfb6476 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (38200) NODE: rx BOX 5a16770f from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (38230) NODE: rx BOX b63e5b20 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (38240) NODE: rx BOX 668479c6 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (38240) NODE: rx BOX 37c928da from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (38280) NODE: rx BOX 8629262b from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (38280) NODE: rx BOX 53fe8b00 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (38290) NODE: rx BOX ec9df0be from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (38290) NODE: rx BOX 58be8b67 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (38300) NODE: rx BOX fe3e477b from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (38300) NODE: rx BOX bf1b60c9 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (38330) NODE: rx BOX bdb2a26a from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (38340) NODE: rx BOX 58d74274 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (38340) NODE: rx BOX 3ee7d7e1 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (38340) NODE: rx BOX 59ddf233 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (38350) NODE: rx BOX eb357a1e from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (38380) NODE: rx BOX 7c8367c4 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (38380) NODE: rx BOX 4ade3593 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (38390) NODE: rx BOX b5350040 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (38390) NODE: rx BOX d031366b from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (38430) NODE: rx BOX 20cbff2a from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (38430) NODE: rx BOX 6a05fac6 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (38440) NODE: rx BOX 5f908f27 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (38440) NODE: rx BOX bf10f051 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (38450) NODE: rx BOX 60a3b35a from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (38480) NODE: rx BOX 17c6cf30 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (38490) NODE: rx BOX cbb9a17a from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (38490) BOX_RX: Android session done -> disconnect[0m
+[0;32mI (38490) NODE: rx BOX 71cb69a0 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (38540) BOX_RX: disconnected from Android conn=1 reason=534[0m
+[0;32mI (41590) BOX_RX: Box device 4b:e6:47:7f:df:71 rssi=0 -> connect (recent, no other phone found)[0m
+[0;32mI (41680) BOX_RX: connected to Android GATT server conn=1[0m
+[0;32mI (41780) BOX_RX: MTU exchange status=0 mtu=517[0m
+[0;32mI (42180) BOX_RX: Box characteristic found: peer_id=6a6dc1733925 val_handle=149[0m
+[0;32mI (42480) BOX_RX: HELLO sent to Android 6a6dc1733925[0m
+[0;32mI (42580) BOX_RX: subscribed to Android 6a6dc1733925 (conn=1 val=149 cccd=150), waiting for its session[0m
+[0;32mI (42580) NODE: rx BOX e106f446 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (42590) NODE: rx BOX 4e08d040 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (42630) NODE: rx BOX f03c2a6d from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (42630) NODE: rx BOX 8c604125 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (42640) NODE: rx BOX 8bfb6476 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (42640) NODE: rx BOX 5a16770f from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (42650) NODE: rx BOX b63e5b20 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (42650) NODE: rx BOX 668479c6 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (42680) NODE: rx BOX 37c928da from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (42680) NODE: rx BOX 8629262b from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (42690) NODE: rx BOX 53fe8b00 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (42690) NODE: rx BOX ec9df0be from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (42730) NODE: rx BOX 58be8b67 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (42730) NODE: rx BOX fe3e477b from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (42740) NODE: rx BOX bf1b60c9 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (42740) NODE: rx BOX bdb2a26a from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (42750) NODE: rx BOX 58d74274 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (42830) NODE: rx BOX 3ee7d7e1 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (42830) NODE: rx BOX 59ddf233 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (42840) NODE: rx BOX eb357a1e from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (42840) NODE: rx BOX 7c8367c4 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (42850) NODE: rx BOX 4ade3593 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (42850) NODE: rx BOX b5350040 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (42860) NODE: rx BOX d031366b from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (42860) NODE: rx BOX 20cbff2a from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (42870) NODE: rx BOX 6a05fac6 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (42880) NODE: rx BOX 5f908f27 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (42880) NODE: rx BOX bf10f051 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (42890) NODE: rx BOX 60a3b35a from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (42930) NODE: rx BOX 17c6cf30 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (42940) NODE: rx BOX cbb9a17a from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (42940) NODE: rx BOX 71cb69a0 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (42940) NODE: rx BOX bf29f649 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (42950) NODE: rx BOX b407e6da from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (42950) NODE: rx BOX bed2d822 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (42960) NODE: rx BOX d9c23204 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (42960) NODE: rx BOX 6b8fb1a0 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (42980) NODE: rx BOX ceb401ca from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (42980) NODE: rx BOX 2a10227a from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (42980) NODE: rx BOX c94af7a0 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (43290) BOX_RX: Android session done -> disconnect[0m
+[0;32mI (43330) BOX_RX: disconnected from Android conn=1 reason=534[0m
+[0;32mI (46410) BOX_RX: Box device 4b:e6:47:7f:df:71 rssi=0 -> connect (recent, no other phone found)[0m
+[0;32mI (46580) BOX_RX: connected to Android GATT server conn=1[0m
+[0;32mI (46680) BOX_RX: MTU exchange status=0 mtu=517[0m
+[0;32mI (47080) BOX_RX: Box characteristic found: peer_id=6a6dc1733925 val_handle=149[0m
+[0;32mI (47380) BOX_RX: HELLO sent to Android 6a6dc1733925[0m
+[0;33mW (47480) BOX_RX: CCCD write failed rc=259, keep listening[0m
+[0;33mW (48830) RELAY: link msg type=0x31 len=23 too long, dropped[0m
+[0;32mI (60780) LINK: link=UP peer=TX boot=efaf | rx=125 tx=127 retx=0 dup=0 failed=0 | crc=0 cobs=0 len=0 | restarts=0 ups=1 downs=0 loop=0 drops=0[0m
+[0;32mI (60790) BOX_RX: phone 6a6dc1733925 addr=4b:e6:47:7f:df:71 connects=7 sessions=6 cccd_no_answer=0[0m
+[0;32mI (60820) RELAY: relay: subs=0 (hello=0 addr known=0 unknown=0) sent=0 done=0 pkts=0 | aborted timeout=0 restart=0 send=0 stale=0 | pending=0 active=0[0m
+[0;32mI (60820) NODE: node: rx sess=5 (no id 0) known=1 boxes=232 msgs new=0 dup=232 rej=0 cbb=0 cdb=0 acb=0 | tx sess=0 msgs=0 pkts=0 | wait cb=4 acb=0 acked=0 gaveup=0[0m
+[0;32mI (60830) STORE: store: msgs=70/16001 live=13KB sectors used=4 free=1260 | put new=0 dup=232 rej=0 | gc=0 copied=0 evicted=0 expired=0 io=0 clock=459728s[0m
+[0;32mI (66590) BOX_RX: hold timeout without TRM -> disconnect[0m
+[0;32mI (66630) BOX_RX: disconnected from Android conn=1 reason=534[0m
+[0;32mI (69400) BOX_RX: phone 6a6dc1733925 is in scan phase (not SERVING) -> wait[0m
+[0;32mI (74340) BOX_RX: Box device 4b:e6:47:7f:df:71 rssi=0 -> connect (recent, no other phone found)[0m
+[0;32mI (74530) BOX_RX: connected to Android GATT server conn=1[0m
+[0;32mI (74630) BOX_RX: MTU exchange status=0 mtu=517[0m
+[0;32mI (75030) BOX_RX: Box characteristic found: peer_id=6a6dc1733925 val_handle=149[0m
+[0;32mI (75330) BOX_RX: HELLO sent to Android 6a6dc1733925[0m
+[0;32mI (75430) BOX_RX: subscribed to Android 6a6dc1733925 (conn=1 val=149 cccd=150), waiting for its session[0m
+[0;32mI (76430) NODE: rx BOX e106f446 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (76430) NODE: rx BOX 4e08d040 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (76440) NODE: rx BOX f03c2a6d from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (76440) NODE: rx BOX 8c604125 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (76480) NODE: rx BOX 8bfb6476 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (76480) NODE: rx BOX 5a16770f from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (76490) NODE: rx BOX b63e5b20 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (76490) NODE: rx BOX 668479c6 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (76500) NODE: rx BOX 37c928da from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (76530) NODE: rx BOX 8629262b from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (76580) NODE: rx BOX 53fe8b00 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (76630) NODE: rx BOX ec9df0be from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (76630) NODE: rx BOX 58be8b67 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (76640) NODE: rx BOX fe3e477b from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (76640) NODE: rx BOX bf1b60c9 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (76640) NODE: rx BOX bdb2a26a from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (76650) NODE: rx BOX 58d74274 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (76660) NODE: rx BOX 3ee7d7e1 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (76660) NODE: rx BOX 59ddf233 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (76670) NODE: rx BOX eb357a1e from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (76670) NODE: rx BOX 7c8367c4 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (76680) NODE: rx BOX 4ade3593 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (76690) NODE: rx BOX b5350040 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (76690) NODE: rx BOX d031366b from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (76700) NODE: rx BOX 20cbff2a from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (76700) NODE: rx BOX 6a05fac6 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (76710) NODE: rx BOX 5f908f27 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (76730) NODE: rx BOX bf10f051 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (76730) NODE: rx BOX 60a3b35a from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (76740) NODE: rx BOX 17c6cf30 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (76740) NODE: rx BOX cbb9a17a from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (76740) NODE: rx BOX 71cb69a0 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (76750) NODE: rx BOX bf29f649 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (76780) NODE: rx BOX b407e6da from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (76780) NODE: rx BOX bed2d822 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (76790) NODE: rx BOX d9c23204 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (76790) NODE: rx BOX 6b8fb1a0 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (76830) NODE: rx BOX ceb401ca from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (76830) NODE: rx BOX 2a10227a from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (76830) NODE: rx BOX c94af7a0 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (77190) BOX_RX: Android session done -> disconnect[0m
+[0;32mI (77230) BOX_RX: disconnected from Android conn=1 reason=534[0m
+[0;32mI (80290) BOX_RX: Box device 4b:e6:47:7f:df:71 rssi=0 -> connect (recent, no other phone found)[0m
+[0;32mI (80580) BOX_RX: connected to Android GATT server conn=1[0m
+[0;32mI (80680) BOX_RX: MTU exchange status=0 mtu=517[0m
+[0;32mI (81130) BOX_RX: Box characteristic found: peer_id=6a6dc1733925 val_handle=149[0m
+[0;32mI (81430) BOX_RX: HELLO sent to Android 6a6dc1733925[0m
+[0;32mI (81530) BOX_RX: subscribed to Android 6a6dc1733925 (conn=1 val=149 cccd=150), waiting for its session[0m
+[0;32mI (81530) NODE: rx BOX e106f446 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (81540) NODE: rx BOX 4e08d040 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (81580) NODE: rx BOX f03c2a6d from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (81580) NODE: rx BOX 8c604125 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (81590) NODE: rx BOX 8bfb6476 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (81590) NODE: rx BOX 5a16770f from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (81600) NODE: rx BOX b63e5b20 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (81600) NODE: rx BOX 668479c6 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (81630) NODE: rx BOX 37c928da from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (81630) NODE: rx BOX 8629262b from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (81640) NODE: rx BOX 53fe8b00 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (81640) NODE: rx BOX ec9df0be from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (81680) NODE: rx BOX 58be8b67 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (81680) NODE: rx BOX fe3e477b from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (81690) NODE: rx BOX bf1b60c9 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (81690) NODE: rx BOX bdb2a26a from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (81700) NODE: rx BOX 58d74274 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (81700) NODE: rx BOX 3ee7d7e1 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (81730) NODE: rx BOX 59ddf233 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (81730) NODE: rx BOX eb357a1e from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (81740) NODE: rx BOX 7c8367c4 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (81740) NODE: rx BOX 4ade3593 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (81780) NODE: rx BOX b5350040 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (81780) NODE: rx BOX d031366b from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (81790) BOX_RX: Android session done -> disconnect[0m
+[0;32mI (81850) BOX_RX: disconnected from Android conn=1 reason=534[0m
+[0;32mI (84890) BOX_RX: Box device 4b:e6:47:7f:df:71 rssi=0 -> connect (recent, no other phone found)[0m
+[0;32mI (85030) BOX_RX: connected to Android GATT server conn=1[0m
+[0;32mI (85130) BOX_RX: MTU exchange status=0 mtu=517[0m
+[0;32mI (85530) BOX_RX: Box characteristic found: peer_id=6a6dc1733925 val_handle=149[0m
+[0;32mI (85830) BOX_RX: HELLO sent to Android 6a6dc1733925[0m
+[0;32mI (85930) BOX_RX: subscribed to Android 6a6dc1733925 (conn=1 val=149 cccd=150), waiting for its session[0m
+[0;32mI (86930) NODE: rx BOX e106f446 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (86930) NODE: rx BOX 4e08d040 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (86940) NODE: rx BOX f03c2a6d from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (86940) NODE: rx BOX 8c604125 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (86940) NODE: rx BOX 8bfb6476 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (86980) NODE: rx BOX 5a16770f from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (86980) NODE: rx BOX b63e5b20 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (86990) NODE: rx BOX 668479c6 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (87030) NODE: rx BOX 37c928da from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (87030) NODE: rx BOX 8629262b from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (87040) NODE: rx BOX 53fe8b00 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (87040) NODE: rx BOX ec9df0be from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (87050) NODE: rx BOX 58be8b67 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (87050) NODE: rx BOX fe3e477b from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (87060) NODE: rx BOX bf1b60c9 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (87080) NODE: rx BOX bdb2a26a from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (87090) NODE: rx BOX 58d74274 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (87090) NODE: rx BOX 3ee7d7e1 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (87090) NODE: rx BOX 59ddf233 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (87130) NODE: rx BOX eb357a1e from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (87130) NODE: rx BOX 7c8367c4 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (87140) NODE: rx BOX 4ade3593 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (87140) NODE: rx BOX b5350040 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (87140) NODE: rx BOX d031366b from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (87180) NODE: rx BOX 20cbff2a from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (87180) NODE: rx BOX 6a05fac6 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (87190) NODE: rx BOX 5f908f27 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (87190) NODE: rx BOX bf10f051 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (87200) NODE: rx BOX 60a3b35a from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (87200) NODE: rx BOX 17c6cf30 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (87230) NODE: rx BOX cbb9a17a from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (87240) NODE: rx BOX 71cb69a0 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (87240) NODE: rx BOX bf29f649 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (87240) NODE: rx BOX b407e6da from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (87280) NODE: rx BOX bed2d822 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (87280) NODE: rx BOX d9c23204 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (87290) NODE: rx BOX 6b8fb1a0 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (87290) NODE: rx BOX ceb401ca from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (87330) NODE: rx BOX 2a10227a from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (87330) NODE: rx BOX c94af7a0 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (87590) BOX_RX: Android session done -> disconnect[0m
+[0;32mI (87630) BOX_RX: disconnected from Android conn=1 reason=534[0m
+[0;32mI (90720) BOX_RX: Box device 4b:e6:47:7f:df:71 rssi=0 -> connect (recent, no other phone found)[0m
+[0;32mI (90780) LINK: link=UP peer=TX boot=efaf | rx=185 tx=187 retx=0 dup=0 failed=0 | crc=0 cobs=0 len=0 | restarts=0 ups=1 downs=0 loop=0 drops=0[0m
+[0;32mI (90790) BOX_RX: phone 6a6dc1733925 addr=4b:e6:47:7f:df:71 connects=10 sessions=9 cccd_no_answer=0[0m
+[0;32mI (90830) BOX_RX: connected to Android GATT server conn=1[0m
+[0;32mI (90850) RELAY: relay: subs=0 (hello=0 addr known=0 unknown=0) sent=0 done=0 pkts=0 | aborted timeout=0 restart=0 send=0 stale=0 | pending=0 active=0[0m
+[0;32mI (90850) NODE: node: rx sess=7 (no id 0) known=2 boxes=336 msgs new=0 dup=336 rej=0 cbb=0 cdb=0 acb=0 | tx sess=0 msgs=0 pkts=0 | wait cb=4 acb=0 acked=0 gaveup=0[0m
+[0;32mI (90860) STORE: store: msgs=70/16001 live=13KB sectors used=4 free=1260 | put new=0 dup=336 rej=0 | gc=0 copied=0 evicted=0 expired=0 io=0 clock=459758s[0m
+[0;32mI (90930) BOX_RX: MTU exchange status=0 mtu=517[0m
+[0;32mI (91330) BOX_RX: Box characteristic found: peer_id=6a6dc1733925 val_handle=149[0m
+[0;32mI (91630) BOX_RX: HELLO sent to Android 6a6dc1733925[0m
+[0;32mI (91730) BOX_RX: subscribed to Android 6a6dc1733925 (conn=1 val=149 cccd=150), waiting for its session[0m
+[0;32mI (92080) NODE: rx BOX e106f446 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (92090) NODE: rx BOX 4e08d040 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (92090) NODE: rx BOX f03c2a6d from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (92100) NODE: rx BOX 8c604125 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (92110) NODE: rx BOX 8bfb6476 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (92110) NODE: rx BOX 5a16770f from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (92120) NODE: rx BOX b63e5b20 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (92130) NODE: rx BOX 668479c6 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (92180) NODE: rx BOX 37c928da from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (92190) NODE: rx BOX 8629262b from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (92200) NODE: rx BOX 53fe8b00 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (92200) NODE: rx BOX ec9df0be from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (92210) NODE: rx BOX 58be8b67 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (92220) NODE: rx BOX fe3e477b from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (92230) NODE: rx BOX bf1b60c9 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (92240) NODE: rx BOX bdb2a26a from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (92280) NODE: rx BOX 58d74274 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (92290) BOX_RX: Android session done -> disconnect[0m
+[0;32mI (92370) BOX_RX: disconnected from Android conn=1 reason=534[0m
+[0;33mW (93940) RELAY: link msg type=0x31 len=23 too long, dropped[0m
+[0;32mI (93980) BOX_RX: phone 6a6dc1733925 is in scan phase (not SERVING) -> wait[0m
+[0;32mI (103790) BOX_RX: Box device 4b:e6:47:7f:df:71 rssi=0 -> connect (recent, no other phone found)[0m
+[0;32mI (104030) BOX_RX: connected to Android GATT server conn=1[0m
+[0;32mI (104130) BOX_RX: MTU exchange status=0 mtu=517[0m
+[0;32mI (104530) BOX_RX: Box characteristic found: peer_id=6a6dc1733925 val_handle=149[0m
+[0;32mI (104830) BOX_RX: HELLO sent to Android 6a6dc1733925[0m
+[0;32mI (104930) BOX_RX: subscribed to Android 6a6dc1733925 (conn=1 val=149 cccd=150), waiting for its session[0m
+[0;32mI (105830) NODE: rx BOX e106f446 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (105830) NODE: rx BOX 4e08d040 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (105840) NODE: rx BOX f03c2a6d from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (105840) NODE: rx BOX 8c604125 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (105840) NODE: rx BOX 8bfb6476 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (105850) NODE: rx BOX 5a16770f from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (105880) NODE: rx BOX b63e5b20 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (105890) NODE: rx BOX 668479c6 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (105890) NODE: rx BOX 37c928da from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (105890) NODE: rx BOX 8629262b from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (105930) NODE: rx BOX 53fe8b00 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (105980) NODE: rx BOX ec9df0be from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (105980) NODE: rx BOX 58be8b67 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (105990) NODE: rx BOX fe3e477b from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (105990) NODE: rx BOX bf1b60c9 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (105990) NODE: rx BOX bdb2a26a from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (106000) NODE: rx BOX 58d74274 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (106030) NODE: rx BOX 3ee7d7e1 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (106030) NODE: rx BOX 59ddf233 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (106030) NODE: rx BOX eb357a1e from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (106040) NODE: rx BOX 7c8367c4 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (106040) NODE: rx BOX 4ade3593 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (106050) NODE: rx BOX b5350040 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (106060) NODE: rx BOX d031366b from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (106060) NODE: rx BOX 20cbff2a from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (106080) NODE: rx BOX 6a05fac6 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (106080) NODE: rx BOX 5f908f27 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (106090) NODE: rx BOX bf10f051 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (106090) NODE: rx BOX 60a3b35a from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (106130) NODE: rx BOX 17c6cf30 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (106140) NODE: rx BOX cbb9a17a from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (106140) NODE: rx BOX 71cb69a0 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (106140) NODE: rx BOX bf29f649 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (106150) NODE: rx BOX b407e6da from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (106180) NODE: rx BOX bed2d822 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (106180) NODE: rx BOX d9c23204 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (106190) NODE: rx BOX 6b8fb1a0 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (106190) NODE: rx BOX ceb401ca from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (106230) NODE: rx BOX 2a10227a from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (106230) NODE: rx BOX c94af7a0 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (106490) BOX_RX: Android session done -> disconnect[0m
+[0;32mI (106530) BOX_RX: disconnected from Android conn=1 reason=534[0m
+[0;32mI (109590) BOX_RX: Box device 4b:e6:47:7f:df:71 rssi=0 -> connect (recent, no other phone found)[0m
+[0;32mI (109730) BOX_RX: connected to Android GATT server conn=1[0m
+[0;32mI (109830) BOX_RX: MTU exchange status=0 mtu=517[0m
+[0;32mI (110280) BOX_RX: Box characteristic found: peer_id=6a6dc1733925 val_handle=149[0m
+[0;32mI (110580) BOX_RX: HELLO sent to Android 6a6dc1733925[0m
+[0;32mI (110680) BOX_RX: subscribed to Android 6a6dc1733925 (conn=1 val=149 cccd=150), waiting for its session[0m
+[0;32mI (110930) NODE: rx BOX e106f446 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (110930) NODE: rx BOX 4e08d040 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (110940) NODE: rx BOX f03c2a6d from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (110980) NODE: rx BOX 8c604125 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (110980) NODE: rx BOX 8bfb6476 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (110990) NODE: rx BOX 5a16770f from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (110990) NODE: rx BOX b63e5b20 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (111000) NODE: rx BOX 668479c6 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (111030) NODE: rx BOX 37c928da from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (111030) NODE: rx BOX 8629262b from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (111040) NODE: rx BOX 53fe8b00 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (111040) NODE: rx BOX ec9df0be from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (111050) NODE: rx BOX 58be8b67 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (111050) NODE: rx BOX fe3e477b from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (111130) NODE: rx BOX bf1b60c9 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (111130) NODE: rx BOX bdb2a26a from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (111140) NODE: rx BOX 58d74274 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (111140) NODE: rx BOX 3ee7d7e1 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (111140) NODE: rx BOX 59ddf233 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (111150) NODE: rx BOX eb357a1e from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (111160) NODE: rx BOX 7c8367c4 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (111160) NODE: rx BOX 4ade3593 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (111170) NODE: rx BOX b5350040 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (111170) NODE: rx BOX d031366b from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (111180) NODE: rx BOX 20cbff2a from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (111190) NODE: rx BOX 6a05fac6 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (111190) NODE: rx BOX 5f908f27 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (111200) NODE: rx BOX bf10f051 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (111210) BOX_RX: Android session done -> disconnect[0m
+[0;32mI (111240) BOX_RX: disconnected from Android conn=1 reason=534[0m
+[0;32mI (113010) BOX_RX: phone 6a6dc1733925 is in scan phase (not SERVING) -> wait[0m
+[0;32mI (116960) BOX_RX: Box device 4b:e6:47:7f:df:71 rssi=0 -> connect (recent, no other phone found)[0m
+[0;32mI (117180) BOX_RX: connected to Android GATT server conn=1[0m
+[0;32mI (117280) BOX_RX: MTU exchange status=0 mtu=517[0m
+[0;32mI (117680) BOX_RX: Box characteristic found: peer_id=6a6dc1733925 val_handle=149[0m
+[0;32mI (117980) BOX_RX: HELLO sent to Android 6a6dc1733925[0m
+[0;32mI (118080) BOX_RX: subscribed to Android 6a6dc1733925 (conn=1 val=149 cccd=150), waiting for its session[0m
+[0;32mI (118330) NODE: rx BOX e106f446 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (118380) NODE: rx BOX 4e08d040 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (118380) NODE: rx BOX f03c2a6d from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (118390) NODE: rx BOX 8c604125 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (118390) NODE: rx BOX 8bfb6476 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (118400) NODE: rx BOX 5a16770f from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (118400) NODE: rx BOX b63e5b20 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (118410) NODE: rx BOX 668479c6 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (118410) NODE: rx BOX 37c928da from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (118480) NODE: rx BOX 8629262b from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (118480) NODE: rx BOX 53fe8b00 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (118490) NODE: rx BOX ec9df0be from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (118490) NODE: rx BOX 58be8b67 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (118500) NODE: rx BOX fe3e477b from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (118500) NODE: rx BOX bf1b60c9 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (118510) NODE: rx BOX bdb2a26a from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (118510) NODE: rx BOX 58d74274 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (118520) NODE: rx BOX 3ee7d7e1 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (118530) NODE: rx BOX 59ddf233 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (118580) NODE: rx BOX eb357a1e from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (118580) NODE: rx BOX 7c8367c4 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (118590) NODE: rx BOX 4ade3593 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (118590) NODE: rx BOX b5350040 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (118590) NODE: rx BOX d031366b from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (118600) NODE: rx BOX 20cbff2a from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (118610) NODE: rx BOX 6a05fac6 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (118610) NODE: rx BOX 5f908f27 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (118620) NODE: rx BOX bf10f051 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (118630) NODE: rx BOX 60a3b35a from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (118630) NODE: rx BOX 17c6cf30 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (118640) NODE: rx BOX cbb9a17a from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (118640) NODE: rx BOX 71cb69a0 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (118680) NODE: rx BOX bf29f649 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (118680) NODE: rx BOX b407e6da from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (118690) NODE: rx BOX bed2d822 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (118730) NODE: rx BOX d9c23204 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (118780) NODE: rx BOX 6b8fb1a0 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (118780) NODE: rx BOX ceb401ca from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (118790) NODE: rx BOX 2a10227a from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (118790) NODE: rx BOX c94af7a0 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (119130) BOX_RX: Android session done -> disconnect[0m
+[0;32mI (119130) BOX_RX: disconnected from Android conn=1 reason=534[0m
+[0;32mI (120780) LINK: link=UP peer=TX boot=efaf | rx=247 tx=249 retx=0 dup=0 failed=0 | crc=0 cobs=0 len=0 | restarts=0 ups=1 downs=0 loop=0 drops=0[0m
+[0;32mI (120830) BOX_RX: phone 6a6dc1733925 addr=4b:e6:47:7f:df:71 connects=14 sessions=13 cccd_no_answer=0[0m
+[0;32mI (120890) RELAY: relay: subs=0 (hello=0 addr known=0 unknown=0) sent=0 done=0 pkts=0 | aborted timeout=0 restart=0 send=0 stale=0 | pending=0 active=0[0m
+[0;32mI (120890) NODE: node: rx sess=9 (no id 0) known=4 boxes=461 msgs new=0 dup=461 rej=0 cbb=0 cdb=0 acb=0 | tx sess=0 msgs=0 pkts=0 | wait cb=4 acb=0 acked=0 gaveup=0[0m
+[0;32mI (120900) STORE: store: msgs=70/16001 live=13KB sectors used=4 free=1260 | put new=0 dup=461 rej=0 | gc=0 copied=0 evicted=0 expired=0 io=0 clock=459788s[0m
+[0;32mI (122240) BOX_RX: Box device 4b:e6:47:7f:df:71 rssi=0 -> connect (recent, no other phone found)[0m
+[0;32mI (122330) BOX_RX: connected to Android GATT server conn=1[0m
+[0;32mI (122430) BOX_RX: MTU exchange status=0 mtu=517[0m
+[0;32mI (122830) BOX_RX: Box characteristic found: peer_id=6a6dc1733925 val_handle=149[0m
+[0;32mI (123130) BOX_RX: HELLO sent to Android 6a6dc1733925[0m
+[0;32mI (123230) BOX_RX: subscribed to Android 6a6dc1733925 (conn=1 val=149 cccd=150), waiting for its session[0m
+[0;32mI (123480) NODE: rx BOX e106f446 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (123480) NODE: rx BOX 4e08d040 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (123490) NODE: rx BOX f03c2a6d from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (123530) NODE: rx BOX 8c604125 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (123530) NODE: rx BOX 8bfb6476 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (123540) NODE: rx BOX 5a16770f from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (123580) NODE: rx BOX b63e5b20 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (123580) NODE: rx BOX 668479c6 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (123590) NODE: rx BOX 37c928da from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (123590) NODE: rx BOX 8629262b from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (123590) NODE: rx BOX 53fe8b00 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (123600) NODE: rx BOX ec9df0be from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (123610) NODE: rx BOX 58be8b67 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (123630) NODE: rx BOX fe3e477b from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (123640) NODE: rx BOX bf1b60c9 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (123640) NODE: rx BOX bdb2a26a from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (123680) NODE: rx BOX 58d74274 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (123690) NODE: rx BOX 3ee7d7e1 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (123690) NODE: rx BOX 59ddf233 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (123690) NODE: rx BOX eb357a1e from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (123700) NODE: rx BOX 7c8367c4 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (123700) NODE: rx BOX 4ade3593 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (123710) NODE: rx BOX b5350040 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (123710) NODE: rx BOX d031366b from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (123720) NODE: rx BOX 20cbff2a from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (123730) NODE: rx BOX 6a05fac6 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (123730) NODE: rx BOX 5f908f27 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (123740) NODE: rx BOX bf10f051 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (123780) NODE: rx BOX 60a3b35a from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (123780) NODE: rx BOX 17c6cf30 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (123790) NODE: rx BOX cbb9a17a from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (123790) NODE: rx BOX 71cb69a0 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (123800) NODE: rx BOX bf29f649 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (123800) NODE: rx BOX b407e6da from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (123830) BOX_RX: Android session done -> disconnect[0m
+[0;32mI (123840) BOX_RX: disconnected from Android conn=1 reason=534[0m
+[0;32mI (126930) BOX_RX: Box device 4b:e6:47:7f:df:71 rssi=0 -> connect (recent, no other phone found)[0m
+[0;32mI (127430) BOX_RX: connected to Android GATT server conn=1[0m
+[0;32mI (127530) BOX_RX: MTU exchange status=0 mtu=517[0m
+[0;32mI (127930) BOX_RX: Box characteristic found: peer_id=6a6dc1733925 val_handle=149[0m
+[0;32mI (128230) BOX_RX: HELLO sent to Android 6a6dc1733925[0m
+[0;32mI (128330) BOX_RX: subscribed to Android 6a6dc1733925 (conn=1 val=149 cccd=150), waiting for its session[0m
+[0;32mI (128880) NODE: rx BOX e106f446 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (128880) NODE: rx BOX 4e08d040 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (128890) NODE: rx BOX f03c2a6d from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (128890) NODE: rx BOX 8c604125 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (128890) NODE: rx BOX 8bfb6476 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (128900) NODE: rx BOX 5a16770f from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (128930) NODE: rx BOX b63e5b20 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (128940) NODE: rx BOX 668479c6 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (128940) NODE: rx BOX 37c928da from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (128980) NODE: rx BOX 8629262b from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (128980) NODE: rx BOX 53fe8b00 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (128990) NODE: rx BOX ec9df0be from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (128990) NODE: rx BOX 58be8b67 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (129000) NODE: rx BOX fe3e477b from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (129000) NODE: rx BOX bf1b60c9 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (129010) NODE: rx BOX bdb2a26a from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (129030) NODE: rx BOX 58d74274 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (129040) NODE: rx BOX 3ee7d7e1 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (129040) NODE: rx BOX 59ddf233 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (129040) NODE: rx BOX eb357a1e from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (129080) NODE: rx BOX 7c8367c4 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (129080) NODE: rx BOX 4ade3593 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (129090) NODE: rx BOX b5350040 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (129090) NODE: rx BOX d031366b from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (129100) NODE: rx BOX 20cbff2a from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (129130) NODE: rx BOX 6a05fac6 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (129130) NODE: rx BOX 5f908f27 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (129140) NODE: rx BOX bf10f051 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (129140) NODE: rx BOX 60a3b35a from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (129180) NODE: rx BOX 17c6cf30 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (129190) NODE: rx BOX cbb9a17a from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (129190) NODE: rx BOX 71cb69a0 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (129190) NODE: rx BOX bf29f649 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (129200) NODE: rx BOX b407e6da from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (129200) NODE: rx BOX bed2d822 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (129230) NODE: rx BOX d9c23204 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (129230) NODE: rx BOX 6b8fb1a0 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (129240) NODE: rx BOX ceb401ca from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (129240) NODE: rx BOX 2a10227a from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (129280) NODE: rx BOX c94af7a0 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (129630) BOX_RX: Android session done -> disconnect[0m
+[0;32mI (129630) BOX_RX: disconnected from Android conn=1 reason=534[0m
+[0;32mI (132730) BOX_RX: Box device 4b:e6:47:7f:df:71 rssi=0 -> connect (recent, no other phone found)[0m
+[0;32mI (132980) BOX_RX: connected to Android GATT server conn=1[0m
+[0;32mI (133080) BOX_RX: MTU exchange status=0 mtu=517[0m
+[0;32mI (133480) BOX_RX: Box characteristic found: peer_id=6a6dc1733925 val_handle=149[0m
+[0;32mI (133780) BOX_RX: HELLO sent to Android 6a6dc1733925[0m
+[0;32mI (133880) BOX_RX: subscribed to Android 6a6dc1733925 (conn=1 val=149 cccd=150), waiting for its session[0m
+[0;32mI (133980) NODE: rx BOX e106f446 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (133980) NODE: rx BOX 4e08d040 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (133990) NODE: rx BOX f03c2a6d from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (133990) NODE: rx BOX 8c604125 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (134030) NODE: rx BOX 8bfb6476 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (134030) NODE: rx BOX 5a16770f from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (134040) NODE: rx BOX b63e5b20 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (134040) NODE: rx BOX 668479c6 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (134050) NODE: rx BOX 37c928da from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (134080) NODE: rx BOX 8629262b from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (134080) NODE: rx BOX 53fe8b00 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (134090) NODE: rx BOX ec9df0be from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (134090) NODE: rx BOX 58be8b67 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (134100) NODE: rx BOX fe3e477b from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (134130) NODE: rx BOX bf1b60c9 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (134140) NODE: rx BOX bdb2a26a from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (134140) NODE: rx BOX 58d74274 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (134140) NODE: rx BOX 3ee7d7e1 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (134150) NODE: rx BOX 59ddf233 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (134180) NODE: rx BOX eb357a1e from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (134180) NODE: rx BOX 7c8367c4 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (134190) NODE: rx BOX 4ade3593 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (134190) NODE: rx BOX b5350040 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (134230) NODE: rx BOX d031366b from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (134230) NODE: rx BOX 20cbff2a from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (134240) NODE: rx BOX 6a05fac6 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (134240) NODE: rx BOX 5f908f27 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (134250) NODE: rx BOX bf10f051 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (134250) NODE: rx BOX 60a3b35a from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (134280) NODE: rx BOX 17c6cf30 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (134290) NODE: rx BOX cbb9a17a from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (134290) NODE: rx BOX 71cb69a0 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (134290) NODE: rx BOX bf29f649 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (134300) NODE: rx BOX b407e6da from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (134330) BOX_RX: Android session done -> disconnect[0m
+[0;32mI (134340) BOX_RX: disconnected from Android conn=1 reason=534[0m
+[0;32mI (135970) BOX_RX: phone 6a6dc1733925 is in scan phase (not SERVING) -> wait[0m
+[0;33mW (136880) RELAY: link msg type=0x31 len=23 too long, dropped[0m
+[0;32mI (145840) BOX_RX: Box device 4b:e6:47:7f:df:71 rssi=0 -> connect (recent, no other phone found)[0m
+[0;32mI (146130) BOX_RX: connected to Android GATT server conn=1[0m
+[0;32mI (146230) BOX_RX: MTU exchange status=0 mtu=517[0m
+[0;32mI (146630) BOX_RX: Box characteristic found: peer_id=6a6dc1733925 val_handle=149[0m
+[0;32mI (146930) BOX_RX: HELLO sent to Android 6a6dc1733925[0m
+[0;32mI (147030) BOX_RX: subscribed to Android 6a6dc1733925 (conn=1 val=149 cccd=150), waiting for its session[0m
+[0;32mI (148030) NODE: rx BOX e106f446 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (148040) NODE: rx BOX 4e08d040 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (148050) NODE: rx BOX f03c2a6d from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (148050) NODE: rx BOX 8c604125 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (148060) NODE: rx BOX 8bfb6476 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (148070) NODE: rx BOX 5a16770f from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (148080) NODE: rx BOX b63e5b20 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (148090) NODE: rx BOX 668479c6 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (148090) NODE: rx BOX 37c928da from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (148100) NODE: rx BOX 8629262b from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (148110) NODE: rx BOX 53fe8b00 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (148110) NODE: rx BOX ec9df0be from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (148180) NODE: rx BOX 58be8b67 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (148190) NODE: rx BOX fe3e477b from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (148190) NODE: rx BOX bf1b60c9 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (148200) NODE: rx BOX bdb2a26a from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (148210) NODE: rx BOX 58d74274 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (148220) NODE: rx BOX 3ee7d7e1 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (148220) NODE: rx BOX 59ddf233 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (148230) NODE: rx BOX eb357a1e from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (148240) NODE: rx BOX 7c8367c4 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (148280) NODE: rx BOX 4ade3593 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (148290) NODE: rx BOX b5350040 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (148290) NODE: rx BOX d031366b from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (148300) NODE: rx BOX 20cbff2a from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (148310) NODE: rx BOX 6a05fac6 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (148320) NODE: rx BOX 5f908f27 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (148320) NODE: rx BOX bf10f051 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (148380) NODE: rx BOX 60a3b35a from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (148390) NODE: rx BOX 17c6cf30 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (148430) NODE: rx BOX cbb9a17a from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (148440) NODE: rx BOX 71cb69a0 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (148450) NODE: rx BOX bf29f649 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (148450) NODE: rx BOX b407e6da from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (148460) NODE: rx BOX bed2d822 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (148460) NODE: rx BOX d9c23204 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (148470) NODE: rx BOX 6b8fb1a0 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (148480) NODE: rx BOX ceb401ca from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (148490) NODE: rx BOX 2a10227a from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (148490) NODE: rx BOX c94af7a0 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (148830) BOX_RX: Android session done -> disconnect[0m
+[0;32mI (148830) BOX_RX: disconnected from Android conn=1 reason=534[0m
+[0;32mI (150780) LINK: link=UP peer=TX boot=efaf | rx=309 tx=311 retx=0 dup=0 failed=0 | crc=0 cobs=0 len=0 | restarts=0 ups=1 downs=0 loop=0 drops=0[0m
+[0;32mI (150830) BOX_RX: phone 6a6dc1733925 addr=4b:e6:47:7f:df:71 connects=18 sessions=17 cccd_no_answer=0[0m
+[0;32mI (150890) RELAY: relay: subs=0 (hello=0 addr known=0 unknown=0) sent=0 done=0 pkts=0 | aborted timeout=0 restart=0 send=0 stale=0 | pending=0 active=0[0m
+[0;32mI (150890) NODE: node: rx sess=11 (no id 0) known=6 boxes=609 msgs new=0 dup=609 rej=0 cbb=0 cdb=0 acb=0 | tx sess=0 msgs=0 pkts=0 | wait cb=4 acb=0 acked=0 gaveup=0[0m
+[0;32mI (150900) STORE: store: msgs=70/16001 live=13KB sectors used=4 free=1260 | put new=0 dup=609 rej=0 | gc=0 copied=0 evicted=0 expired=0 io=0 clock=459818s[0m
+[0;32mI (151930) BOX_RX: Box device 4b:e6:47:7f:df:71 rssi=0 -> connect (recent, no other phone found)[0m
+[0;32mI (152130) BOX_RX: connected to Android GATT server conn=1[0m
+[0;32mI (152230) BOX_RX: MTU exchange status=0 mtu=517[0m
+[0;32mI (152680) BOX_RX: Box characteristic found: peer_id=6a6dc1733925 val_handle=149[0m
+[0;32mI (152980) BOX_RX: HELLO sent to Android 6a6dc1733925[0m
+[0;32mI (153080) BOX_RX: subscribed to Android 6a6dc1733925 (conn=1 val=149 cccd=150), waiting for its session[0m
+[0;32mI (154130) NODE: rx BOX e106f446 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (154130) NODE: rx BOX 4e08d040 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (154140) NODE: rx BOX f03c2a6d from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (154140) NODE: rx BOX 8c604125 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (154140) NODE: rx BOX 8bfb6476 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (154150) NODE: rx BOX 5a16770f from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (154160) NODE: rx BOX b63e5b20 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (154180) NODE: rx BOX 668479c6 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (154180) NODE: rx BOX 37c928da from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (154190) NODE: rx BOX 8629262b from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (154190) NODE: rx BOX 53fe8b00 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (154230) NODE: rx BOX ec9df0be from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (154230) NODE: rx BOX 58be8b67 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (154240) NODE: rx BOX fe3e477b from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (154240) NODE: rx BOX bf1b60c9 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (154280) NODE: rx BOX bdb2a26a from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (154280) NODE: rx BOX 58d74274 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (154330) NODE: rx BOX 3ee7d7e1 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (154330) NODE: rx BOX 59ddf233 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (154330) NODE: rx BOX eb357a1e from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (154340) NODE: rx BOX 7c8367c4 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (154340) NODE: rx BOX 4ade3593 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (154350) NODE: rx BOX b5350040 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (154360) NODE: rx BOX d031366b from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (154360) NODE: rx BOX 20cbff2a from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (154370) NODE: rx BOX 6a05fac6 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (154370) NODE: rx BOX 5f908f27 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (154380) NODE: rx BOX bf10f051 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (154390) NODE: rx BOX 60a3b35a from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (154390) NODE: rx BOX 17c6cf30 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (154430) BOX_RX: Android session done -> disconnect[0m
+[0;32mI (154440) BOX_RX: disconnected from Android conn=1 reason=534[0m
+[0;32mI (156480) BOX_RX: phone 6a6dc1733925 is in scan phase (not SERVING) -> wait[0m
+[0;32mI (163590) BOX_RX: Box device 4b:e6:47:7f:df:71 rssi=0 -> connect (recent, no other phone found)[0m
+[0;32mI (163780) BOX_RX: connected to Android GATT server conn=1[0m
+[0;32mI (163880) BOX_RX: MTU exchange status=0 mtu=517[0m
+[0;32mI (164280) BOX_RX: Box characteristic found: peer_id=6a6dc1733925 val_handle=149[0m
+[0;32mI (164580) BOX_RX: HELLO sent to Android 6a6dc1733925[0m
+[0;32mI (164680) BOX_RX: subscribed to Android 6a6dc1733925 (conn=1 val=149 cccd=150), waiting for its session[0m
+[0;32mI (164730) NODE: rx BOX e106f446 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (164730) NODE: rx BOX 4e08d040 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (164740) NODE: rx BOX f03c2a6d from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (164740) NODE: rx BOX 8c604125 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (164740) NODE: rx BOX 8bfb6476 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (164780) NODE: rx BOX 5a16770f from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (164780) NODE: rx BOX b63e5b20 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (164790) NODE: rx BOX 668479c6 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (164790) NODE: rx BOX 37c928da from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (164790) NODE: rx BOX 8629262b from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (164800) NODE: rx BOX 53fe8b00 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (164830) NODE: rx BOX ec9df0be from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (164830) NODE: rx BOX 58be8b67 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (164840) NODE: rx BOX fe3e477b from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (164840) NODE: rx BOX bf1b60c9 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (164840) NODE: rx BOX bdb2a26a from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (164880) NODE: rx BOX 58d74274 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (164890) NODE: rx BOX 3ee7d7e1 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (164890) NODE: rx BOX 59ddf233 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (164890) NODE: rx BOX eb357a1e from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (164930) NODE: rx BOX 7c8367c4 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (164930) NODE: rx BOX 4ade3593 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (164940) NODE: rx BOX b5350040 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (164940) NODE: rx BOX d031366b from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (164950) NODE: rx BOX 20cbff2a from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (164950) NODE: rx BOX 6a05fac6 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (164980) NODE: rx BOX 5f908f27 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (164980) NODE: rx BOX bf10f051 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (164990) NODE: rx BOX 60a3b35a from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (164990) NODE: rx BOX 17c6cf30 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (165030) NODE: rx BOX cbb9a17a from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (165040) NODE: rx BOX 71cb69a0 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (165040) NODE: rx BOX bf29f649 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (165040) NODE: rx BOX b407e6da from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (165080) NODE: rx BOX bed2d822 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (165080) NODE: rx BOX d9c23204 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (165090) NODE: rx BOX 6b8fb1a0 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (165090) NODE: rx BOX ceb401ca from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (165100) NODE: rx BOX 2a10227a from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (165100) NODE: rx BOX c94af7a0 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (165430) BOX_RX: Android session done -> disconnect[0m
+[0;32mI (165430) BOX_RX: disconnected from Android conn=1 reason=534[0m
+[0;32mI (168540) BOX_RX: Box device 4b:e6:47:7f:df:71 rssi=0 -> connect (recent, no other phone found)[0m
+[0;32mI (168630) BOX_RX: connected to Android GATT server conn=1[0m
+[0;32mI (168730) BOX_RX: MTU exchange status=0 mtu=517[0m
+[0;32mI (169130) BOX_RX: Box characteristic found: peer_id=6a6dc1733925 val_handle=149[0m
+[0;32mI (169480) BOX_RX: HELLO sent to Android 6a6dc1733925[0m
+[0;32mI (169580) BOX_RX: subscribed to Android 6a6dc1733925 (conn=1 val=149 cccd=150), waiting for its session[0m
+[0;32mI (170180) NODE: rx BOX e106f446 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (170230) NODE: rx BOX 4e08d040 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (170230) NODE: rx BOX f03c2a6d from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (170240) NODE: rx BOX 8c604125 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (170240) NODE: rx BOX 8bfb6476 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (170250) NODE: rx BOX 5a16770f from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (170250) NODE: rx BOX b63e5b20 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (170280) NODE: rx BOX 668479c6 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (170280) NODE: rx BOX 37c928da from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (170330) NODE: rx BOX 8629262b from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (170330) NODE: rx BOX 53fe8b00 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (170330) NODE: rx BOX ec9df0be from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (170340) NODE: rx BOX 58be8b67 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (170340) NODE: rx BOX fe3e477b from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (170350) NODE: rx BOX bf1b60c9 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (170360) NODE: rx BOX bdb2a26a from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (170360) NODE: rx BOX 58d74274 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (170380) NODE: rx BOX 3ee7d7e1 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (170380) NODE: rx BOX 59ddf233 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (170390) NODE: rx BOX eb357a1e from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (170390) NODE: rx BOX 7c8367c4 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (170430) NODE: rx BOX 4ade3593 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (170430) NODE: rx BOX b5350040 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (170440) NODE: rx BOX d031366b from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (170440) NODE: rx BOX 20cbff2a from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (170450) NODE: rx BOX 6a05fac6 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (170480) NODE: rx BOX 5f908f27 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (170480) NODE: rx BOX bf10f051 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (170490) NODE: rx BOX 60a3b35a from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (170490) NODE: rx BOX 17c6cf30 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (170500) NODE: rx BOX cbb9a17a from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (170530) NODE: rx BOX 71cb69a0 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (170540) NODE: rx BOX bf29f649 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (170540) NODE: rx BOX b407e6da from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (170540) NODE: rx BOX bed2d822 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (170550) NODE: rx BOX d9c23204 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (170630) NODE: rx BOX 6b8fb1a0 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (170630) NODE: rx BOX ceb401ca from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (170640) NODE: rx BOX 2a10227a from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (170640) NODE: rx BOX c94af7a0 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (170930) BOX_RX: Android session done -> disconnect[0m
+[0;32mI (170930) BOX_RX: disconnected from Android conn=1 reason=534[0m
+[0;32mI (174040) BOX_RX: Box device 4b:e6:47:7f:df:71 rssi=0 -> connect (recent, no other phone found)[0m
+[0;32mI (174180) BOX_RX: connected to Android GATT server conn=1[0m
+[0;32mI (174280) BOX_RX: MTU exchange status=0 mtu=517[0m
+[0;32mI (174680) BOX_RX: Box characteristic found: peer_id=6a6dc1733925 val_handle=149[0m
+[0;32mI (174980) BOX_RX: HELLO sent to Android 6a6dc1733925[0m
+[0;32mI (175080) BOX_RX: subscribed to Android 6a6dc1733925 (conn=1 val=149 cccd=150), waiting for its session[0m
+[0;32mI (175330) NODE: rx BOX e106f446 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (175330) NODE: rx BOX 4e08d040 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (175340) NODE: rx BOX f03c2a6d from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (175340) NODE: rx BOX 8c604125 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (175340) NODE: rx BOX 8bfb6476 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (175350) NODE: rx BOX 5a16770f from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (175380) NODE: rx BOX b63e5b20 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (175390) NODE: rx BOX 668479c6 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (175390) NODE: rx BOX 37c928da from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (175390) NODE: rx BOX 8629262b from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (175400) NODE: rx BOX 53fe8b00 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (175430) NODE: rx BOX ec9df0be from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (175430) NODE: rx BOX 58be8b67 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (175480) NODE: rx BOX fe3e477b from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (175480) NODE: rx BOX bf1b60c9 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (175490) NODE: rx BOX bdb2a26a from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (175490) NODE: rx BOX 58d74274 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (175490) NODE: rx BOX 3ee7d7e1 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (175530) NODE: rx BOX 59ddf233 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (175530) NODE: rx BOX eb357a1e from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (175580) NODE: rx BOX 7c8367c4 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (175580) NODE: rx BOX 4ade3593 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (175590) NODE: rx BOX b5350040 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (175590) NODE: rx BOX d031366b from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (175600) NODE: rx BOX 20cbff2a from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (175600) NODE: rx BOX 6a05fac6 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (175630) BOX_RX: Android session done -> disconnect[0m
+[0;32mI (175640) BOX_RX: disconnected from Android conn=1 reason=534[0m
+[0;32mI (178730) BOX_RX: Box device 4b:e6:47:7f:df:71 rssi=0 -> connect (recent, no other phone found)[0m
+[0;32mI (178830) BOX_RX: connected to Android GATT server conn=1[0m
+[0;32mI (178930) BOX_RX: MTU exchange status=0 mtu=517[0m
+[0;32mI (179380) BOX_RX: Box characteristic found: peer_id=6a6dc1733925 val_handle=149[0m
+[0;32mI (179680) BOX_RX: HELLO sent to Android 6a6dc1733925[0m
+[0;33mW (179780) BOX_RX: CCCD write failed rc=259, keep listening[0m
+[0;32mI (180790) LINK: link=UP peer=TX boot=efaf | rx=369 tx=371 retx=0 dup=0 failed=0 | crc=0 cobs=0 len=0 | restarts=0 ups=1 downs=0 loop=0 drops=0[0m
+[0;32mI (180830) BOX_RX: phone 6a6dc1733925 addr=4b:e6:47:7f:df:71 connects=23 sessions=21 cccd_no_answer=0[0m
+[0;33mW (180920) RELAY: link msg type=0x31 len=23 too long, dropped[0m
+[0;32mI (180920) RELAY: relay: subs=0 (hello=0 addr known=0 unknown=0) sent=0 done=0 pkts=0 | aborted timeout=0 restart=0 send=0 stale=0 | pending=0 active=0[0m
+[0;32mI (180920) NODE: node: rx sess=13 (no id 0) known=8 boxes=745 msgs new=0 dup=745 rej=0 cbb=0 cdb=0 acb=0 | tx sess=0 msgs=0 pkts=0 | wait cb=4 acb=0 acked=0 gaveup=0[0m
+[0;32mI (180940) STORE: store: msgs=70/16001 live=13KB sectors used=4 free=1260 | put new=0 dup=745 rej=0 | gc=0 copied=0 evicted=0 expired=0 io=0 clock=459848s[0m
+[0;32mI (198840) BOX_RX: hold timeout without TRM -> disconnect[0m
+[0;32mI (198880) BOX_RX: disconnected from Android conn=1 reason=534[0m
+[0;32mI (201940) BOX_RX: Box device 4b:e6:47:7f:df:71 rssi=0 -> connect (recent, no other phone found)[0m
+[0;32mI (202130) BOX_RX: connected to Android GATT server conn=1[0m
+[0;32mI (202230) BOX_RX: MTU exchange status=0 mtu=517[0m
+[0;32mI (202630) BOX_RX: Box characteristic found: peer_id=6a6dc1733925 val_handle=149[0m
+[0;32mI (202930) BOX_RX: HELLO sent to Android 6a6dc1733925[0m
+[0;32mI (203030) BOX_RX: subscribed to Android 6a6dc1733925 (conn=1 val=149 cccd=150), waiting for its session[0m
+[0;32mI (203680) NODE: rx BOX e106f446 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (203680) NODE: rx BOX 4e08d040 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (203690) NODE: rx BOX f03c2a6d from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (203690) NODE: rx BOX 8c604125 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (203700) NODE: rx BOX 8bfb6476 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (203730) NODE: rx BOX 5a16770f from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (203730) NODE: rx BOX b63e5b20 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (203740) NODE: rx BOX 668479c6 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (203740) NODE: rx BOX 37c928da from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (203780) NODE: rx BOX 8629262b from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (203780) NODE: rx BOX 53fe8b00 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (203790) NODE: rx BOX ec9df0be from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (203790) NODE: rx BOX 58be8b67 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (203800) NODE: rx BOX fe3e477b from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (203830) NODE: rx BOX bf1b60c9 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (203840) NODE: rx BOX bdb2a26a from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (203840) NODE: rx BOX 58d74274 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (203840) NODE: rx BOX 3ee7d7e1 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (203850) NODE: rx BOX 59ddf233 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (203880) NODE: rx BOX eb357a1e from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (203880) NODE: rx BOX 7c8367c4 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (203890) NODE: rx BOX 4ade3593 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (203890) NODE: rx BOX b5350040 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (203930) NODE: rx BOX d031366b from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (203930) NODE: rx BOX 20cbff2a from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (203940) NODE: rx BOX 6a05fac6 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (203940) NODE: rx BOX 5f908f27 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (203950) NODE: rx BOX bf10f051 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (203980) NODE: rx BOX 60a3b35a from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (203980) NODE: rx BOX 17c6cf30 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (203990) NODE: rx BOX cbb9a17a from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (203990) NODE: rx BOX 71cb69a0 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (204000) NODE: rx BOX bf29f649 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (204030) NODE: rx BOX b407e6da from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (204030) NODE: rx BOX bed2d822 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (204040) NODE: rx BOX d9c23204 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (204040) NODE: rx BOX 6b8fb1a0 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (204040) NODE: rx BOX ceb401ca from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (204080) NODE: rx BOX 2a10227a from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (204080) NODE: rx BOX c94af7a0 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (204340) BOX_RX: Android session done -> disconnect[0m
+[0;32mI (204380) BOX_RX: disconnected from Android conn=1 reason=534[0m
+[0;32mI (207450) BOX_RX: Box device 4b:e6:47:7f:df:71 rssi=0 -> connect (recent, no other phone found)[0m
+[0;32mI (207680) BOX_RX: connected to Android GATT server conn=1[0m
+[0;32mI (207780) BOX_RX: MTU exchange status=0 mtu=517[0m
+[0;32mI (208180) BOX_RX: Box characteristic found: peer_id=6a6dc1733925 val_handle=149[0m
+[0;32mI (208480) BOX_RX: HELLO sent to Android 6a6dc1733925[0m
+[0;32mI (208580) BOX_RX: subscribed to Android 6a6dc1733925 (conn=1 val=149 cccd=150), waiting for its session[0m
+[0;32mI (208930) NODE: rx BOX e106f446 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (208930) NODE: rx BOX 4e08d040 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (208980) NODE: rx BOX f03c2a6d from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (208980) NODE: rx BOX 8c604125 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (209030) NODE: rx BOX 8bfb6476 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (209080) NODE: rx BOX 5a16770f from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (209130) NODE: rx BOX b63e5b20 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (209180) NODE: rx BOX 668479c6 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (209190) NODE: rx BOX 37c928da from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (209190) NODE: rx BOX 8629262b from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (209190) NODE: rx BOX 53fe8b00 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (209200) NODE: rx BOX ec9df0be from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (209200) NODE: rx BOX 58be8b67 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (209230) NODE: rx BOX fe3e477b from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (209280) NODE: rx BOX bf1b60c9 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (209280) NODE: rx BOX bdb2a26a from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (209290) NODE: rx BOX 58d74274 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (209290) NODE: rx BOX 3ee7d7e1 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (209330) NODE: rx BOX 59ddf233 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (209330) NODE: rx BOX eb357a1e from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (209340) NODE: rx BOX 7c8367c4 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (209340) NODE: rx BOX 4ade3593 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (209340) NODE: rx BOX b5350040 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (209350) NODE: rx BOX d031366b from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (209380) NODE: rx BOX 20cbff2a from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (209430) NODE: rx BOX 6a05fac6 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (209430) NODE: rx BOX 5f908f27 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (209440) NODE: rx BOX bf10f051 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (209440) NODE: rx BOX 60a3b35a from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (209440) NODE: rx BOX 17c6cf30 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (209480) NODE: rx BOX cbb9a17a from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (209490) NODE: rx BOX 71cb69a0 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (209490) NODE: rx BOX bf29f649 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (209490) NODE: rx BOX b407e6da from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (209530) NODE: rx BOX bed2d822 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (209580) NODE: rx BOX d9c23204 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (209580) NODE: rx BOX 6b8fb1a0 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (209590) NODE: rx BOX ceb401ca from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (209590) NODE: rx BOX 2a10227a from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (209590) NODE: rx BOX c94af7a0 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (209630) NODE: rx BOX 430d81ff from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (209680) NODE: rx BOX 467d7391 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (209680) NODE: rx BOX d5802efb from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (209730) NODE: rx BOX 300a8af2 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (209880) NODE: rx BOX e106f446 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (209930) NODE: rx BOX 4e08d040 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (209930) NODE: rx BOX f03c2a6d from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (209940) NODE: rx BOX 8c604125 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (209940) NODE: rx BOX 8bfb6476 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (209950) NODE: rx BOX 5a16770f from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (209950) NODE: rx BOX b63e5b20 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (209980) NODE: rx BOX 668479c6 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (210030) NODE: rx BOX 37c928da from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (210030) NODE: rx BOX 8629262b from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (210040) NODE: rx BOX 53fe8b00 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (210040) NODE: rx BOX ec9df0be from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (210060) BOX_RX: Android session done -> disconnect[0m
+[0;32mI (210090) BOX_RX: disconnected from Android conn=1 reason=534[0m
+[0;32mI (210790) LINK: link=UP peer=TX boot=efaf | rx=431 tx=433 retx=0 dup=0 failed=0 | crc=0 cobs=0 len=0 | restarts=0 ups=1 downs=0 loop=0 drops=0[0m
+[0;32mI (210860) BOX_RX: phone 6a6dc1733925 addr=4b:e6:47:7f:df:71 connects=25 sessions=23 cccd_no_answer=0[0m
+[0;32mI (210960) RELAY: relay: subs=0 (hello=0 addr known=0 unknown=0) sent=0 done=0 pkts=0 | aborted timeout=0 restart=0 send=0 stale=0 | pending=0 active=0[0m
+[0;32mI (210960) NODE: node: rx sess=15 (no id 0) known=9 boxes=841 msgs new=0 dup=841 rej=0 cbb=0 cdb=0 acb=0 | tx sess=0 msgs=0 pkts=0 | wait cb=5 acb=0 acked=0 gaveup=0[0m
+[0;32mI (210970) STORE: store: msgs=70/16001 live=13KB sectors used=4 free=1260 | put new=0 dup=841 rej=0 | gc=0 copied=0 evicted=0 expired=0 io=0 clock=459878s[0m
+[0;32mI (213170) BOX_RX: Box device 4b:e6:47:7f:df:71 rssi=0 -> connect (recent, no other phone found)[0m
+[0;32mI (213380) BOX_RX: connected to Android GATT server conn=1[0m
+[0;32mI (213480) BOX_RX: MTU exchange status=0 mtu=517[0m
+[0;32mI (213930) BOX_RX: Box characteristic found: peer_id=6a6dc1733925 val_handle=149[0m
+[0;32mI (214230) BOX_RX: HELLO sent to Android 6a6dc1733925[0m
+[0;33mW (214330) BOX_RX: CCCD write failed rc=259, keep listening[0m
+[0;33mW (217390) RELAY: link msg type=0x31 len=23 too long, dropped[0m
+[0;32mI (233470) BOX_RX: hold timeout without TRM -> disconnect[0m
+[0;32mI (233480) BOX_RX: disconnected from Android conn=1 reason=534[0m
+[0;32mI (236570) BOX_RX: Box device 4b:e6:47:7f:df:71 rssi=0 -> connect (recent, no other phone found)[0m
+[0;32mI (236780) BOX_RX: connected to Android GATT server conn=1[0m
+[0;32mI (236880) BOX_RX: MTU exchange status=0 mtu=517[0m
+[0;32mI (237280) BOX_RX: Box characteristic found: peer_id=6a6dc1733925 val_handle=149[0m
+[0;32mI (237580) BOX_RX: HELLO sent to Android 6a6dc1733925[0m
+[0;32mI (237680) BOX_RX: subscribed to Android 6a6dc1733925 (conn=1 val=149 cccd=150), waiting for its session[0m
+[0;32mI (237680) NODE: rx BOX e106f446 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (237690) NODE: rx BOX 4e08d040 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (237690) NODE: rx BOX f03c2a6d from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (237700) NODE: rx BOX 8c604125 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (237700) NODE: rx BOX 8bfb6476 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (237730) NODE: rx BOX 5a16770f from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (237730) NODE: rx BOX b63e5b20 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (237740) NODE: rx BOX 668479c6 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (237740) NODE: rx BOX 37c928da from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (237780) NODE: rx BOX 8629262b from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (237830) NODE: rx BOX 53fe8b00 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (237830) NODE: rx BOX ec9df0be from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (237830) NODE: rx BOX 58be8b67 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (237840) NODE: rx BOX fe3e477b from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (237840) NODE: rx BOX bf1b60c9 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (237850) NODE: rx BOX bdb2a26a from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (237860) NODE: rx BOX 58d74274 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (237860) NODE: rx BOX 3ee7d7e1 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (237870) NODE: rx BOX 59ddf233 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (237870) NODE: rx BOX eb357a1e from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (237880) NODE: rx BOX 7c8367c4 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (237890) NODE: rx BOX 4ade3593 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (237890) NODE: rx BOX b5350040 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (237930) NODE: rx BOX d031366b from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (237930) NODE: rx BOX 20cbff2a from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (237940) NODE: rx BOX 6a05fac6 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (237980) BOX_RX: Android session done -> disconnect[0m
+[0;32mI (237990) BOX_RX: disconnected from Android conn=1 reason=534[0m
+[0;32mI (239650) BOX_RX: phone 6a6dc1733925 is in scan phase (not SERVING) -> wait[0m
+[0;32mI (240790) LINK: link=UP peer=TX boot=efaf | rx=493 tx=495 retx=0 dup=0 failed=0 | crc=0 cobs=0 len=0 | restarts=0 ups=1 downs=0 loop=0 drops=0[0m
+[0;32mI (240880) BOX_RX: phone 6a6dc1733925 addr=4b:e6:47:7f:df:71 connects=27 sessions=24 cccd_no_answer=0[0m
+[0;32mI (240960) RELAY: relay: subs=0 (hello=0 addr known=0 unknown=0) sent=0 done=0 pkts=0 | aborted timeout=0 restart=0 send=0 stale=0 | pending=0 active=0[0m
+[0;32mI (240960) NODE: node: rx sess=15 (no id 0) known=10 boxes=867 msgs new=0 dup=867 rej=0 cbb=0 cdb=0 acb=0 | tx sess=0 msgs=0 pkts=0 | wait cb=5 acb=0 acked=0 gaveup=0[0m
+[0;32mI (240970) STORE: store: msgs=70/16001 live=13KB sectors used=4 free=1260 | put new=0 dup=867 rej=0 | gc=0 copied=0 evicted=0 expired=0 io=0 clock=459908s[0m
+[0;32mI (243890) BOX_RX: Box device 4b:e6:47:7f:df:71 rssi=0 -> connect (recent, no other phone found)[0m
+[0;32mI (244080) BOX_RX: connected to Android GATT server conn=1[0m
+[0;32mI (244180) BOX_RX: MTU exchange status=0 mtu=517[0m
+[0;32mI (244580) BOX_RX: Box characteristic found: peer_id=6a6dc1733925 val_handle=149[0m
+[0;32mI (244880) BOX_RX: HELLO sent to Android 6a6dc1733925[0m
+[0;32mI (244980) BOX_RX: subscribed to Android 6a6dc1733925 (conn=1 val=149 cccd=150), waiting for its session[0m
+[0;32mI (245080) NODE: rx BOX e106f446 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (245080) NODE: rx BOX 4e08d040 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (245090) NODE: rx BOX f03c2a6d from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (245130) NODE: rx BOX 8c604125 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (245130) NODE: rx BOX 8bfb6476 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (245140) NODE: rx BOX 5a16770f from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (245180) NODE: rx BOX b63e5b20 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (245180) NODE: rx BOX 668479c6 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (245190) NODE: rx BOX 37c928da from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (245190) NODE: rx BOX 8629262b from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (245190) NODE: rx BOX 53fe8b00 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (245230) NODE: rx BOX ec9df0be from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (245230) NODE: rx BOX 58be8b67 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (245240) NODE: rx BOX fe3e477b from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (245240) NODE: rx BOX bf1b60c9 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (245280) NODE: rx BOX bdb2a26a from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (245290) NODE: rx BOX 58d74274 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (245290) NODE: rx BOX 3ee7d7e1 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (245330) NODE: rx BOX 59ddf233 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (245330) NODE: rx BOX eb357a1e from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (245330) NODE: rx BOX 7c8367c4 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (245340) NODE: rx BOX 4ade3593 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (245340) NODE: rx BOX b5350040 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (245350) NODE: rx BOX d031366b from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (245360) NODE: rx BOX 20cbff2a from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (245360) NODE: rx BOX 6a05fac6 from 6a6dc1733925 msgs=1 new=0 dup=1[0m
+[0;32mI (245380) BOX_RX: Android session done -> disconnect[0m
+[0;32mI (245390) BOX_RX: disconnected from Android conn=1 reason=534[0m
+[0;32mI (248480) BOX_RX: Box device 4b:e6:47:7f:df:71 rssi=0 -> connect (recent, no other phone found)[0m
+[0;32mI (248680) BOX_RX: connected to Android GATT server conn=1[0m
+[0;32mI (248780) BOX_RX: MTU exchange status=0 mtu=517[0m
+[0;32mI (249180) BOX_RX: Box characteristic found: peer_id=6a6dc1733925 val_handle=149[0m
+[0;32mI (268780) BOX_RX: hold timeout without TRM -> disconnect[0m
+[0;33mW (268780) BOX_RX: HELLO write failed rc=7, subscribing anyway[0m
+[0;32mI (268780) BOX_RX: disconnected from Android conn=1 reason=534[0m
+[0;32mI (270790) LINK: link=UP peer=TX boot=efaf | rx=553 tx=555 retx=0 dup=0 failed=0 | crc=0 cobs=0 len=0 | restarts=0 ups=1 downs=0 loop=0 drops=0[0m
+[0;32mI (270880) BOX_RX: phone 6a6dc1733925 addr=4b:e6:47:7f:df:71 connects=29 sessions=25 cccd_no_answer=0[0m
+[0;32mI (270990) RELAY: relay: subs=0 (hello=0 addr known=0 unknown=0) sent=0 done=0 pkts=0 | aborted timeout=0 restart=0 send=0 stale=0 | pending=0 active=0[0m
+[0;32mI (270990) NODE: node: rx sess=15 (no id 0) known=11 boxes=893 msgs new=0 dup=893 rej=0 cbb=0 cdb=0 acb=0 | tx sess=0 msgs=0 pkts=0 | wait cb=5 acb=0 acked=0 gaveup=0[0m
+[0;32mI (271000) STORE: store: msgs=70/16001 live=13KB sectors used=4 free=1260 | put new=0 dup=893 rej=0 | gc=0 copied=0 evicted=0 expired=0 io=0 clock=459938s[0m
+[0;32mI (271880) BOX_RX: Box device 4b:e6:47:7f:df:71 rssi=0 -> connect (recent, no other phone found)[0m
+[0;32mI (271980) BOX_RX: connected to Android GATT server conn=1[0m
+[0;32mI (272080) BOX_RX: MTU exchange status=0 mtu=517[0m
+[0;33mW (272480) BOX_RX: CCCD write failed rc=266, keep listening[0m

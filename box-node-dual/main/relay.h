@@ -39,6 +39,7 @@ enum {
 };
 
 #define RL_PKT_HDR        8
+#define RL_MAX_TX_MSG     23      /* самое длинное TX -> CORE: SUBSCRIBED с ID из HELLO */
 #define RL_MAX_PENDING    4
 #define RL_SESS_TIMEOUT_MS 20000   /* CORE: ждать SESS_DONE не дольше */
 

@@ -318,6 +318,15 @@ int main(int argc, char **argv)
     t_sub_addr();
     t_two_phones();
     t_asm_fuzz();
+    {   /* TX -> CORE помещаются в очередь CORE (rmsg_t.data >= RL_MAX_TX_MSG) */
+        uint8_t b[64], a6[6] = {1, 2, 3, 4, 5, 6};
+        assert(rl_enc_subscribed(b, 1, 517, 1, a6, "6a6dc1733925") == RL_MAX_TX_MSG);
+        assert(rl_enc_subscribed(b, 1, 517, 1, a6, NULL) <= RL_MAX_TX_MSG);
+        assert(rl_enc_sess_done(b, 1, 1, 1, 1, 0) <= RL_MAX_TX_MSG);
+        assert(rl_enc_tx_info(b, 0, a6) <= RL_MAX_TX_MSG);
+        assert(rl_enc_conn(b, 1) <= RL_MAX_TX_MSG);
+        printf("  tx->core sizes        ok (max %d)\n", RL_MAX_TX_MSG);
+    }
     printf("ALL PASSED\n");
     return 0;
 }

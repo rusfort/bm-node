@@ -247,14 +247,16 @@ static void t_dup_from_b(void)
 {
     /* B возвращает узлу те же сообщения (как при первом контакте) — узел отвечает CDB */
     for (int i = 0; i < B.n; i++) B.m[i].node_has = false;
-    uint32_t dup0 = rn_stats()->rx_msgs_dup;
+    uint32_t dup0 = rn_stats()->rx_msgs_dup, useful0 = rn_rx_useful();
     assert(phone_serve(&B) == 5);
     assert(rn_stats()->rx_msgs_dup - dup0 == 5 && st_stats()->entries == 5);
+    assert(rn_rx_useful() == useful0);                /* одни дубликаты: сеанс пустой (пауза CORE) */
     got_t g = node_serve(&B, true, -1);
     assert(g.cdb == 1 && g.boxes == 0);
     for (int i = 0; i < B.n; i++) assert(B.m[i].node_has);
     phone_serve(&B);                                  /* ACB на CDB */
     assert(rn_pending_callbacks() == 0);
+    assert(rn_rx_useful() > useful0);                 /* подтверждение нашего CDB — полезный сеанс */
     printf("dup -> CDB -> ACB      ok\n");
 }
 

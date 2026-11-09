@@ -22,3 +22,5 @@ const char *core_phone_by_addr(const uint8_t addr[6]);
 void            node_rx_begin(const char *phone);
 e2e_rx_action_t node_on_rx(const uint8_t *data, size_t len);
 void            node_tick(void);
+/* Счётчик полезного приёма (см. rn_rx_useful); в режиме E2E растёт на каждом вызове. */
+uint32_t        node_rx_useful(void);

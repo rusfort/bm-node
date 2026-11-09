@@ -411,6 +411,11 @@ void rn_tick(void)
         if (R.acb[i].used && now - R.acb[i].created_ms > RN_ACB_TTL_MS) R.acb[i].used = false;
 }
 
+uint32_t rn_rx_useful(void)
+{
+    return R.st.rx_msgs_new + R.st.rx_cb_matched + R.st.cb_acked;
+}
+
 const rn_stats_t *rn_stats(void) { return &R.st; }
 
 int rn_pending_callbacks(void)

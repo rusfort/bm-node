@@ -25,37 +25,37 @@ Flash will be erased from 0x00000000 to 0x00005fff...
 Flash will be erased from 0x00010000 to 0x00097fff...
 Flash will be erased from 0x00008000 to 0x00008fff...
 SHA digest in image updated
-Compressed 20832 bytes to 13353...
+Compressed 20832 bytes to 13351...
 Writing at 0x00000000... (100 %)
-Wrote 20832 bytes (13353 compressed) at 0x00000000 in 0.6 seconds (effective 295.0 kbit/s)...
+Wrote 20832 bytes (13351 compressed) at 0x00000000 in 0.6 seconds (effective 294.4 kbit/s)...
 Hash of data verified.
-Compressed 553072 bytes to 331118...
+Compressed 553072 bytes to 331121...
 Writing at 0x00010000... (4 %)
 Writing at 0x0001bdf6... (9 %)
 Writing at 0x0002741d... (14 %)
-Writing at 0x0002ddde... (19 %)
+Writing at 0x0002dddd... (19 %)
 Writing at 0x000338a6... (23 %)
 Writing at 0x00039ac5... (28 %)
 Writing at 0x0003fedd... (33 %)
-Writing at 0x00045b33... (38 %)
-Writing at 0x0004c062... (42 %)
-Writing at 0x00051fc1... (47 %)
-Writing at 0x00058289... (52 %)
-Writing at 0x0005dcad... (57 %)
-Writing at 0x000636ea... (61 %)
-Writing at 0x000692bb... (66 %)
-Writing at 0x0006f099... (71 %)
-Writing at 0x00074c2b... (76 %)
-Writing at 0x0007a4a7... (80 %)
-Writing at 0x0008336f... (85 %)
-Writing at 0x00088f46... (90 %)
+Writing at 0x00045b2d... (38 %)
+Writing at 0x0004c05d... (42 %)
+Writing at 0x00051fc0... (47 %)
+Writing at 0x00058287... (52 %)
+Writing at 0x0005dcac... (57 %)
+Writing at 0x000636e9... (61 %)
+Writing at 0x000692ba... (66 %)
+Writing at 0x0006f098... (71 %)
+Writing at 0x00074c27... (76 %)
+Writing at 0x0007a4a5... (80 %)
+Writing at 0x0008336d... (85 %)
+Writing at 0x00088f44... (90 %)
 Writing at 0x0008f0ab... (95 %)
-Writing at 0x000956c0... (100 %)
-Wrote 553072 bytes (331118 compressed) at 0x00010000 in 7.8 seconds (effective 563.7 kbit/s)...
+Writing at 0x000956be... (100 %)
+Wrote 553072 bytes (331121 compressed) at 0x00010000 in 7.9 seconds (effective 563.5 kbit/s)...
 Hash of data verified.
 Compressed 3072 bytes to 121...
 Writing at 0x00008000... (100 %)
-Wrote 3072 bytes (121 compressed) at 0x00008000 in 0.1 seconds (effective 390.2 kbit/s)...
+Wrote 3072 bytes (121 compressed) at 0x00008000 in 0.1 seconds (effective 403.4 kbit/s)...
 Hash of data verified.
 
 Leaving...

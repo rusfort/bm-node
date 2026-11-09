@@ -20,6 +20,7 @@
 #include "core_glue.h"
 #include "link_glue.h"
 #include "box_adv.h"
+#include "peer_pace.h"
 
 static const char *TAG = "BOX_RX";
 
@@ -50,7 +51,13 @@ static volatile uint16_t c_conn = BLE_HS_CONN_HANDLE_NONE;
 static volatile uint32_t c_conn_at, c_close_at, c_next_scan_at;
 static volatile bool     c_subscribed;
 static volatile bool     c_cccd_pending, c_got_data, c_no_answer;
+static volatile bool     c_cccd_failed;          /* CCCD отклонён: ждём данные CCCD_WAIT_MS */
 static volatile uint32_t c_cccd_at;
+/* Оценка сеанса после отключения: ждём, пока rx_worker разберёт всё принятое. */
+static volatile uint32_t rx_queued, rx_handled;
+static volatile bool     pace_pending;
+static uint32_t          pace_rx_target, pace_useful_at_connect, pace_base;
+static uint8_t           pace_addr[6];
 
 static uint16_t svc_start, svc_end, chr_val, chr_end, cccd;
 static char     peer_suffix[13];
@@ -73,7 +80,9 @@ static struct {
     uint8_t  addr[6];
     char     id[13];
     uint32_t last_served;      /* время отключения после сеанса */
-    uint32_t connects, sessions, no_answer;
+    uint32_t connects, sessions, no_answer, idle_sessions;
+    pp_t     pace;             /* пауза после сеансов без новых данных */
+    uint32_t pace_note_at;
 } peers[MAX_PEERS];
 static int n_peers;
 static portMUX_TYPE peers_mux = portMUX_INITIALIZER_UNLOCKED;
@@ -115,6 +124,24 @@ static bool peer_recent(const uint8_t a[6], uint32_t now)
     return r;
 }
 
+/* Телефон на паузе (последние сеансы — одни дубликаты). Android меняет адрес, поэтому
+ * ищем и по ID из scan response. left_ms — сколько ещё ждать. */
+static bool peer_quiet(const uint8_t a[6], const char *id, uint32_t now, uint32_t *left_ms, bool *note)
+{
+    bool r = false;
+    taskENTER_CRITICAL(&peers_mux);
+    for (int i = 0; i < n_peers && !r; i++) {
+        bool same = memcmp(peers[i].addr, a, 6) == 0 || (id && id[0] && !strcmp(peers[i].id, id));
+        if (!same || !pp_quiet(&peers[i].pace, now)) continue;
+        r = true;
+        *left_ms = pp_left_ms(&peers[i].pace, now);
+        *note = peers[i].pace_note_at == 0 || now - peers[i].pace_note_at >= NOTE_MS * 3;
+        if (*note) peers[i].pace_note_at = now;
+    }
+    taskEXIT_CRITICAL(&peers_mux);
+    return r;
+}
+
 const char *core_phone_by_addr(const uint8_t a[6])
 {
     static char out[13];     /* вызывается только из relay_task */
@@ -130,9 +157,10 @@ static void print_peers(void)
 {
     for (int i = 0; i < n_peers; i++) {
         const uint8_t *a = peers[i].addr;
-        ESP_LOGI(TAG, "phone %s addr=%02x:%02x:%02x:%02x:%02x:%02x connects=%u sessions=%u cccd_no_answer=%u",
+        ESP_LOGI(TAG, "phone %s addr=%02x:%02x:%02x:%02x:%02x:%02x connects=%u sessions=%u idle=%u cccd_no_answer=%u pause=%us",
                  peers[i].id[0] ? peers[i].id : "?", a[5], a[4], a[3], a[2], a[1], a[0],
-                 (unsigned)peers[i].connects, (unsigned)peers[i].sessions, (unsigned)peers[i].no_answer);
+                 (unsigned)peers[i].connects, (unsigned)peers[i].sessions, (unsigned)peers[i].idle_sessions,
+                 (unsigned)peers[i].no_answer, (unsigned)(pp_left_ms(&peers[i].pace, node_now_ms()) / 1000));
     }
 }
 
@@ -169,10 +197,13 @@ static int on_subscribed(uint16_t conn, const struct ble_gatt_error *err,
     c_cccd_pending = false;
     if (err->status == BLE_HS_ENOTCONN && c_no_answer) return 0;   /* мы сами отключились */
     if (err->status != 0) {
-        /* Android шлёт notifications всем подключённым клиентам и без CCCD,
-         * поэтому соединение не рвём — продолжаем слушать. */
-        ESP_LOGW(TAG, "CCCD write failed rc=%d, keep listening", err->status);
+        /* Android шлёт notifications всем подключённым клиентам и без CCCD, поэтому
+         * сразу не рвём. Но если за CCCD_WAIT_MS ничего не пришло — телефон не в фазе
+         * раздачи: отключаемся (раньше висели до HOLD_MAX_MS = 20 с). */
+        ESP_LOGW(TAG, "CCCD write failed rc=%d, listening up to %d ms", err->status, CCCD_WAIT_MS);
         c_subscribed = true;
+        c_cccd_failed = true;
+        c_cccd_at = node_now_ms();
         return 0;
     }
     c_subscribed = true;
@@ -393,6 +424,15 @@ static int central_gap_event(struct ble_gap_event *event, void *arg)
         }
         if (dec != BX_CONNECT) return 0;
 
+        {
+            uint32_t left = 0;
+            bool note = false;
+            if (peer_quiet(d->addr.val, n->info_valid ? n->info.id : NULL, now, &left, &note)) {
+                if (note) ESP_LOGI(TAG, "phone %s: last sessions had nothing new -> pause %u s",
+                                   n->info_valid ? n->info.id : "?", (unsigned)(left / 1000));
+                return 0;                   /* на паузе: не подключаемся и не держим кандидатом */
+            }
+        }
         if (peer_recent(d->addr.val, now)) {
             if (!fair_has_cand) { fair_cand = d->addr; fair_has_cand = true; }
             return 0;                       /* сначала поищем другой телефон */
@@ -429,7 +469,8 @@ static int central_gap_event(struct ble_gap_event *event, void *arg)
         c_conn_at = node_now_ms();
         c_close_at = 0;
         c_subscribed = false;
-        c_cccd_pending = c_got_data = c_no_answer = false;
+        c_cccd_pending = c_got_data = c_no_answer = c_cccd_failed = false;
+        pace_useful_at_connect = node_rx_useful();   /* прежняя оценка (pace_pending) не теряется */
         svc_start = svc_end = chr_val = chr_end = cccd = 0;
         peer_suffix[0] = '\0';
         cstate = C_CONNECTED;
@@ -458,7 +499,15 @@ static int central_gap_event(struct ble_gap_event *event, void *arg)
                 if (c_no_answer) peers[pi].no_answer++;
             }
             taskEXIT_CRITICAL(&peers_mux);
+            if (!c_no_answer) {
+                /* оценим сеанс, когда rx_worker разберёт всё принятое */
+                memcpy(pace_addr, c_peer_addr.val, 6);
+                pace_rx_target = rx_queued;
+                pace_base = pace_useful_at_connect;
+                pace_pending = true;
+            }
             c_cccd_pending = false;
+            c_cccd_failed = false;
             c_no_answer = false;
             c_next_scan_at = node_now_ms() + COOLDOWN_MS;
         }
@@ -476,6 +525,7 @@ static int central_gap_event(struct ble_gap_event *event, void *arg)
         c_got_data = true;
         os_mbuf_copydata(event->notify_rx.om, 0, len, it.data);
         if (xQueueSend(rx_q, &it, 0) != pdTRUE) ESP_LOGW(TAG, "rx queue full, packet dropped");
+        else rx_queued++;
         return 0;
     }
 
@@ -496,6 +546,7 @@ static void rx_worker(void *arg)
     for (;;) {
         if (xQueueReceive(rx_q, &it, portMAX_DELAY) != pdTRUE) continue;
         e2e_rx_action_t act = node_on_rx(it.data, it.len);
+        rx_handled++;
         if (act == E2E_RX_CLOSE && c_close_at == 0) {
             c_close_at = node_now_ms() + CLOSE_DELAY_MS;
             taskENTER_CRITICAL(&peers_mux);
@@ -521,6 +572,23 @@ static void central_mgr(void *arg)
         if (!synced) continue;
         uint32_t now = node_now_ms();
 
+        if (pace_pending && (int32_t)(rx_handled - pace_rx_target) >= 0) {
+            pace_pending = false;
+            bool useful = node_rx_useful() != pace_base;
+            taskENTER_CRITICAL(&peers_mux);
+            int pi = peer_get_locked(pace_addr);
+            pp_on_session(&peers[pi].pace, useful, now);
+            if (!useful) peers[pi].idle_sessions++;
+            uint8_t idle = peers[pi].pace.idle;
+            peers[pi].pace_note_at = 0;
+            char id[13];
+            memcpy(id, peers[pi].id, sizeof(id));
+            taskEXIT_CRITICAL(&peers_mux);
+            if (useful) ESP_LOGI(TAG, "phone %s: session brought new data", id[0] ? id : "?");
+            else ESP_LOGI(TAG, "phone %s: nothing new (%u in a row) -> next connect in %u s",
+                          id[0] ? id : "?", idle, (unsigned)(pp_quiet_ms(idle) / 1000));
+        }
+
         switch (cstate) {
         case C_IDLE:
             if ((int32_t)(now - c_next_scan_at) >= 0) start_scan();
@@ -534,7 +602,7 @@ static void central_mgr(void *arg)
                 ESP_LOGI(TAG, "Android session done -> disconnect");
                 c_close_at = 0;
                 ble_gap_terminate(c_conn, BLE_ERR_REM_USER_CONN_TERM);
-            } else if (c_cccd_pending && !c_got_data && !c_no_answer &&
+            } else if ((c_cccd_pending || c_cccd_failed) && !c_got_data && !c_no_answer &&
                        now - c_cccd_at > CCCD_WAIT_MS) {
                 ESP_LOGW(TAG, "phone %s did not answer CCCD in %d ms (its GATT server is in scan/client "
                          "phase) -> disconnect, retry soon", peer_suffix, CCCD_WAIT_MS);

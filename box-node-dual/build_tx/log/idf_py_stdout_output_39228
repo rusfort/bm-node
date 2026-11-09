@@ -1,0 +1,2069 @@
+Command: /Users/nickrusfort/.espressif/python_env/idf5.5_py3.13_env/bin/python /Users/nickrusfort/esp/esp-idf-v5.5.5/tools/idf_monitor.py -p /dev/cu.usbmodem5CCD0108651 -b 115200 --toolchain-prefix xtensa-esp32s3-elf- --target esp32s3 --revision 0 /Users/nickrusfort/Desktop/dev/bm-node/box-node-dual/build_tx/box_node_dual.elf /Users/nickrusfort/Desktop/dev/bm-node/box-node-dual/build_tx/bootloader/bootloader.elf -m '/Users/nickrusfort/.espressif/python_env/idf5.5_py3.13_env/bin/python' '/Users/nickrusfort/esp/esp-idf-v5.5.5/tools/idf.py' '-B' 'build_tx' '-D' 'NODE_ROLE=TX' '-p' '/dev/cu.usbmodem5CCD0108651'
+ESP-ROM:esp32s3-20210327
+Build:Mar 27 2021
+rst:0x1 (POWERON),boot:0x8 (SPI_FAST_FLASH_BOOT)
+SPIWP:0xee
+mode:DIO, clock div:1
+load:0x3fce2820,len:0x14f0
+load:0x403c8700,len:0xd24
+load:0x403cb700,len:0x2eec
+entry 0x403c8924
+[0;32mI (24) boot: ESP-IDF v5.5.5 2nd stage bootloader[0m
+[0;32mI (25) boot: compile time Oct 27 2026 15:29:28[0m
+[0;32mI (25) boot: Multicore bootloader[0m
+[0;32mI (25) boot: chip revision: v0.2[0m
+[0;32mI (28) boot: efuse block revision: v1.3[0m
+[0;32mI (31) boot.esp32s3: Boot SPI Speed : 80MHz[0m
+[0;32mI (35) boot.esp32s3: SPI Mode       : DIO[0m
+[0;32mI (39) boot.esp32s3: SPI Flash Size : 8MB[0m
+[0;32mI (43) boot: Enabling RNG early entropy source...[0m
+[0;32mI (47) boot: Partition Table:[0m
+[0;32mI (50) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (56) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (63) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (69) boot:  2 factory          factory app      00 00 00010000 00300000[0m
+[0;32mI (76) boot:  3 transit          Unknown data     01 40 00310000 004f0000[0m
+[0;32mI (82) boot: End of partition table[0m
+[0;32mI (85) esp_image: segment 0: paddr=00010020 vaddr=3c060020 size=14a14h ( 84500) map[0m
+[0;32mI (108) esp_image: segment 1: paddr=00024a3c vaddr=3fc9b900 size=042fch ( 17148) load[0m
+[0;32mI (112) esp_image: segment 2: paddr=00028d40 vaddr=40374000 size=072d8h ( 29400) load[0m
+[0;32mI (119) esp_image: segment 3: paddr=00030020 vaddr=42000020 size=5174ch (333644) map[0m
+[0;32mI (181) esp_image: segment 4: paddr=00081774 vaddr=4037b2d8 size=1053ch ( 66876) load[0m
+[0;32mI (196) esp_image: segment 5: paddr=00091cb8 vaddr=50000000 size=00020h (    32) load[0m
+[0;32mI (205) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (206) boot: Disabling RNG early entropy source...[0m
+[0;32mI (216) esp_psram: Found 2MB PSRAM device[0m
+[0;32mI (216) esp_psram: Speed: 80MHz[0m
+[0;32mI (216) cpu_start: Multicore app[0m
+[0;32mI (446) esp_psram: SPI SRAM memory test OK[0m
+[0;32mI (454) cpu_start: GPIO 44 and 43 are used as console UART I/O pins[0m
+[0;32mI (455) cpu_start: Pro cpu start user code[0m
+[0;32mI (455) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (456) app_init: Application information:[0m
+[0;32mI (460) app_init: Project name:     box_node_dual[0m
+[0;32mI (465) app_init: App version:      a34f006-dirty[0m
+[0;32mI (469) app_init: Compile time:     Nov  8 2026 23:03:00[0m
+[0;32mI (474) app_init: ELF file SHA256:  02e3970f4...[0m
+[0;32mI (478) app_init: ESP-IDF:          v5.5.5[0m
+[0;32mI (482) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (486) efuse_init: Max chip rev:     v0.99 [0m
+[0;32mI (490) efuse_init: Chip rev:         v0.2[0m
+[0;32mI (494) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (500) heap_init: At 3FCA1670 len 000480A0 (288 KiB): RAM[0m
+[0;32mI (505) heap_init: At 3FCE9710 len 00005724 (21 KiB): RAM[0m
+[0;32mI (510) heap_init: At 3FCF0000 len 00008000 (32 KiB): DRAM[0m
+[0;32mI (516) heap_init: At 600FE000 len 00001FE8 (7 KiB): RTCRAM[0m
+[0;32mI (521) esp_psram: Adding pool of 2048K of PSRAM memory to heap allocator[0m
+[0;32mI (528) spi_flash: detected chip: generic[0m
+[0;32mI (531) spi_flash: flash io: dio[0m
+[0;32mI (534) sleep_gpio: Configure to isolate all GPIO pins in sleep state[0m
+[0;32mI (541) sleep_gpio: Enable automatic switching of GPIO sleep configuration[0m
+[0;32mI (547) coexist: coex firmware version: 6f3d08c[0m
+[0;32mI (551) coexist: coexist rom version e7ae62f[0m
+[0;32mI (556) main_task: Started on CPU0[0m
+[0;32mI (576) esp_psram: Reserving pool of 32K of internal memory for DMA/internal allocations[0m
+[0;32mI (576) main_task: Calling app_main()[0m
+[0;32mI (576) BOX_NODE: Box Node Dual role=TX fw=dual-0.4.5 boot=35a6 bt_mac=10:00:3b:6b:b2:b6[0m
+[0;32mI (576) LINK: UART1 TX=GPIO17 RX=GPIO18 115200 8N1 role=TX boot=35a6[0m
+[0;32mI (586) BLE_INIT: BT controller compile version [51d9dfd][0m
+[0;32mI (586) BLE_INIT: Using main XTAL as clock source[0m
+[0;32mI (596) BLE_INIT: Feature Config, ADV:1, BLE_50:1, DTM:1, SCAN:1, CCA:0, SMP:1, CONNECT:1[0m
+[0;32mI (606) BLE_INIT: Bluetooth MAC: 10:00:3b:6b:b2:b6[0m
+[0;32mI (606) phy_init: phy_version 712,87e8c20e,Apr 13 2026,18:51:10[0m
+[0;32mI (656) BOX_NODE: Own BLE address 10:00:3b:6b:b2:b6 type=0[0m
+[0;32mI (666) BOX_TX: advertising Box UUID, scan response: node id=aabbccddeeff flags=NODE|SERVING[0m
+[0;32mI (666) BOX_NODE: Box Node Dual TX started[0m
+[0;32mI (666) main_task: Returned from app_main()[0m
+[0;33mW (4446) LINK: event: link up (peer role=CORE boot=2d30)[0m
+[0;32mI (30596) LINK: link=UP peer=CORE boot=2d30 | rx=56 tx=60 retx=0 dup=0 failed=0 | crc=0 cobs=1 len=0 | restarts=0 ups=1 downs=0 loop=0 drops=0[0m
+[0;32mI (60596) LINK: link=UP peer=CORE boot=2d30 | rx=116 tx=120 retx=0 dup=0 failed=0 | crc=0 cobs=1 len=0 | restarts=0 ups=1 downs=0 loop=0 drops=0[0m
+[0;32mI (68236) BOX_TX: incoming connect conn=1 peer=7f:4d:71:9a:70:10/1[0m
+[0;32mI (68236) BOX_TX: advertising Box UUID, scan response: node id=aabbccddeeff flags=NODE|SERVING[0m
+[0;32mI (68826) BOX_TX: mtu conn=1 mtu=517[0m
+[0;32mI (68866) BOX_TX: HELLO conn=1 phone=6a6dc1733925 flags=04[0m
+[0;32mI (68896) BOX_TX: subscription conn=1 notify=1[0m
+[0;32mI (68896) BOX_TX: subscribed conn=1 mtu=517 phone=6a6dc1733925 -> CORE[0m
+[0;32mI (68956) BOX_TX: session start token=00f9 conn=1 mtu=517 packets=40 (streaming)[0m
+[0;32mI (68956) BOX_TX:   notify SID          1/40 len= 43 -> ok (rc=0)[0m
+[0;32mI (69006) BOX_TX:   notify BOX          2/40 len=286 -> ok (rc=0)[0m
+[0;32mI (69056) BOX_TX:   notify BOX          3/40 len=286 -> ok (rc=0)[0m
+[0;32mI (69106) BOX_TX:   notify BOX          4/40 len=286 -> ok (rc=0)[0m
+[0;32mI (69136) BOX_TX:   notify BOX          5/40 len=222 -> ok (rc=0)[0m
+[0;32mI (69186) BOX_TX:   notify BOX          6/40 len=286 -> ok (rc=0)[0m
+[0;32mI (69236) BOX_TX:   notify BOX          7/40 len=242 -> ok (rc=0)[0m
+[0;32mI (69286) BOX_TX:   notify BOX          8/40 len=286 -> ok (rc=0)[0m
+[0;32mI (69336) BOX_TX:   notify BOX          9/40 len=286 -> ok (rc=0)[0m
+[0;32mI (69366) BOX_TX:   notify BOX          10/40 len=202 -> ok (rc=0)[0m
+[0;32mI (69416) BOX_TX:   notify BOX          11/40 len=218 -> ok (rc=0)[0m
+[0;32mI (69446) BOX_TX:   notify BOX          12/40 len=218 -> ok (rc=0)[0m
+[0;32mI (69496) BOX_TX:   notify BOX          13/40 len=286 -> ok (rc=0)[0m
+[0;32mI (69546) BOX_TX:   notify BOX          14/40 len=266 -> ok (rc=0)[0m
+[0;32mI (69596) BOX_TX:   notify BOX          15/40 len=286 -> ok (rc=0)[0m
+[0;32mI (69626) BOX_TX:   notify BOX          16/40 len=266 -> ok (rc=0)[0m
+[0;32mI (69676) BOX_TX:   notify BOX          17/40 len=198 -> ok (rc=0)[0m
+[0;32mI (69726) BOX_TX:   notify BOX          18/40 len=286 -> ok (rc=0)[0m
+[0;32mI (69756) BOX_TX:   notify BOX          19/40 len=266 -> ok (rc=0)[0m
+[0;32mI (69806) BOX_TX:   notify BOX          20/40 len=286 -> ok (rc=0)[0m
+[0;32mI (69856) BOX_TX:   notify BOX          21/40 len=222 -> ok (rc=0)[0m
+[0;32mI (69906) BOX_TX:   notify BOX          22/40 len=286 -> ok (rc=0)[0m
+[0;32mI (69936) BOX_TX:   notify BOX          23/40 len=242 -> ok (rc=0)[0m
+[0;32mI (69986) BOX_TX:   notify BOX          24/40 len=286 -> ok (rc=0)[0m
+[0;32mI (70036) BOX_TX:   notify BOX          25/40 len=266 -> ok (rc=0)[0m
+[0;32mI (70086) BOX_TX:   notify BOX          26/40 len=286 -> ok (rc=0)[0m
+[0;32mI (70136) BOX_TX:   notify BOX          27/40 len=286 -> ok (rc=0)[0m
+[0;32mI (70186) BOX_TX:   notify BOX          28/40 len=286 -> ok (rc=0)[0m
+[0;32mI (70236) BOX_TX:   notify BOX          29/40 len=286 -> ok (rc=0)[0m
+[0;32mI (70266) BOX_TX:   notify BOX          30/40 len=242 -> ok (rc=0)[0m
+[0;32mI (70316) BOX_TX:   notify BOX          31/40 len=198 -> ok (rc=0)[0m
+[0;32mI (70346) BOX_TX:   notify BOX          32/40 len=238 -> ok (rc=0)[0m
+[0;32mI (70396) BOX_TX:   notify BOX          33/40 len=286 -> ok (rc=0)[0m
+[0;32mI (70446) BOX_TX:   notify BOX          34/40 len=222 -> ok (rc=0)[0m
+[0;32mI (70496) BOX_TX:   notify BOX          35/40 len=286 -> ok (rc=0)[0m
+[0;32mI (70526) BOX_TX:   notify BOX          36/40 len=266 -> ok (rc=0)[0m
+[0;32mI (70576) BOX_TX:   notify BOX          37/40 len=238 -> ok (rc=0)[0m
+[0;32mI (70626) BOX_TX:   notify BOX          38/40 len=286 -> ok (rc=0)[0m
+[0;32mI (70636) BOX_TX:   notify TRM          39/40 len= 43 -> ok (rc=0)[0m
+[0;32mI (70646) BOX_TX:   notify TRM          40/40 len= 43 -> ok (rc=0)[0m
+[0;32mI (70646) BOX_TX: session done token=00f9 conn=1 delivered=40/40 rc=0[0m
+[0;32mI (74686) BOX_TX: subscription conn=1 notify=0[0m
+[0;32mI (74686) BOX_TX: incoming disconnect conn=1 reason=531[0m
+[0;32mI (90596) LINK: link=UP peer=CORE boot=2d30 | rx=219 tx=223 retx=0 dup=0 failed=0 | crc=0 cobs=1 len=0 | restarts=0 ups=1 downs=0 loop=0 drops=0[0m
+[0;32mI (120596) LINK: link=UP peer=CORE boot=2d30 | rx=279 tx=283 retx=0 dup=0 failed=0 | crc=0 cobs=1 len=0 | restarts=0 ups=1 downs=0 loop=0 drops=0[0m
+[0;32mI (150596) LINK: link=UP peer=CORE boot=2d30 | rx=339 tx=343 retx=0 dup=0 failed=0 | crc=0 cobs=1 len=0 | restarts=0 ups=1 downs=0 loop=0 drops=0[0m
+[0;32mI (174496) BOX_TX: incoming connect conn=2 peer=63:3b:0c:fd:76:68/1[0m
+[0;32mI (174496) BOX_TX: advertising Box UUID, scan response: node id=aabbccddeeff flags=NODE|SERVING[0m
+[0;32mI (175066) BOX_TX: mtu conn=2 mtu=517[0m
+[0;32mI (175076) BOX_TX: HELLO conn=2 phone=6a6dc1733925 flags=04[0m
+[0;32mI (175096) BOX_TX: subscription conn=2 notify=1[0m
+[0;32mI (175096) BOX_TX: subscribed conn=2 mtu=517 phone=6a6dc1733925 -> CORE[0m
+[0;32mI (175156) BOX_TX: session start token=00fa conn=2 mtu=517 packets=40 (streaming)[0m
+[0;32mI (175156) BOX_TX:   notify SID          1/40 len= 43 -> ok (rc=0)[0m
+[0;32mI (175166) BOX_TX:   notify ACB          2/40 len=117 -> ok (rc=0)[0m
+[0;32mI (175196) BOX_TX:   notify BOX          3/40 len=222 -> ok (rc=0)[0m
+[0;32mI (175246) BOX_TX:   notify BOX          4/40 len=286 -> ok (rc=0)[0m
+[0;32mI (175276) BOX_TX:   notify BOX          5/40 len=222 -> ok (rc=0)[0m
+[0;32mI (175306) BOX_TX:   notify BOX          6/40 len=286 -> ok (rc=0)[0m
+[0;32mI (175356) BOX_TX:   notify BOX          7/40 len=286 -> ok (rc=0)[0m
+[0;32mI (175386) BOX_TX:   notify BOX          8/40 len=198 -> ok (rc=0)[0m
+[0;32mI (175416) BOX_TX:   notify BOX          9/40 len=238 -> ok (rc=0)[0m
+[0;32mI (175446) BOX_TX:   notify BOX          10/40 len=286 -> ok (rc=0)[0m
+[0;32mI (175476) BOX_TX:   notify BOX          11/40 len=202 -> ok (rc=0)[0m
+[0;32mI (175526) BOX_TX:   notify BOX          12/40 len=286 -> ok (rc=0)[0m
+[0;32mI (175556) BOX_TX:   notify BOX          13/40 len=202 -> ok (rc=0)[0m
+[0;32mI (175606) BOX_TX:   notify BOX          14/40 len=286 -> ok (rc=0)[0m
+[0;32mI (175636) BOX_TX:   notify BOX          15/40 len=222 -> ok (rc=0)[0m
+[0;32mI (175666) BOX_TX:   notify BOX          16/40 len=198 -> ok (rc=0)[0m
+[0;32mI (175696) BOX_TX:   notify BOX          17/40 len=282 -> ok (rc=0)[0m
+[0;32mI (175726) BOX_TX:   notify BOX          18/40 len=198 -> ok (rc=0)[0m
+[0;32mI (175756) BOX_TX:   notify BOX          19/40 len=198 -> ok (rc=0)[0m
+[0;32mI (175786) BOX_TX:   notify BOX          20/40 len=145 -> ok (rc=0)[0m
+[0;32mI (175796) BOX_TX:   notify BOX          21/40 len=145 -> ok (rc=0)[0m
+[0;32mI (175826) BOX_TX:   notify BOX          22/40 len=198 -> ok (rc=0)[0m
+[0;32mI (175856) BOX_TX:   notify BOX          23/40 len=198 -> ok (rc=0)[0m
+[0;32mI (175886) BOX_TX:   notify BOX          24/40 len=218 -> ok (rc=0)[0m
+[0;32mI (175916) BOX_TX:   notify BOX          25/40 len=141 -> ok (rc=0)[0m
+[0;32mI (175926) BOX_TX:   notify BOX          26/40 len=145 -> ok (rc=0)[0m
+[0;32mI (175956) BOX_TX:   notify BOX          27/40 len=145 -> ok (rc=0)[0m
+[0;32mI (175966) BOX_TX:   notify BOX          28/40 len=145 -> ok (rc=0)[0m
+[0;32mI (175996) BOX_TX:   notify BOX          29/40 len=145 -> ok (rc=0)[0m
+[0;32mI (176006) BOX_TX:   notify BOX          30/40 len=145 -> ok (rc=0)[0m
+[0;32mI (176036) BOX_TX:   notify BOX          31/40 len=145 -> ok (rc=0)[0m
+[0;32mI (176046) BOX_TX:   notify BOX          32/40 len=145 -> ok (rc=0)[0m
+[0;32mI (176076) BOX_TX:   notify BOX          33/40 len=145 -> ok (rc=0)[0m
+[0;32mI (176086) BOX_TX:   notify BOX          34/40 len=145 -> ok (rc=0)[0m
+[0;32mI (176116) BOX_TX:   notify BOX          35/40 len=145 -> ok (rc=0)[0m
+[0;32mI (176126) BOX_TX:   notify BOX          36/40 len=145 -> ok (rc=0)[0m
+[0;32mI (176156) BOX_TX:   notify BOX          37/40 len=145 -> ok (rc=0)[0m
+[0;32mI (176186) BOX_TX:   notify BOX          38/40 len=198 -> ok (rc=0)[0m
+[0;32mI (176196) BOX_TX:   notify TRM          39/40 len= 43 -> ok (rc=0)[0m
+[0;32mI (176206) BOX_TX:   notify TRM          40/40 len= 43 -> ok (rc=0)[0m
+[0;32mI (176206) BOX_TX: session done token=00fa conn=2 delivered=40/40 rc=0[0m
+[0;32mI (180236) BOX_TX: subscription conn=2 notify=0[0m
+[0;32mI (180236) BOX_TX: incoming disconnect conn=2 reason=531[0m
+[0;32mI (180596) LINK: link=UP peer=CORE boot=2d30 | rx=442 tx=446 retx=0 dup=0 failed=0 | crc=0 cobs=1 len=0 | restarts=0 ups=1 downs=0 loop=0 drops=0[0m
+[0;32mI (210596) LINK: link=UP peer=CORE boot=2d30 | rx=502 tx=506 retx=0 dup=0 failed=0 | crc=0 cobs=1 len=0 | restarts=0 ups=1 downs=0 loop=0 drops=0[0m
+[0;32mI (240596) LINK: link=UP peer=CORE boot=2d30 | rx=562 tx=566 retx=0 dup=0 failed=0 | crc=0 cobs=1 len=0 | restarts=0 ups=1 downs=0 loop=0 drops=0[0m
+[0;32mI (247886) BOX_TX: incoming connect conn=1 peer=58:dc:31:bb:fa:c4/1[0m
+[0;32mI (247886) BOX_TX: advertising Box UUID, scan response: node id=aabbccddeeff flags=NODE|SERVING[0m
+[0;32mI (248476) BOX_TX: mtu conn=1 mtu=517[0m
+[0;32mI (248526) BOX_TX: HELLO conn=1 phone=6a6dc1733925 flags=04[0m
+[0;32mI (248556) BOX_TX: subscription conn=1 notify=1[0m
+[0;32mI (248556) BOX_TX: subscribed conn=1 mtu=517 phone=6a6dc1733925 -> CORE[0m
+[0;32mI (248616) BOX_TX: session start token=00fb conn=1 mtu=517 packets=5 (streaming)[0m
+[0;32mI (248616) BOX_TX:   notify SID          1/5 len= 43 -> ok (rc=0)[0m
+[0;32mI (248646) BOX_TX:   notify ACB          2/5 len= 80 -> ok (rc=0)[0m
+[0;32mI (248676) BOX_TX:   notify CDB          3/5 len=302 -> ok (rc=0)[0m
+[0;32mI (248686) BOX_TX:   notify TRM          4/5 len= 43 -> ok (rc=0)[0m
+[0;32mI (248696) BOX_TX:   notify TRM          5/5 len= 43 -> ok (rc=0)[0m
+[0;32mI (248696) BOX_TX: session done token=00fb conn=1 delivered=5/5 rc=0[0m
+[0;32mI (252776) BOX_TX: subscription conn=1 notify=0[0m
+[0;32mI (252776) BOX_TX: incoming disconnect conn=1 reason=531[0m
+[0;32mI (270596) LINK: link=UP peer=CORE boot=2d30 | rx=630 tx=634 retx=0 dup=0 failed=0 | crc=0 cobs=1 len=0 | restarts=0 ups=1 downs=0 loop=0 drops=0[0m
+[0;32mI (270646) BOX_TX: incoming connect conn=2 peer=4a:d9:85:5e:51:66/1[0m
+[0;32mI (270656) BOX_TX: advertising Box UUID, scan response: node id=aabbccddeeff flags=NODE|SERVING[0m
+[0;32mI (271206) BOX_TX: mtu conn=2 mtu=517[0m
+[0;32mI (271226) BOX_TX: subscription conn=2 notify=1[0m
+[0;32mI (271526) BOX_TX: subscribed conn=2 mtu=517 phone=? (no HELLO) -> CORE[0m
+[0;32mI (271586) BOX_TX: session start token=00fc conn=2 mtu=517 packets=40 (streaming)[0m
+[0;32mI (271586) BOX_TX:   notify SID          1/40 len= 43 -> ok (rc=0)[0m
+[0;32mI (271616) BOX_TX:   notify CDB          2/40 len=302 -> ok (rc=0)[0m
+[0;32mI (271666) BOX_TX:   notify BOX          3/40 len=286 -> ok (rc=0)[0m
+[0;32mI (271696) BOX_TX:   notify BOX          4/40 len=286 -> ok (rc=0)[0m
+[0;32mI (271746) BOX_TX:   notify BOX          5/40 len=286 -> ok (rc=0)[0m
+[0;32mI (271776) BOX_TX:   notify BOX          6/40 len=266 -> ok (rc=0)[0m
+[0;32mI (271806) BOX_TX:   notify BOX          7/40 len=286 -> ok (rc=0)[0m
+[0;32mI (271836) BOX_TX:   notify BOX          8/40 len=266 -> ok (rc=0)[0m
+[0;32mI (271886) BOX_TX:   notify BOX          9/40 len=286 -> ok (rc=0)[0m
+[0;32mI (271916) BOX_TX:   notify BOX          10/40 len=286 -> ok (rc=0)[0m
+[0;32mI (271946) BOX_TX:   notify BOX          11/40 len=222 -> ok (rc=0)[0m
+[0;32mI (271976) BOX_TX:   notify BOX          12/40 len=218 -> ok (rc=0)[0m
+[0;32mI (272006) BOX_TX:   notify BOX          13/40 len=218 -> ok (rc=0)[0m
+[0;32mI (272036) BOX_TX:   notify BOX          14/40 len=198 -> ok (rc=0)[0m
+[0;32mI (272066) BOX_TX:   notify BOX          15/40 len=218 -> ok (rc=0)[0m
+[0;32mI (272116) BOX_TX:   notify BOX          16/40 len=286 -> ok (rc=0)[0m
+[0;32mI (272146) BOX_TX:   notify BOX          17/40 len=286 -> ok (rc=0)[0m
+[0;32mI (272196) BOX_TX:   notify BOX          18/40 len=286 -> ok (rc=0)[0m
+[0;32mI (272226) BOX_TX:   notify BOX          19/40 len=222 -> ok (rc=0)[0m
+[0;32mI (272256) BOX_TX:   notify BOX          20/40 len=286 -> ok (rc=0)[0m
+[0;32mI (272286) BOX_TX:   notify BOX          21/40 len=242 -> ok (rc=0)[0m
+[0;32mI (272336) BOX_TX:   notify BOX          22/40 len=286 -> ok (rc=0)[0m
+[0;32mI (272366) BOX_TX:   notify BOX          23/40 len=286 -> ok (rc=0)[0m
+[0;32mI (272396) BOX_TX:   notify BOX          24/40 len=202 -> ok (rc=0)[0m
+[0;32mI (272426) BOX_TX:   notify BOX          25/40 len=218 -> ok (rc=0)[0m
+[0;32mI (272456) BOX_TX:   notify BOX          26/40 len=218 -> ok (rc=0)[0m
+[0;32mI (272506) BOX_TX:   notify BOX          27/40 len=286 -> ok (rc=0)[0m
+[0;32mI (272536) BOX_TX:   notify BOX          28/40 len=266 -> ok (rc=0)[0m
+[0;32mI (272586) BOX_TX:   notify BOX          29/40 len=286 -> ok (rc=0)[0m
+[0;32mI (272616) BOX_TX:   notify BOX          30/40 len=266 -> ok (rc=0)[0m
+[0;32mI (272646) BOX_TX:   notify BOX          31/40 len=198 -> ok (rc=0)[0m
+[0;32mI (272696) BOX_TX:   notify BOX          32/40 len=286 -> ok (rc=0)[0m
+[0;32mI (272726) BOX_TX:   notify BOX          33/40 len=266 -> ok (rc=0)[0m
+[0;32mI (272756) BOX_TX:   notify BOX          34/40 len=286 -> ok (rc=0)[0m
+[0;32mI (272786) BOX_TX:   notify BOX          35/40 len=222 -> ok (rc=0)[0m
+[0;32mI (272836) BOX_TX:   notify BOX          36/40 len=286 -> ok (rc=0)[0m
+[0;32mI (272866) BOX_TX:   notify BOX          37/40 len=242 -> ok (rc=0)[0m
+[0;32mI (272896) BOX_TX:   notify BOX          38/40 len=286 -> ok (rc=0)[0m
+[0;32mI (272906) BOX_TX:   notify TRM          39/40 len= 43 -> ok (rc=0)[0m
+[0;32mI (272916) BOX_TX:   notify TRM          40/40 len= 43 -> ok (rc=0)[0m
+[0;32mI (272916) BOX_TX: session done token=00fc conn=2 delivered=40/40 rc=0[0m
+[0;32mI (276926) BOX_TX: subscription conn=2 notify=0[0m
+[0;32mI (276926) BOX_TX: incoming disconnect conn=2 reason=531[0m
+[0;32mI (300596) LINK: link=UP peer=CORE boot=2d30 | rx=733 tx=736 retx=0 dup=0 failed=0 | crc=0 cobs=1 len=0 | restarts=0 ups=1 downs=0 loop=0 drops=0[0m
+[0;32mI (304706) BOX_TX: incoming connect conn=1 peer=45:37:8c:cc:ec:de/1[0m
+[0;32mI (304706) BOX_TX: advertising Box UUID, scan response: node id=aabbccddeeff flags=NODE|SERVING[0m
+[0;32mI (305336) BOX_TX: mtu conn=1 mtu=517[0m
+[0;32mI (305366) BOX_TX: subscription conn=1 notify=1[0m
+[0;32mI (305666) BOX_TX: subscribed conn=1 mtu=517 phone=? (no HELLO) -> CORE[0m
+[0;32mI (305726) BOX_TX: session start token=00fd conn=1 mtu=517 packets=40 (streaming)[0m
+[0;32mI (305726) BOX_TX:   notify SID          1/40 len= 43 -> ok (rc=0)[0m
+[0;32mI (305756) BOX_TX:   notify CDB          2/40 len=302 -> ok (rc=0)[0m
+[0;32mI (305806) BOX_TX:   notify BOX          3/40 len=286 -> ok (rc=0)[0m
+[0;32mI (305836) BOX_TX:   notify BOX          4/40 len=286 -> ok (rc=0)[0m
+[0;32mI (305886) BOX_TX:   notify BOX          5/40 len=286 -> ok (rc=0)[0m
+[0;32mI (305916) BOX_TX:   notify BOX          6/40 len=266 -> ok (rc=0)[0m
+[0;32mI (305946) BOX_TX:   notify BOX          7/40 len=286 -> ok (rc=0)[0m
+[0;32mI (305976) BOX_TX:   notify BOX          8/40 len=266 -> ok (rc=0)[0m
+[0;32mI (306026) BOX_TX:   notify BOX          9/40 len=286 -> ok (rc=0)[0m
+[0;32mI (306056) BOX_TX:   notify BOX          10/40 len=286 -> ok (rc=0)[0m
+[0;32mI (306086) BOX_TX:   notify BOX          11/40 len=222 -> ok (rc=0)[0m
+[0;32mI (306116) BOX_TX:   notify BOX          12/40 len=218 -> ok (rc=0)[0m
+[0;32mI (306146) BOX_TX:   notify BOX          13/40 len=218 -> ok (rc=0)[0m
+[0;32mI (306176) BOX_TX:   notify BOX          14/40 len=198 -> ok (rc=0)[0m
+[0;32mI (306206) BOX_TX:   notify BOX          15/40 len=218 -> ok (rc=0)[0m
+[0;32mI (306236) BOX_TX:   notify BOX          16/40 len=266 -> ok (rc=0)[0m
+[0;32mI (306286) BOX_TX:   notify BOX          17/40 len=286 -> ok (rc=0)[0m
+[0;32mI (306316) BOX_TX:   notify BOX          18/40 len=286 -> ok (rc=0)[0m
+[0;32mI (306366) BOX_TX:   notify BOX          19/40 len=286 -> ok (rc=0)[0m
+[0;32mI (306396) BOX_TX:   notify BOX          20/40 len=286 -> ok (rc=0)[0m
+[0;32mI (306446) BOX_TX:   notify BOX          21/40 len=286 -> ok (rc=0)[0m
+[0;32mI (306476) BOX_TX:   notify BOX          22/40 len=242 -> ok (rc=0)[0m
+[0;32mI (306506) BOX_TX:   notify BOX          23/40 len=198 -> ok (rc=0)[0m
+[0;32mI (306536) BOX_TX:   notify BOX          24/40 len=238 -> ok (rc=0)[0m
+[0;32mI (306586) BOX_TX:   notify BOX          25/40 len=286 -> ok (rc=0)[0m
+[0;32mI (306616) BOX_TX:   notify BOX          26/40 len=222 -> ok (rc=0)[0m
+[0;32mI (306646) BOX_TX:   notify BOX          27/40 len=286 -> ok (rc=0)[0m
+[0;32mI (306676) BOX_TX:   notify BOX          28/40 len=266 -> ok (rc=0)[0m
+[0;32mI (306706) BOX_TX:   notify BOX          29/40 len=238 -> ok (rc=0)[0m
+[0;32mI (306756) BOX_TX:   notify BOX          30/40 len=286 -> ok (rc=0)[0m
+[0;32mI (306786) BOX_TX:   notify BOX          31/40 len=222 -> ok (rc=0)[0m
+[0;32mI (306816) BOX_TX:   notify BOX          32/40 len=286 -> ok (rc=0)[0m
+[0;32mI (306846) BOX_TX:   notify BOX          33/40 len=222 -> ok (rc=0)[0m
+[0;32mI (306896) BOX_TX:   notify BOX          34/40 len=286 -> ok (rc=0)[0m
+[0;32mI (306926) BOX_TX:   notify BOX          35/40 len=286 -> ok (rc=0)[0m
+[0;32mI (306956) BOX_TX:   notify BOX          36/40 len=198 -> ok (rc=0)[0m
+[0;32mI (306986) BOX_TX:   notify BOX          37/40 len=238 -> ok (rc=0)[0m
+[0;32mI (307036) BOX_TX:   notify BOX          38/40 len=286 -> ok (rc=0)[0m
+[0;32mI (307046) BOX_TX:   notify TRM          39/40 len= 43 -> ok (rc=0)[0m
+[0;32mI (307056) BOX_TX:   notify TRM          40/40 len= 43 -> ok (rc=0)[0m
+[0;32mI (307056) BOX_TX: session done token=00fd conn=1 delivered=40/40 rc=0[0m
+[0;32mI (311096) BOX_TX: subscription conn=1 notify=0[0m
+[0;32mI (311096) BOX_TX: incoming disconnect conn=1 reason=531[0m
+[0;32mI (330596) LINK: link=UP peer=CORE boot=2d30 | rx=836 tx=839 retx=0 dup=0 failed=0 | crc=0 cobs=1 len=0 | restarts=0 ups=1 downs=0 loop=0 drops=0[0m
+[0;32mI (342296) BOX_TX: incoming connect conn=2 peer=7b:a2:c7:cf:a6:47/1[0m
+[0;32mI (342296) BOX_TX: advertising Box UUID, scan response: node id=aabbccddeeff flags=NODE|SERVING[0m
+[0;32mI (342866) BOX_TX: mtu conn=2 mtu=517[0m
+[0;32mI (342896) BOX_TX: subscription conn=2 notify=1[0m
+[0;32mI (343196) BOX_TX: subscribed conn=2 mtu=517 phone=? (no HELLO) -> CORE[0m
+[0;32mI (343256) BOX_TX: session start token=00fe conn=2 mtu=517 packets=40 (streaming)[0m
+[0;32mI (343256) BOX_TX:   notify SID          1/40 len= 43 -> ok (rc=0)[0m
+[0;32mI (343286) BOX_TX:   notify CDB          2/40 len=302 -> ok (rc=0)[0m
+[0;32mI (343316) BOX_TX:   notify BOX          3/40 len=202 -> ok (rc=0)[0m
+[0;32mI (343366) BOX_TX:   notify BOX          4/40 len=286 -> ok (rc=0)[0m
+[0;32mI (343396) BOX_TX:   notify BOX          5/40 len=286 -> ok (rc=0)[0m
+[0;32mI (343426) BOX_TX:   notify BOX          6/40 len=202 -> ok (rc=0)[0m
+[0;32mI (343476) BOX_TX:   notify BOX          7/40 len=286 -> ok (rc=0)[0m
+[0;32mI (343506) BOX_TX:   notify BOX          8/40 len=222 -> ok (rc=0)[0m
+[0;32mI (343536) BOX_TX:   notify BOX          9/40 len=198 -> ok (rc=0)[0m
+[0;32mI (343586) BOX_TX:   notify BOX          10/40 len=282 -> ok (rc=0)[0m
+[0;32mI (343616) BOX_TX:   notify BOX          11/40 len=198 -> ok (rc=0)[0m
+[0;32mI (343646) BOX_TX:   notify BOX          12/40 len=198 -> ok (rc=0)[0m
+[0;32mI (343656) BOX_TX:   notify BOX          13/40 len=145 -> ok (rc=0)[0m
+[0;32mI (343686) BOX_TX:   notify BOX          14/40 len=145 -> ok (rc=0)[0m
+[0;32mI (343716) BOX_TX:   notify BOX          15/40 len=198 -> ok (rc=0)[0m
+[0;32mI (343746) BOX_TX:   notify BOX          16/40 len=198 -> ok (rc=0)[0m
+[0;32mI (343776) BOX_TX:   notify BOX          17/40 len=218 -> ok (rc=0)[0m
+[0;32mI (343786) BOX_TX:   notify BOX          18/40 len=141 -> ok (rc=0)[0m
+[0;32mI (343816) BOX_TX:   notify BOX          19/40 len=145 -> ok (rc=0)[0m
+[0;32mI (343826) BOX_TX:   notify BOX          20/40 len=145 -> ok (rc=0)[0m
+[0;32mI (343856) BOX_TX:   notify BOX          21/40 len=145 -> ok (rc=0)[0m
+[0;32mI (343866) BOX_TX:   notify BOX          22/40 len=145 -> ok (rc=0)[0m
+[0;32mI (343896) BOX_TX:   notify BOX          23/40 len=145 -> ok (rc=0)[0m
+[0;32mI (343906) BOX_TX:   notify BOX          24/40 len=145 -> ok (rc=0)[0m
+[0;32mI (343936) BOX_TX:   notify BOX          25/40 len=145 -> ok (rc=0)[0m
+[0;32mI (343946) BOX_TX:   notify BOX          26/40 len=145 -> ok (rc=0)[0m
+[0;32mI (343976) BOX_TX:   notify BOX          27/40 len=145 -> ok (rc=0)[0m
+[0;32mI (343986) BOX_TX:   notify BOX          28/40 len=145 -> ok (rc=0)[0m
+[0;32mI (344016) BOX_TX:   notify BOX          29/40 len=145 -> ok (rc=0)[0m
+[0;32mI (344026) BOX_TX:   notify BOX          30/40 len=145 -> ok (rc=0)[0m
+[0;32mI (344056) BOX_TX:   notify BOX          31/40 len=198 -> ok (rc=0)[0m
+[0;32mI (344106) BOX_TX:   notify BOX          32/40 len=286 -> ok (rc=0)[0m
+[0;32mI (344136) BOX_TX:   notify BOX          33/40 len=286 -> ok (rc=0)[0m
+[0;32mI (344186) BOX_TX:   notify BOX          34/40 len=286 -> ok (rc=0)[0m
+[0;32mI (344216) BOX_TX:   notify BOX          35/40 len=222 -> ok (rc=0)[0m
+[0;32mI (344246) BOX_TX:   notify BOX          36/40 len=286 -> ok (rc=0)[0m
+[0;32mI (344296) BOX_TX:   notify BOX          37/40 len=286 -> ok (rc=0)[0m
+[0;32mI (344326) BOX_TX:   notify BOX          38/40 len=286 -> ok (rc=0)[0m
+[0;32mI (344336) BOX_TX:   notify TRM          39/40 len= 43 -> ok (rc=0)[0m
+[0;32mI (344366) BOX_TX:   notify TRM          40/40 len= 43 -> ok (rc=0)[0m
+[0;32mI (344366) BOX_TX: session done token=00fe conn=2 delivered=40/40 rc=0[0m
+[0;32mI (348386) BOX_TX: subscription conn=2 notify=0[0m
+[0;32mI (348386) BOX_TX: incoming disconnect conn=2 reason=531[0m
+[0;32mI (360596) LINK: link=UP peer=CORE boot=2d30 | rx=939 tx=942 retx=0 dup=0 failed=0 | crc=0 cobs=1 len=0 | restarts=0 ups=1 downs=0 loop=0 drops=0[0m
+[0;32mI (384266) BOX_TX: incoming connect conn=1 peer=5d:00:b0:91:c1:fa/1[0m
+[0;32mI (384266) BOX_TX: advertising Box UUID, scan response: node id=aabbccddeeff flags=NODE|SERVING[0m
+[0;32mI (384876) BOX_TX: mtu conn=1 mtu=517[0m
+[0;32mI (384916) BOX_TX: subscription conn=1 notify=1[0m
+[0;32mI (385216) BOX_TX: subscribed conn=1 mtu=517 phone=? (no HELLO) -> CORE[0m
+[0;32mI (385276) BOX_TX: session start token=00ff conn=1 mtu=517 packets=40 (streaming)[0m
+[0;32mI (385276) BOX_TX:   notify SID          1/40 len= 43 -> ok (rc=0)[0m
+[0;32mI (385306) BOX_TX:   notify CDB          2/40 len=302 -> ok (rc=0)[0m
+[0;32mI (385336) BOX_TX:   notify BOX          3/40 len=242 -> ok (rc=0)[0m
+[0;32mI (385386) BOX_TX:   notify BOX          4/40 len=286 -> ok (rc=0)[0m
+[0;32mI (385416) BOX_TX:   notify BOX          5/40 len=286 -> ok (rc=0)[0m
+[0;32mI (385466) BOX_TX:   notify BOX          6/40 len=286 -> ok (rc=0)[0m
+[0;32mI (385496) BOX_TX:   notify BOX          7/40 len=202 -> ok (rc=0)[0m
+[0;32mI (385546) BOX_TX:   notify BOX          8/40 len=286 -> ok (rc=0)[0m
+[0;32mI (385576) BOX_TX:   notify BOX          9/40 len=266 -> ok (rc=0)[0m
+[0;32mI (385606) BOX_TX:   notify BOX          10/40 len=286 -> ok (rc=0)[0m
+[0;32mI (385656) BOX_TX:   notify BOX          11/40 len=266 -> ok (rc=0)[0m
+[0;32mI (385686) BOX_TX:   notify BOX          12/40 len=218 -> ok (rc=0)[0m
+[0;32mI (385716) BOX_TX:   notify BOX          13/40 len=286 -> ok (rc=0)[0m
+[0;32mI (385766) BOX_TX:   notify BOX          14/40 len=286 -> ok (rc=0)[0m
+[0;32mI (385796) BOX_TX:   notify BOX          15/40 len=222 -> ok (rc=0)[0m
+[0;32mI (385826) BOX_TX:   notify BOX          16/40 len=218 -> ok (rc=0)[0m
+[0;32mI (385856) BOX_TX:   notify BOX          17/40 len=218 -> ok (rc=0)[0m
+[0;32mI (385886) BOX_TX:   notify BOX          18/40 len=198 -> ok (rc=0)[0m
+[0;32mI (385916) BOX_TX:   notify BOX          19/40 len=218 -> ok (rc=0)[0m
+[0;32mI (385946) BOX_TX:   notify BOX          20/40 len=218 -> ok (rc=0)[0m
+[0;32mI (385976) BOX_TX:   notify BOX          21/40 len=286 -> ok (rc=0)[0m
+[0;32mI (386006) BOX_TX:   notify BOX          22/40 len=266 -> ok (rc=0)[0m
+[0;32mI (386056) BOX_TX:   notify BOX          23/40 len=286 -> ok (rc=0)[0m
+[0;32mI (386086) BOX_TX:   notify BOX          24/40 len=266 -> ok (rc=0)[0m
+[0;32mI (386116) BOX_TX:   notify BOX          25/40 len=198 -> ok (rc=0)[0m
+[0;32mI (386146) BOX_TX:   notify BOX          26/40 len=286 -> ok (rc=0)[0m
+[0;32mI (386176) BOX_TX:   notify BOX          27/40 len=266 -> ok (rc=0)[0m
+[0;32mI (386206) BOX_TX:   notify BOX          28/40 len=286 -> ok (rc=0)[0m
+[0;32mI (386256) BOX_TX:   notify BOX          29/40 len=222 -> ok (rc=0)[0m
+[0;32mI (386286) BOX_TX:   notify BOX          30/40 len=286 -> ok (rc=0)[0m
+[0;32mI (386316) BOX_TX:   notify BOX          31/40 len=242 -> ok (rc=0)[0m
+[0;32mI (386346) BOX_TX:   notify BOX          32/40 len=266 -> ok (rc=0)[0m
+[0;32mI (386396) BOX_TX:   notify BOX          33/40 len=286 -> ok (rc=0)[0m
+[0;32mI (386426) BOX_TX:   notify BOX          34/40 len=286 -> ok (rc=0)[0m
+[0;32mI (386476) BOX_TX:   notify BOX          35/40 len=286 -> ok (rc=0)[0m
+[0;32mI (386506) BOX_TX:   notify BOX          36/40 len=286 -> ok (rc=0)[0m
+[0;32mI (386556) BOX_TX:   notify BOX          37/40 len=286 -> ok (rc=0)[0m
+[0;32mI (386586) BOX_TX:   notify BOX          38/40 len=242 -> ok (rc=0)[0m
+[0;32mI (386616) BOX_TX:   notify TRM          39/40 len= 43 -> ok (rc=0)[0m
+[0;32mI (386626) BOX_TX:   notify TRM          40/40 len= 43 -> ok (rc=0)[0m
+[0;32mI (386626) BOX_TX: session done token=00ff conn=1 delivered=40/40 rc=0[0m
+[0;32mI (390596) LINK: link=UP peer=CORE boot=2d30 | rx=1041 tx=1044 retx=0 dup=0 failed=0 | crc=0 cobs=1 len=0 | restarts=0 ups=1 downs=0 loop=0 drops=0[0m
+[0;32mI (390656) BOX_TX: subscription conn=1 notify=0[0m
+[0;32mI (390656) BOX_TX: incoming disconnect conn=1 reason=531[0m
+[0;32mI (414476) BOX_TX: incoming connect conn=2 peer=4c:3e:ab:c5:29:6e/1[0m
+[0;32mI (414476) BOX_TX: advertising Box UUID, scan response: node id=aabbccddeeff flags=NODE|SERVING[0m
+[0;32mI (415036) BOX_TX: mtu conn=2 mtu=517[0m
+[0;32mI (415076) BOX_TX: subscription conn=2 notify=1[0m
+[0;32mI (415376) BOX_TX: subscribed conn=2 mtu=517 phone=? (no HELLO) -> CORE[0m
+[0;32mI (415436) BOX_TX: session start token=0100 conn=2 mtu=517 packets=40 (streaming)[0m
+[0;32mI (415436) BOX_TX:   notify SID          1/40 len= 43 -> ok (rc=0)[0m
+[0;32mI (415466) BOX_TX:   notify CDB          2/40 len=302 -> ok (rc=0)[0m
+[0;32mI (415496) BOX_TX:   notify BOX          3/40 len=198 -> ok (rc=0)[0m
+[0;32mI (415546) BOX_TX:   notify BOX          4/40 len=238 -> ok (rc=0)[0m
+[0;32mI (415576) BOX_TX:   notify BOX          5/40 len=286 -> ok (rc=0)[0m
+[0;32mI (415606) BOX_TX:   notify BOX          6/40 len=222 -> ok (rc=0)[0m
+[0;32mI (415656) BOX_TX:   notify BOX          7/40 len=286 -> ok (rc=0)[0m
+[0;32mI (415686) BOX_TX:   notify BOX          8/40 len=266 -> ok (rc=0)[0m
+[0;32mI (415716) BOX_TX:   notify BOX          9/40 len=238 -> ok (rc=0)[0m
+[0;32mI (415746) BOX_TX:   notify BOX          10/40 len=286 -> ok (rc=0)[0m
+[0;32mI (415776) BOX_TX:   notify BOX          11/40 len=222 -> ok (rc=0)[0m
+[0;32mI (415826) BOX_TX:   notify BOX          12/40 len=286 -> ok (rc=0)[0m
+[0;32mI (415856) BOX_TX:   notify BOX          13/40 len=222 -> ok (rc=0)[0m
+[0;32mI (415886) BOX_TX:   notify BOX          14/40 len=286 -> ok (rc=0)[0m
+[0;32mI (415936) BOX_TX:   notify BOX          15/40 len=286 -> ok (rc=0)[0m
+[0;32mI (415966) BOX_TX:   notify BOX          16/40 len=198 -> ok (rc=0)[0m
+[0;32mI (415996) BOX_TX:   notify BOX          17/40 len=238 -> ok (rc=0)[0m
+[0;32mI (416026) BOX_TX:   notify BOX          18/40 len=202 -> ok (rc=0)[0m
+[0;32mI (416056) BOX_TX:   notify BOX          19/40 len=286 -> ok (rc=0)[0m
+[0;32mI (416106) BOX_TX:   notify BOX          20/40 len=286 -> ok (rc=0)[0m
+[0;32mI (416136) BOX_TX:   notify BOX          21/40 len=202 -> ok (rc=0)[0m
+[0;32mI (416166) BOX_TX:   notify BOX          22/40 len=286 -> ok (rc=0)[0m
+[0;32mI (416196) BOX_TX:   notify BOX          23/40 len=222 -> ok (rc=0)[0m
+[0;32mI (416226) BOX_TX:   notify BOX          24/40 len=198 -> ok (rc=0)[0m
+[0;32mI (416276) BOX_TX:   notify BOX          25/40 len=282 -> ok (rc=0)[0m
+[0;32mI (416306) BOX_TX:   notify BOX          26/40 len=198 -> ok (rc=0)[0m
+[0;32mI (416336) BOX_TX:   notify BOX          27/40 len=198 -> ok (rc=0)[0m
+[0;32mI (416346) BOX_TX:   notify BOX          28/40 len=145 -> ok (rc=0)[0m
+[0;32mI (416376) BOX_TX:   notify BOX          29/40 len=145 -> ok (rc=0)[0m
+[0;32mI (416406) BOX_TX:   notify BOX          30/40 len=198 -> ok (rc=0)[0m
+[0;32mI (416436) BOX_TX:   notify BOX          31/40 len=198 -> ok (rc=0)[0m
+[0;32mI (416466) BOX_TX:   notify BOX          32/40 len=218 -> ok (rc=0)[0m
+[0;32mI (416476) BOX_TX:   notify BOX          33/40 len=141 -> ok (rc=0)[0m
+[0;32mI (416506) BOX_TX:   notify BOX          34/40 len=145 -> ok (rc=0)[0m
+[0;32mI (416536) BOX_TX:   notify BOX          35/40 len=145 -> ok (rc=0)[0m
+[0;32mI (416566) BOX_TX:   notify BOX          36/40 len=145 -> ok (rc=0)[0m
+[0;32mI (416576) BOX_TX:   notify BOX          37/40 len=145 -> ok (rc=0)[0m
+[0;32mI (416606) BOX_TX:   notify BOX          38/40 len=145 -> ok (rc=0)[0m
+[0;32mI (416616) BOX_TX:   notify TRM          39/40 len= 43 -> ok (rc=0)[0m
+[0;32mI (416646) BOX_TX:   notify TRM          40/40 len= 43 -> ok (rc=0)[0m
+[0;32mI (416646) BOX_TX: session done token=0100 conn=2 delivered=40/40 rc=0[0m
+[0;32mI (420596) LINK: link=UP peer=CORE boot=2d30 | rx=1144 tx=1147 retx=0 dup=0 failed=0 | crc=0 cobs=1 len=0 | restarts=0 ups=1 downs=0 loop=0 drops=0[0m
+[0;32mI (420656) BOX_TX: subscription conn=2 notify=0[0m
+[0;32mI (420656) BOX_TX: incoming disconnect conn=2 reason=531[0m
+[0;32mI (446906) BOX_TX: incoming connect conn=1 peer=66:ba:9d:38:e6:fc/1[0m
+[0;32mI (446906) BOX_TX: advertising Box UUID, scan response: node id=aabbccddeeff flags=NODE|SERVING[0m
+[0;32mI (447476) BOX_TX: mtu conn=1 mtu=517[0m
+[0;32mI (447516) BOX_TX: subscription conn=1 notify=1[0m
+[0;32mI (447816) BOX_TX: subscribed conn=1 mtu=517 phone=? (no HELLO) -> CORE[0m
+[0;32mI (447876) BOX_TX: session start token=0101 conn=1 mtu=517 packets=40 (streaming)[0m
+[0;32mI (447876) BOX_TX:   notify SID          1/40 len= 43 -> ok (rc=0)[0m
+[0;32mI (447906) BOX_TX:   notify CDB          2/40 len=302 -> ok (rc=0)[0m
+[0;32mI (447936) BOX_TX:   notify BOX          3/40 len=145 -> ok (rc=0)[0m
+[0;32mI (447946) BOX_TX:   notify BOX          4/40 len=145 -> ok (rc=0)[0m
+[0;32mI (447976) BOX_TX:   notify BOX          5/40 len=145 -> ok (rc=0)[0m
+[0;32mI (447986) BOX_TX:   notify BOX          6/40 len=145 -> ok (rc=0)[0m
+[0;32mI (448016) BOX_TX:   notify BOX          7/40 len=145 -> ok (rc=0)[0m
+[0;32mI (448026) BOX_TX:   notify BOX          8/40 len=145 -> ok (rc=0)[0m
+[0;32mI (448056) BOX_TX:   notify BOX          9/40 len=145 -> ok (rc=0)[0m
+[0;32mI (448086) BOX_TX:   notify BOX          10/40 len=198 -> ok (rc=0)[0m
+[0;32mI (448116) BOX_TX:   notify BOX          11/40 len=286 -> ok (rc=0)[0m
+[0;32mI (448166) BOX_TX:   notify BOX          12/40 len=286 -> ok (rc=0)[0m
+[0;32mI (448196) BOX_TX:   notify BOX          13/40 len=286 -> ok (rc=0)[0m
+[0;32mI (448226) BOX_TX:   notify BOX          14/40 len=222 -> ok (rc=0)[0m
+[0;32mI (448276) BOX_TX:   notify BOX          15/40 len=286 -> ok (rc=0)[0m
+[0;32mI (448306) BOX_TX:   notify BOX          16/40 len=286 -> ok (rc=0)[0m
+[0;32mI (448336) BOX_TX:   notify BOX          17/40 len=242 -> ok (rc=0)[0m
+[0;32mI (448386) BOX_TX:   notify BOX          18/40 len=286 -> ok (rc=0)[0m
+[0;32mI (448416) BOX_TX:   notify BOX          19/40 len=286 -> ok (rc=0)[0m
+[0;32mI (448466) BOX_TX:   notify BOX          20/40 len=286 -> ok (rc=0)[0m
+[0;32mI (448496) BOX_TX:   notify BOX          21/40 len=202 -> ok (rc=0)[0m
+[0;32mI (448526) BOX_TX:   notify BOX          22/40 len=286 -> ok (rc=0)[0m
+[0;32mI (448576) BOX_TX:   notify BOX          23/40 len=266 -> ok (rc=0)[0m
+[0;32mI (448626) BOX_TX:   notify BOX          24/40 len=286 -> ok (rc=0)[0m
+[0;32mI (448676) BOX_TX:   notify BOX          25/40 len=266 -> ok (rc=0)[0m
+[0;32mI (448706) BOX_TX:   notify BOX          26/40 len=218 -> ok (rc=0)[0m
+[0;32mI (448736) BOX_TX:   notify BOX          27/40 len=286 -> ok (rc=0)[0m
+[0;32mI (448786) BOX_TX:   notify BOX          28/40 len=286 -> ok (rc=0)[0m
+[0;32mI (448816) BOX_TX:   notify BOX          29/40 len=222 -> ok (rc=0)[0m
+[0;32mI (448846) BOX_TX:   notify BOX          30/40 len=218 -> ok (rc=0)[0m
+[0;32mI (448876) BOX_TX:   notify BOX          31/40 len=218 -> ok (rc=0)[0m
+[0;32mI (448906) BOX_TX:   notify BOX          32/40 len=198 -> ok (rc=0)[0m
+[0;32mI (448936) BOX_TX:   notify BOX          33/40 len=218 -> ok (rc=0)[0m
+[0;32mI (448966) BOX_TX:   notify BOX          34/40 len=218 -> ok (rc=0)[0m
+[0;32mI (448996) BOX_TX:   notify BOX          35/40 len=286 -> ok (rc=0)[0m
+[0;32mI (449026) BOX_TX:   notify BOX          36/40 len=266 -> ok (rc=0)[0m
+[0;32mI (449076) BOX_TX:   notify BOX          37/40 len=286 -> ok (rc=0)[0m
+[0;32mI (449106) BOX_TX:   notify BOX          38/40 len=266 -> ok (rc=0)[0m
+[0;32mI (449116) BOX_TX:   notify TRM          39/40 len= 43 -> ok (rc=0)[0m
+[0;32mI (449146) BOX_TX:   notify TRM          40/40 len= 43 -> ok (rc=0)[0m
+[0;32mI (449146) BOX_TX: session done token=0101 conn=1 delivered=40/40 rc=0[0m
+[0;32mI (450596) LINK: link=UP peer=CORE boot=2d30 | rx=1247 tx=1250 retx=0 dup=0 failed=0 | crc=0 cobs=1 len=0 | restarts=0 ups=1 downs=0 loop=0 drops=0[0m
+[0;32mI (453206) BOX_TX: subscription conn=1 notify=0[0m
+[0;32mI (453206) BOX_TX: incoming disconnect conn=1 reason=531[0m
+[0;32mI (480596) LINK: link=UP peer=CORE boot=2d30 | rx=1308 tx=1311 retx=0 dup=0 failed=0 | crc=0 cobs=1 len=0 | restarts=0 ups=1 downs=0 loop=0 drops=0[0m
+[0;32mI (491886) BOX_TX: incoming connect conn=2 peer=74:5a:8c:48:e0:2d/1[0m
+[0;32mI (491886) BOX_TX: advertising Box UUID, scan response: node id=aabbccddeeff flags=NODE|SERVING[0m
+[0;32mI (492476) BOX_TX: mtu conn=2 mtu=517[0m
+[0;32mI (492526) BOX_TX: subscription conn=2 notify=1[0m
+[0;32mI (492826) BOX_TX: subscribed conn=2 mtu=517 phone=? (no HELLO) -> CORE[0m
+[0;32mI (492886) BOX_TX: session start token=0102 conn=2 mtu=517 packets=40 (streaming)[0m
+[0;32mI (492886) BOX_TX:   notify SID          1/40 len= 43 -> ok (rc=0)[0m
+[0;32mI (492916) BOX_TX:   notify CDB          2/40 len=302 -> ok (rc=0)[0m
+[0;32mI (492946) BOX_TX:   notify BOX          3/40 len=198 -> ok (rc=0)[0m
+[0;32mI (492996) BOX_TX:   notify BOX          4/40 len=286 -> ok (rc=0)[0m
+[0;32mI (493026) BOX_TX:   notify BOX          5/40 len=266 -> ok (rc=0)[0m
+[0;32mI (493076) BOX_TX:   notify BOX          6/40 len=286 -> ok (rc=0)[0m
+[0;32mI (493106) BOX_TX:   notify BOX          7/40 len=222 -> ok (rc=0)[0m
+[0;32mI (493136) BOX_TX:   notify BOX          8/40 len=286 -> ok (rc=0)[0m
+[0;32mI (493166) BOX_TX:   notify BOX          9/40 len=242 -> ok (rc=0)[0m
+[0;32mI (493216) BOX_TX:   notify BOX          10/40 len=266 -> ok (rc=0)[0m
+[0;32mI (493246) BOX_TX:   notify BOX          11/40 len=286 -> ok (rc=0)[0m
+[0;32mI (493296) BOX_TX:   notify BOX          12/40 len=286 -> ok (rc=0)[0m
+[0;32mI (493326) BOX_TX:   notify BOX          13/40 len=286 -> ok (rc=0)[0m
+[0;32mI (493376) BOX_TX:   notify BOX          14/40 len=286 -> ok (rc=0)[0m
+[0;32mI (493406) BOX_TX:   notify BOX          15/40 len=286 -> ok (rc=0)[0m
+[0;32mI (493436) BOX_TX:   notify BOX          16/40 len=242 -> ok (rc=0)[0m
+[0;32mI (493466) BOX_TX:   notify BOX          17/40 len=198 -> ok (rc=0)[0m
+[0;32mI (493496) BOX_TX:   notify BOX          18/40 len=238 -> ok (rc=0)[0m
+[0;32mI (493546) BOX_TX:   notify BOX          19/40 len=286 -> ok (rc=0)[0m
+[0;32mI (493576) BOX_TX:   notify BOX          20/40 len=222 -> ok (rc=0)[0m
+[0;32mI (493626) BOX_TX:   notify BOX          21/40 len=286 -> ok (rc=0)[0m
+[0;32mI (493656) BOX_TX:   notify BOX          22/40 len=266 -> ok (rc=0)[0m
+[0;32mI (493686) BOX_TX:   notify BOX          23/40 len=238 -> ok (rc=0)[0m
+[0;32mI (493736) BOX_TX:   notify BOX          24/40 len=286 -> ok (rc=0)[0m
+[0;32mI (493766) BOX_TX:   notify BOX          25/40 len=222 -> ok (rc=0)[0m
+[0;32mI (493796) BOX_TX:   notify BOX          26/40 len=286 -> ok (rc=0)[0m
+[0;32mI (493826) BOX_TX:   notify BOX          27/40 len=222 -> ok (rc=0)[0m
+[0;32mI (493876) BOX_TX:   notify BOX          28/40 len=286 -> ok (rc=0)[0m
+[0;32mI (493906) BOX_TX:   notify BOX          29/40 len=286 -> ok (rc=0)[0m
+[0;32mI (493936) BOX_TX:   notify BOX          30/40 len=198 -> ok (rc=0)[0m
+[0;32mI (493966) BOX_TX:   notify BOX          31/40 len=238 -> ok (rc=0)[0m
+[0;32mI (493996) BOX_TX:   notify BOX          32/40 len=202 -> ok (rc=0)[0m
+[0;32mI (494046) BOX_TX:   notify BOX          33/40 len=286 -> ok (rc=0)[0m
+[0;32mI (494076) BOX_TX:   notify BOX          34/40 len=286 -> ok (rc=0)[0m
+[0;32mI (494106) BOX_TX:   notify BOX          35/40 len=202 -> ok (rc=0)[0m
+[0;32mI (494156) BOX_TX:   notify BOX          36/40 len=286 -> ok (rc=0)[0m
+[0;32mI (494186) BOX_TX:   notify BOX          37/40 len=222 -> ok (rc=0)[0m
+[0;32mI (494216) BOX_TX:   notify BOX          38/40 len=198 -> ok (rc=0)[0m
+[0;32mI (494226) BOX_TX:   notify TRM          39/40 len= 43 -> ok (rc=0)[0m
+[0;32mI (494256) BOX_TX:   notify TRM          40/40 len= 43 -> ok (rc=0)[0m
+[0;32mI (494256) BOX_TX: session done token=0102 conn=2 delivered=40/40 rc=0[0m
+[0;32mI (498296) BOX_TX: subscription conn=2 notify=0[0m
+[0;32mI (498296) BOX_TX: incoming disconnect conn=2 reason=531[0m
+[0;32mI (510596) LINK: link=UP peer=CORE boot=2d30 | rx=1411 tx=1414 retx=0 dup=0 failed=0 | crc=0 cobs=1 len=0 | restarts=0 ups=1 downs=0 loop=0 drops=0[0m
+[0;32mI (528086) BOX_TX: incoming connect conn=1 peer=7b:9c:c4:59:db:0a/1[0m
+[0;32mI (528096) BOX_TX: advertising Box UUID, scan response: node id=aabbccddeeff flags=NODE|SERVING[0m
+[0;32mI (528676) BOX_TX: mtu conn=1 mtu=517[0m
+[0;32mI (528716) BOX_TX: subscription conn=1 notify=1[0m
+[0;32mI (529016) BOX_TX: subscribed conn=1 mtu=517 phone=? (no HELLO) -> CORE[0m
+[0;32mI (529076) BOX_TX: session start token=0103 conn=1 mtu=517 packets=40 (streaming)[0m
+[0;32mI (529076) BOX_TX:   notify SID          1/40 len= 43 -> ok (rc=0)[0m
+[0;32mI (529106) BOX_TX:   notify CDB          2/40 len=302 -> ok (rc=0)[0m
+[0;32mI (529156) BOX_TX:   notify BOX          3/40 len=282 -> ok (rc=0)[0m
+[0;32mI (529186) BOX_TX:   notify BOX          4/40 len=198 -> ok (rc=0)[0m
+[0;32mI (529216) BOX_TX:   notify BOX          5/40 len=198 -> ok (rc=0)[0m
+[0;32mI (529226) BOX_TX:   notify BOX          6/40 len=145 -> ok (rc=0)[0m
+[0;32mI (529256) BOX_TX:   notify BOX          7/40 len=145 -> ok (rc=0)[0m
+[0;32mI (529286) BOX_TX:   notify BOX          8/40 len=198 -> ok (rc=0)[0m
+[0;32mI (529316) BOX_TX:   notify BOX          9/40 len=198 -> ok (rc=0)[0m
+[0;32mI (529346) BOX_TX:   notify BOX          10/40 len=218 -> ok (rc=0)[0m
+[0;32mI (529356) BOX_TX:   notify BOX          11/40 len=141 -> ok (rc=0)[0m
+[0;32mI (529386) BOX_TX:   notify BOX          12/40 len=145 -> ok (rc=0)[0m
+[0;32mI (529396) BOX_TX:   notify BOX          13/40 len=145 -> ok (rc=0)[0m
+[0;32mI (529426) BOX_TX:   notify BOX          14/40 len=145 -> ok (rc=0)[0m
+[0;32mI (529436) BOX_TX:   notify BOX          15/40 len=145 -> ok (rc=0)[0m
+[0;32mI (529466) BOX_TX:   notify BOX          16/40 len=145 -> ok (rc=0)[0m
+[0;32mI (529496) BOX_TX:   notify BOX          17/40 len=145 -> ok (rc=0)[0m
+[0;32mI (529506) BOX_TX:   notify BOX          18/40 len=145 -> ok (rc=0)[0m
+[0;32mI (529536) BOX_TX:   notify BOX          19/40 len=145 -> ok (rc=0)[0m
+[0;32mI (529566) BOX_TX:   notify BOX          20/40 len=145 -> ok (rc=0)[0m
+[0;32mI (529596) BOX_TX:   notify BOX          21/40 len=145 -> ok (rc=0)[0m
+[0;32mI (529606) BOX_TX:   notify BOX          22/40 len=145 -> ok (rc=0)[0m
+[0;32mI (529636) BOX_TX:   notify BOX          23/40 len=145 -> ok (rc=0)[0m
+[0;32mI (529666) BOX_TX:   notify BOX          24/40 len=198 -> ok (rc=0)[0m
+[0;32mI (529716) BOX_TX:   notify BOX          25/40 len=286 -> ok (rc=0)[0m
+[0;32mI (529746) BOX_TX:   notify BOX          26/40 len=286 -> ok (rc=0)[0m
+[0;32mI (529796) BOX_TX:   notify BOX          27/40 len=286 -> ok (rc=0)[0m
+[0;32mI (529826) BOX_TX:   notify BOX          28/40 len=222 -> ok (rc=0)[0m
+[0;32mI (529856) BOX_TX:   notify BOX          29/40 len=286 -> ok (rc=0)[0m
+[0;32mI (529906) BOX_TX:   notify BOX          30/40 len=286 -> ok (rc=0)[0m
+[0;32mI (529936) BOX_TX:   notify BOX          31/40 len=242 -> ok (rc=0)[0m
+[0;32mI (529966) BOX_TX:   notify BOX          32/40 len=286 -> ok (rc=0)[0m
+[0;32mI (530016) BOX_TX:   notify BOX          33/40 len=286 -> ok (rc=0)[0m
+[0;32mI (530046) BOX_TX:   notify BOX          34/40 len=286 -> ok (rc=0)[0m
+[0;32mI (530076) BOX_TX:   notify BOX          35/40 len=202 -> ok (rc=0)[0m
+[0;32mI (530126) BOX_TX:   notify BOX          36/40 len=286 -> ok (rc=0)[0m
+[0;32mI (530156) BOX_TX:   notify BOX          37/40 len=266 -> ok (rc=0)[0m
+[0;32mI (530206) BOX_TX:   notify BOX          38/40 len=286 -> ok (rc=0)[0m
+[0;32mI (530216) BOX_TX:   notify TRM          39/40 len= 43 -> ok (rc=0)[0m
+[0;32mI (530246) BOX_TX:   notify TRM          40/40 len= 43 -> ok (rc=0)[0m
+[0;32mI (530246) BOX_TX: session done token=0103 conn=1 delivered=40/40 rc=0[0m
+[0;32mI (534326) BOX_TX: subscription conn=1 notify=0[0m
+[0;32mI (534326) BOX_TX: incoming disconnect conn=1 reason=531[0m
+[0;32mI (540596) LINK: link=UP peer=CORE boot=2d30 | rx=1514 tx=1517 retx=0 dup=0 failed=0 | crc=0 cobs=1 len=0 | restarts=0 ups=1 downs=0 loop=0 drops=0[0m
+[0;32mI (554796) BOX_TX: incoming connect conn=2 peer=4b:23:d6:78:24:79/1[0m
+[0;32mI (554796) BOX_TX: advertising Box UUID, scan response: node id=aabbccddeeff flags=NODE|SERVING[0m
+[0;32mI (555386) BOX_TX: mtu conn=2 mtu=517[0m
+[0;32mI (555426) BOX_TX: subscription conn=2 notify=1[0m
+[0;32mI (555726) BOX_TX: subscribed conn=2 mtu=517 phone=? (no HELLO) -> CORE[0m
+[0;32mI (555766) BOX_TX: session start token=0104 conn=2 mtu=517 packets=40 (streaming)[0m
+[0;32mI (555766) BOX_TX:   notify SID          1/40 len= 43 -> ok (rc=0)[0m
+[0;32mI (555816) BOX_TX:   notify CDB          2/40 len=302 -> ok (rc=0)[0m
+[0;32mI (555846) BOX_TX:   notify BOX          3/40 len=266 -> ok (rc=0)[0m
+[0;32mI (555896) BOX_TX:   notify BOX          4/40 len=286 -> ok (rc=0)[0m
+[0;32mI (555926) BOX_TX:   notify BOX          5/40 len=218 -> ok (rc=0)[0m
+[0;32mI (555956) BOX_TX:   notify BOX          6/40 len=286 -> ok (rc=0)[0m
+[0;32mI (556006) BOX_TX:   notify BOX          7/40 len=286 -> ok (rc=0)[0m
+[0;32mI (556036) BOX_TX:   notify BOX          8/40 len=222 -> ok (rc=0)[0m
+[0;32mI (556066) BOX_TX:   notify BOX          9/40 len=218 -> ok (rc=0)[0m
+[0;32mI (556096) BOX_TX:   notify BOX          10/40 len=218 -> ok (rc=0)[0m
+[0;32mI (556126) BOX_TX:   notify BOX          11/40 len=198 -> ok (rc=0)[0m
+[0;32mI (556156) BOX_TX:   notify BOX          12/40 len=218 -> ok (rc=0)[0m
+[0;32mI (556186) BOX_TX:   notify BOX          13/40 len=218 -> ok (rc=0)[0m
+[0;32mI (556216) BOX_TX:   notify BOX          14/40 len=286 -> ok (rc=0)[0m
+[0;32mI (556266) BOX_TX:   notify BOX          15/40 len=266 -> ok (rc=0)[0m
+[0;32mI (556296) BOX_TX:   notify BOX          16/40 len=286 -> ok (rc=0)[0m
+[0;32mI (556346) BOX_TX:   notify BOX          17/40 len=266 -> ok (rc=0)[0m
+[0;32mI (556376) BOX_TX:   notify BOX          18/40 len=198 -> ok (rc=0)[0m
+[0;32mI (556406) BOX_TX:   notify BOX          19/40 len=286 -> ok (rc=0)[0m
+[0;32mI (556456) BOX_TX:   notify BOX          20/40 len=266 -> ok (rc=0)[0m
+[0;32mI (556486) BOX_TX:   notify BOX          21/40 len=286 -> ok (rc=0)[0m
+[0;32mI (556516) BOX_TX:   notify BOX          22/40 len=222 -> ok (rc=0)[0m
+[0;32mI (556566) BOX_TX:   notify BOX          23/40 len=286 -> ok (rc=0)[0m
+[0;32mI (556596) BOX_TX:   notify BOX          24/40 len=242 -> ok (rc=0)[0m
+[0;32mI (556646) BOX_TX:   notify BOX          25/40 len=266 -> ok (rc=0)[0m
+[0;32mI (556696) BOX_TX:   notify BOX          26/40 len=286 -> ok (rc=0)[0m
+[0;32mI (556726) BOX_TX:   notify BOX          27/40 len=286 -> ok (rc=0)[0m
+[0;32mI (556776) BOX_TX:   notify BOX          28/40 len=286 -> ok (rc=0)[0m
+[0;32mI (556806) BOX_TX:   notify BOX          29/40 len=286 -> ok (rc=0)[0m
+[0;32mI (556856) BOX_TX:   notify BOX          30/40 len=286 -> ok (rc=0)[0m
+[0;32mI (556886) BOX_TX:   notify BOX          31/40 len=242 -> ok (rc=0)[0m
+[0;32mI (556916) BOX_TX:   notify BOX          32/40 len=198 -> ok (rc=0)[0m
+[0;32mI (556946) BOX_TX:   notify BOX          33/40 len=238 -> ok (rc=0)[0m
+[0;32mI (556976) BOX_TX:   notify BOX          34/40 len=286 -> ok (rc=0)[0m
+[0;32mI (557006) BOX_TX:   notify BOX          35/40 len=222 -> ok (rc=0)[0m
+[0;32mI (557056) BOX_TX:   notify BOX          36/40 len=286 -> ok (rc=0)[0m
+[0;32mI (557086) BOX_TX:   notify BOX          37/40 len=266 -> ok (rc=0)[0m
+[0;32mI (557116) BOX_TX:   notify BOX          38/40 len=238 -> ok (rc=0)[0m
+[0;32mI (557146) BOX_TX:   notify TRM          39/40 len= 43 -> ok (rc=0)[0m
+[0;32mI (557156) BOX_TX:   notify TRM          40/40 len= 43 -> ok (rc=0)[0m
+[0;32mI (557156) BOX_TX: session done token=0104 conn=2 delivered=40/40 rc=0[0m
+[0;32mI (561206) BOX_TX: subscription conn=2 notify=0[0m
+[0;32mI (561206) BOX_TX: incoming disconnect conn=2 reason=531[0m
+[0;32mI (570596) LINK: link=UP peer=CORE boot=2d30 | rx=1617 tx=1620 retx=0 dup=0 failed=0 | crc=0 cobs=1 len=0 | restarts=0 ups=1 downs=0 loop=0 drops=0[0m
+[0;32mI (577506) BOX_TX: incoming connect conn=1 peer=4f:23:fc:dd:31:e6/1[0m
+[0;32mI (577506) BOX_TX: advertising Box UUID, scan response: node id=aabbccddeeff flags=NODE|SERVING[0m
+[0;32mI (578096) BOX_TX: mtu conn=1 mtu=517[0m
+[0;32mI (578136) BOX_TX: subscription conn=1 notify=1[0m
+[0;32mI (578436) BOX_TX: subscribed conn=1 mtu=517 phone=? (no HELLO) -> CORE[0m
+[0;32mI (578476) BOX_TX: session start token=0105 conn=1 mtu=517 packets=40 (streaming)[0m
+[0;32mI (578476) BOX_TX:   notify SID          1/40 len= 43 -> ok (rc=0)[0m
+[0;32mI (578526) BOX_TX:   notify CDB          2/40 len=302 -> ok (rc=0)[0m
+[0;32mI (578556) BOX_TX:   notify BOX          3/40 len=286 -> ok (rc=0)[0m
+[0;32mI (578606) BOX_TX:   notify BOX          4/40 len=222 -> ok (rc=0)[0m
+[0;32mI (578636) BOX_TX:   notify BOX          5/40 len=286 -> ok (rc=0)[0m
+[0;32mI (578666) BOX_TX:   notify BOX          6/40 len=222 -> ok (rc=0)[0m
+[0;32mI (578716) BOX_TX:   notify BOX          7/40 len=286 -> ok (rc=0)[0m
+[0;32mI (578746) BOX_TX:   notify BOX          8/40 len=286 -> ok (rc=0)[0m
+[0;32mI (578776) BOX_TX:   notify BOX          9/40 len=198 -> ok (rc=0)[0m
+[0;32mI (578806) BOX_TX:   notify BOX          10/40 len=238 -> ok (rc=0)[0m
+[0;32mI (578836) BOX_TX:   notify BOX          11/40 len=202 -> ok (rc=0)[0m
+[0;32mI (578886) BOX_TX:   notify BOX          12/40 len=286 -> ok (rc=0)[0m
+[0;32mI (578916) BOX_TX:   notify BOX          13/40 len=286 -> ok (rc=0)[0m
+[0;32mI (578946) BOX_TX:   notify BOX          14/40 len=202 -> ok (rc=0)[0m
+[0;32mI (578996) BOX_TX:   notify BOX          15/40 len=286 -> ok (rc=0)[0m
+[0;32mI (579026) BOX_TX:   notify BOX          16/40 len=222 -> ok (rc=0)[0m
+[0;32mI (579056) BOX_TX:   notify BOX          17/40 len=198 -> ok (rc=0)[0m
+[0;32mI (579086) BOX_TX:   notify BOX          18/40 len=282 -> ok (rc=0)[0m
+[0;32mI (579116) BOX_TX:   notify BOX          19/40 len=198 -> ok (rc=0)[0m
+[0;32mI (579146) BOX_TX:   notify BOX          20/40 len=198 -> ok (rc=0)[0m
+[0;32mI (579176) BOX_TX:   notify BOX          21/40 len=145 -> ok (rc=0)[0m
+[0;32mI (579186) BOX_TX:   notify BOX          22/40 len=145 -> ok (rc=0)[0m
+[0;32mI (579216) BOX_TX:   notify BOX          23/40 len=198 -> ok (rc=0)[0m
+[0;32mI (579246) BOX_TX:   notify BOX          24/40 len=198 -> ok (rc=0)[0m
+[0;32mI (579276) BOX_TX:   notify BOX          25/40 len=218 -> ok (rc=0)[0m
+[0;32mI (579306) BOX_TX:   notify BOX          26/40 len=141 -> ok (rc=0)[0m
+[0;32mI (579316) BOX_TX:   notify BOX          27/40 len=145 -> ok (rc=0)[0m
+[0;32mI (579346) BOX_TX:   notify BOX          28/40 len=145 -> ok (rc=0)[0m
+[0;32mI (579356) BOX_TX:   notify BOX          29/40 len=145 -> ok (rc=0)[0m
+[0;32mI (579386) BOX_TX:   notify BOX          30/40 len=145 -> ok (rc=0)[0m
+[0;32mI (579396) BOX_TX:   notify BOX          31/40 len=145 -> ok (rc=0)[0m
+[0;32mI (579426) BOX_TX:   notify BOX          32/40 len=145 -> ok (rc=0)[0m
+[0;32mI (579436) BOX_TX:   notify BOX          33/40 len=145 -> ok (rc=0)[0m
+[0;32mI (579466) BOX_TX:   notify BOX          34/40 len=145 -> ok (rc=0)[0m
+[0;32mI (579476) BOX_TX:   notify BOX          35/40 len=145 -> ok (rc=0)[0m
+[0;32mI (579506) BOX_TX:   notify BOX          36/40 len=145 -> ok (rc=0)[0m
+[0;32mI (579516) BOX_TX:   notify BOX          37/40 len=145 -> ok (rc=0)[0m
+[0;32mI (579546) BOX_TX:   notify BOX          38/40 len=145 -> ok (rc=0)[0m
+[0;32mI (579576) BOX_TX:   notify TRM          39/40 len= 43 -> ok (rc=0)[0m
+[0;32mI (579586) BOX_TX:   notify TRM          40/40 len= 43 -> ok (rc=0)[0m
+[0;32mI (579586) BOX_TX: session done token=0105 conn=1 delivered=40/40 rc=0[0m
+[0;32mI (583646) BOX_TX: subscription conn=1 notify=0[0m
+[0;32mI (583646) BOX_TX: incoming disconnect conn=1 reason=531[0m
+[0;32mI (600596) LINK: link=UP peer=CORE boot=2d30 | rx=1720 tx=1723 retx=0 dup=0 failed=0 | crc=0 cobs=1 len=0 | restarts=0 ups=1 downs=0 loop=0 drops=0[0m
+[0;32mI (609906) BOX_TX: incoming connect conn=2 peer=62:11:9b:82:e9:98/1[0m
+[0;32mI (609906) BOX_TX: advertising Box UUID, scan response: node id=aabbccddeeff flags=NODE|SERVING[0m
+[0;32mI (610476) BOX_TX: mtu conn=2 mtu=517[0m
+[0;32mI (610496) BOX_TX: subscription conn=2 notify=1[0m
+[0;32mI (610806) BOX_TX: subscribed conn=2 mtu=517 phone=? (no HELLO) -> CORE[0m
+[0;32mI (610846) BOX_TX: session start token=0106 conn=2 mtu=517 packets=40 (streaming)[0m
+[0;32mI (610846) BOX_TX:   notify SID          1/40 len= 43 -> ok (rc=0)[0m
+[0;32mI (610896) BOX_TX:   notify CDB          2/40 len=302 -> ok (rc=0)[0m
+[0;32mI (610926) BOX_TX:   notify BOX          3/40 len=198 -> ok (rc=0)[0m
+[0;32mI (610956) BOX_TX:   notify BOX          4/40 len=286 -> ok (rc=0)[0m
+[0;32mI (611006) BOX_TX:   notify BOX          5/40 len=286 -> ok (rc=0)[0m
+[0;32mI (611036) BOX_TX:   notify BOX          6/40 len=286 -> ok (rc=0)[0m
+[0;32mI (611066) BOX_TX:   notify BOX          7/40 len=222 -> ok (rc=0)[0m
+[0;32mI (611116) BOX_TX:   notify BOX          8/40 len=286 -> ok (rc=0)[0m
+[0;32mI (611146) BOX_TX:   notify BOX          9/40 len=286 -> ok (rc=0)[0m
+[0;32mI (611176) BOX_TX:   notify BOX          10/40 len=242 -> ok (rc=0)[0m
+[0;32mI (611226) BOX_TX:   notify BOX          11/40 len=286 -> ok (rc=0)[0m
+[0;32mI (611256) BOX_TX:   notify BOX          12/40 len=286 -> ok (rc=0)[0m
+[0;32mI (611306) BOX_TX:   notify BOX          13/40 len=286 -> ok (rc=0)[0m
+[0;32mI (611336) BOX_TX:   notify BOX          14/40 len=202 -> ok (rc=0)[0m
+[0;32mI (611366) BOX_TX:   notify BOX          15/40 len=286 -> ok (rc=0)[0m
+[0;32mI (611416) BOX_TX:   notify BOX          16/40 len=266 -> ok (rc=0)[0m
+[0;32mI (611446) BOX_TX:   notify BOX          17/40 len=266 -> ok (rc=0)[0m
+[0;32mI (611496) BOX_TX:   notify BOX          18/40 len=286 -> ok (rc=0)[0m
+[0;32mI (611526) BOX_TX:   notify BOX          19/40 len=218 -> ok (rc=0)[0m
+[0;32mI (611556) BOX_TX:   notify BOX          20/40 len=286 -> ok (rc=0)[0m
+[0;32mI (611606) BOX_TX:   notify BOX          21/40 len=286 -> ok (rc=0)[0m
+[0;32mI (611636) BOX_TX:   notify BOX          22/40 len=222 -> ok (rc=0)[0m
+[0;32mI (611666) BOX_TX:   notify BOX          23/40 len=218 -> ok (rc=0)[0m
+[0;32mI (611696) BOX_TX:   notify BOX          24/40 len=218 -> ok (rc=0)[0m
+[0;32mI (611726) BOX_TX:   notify BOX          25/40 len=198 -> ok (rc=0)[0m
+[0;32mI (611756) BOX_TX:   notify BOX          26/40 len=218 -> ok (rc=0)[0m
+[0;32mI (611786) BOX_TX:   notify BOX          27/40 len=218 -> ok (rc=0)[0m
+[0;32mI (611816) BOX_TX:   notify BOX          28/40 len=286 -> ok (rc=0)[0m
+[0;32mI (611866) BOX_TX:   notify BOX          29/40 len=266 -> ok (rc=0)[0m
+[0;32mI (611916) BOX_TX:   notify BOX          30/40 len=286 -> ok (rc=0)[0m
+[0;32mI (611946) BOX_TX:   notify BOX          31/40 len=266 -> ok (rc=0)[0m
+[0;32mI (611976) BOX_TX:   notify BOX          32/40 len=198 -> ok (rc=0)[0m
+[0;32mI (612026) BOX_TX:   notify BOX          33/40 len=286 -> ok (rc=0)[0m
+[0;32mI (612056) BOX_TX:   notify BOX          34/40 len=266 -> ok (rc=0)[0m
+[0;32mI (612106) BOX_TX:   notify BOX          35/40 len=286 -> ok (rc=0)[0m
+[0;32mI (612136) BOX_TX:   notify BOX          36/40 len=222 -> ok (rc=0)[0m
+[0;32mI (612166) BOX_TX:   notify BOX          37/40 len=286 -> ok (rc=0)[0m
+[0;32mI (612196) BOX_TX:   notify BOX          38/40 len=242 -> ok (rc=0)[0m
+[0;32mI (612226) BOX_TX:   notify TRM          39/40 len= 43 -> ok (rc=0)[0m
+[0;32mI (612236) BOX_TX:   notify TRM          40/40 len= 43 -> ok (rc=0)[0m
+[0;32mI (612236) BOX_TX: session done token=0106 conn=2 delivered=40/40 rc=0[0m
+[0;32mI (616256) BOX_TX: subscription conn=2 notify=0[0m
+[0;32mI (616256) BOX_TX: incoming disconnect conn=2 reason=531[0m
+[0;32mI (630596) LINK: link=UP peer=CORE boot=2d30 | rx=1823 tx=1826 retx=0 dup=0 failed=0 | crc=0 cobs=1 len=0 | restarts=0 ups=1 downs=0 loop=0 drops=0[0m
+[0;32mI (660596) LINK: link=UP peer=CORE boot=2d30 | rx=1883 tx=1886 retx=0 dup=0 failed=0 | crc=0 cobs=1 len=0 | restarts=0 ups=1 downs=0 loop=0 drops=0[0m
+[0;32mI (670596) BOX_TX: incoming connect conn=1 peer=66:cd:f2:eb:fc:03/1[0m
+[0;32mI (670596) BOX_TX: advertising Box UUID, scan response: node id=aabbccddeeff flags=NODE|SERVING[0m
+[0;32mI (671156) BOX_TX: mtu conn=1 mtu=517[0m
+[0;32mI (671196) BOX_TX: subscription conn=1 notify=1[0m
+[0;32mI (671496) BOX_TX: subscribed conn=1 mtu=517 phone=? (no HELLO) -> CORE[0m
+[0;32mI (671536) BOX_TX: session start token=0107 conn=1 mtu=517 packets=40 (streaming)[0m
+[0;32mI (671536) BOX_TX:   notify SID          1/40 len= 43 -> ok (rc=0)[0m
+[0;32mI (671586) BOX_TX:   notify CDB          2/40 len=302 -> ok (rc=0)[0m
+[0;32mI (671616) BOX_TX:   notify BOX          3/40 len=266 -> ok (rc=0)[0m
+[0;32mI (671666) BOX_TX:   notify BOX          4/40 len=286 -> ok (rc=0)[0m
+[0;32mI (671696) BOX_TX:   notify BOX          5/40 len=286 -> ok (rc=0)[0m
+[0;32mI (671746) BOX_TX:   notify BOX          6/40 len=286 -> ok (rc=0)[0m
+[0;32mI (671776) BOX_TX:   notify BOX          7/40 len=286 -> ok (rc=0)[0m
+[0;32mI (671826) BOX_TX:   notify BOX          8/40 len=286 -> ok (rc=0)[0m
+[0;32mI (671856) BOX_TX:   notify BOX          9/40 len=242 -> ok (rc=0)[0m
+[0;32mI (671886) BOX_TX:   notify BOX          10/40 len=198 -> ok (rc=0)[0m
+[0;32mI (671916) BOX_TX:   notify BOX          11/40 len=238 -> ok (rc=0)[0m
+[0;32mI (671946) BOX_TX:   notify BOX          12/40 len=286 -> ok (rc=0)[0m
+[0;32mI (671976) BOX_TX:   notify BOX          13/40 len=222 -> ok (rc=0)[0m
+[0;32mI (672026) BOX_TX:   notify BOX          14/40 len=286 -> ok (rc=0)[0m
+[0;32mI (672056) BOX_TX:   notify BOX          15/40 len=266 -> ok (rc=0)[0m
+[0;32mI (672086) BOX_TX:   notify BOX          16/40 len=238 -> ok (rc=0)[0m
+[0;32mI (672136) BOX_TX:   notify BOX          17/40 len=286 -> ok (rc=0)[0m
+[0;32mI (672166) BOX_TX:   notify BOX          18/40 len=222 -> ok (rc=0)[0m
+[0;32mI (672196) BOX_TX:   notify BOX          19/40 len=286 -> ok (rc=0)[0m
+[0;32mI (672226) BOX_TX:   notify BOX          20/40 len=222 -> ok (rc=0)[0m
+[0;32mI (672276) BOX_TX:   notify BOX          21/40 len=286 -> ok (rc=0)[0m
+[0;32mI (672306) BOX_TX:   notify BOX          22/40 len=286 -> ok (rc=0)[0m
+[0;32mI (672336) BOX_TX:   notify BOX          23/40 len=198 -> ok (rc=0)[0m
+[0;32mI (672366) BOX_TX:   notify BOX          24/40 len=238 -> ok (rc=0)[0m
+[0;32mI (672396) BOX_TX:   notify BOX          25/40 len=202 -> ok (rc=0)[0m
+[0;32mI (672446) BOX_TX:   notify BOX          26/40 len=286 -> ok (rc=0)[0m
+[0;32mI (672476) BOX_TX:   notify BOX          27/40 len=286 -> ok (rc=0)[0m
+[0;32mI (672506) BOX_TX:   notify BOX          28/40 len=202 -> ok (rc=0)[0m
+[0;32mI (672556) BOX_TX:   notify BOX          29/40 len=286 -> ok (rc=0)[0m
+[0;32mI (672586) BOX_TX:   notify BOX          30/40 len=222 -> ok (rc=0)[0m
+[0;32mI (672616) BOX_TX:   notify BOX          31/40 len=198 -> ok (rc=0)[0m
+[0;32mI (672646) BOX_TX:   notify BOX          32/40 len=282 -> ok (rc=0)[0m
+[0;32mI (672676) BOX_TX:   notify BOX          33/40 len=198 -> ok (rc=0)[0m
+[0;32mI (672706) BOX_TX:   notify BOX          34/40 len=198 -> ok (rc=0)[0m
+[0;32mI (672736) BOX_TX:   notify BOX          35/40 len=145 -> ok (rc=0)[0m
+[0;32mI (672746) BOX_TX:   notify BOX          36/40 len=145 -> ok (rc=0)[0m
+[0;32mI (672776) BOX_TX:   notify BOX          37/40 len=198 -> ok (rc=0)[0m
+[0;32mI (672806) BOX_TX:   notify BOX          38/40 len=198 -> ok (rc=0)[0m
+[0;32mI (672836) BOX_TX:   notify TRM          39/40 len= 43 -> ok (rc=0)[0m
+[0;32mI (672846) BOX_TX:   notify TRM          40/40 len= 43 -> ok (rc=0)[0m
+[0;32mI (672846) BOX_TX: session done token=0107 conn=1 delivered=40/40 rc=0[0m
+[0;32mI (676886) BOX_TX: subscription conn=1 notify=0[0m
+[0;32mI (676886) BOX_TX: incoming disconnect conn=1 reason=531[0m
+[0;32mI (690596) LINK: link=UP peer=CORE boot=2d30 | rx=1986 tx=1989 retx=0 dup=0 failed=0 | crc=0 cobs=1 len=0 | restarts=0 ups=1 downs=0 loop=0 drops=0[0m
+[0;32mI (708486) BOX_TX: incoming connect conn=2 peer=43:7e:e4:92:5a:7f/1[0m
+[0;32mI (708486) BOX_TX: advertising Box UUID, scan response: node id=aabbccddeeff flags=NODE|SERVING[0m
+[0;32mI (709066) BOX_TX: mtu conn=2 mtu=517[0m
+[0;32mI (709096) BOX_TX: subscription conn=2 notify=1[0m
+[0;32mI (709396) BOX_TX: subscribed conn=2 mtu=517 phone=? (no HELLO) -> CORE[0m
+[0;32mI (709436) BOX_TX: session start token=0108 conn=2 mtu=517 packets=40 (streaming)[0m
+[0;32mI (709436) BOX_TX:   notify SID          1/40 len= 43 -> ok (rc=0)[0m
+[0;32mI (709486) BOX_TX:   notify CDB          2/40 len=302 -> ok (rc=0)[0m
+[0;32mI (709516) BOX_TX:   notify BOX          3/40 len=218 -> ok (rc=0)[0m
+[0;32mI (709526) BOX_TX:   notify BOX          4/40 len=141 -> ok (rc=0)[0m
+[0;32mI (709556) BOX_TX:   notify BOX          5/40 len=145 -> ok (rc=0)[0m
+[0;32mI (709586) BOX_TX:   notify BOX          6/40 len=145 -> ok (rc=0)[0m
+[0;32mI (709616) BOX_TX:   notify BOX          7/40 len=145 -> ok (rc=0)[0m
+[0;32mI (709626) BOX_TX:   notify BOX          8/40 len=145 -> ok (rc=0)[0m
+[0;32mI (709656) BOX_TX:   notify BOX          9/40 len=145 -> ok (rc=0)[0m
+[0;32mI (709686) BOX_TX:   notify BOX          10/40 len=145 -> ok (rc=0)[0m
+[0;32mI (709696) BOX_TX:   notify BOX          11/40 len=145 -> ok (rc=0)[0m
+[0;32mI (709726) BOX_TX:   notify BOX          12/40 len=145 -> ok (rc=0)[0m
+[0;32mI (709736) BOX_TX:   notify BOX          13/40 len=145 -> ok (rc=0)[0m
+[0;32mI (709766) BOX_TX:   notify BOX          14/40 len=145 -> ok (rc=0)[0m
+[0;32mI (709776) BOX_TX:   notify BOX          15/40 len=145 -> ok (rc=0)[0m
+[0;32mI (709806) BOX_TX:   notify BOX          16/40 len=145 -> ok (rc=0)[0m
+[0;32mI (709836) BOX_TX:   notify BOX          17/40 len=198 -> ok (rc=0)[0m
+[0;32mI (709866) BOX_TX:   notify BOX          18/40 len=286 -> ok (rc=0)[0m
+[0;32mI (709916) BOX_TX:   notify BOX          19/40 len=286 -> ok (rc=0)[0m
+[0;32mI (709946) BOX_TX:   notify BOX          20/40 len=286 -> ok (rc=0)[0m
+[0;32mI (709976) BOX_TX:   notify BOX          21/40 len=222 -> ok (rc=0)[0m
+[0;32mI (710026) BOX_TX:   notify BOX          22/40 len=286 -> ok (rc=0)[0m
+[0;32mI (710056) BOX_TX:   notify BOX          23/40 len=286 -> ok (rc=0)[0m
+[0;32mI (710086) BOX_TX:   notify BOX          24/40 len=242 -> ok (rc=0)[0m
+[0;32mI (710136) BOX_TX:   notify BOX          25/40 len=286 -> ok (rc=0)[0m
+[0;32mI (710166) BOX_TX:   notify BOX          26/40 len=286 -> ok (rc=0)[0m
+[0;32mI (710216) BOX_TX:   notify BOX          27/40 len=286 -> ok (rc=0)[0m
+[0;32mI (710246) BOX_TX:   notify BOX          28/40 len=202 -> ok (rc=0)[0m
+[0;32mI (710276) BOX_TX:   notify BOX          29/40 len=286 -> ok (rc=0)[0m
+[0;32mI (710326) BOX_TX:   notify BOX          30/40 len=266 -> ok (rc=0)[0m
+[0;32mI (710356) BOX_TX:   notify BOX          31/40 len=266 -> ok (rc=0)[0m
+[0;32mI (710406) BOX_TX:   notify BOX          32/40 len=286 -> ok (rc=0)[0m
+[0;32mI (710436) BOX_TX:   notify BOX          33/40 len=218 -> ok (rc=0)[0m
+[0;32mI (710466) BOX_TX:   notify BOX          34/40 len=286 -> ok (rc=0)[0m
+[0;32mI (710516) BOX_TX:   notify BOX          35/40 len=286 -> ok (rc=0)[0m
+[0;32mI (710546) BOX_TX:   notify BOX          36/40 len=222 -> ok (rc=0)[0m
+[0;32mI (710576) BOX_TX:   notify BOX          37/40 len=218 -> ok (rc=0)[0m
+[0;32mI (710606) BOX_TX:   notify BOX          38/40 len=218 -> ok (rc=0)[0m
+[0;32mI (710616) BOX_TX:   notify TRM          39/40 len= 43 -> ok (rc=0)[0m
+[0;32mI (710646) BOX_TX:   notify TRM          40/40 len= 43 -> ok (rc=0)[0m
+[0;32mI (710646) BOX_TX: session done token=0108 conn=2 delivered=40/40 rc=0[0m
+[0;32mI (714686) BOX_TX: subscription conn=2 notify=0[0m
+[0;32mI (714686) BOX_TX: incoming disconnect conn=2 reason=531[0m
+[0;32mI (720596) LINK: link=UP peer=CORE boot=2d30 | rx=2089 tx=2092 retx=0 dup=0 failed=0 | crc=0 cobs=1 len=0 | restarts=0 ups=1 downs=0 loop=0 drops=0[0m
+[0;32mI (735216) BOX_TX: incoming connect conn=1 peer=5a:93:41:74:c7:29/1[0m
+[0;32mI (735216) BOX_TX: advertising Box UUID, scan response: node id=aabbccddeeff flags=NODE|SERVING[0m
+[0;32mI (735786) BOX_TX: mtu conn=1 mtu=517[0m
+[0;32mI (735816) BOX_TX: subscription conn=1 notify=1[0m
+[0;32mI (736116) BOX_TX: subscribed conn=1 mtu=517 phone=? (no HELLO) -> CORE[0m
+[0;32mI (736156) BOX_TX: session start token=0109 conn=1 mtu=517 packets=40 (streaming)[0m
+[0;32mI (736156) BOX_TX:   notify SID          1/40 len= 43 -> ok (rc=0)[0m
+[0;32mI (736206) BOX_TX:   notify CDB          2/40 len=302 -> ok (rc=0)[0m
+[0;32mI (736236) BOX_TX:   notify BOX          3/40 len=198 -> ok (rc=0)[0m
+[0;32mI (736266) BOX_TX:   notify BOX          4/40 len=218 -> ok (rc=0)[0m
+[0;32mI (736296) BOX_TX:   notify BOX          5/40 len=218 -> ok (rc=0)[0m
+[0;32mI (736326) BOX_TX:   notify BOX          6/40 len=286 -> ok (rc=0)[0m
+[0;32mI (736376) BOX_TX:   notify BOX          7/40 len=266 -> ok (rc=0)[0m
+[0;32mI (736406) BOX_TX:   notify BOX          8/40 len=286 -> ok (rc=0)[0m
+[0;32mI (736456) BOX_TX:   notify BOX          9/40 len=266 -> ok (rc=0)[0m
+[0;32mI (736486) BOX_TX:   notify BOX          10/40 len=198 -> ok (rc=0)[0m
+[0;32mI (736516) BOX_TX:   notify BOX          11/40 len=286 -> ok (rc=0)[0m
+[0;32mI (736566) BOX_TX:   notify BOX          12/40 len=266 -> ok (rc=0)[0m
+[0;32mI (736596) BOX_TX:   notify BOX          13/40 len=286 -> ok (rc=0)[0m
+[0;32mI (736626) BOX_TX:   notify BOX          14/40 len=222 -> ok (rc=0)[0m
+[0;32mI (736676) BOX_TX:   notify BOX          15/40 len=286 -> ok (rc=0)[0m
+[0;32mI (736706) BOX_TX:   notify BOX          16/40 len=242 -> ok (rc=0)[0m
+[0;32mI (736736) BOX_TX:   notify BOX          17/40 len=266 -> ok (rc=0)[0m
+[0;32mI (736786) BOX_TX:   notify BOX          18/40 len=286 -> ok (rc=0)[0m
+[0;32mI (736816) BOX_TX:   notify BOX          19/40 len=286 -> ok (rc=0)[0m
+[0;32mI (736866) BOX_TX:   notify BOX          20/40 len=286 -> ok (rc=0)[0m
+[0;32mI (736896) BOX_TX:   notify BOX          21/40 len=286 -> ok (rc=0)[0m
+[0;32mI (736946) BOX_TX:   notify BOX          22/40 len=286 -> ok (rc=0)[0m
+[0;32mI (736976) BOX_TX:   notify BOX          23/40 len=242 -> ok (rc=0)[0m
+[0;32mI (737006) BOX_TX:   notify BOX          24/40 len=198 -> ok (rc=0)[0m
+[0;32mI (737036) BOX_TX:   notify BOX          25/40 len=238 -> ok (rc=0)[0m
+[0;32mI (737066) BOX_TX:   notify BOX          26/40 len=286 -> ok (rc=0)[0m
+[0;32mI (737096) BOX_TX:   notify BOX          27/40 len=222 -> ok (rc=0)[0m
+[0;32mI (737146) BOX_TX:   notify BOX          28/40 len=286 -> ok (rc=0)[0m
+[0;32mI (737176) BOX_TX:   notify BOX          29/40 len=266 -> ok (rc=0)[0m
+[0;32mI (737206) BOX_TX:   notify BOX          30/40 len=238 -> ok (rc=0)[0m
+[0;32mI (737256) BOX_TX:   notify BOX          31/40 len=286 -> ok (rc=0)[0m
+[0;32mI (737286) BOX_TX:   notify BOX          32/40 len=222 -> ok (rc=0)[0m
+[0;32mI (737316) BOX_TX:   notify BOX          33/40 len=286 -> ok (rc=0)[0m
+[0;32mI (737346) BOX_TX:   notify BOX          34/40 len=222 -> ok (rc=0)[0m
+[0;32mI (737396) BOX_TX:   notify BOX          35/40 len=286 -> ok (rc=0)[0m
+[0;32mI (737426) BOX_TX:   notify BOX          36/40 len=286 -> ok (rc=0)[0m
+[0;32mI (737456) BOX_TX:   notify BOX          37/40 len=198 -> ok (rc=0)[0m
+[0;32mI (737506) BOX_TX:   notify BOX          38/40 len=238 -> ok (rc=0)[0m
+[0;32mI (737516) BOX_TX:   notify TRM          39/40 len= 43 -> ok (rc=0)[0m
+[0;32mI (737546) BOX_TX:   notify TRM          40/40 len= 43 -> ok (rc=0)[0m
+[0;32mI (737546) BOX_TX: session done token=0109 conn=1 delivered=40/40 rc=0[0m
+[0;32mI (741596) BOX_TX: subscription conn=1 notify=0[0m
+[0;32mI (741596) BOX_TX: incoming disconnect conn=1 reason=531[0m
+[0;32mI (750596) LINK: link=UP peer=CORE boot=2d30 | rx=2192 tx=2195 retx=0 dup=0 failed=0 | crc=0 cobs=1 len=0 | restarts=0 ups=1 downs=0 loop=0 drops=0[0m
+[0;32mI (780596) LINK: link=UP peer=CORE boot=2d30 | rx=2252 tx=2255 retx=0 dup=0 failed=0 | crc=0 cobs=1 len=0 | restarts=0 ups=1 downs=0 loop=0 drops=0[0m
+[0;32mI (796986) BOX_TX: incoming connect conn=2 peer=66:fd:e3:38:5c:c1/1[0m
+[0;32mI (796996) BOX_TX: advertising Box UUID, scan response: node id=aabbccddeeff flags=NODE|SERVING[0m
+[0;32mI (797586) BOX_TX: mtu conn=2 mtu=517[0m
+[0;32mI (797626) BOX_TX: HELLO conn=2 phone=6a6dc1733925 flags=04[0m
+[0;32mI (797656) BOX_TX: subscription conn=2 notify=1[0m
+[0;32mI (797656) BOX_TX: subscribed conn=2 mtu=517 phone=6a6dc1733925 -> CORE[0m
+[0;32mI (797716) BOX_TX: session start token=010a conn=2 mtu=517 packets=4 (streaming)[0m
+[0;32mI (797716) BOX_TX:   notify SID          1/4 len= 43 -> ok (rc=0)[0m
+[0;32mI (797746) BOX_TX:   notify CDB          2/4 len=302 -> ok (rc=0)[0m
+[0;32mI (797776) BOX_TX:   notify TRM          3/4 len= 43 -> ok (rc=0)[0m
+[0;32mI (797786) BOX_TX:   notify TRM          4/4 len= 43 -> ok (rc=0)[0m
+[0;32mI (797786) BOX_TX: session done token=010a conn=2 delivered=4/4 rc=0[0m
+[0;32mI (801836) BOX_TX: subscription conn=2 notify=0[0m
+[0;32mI (801836) BOX_TX: incoming disconnect conn=2 reason=531[0m
+[0;32mI (810596) LINK: link=UP peer=CORE boot=2d30 | rx=2319 tx=2322 retx=0 dup=0 failed=0 | crc=0 cobs=1 len=0 | restarts=0 ups=1 downs=0 loop=0 drops=0[0m
+[0;32mI (829786) BOX_TX: incoming connect conn=1 peer=4f:03:7f:e4:be:99/1[0m
+[0;32mI (829786) BOX_TX: advertising Box UUID, scan response: node id=aabbccddeeff flags=NODE|SERVING[0m
+[0;32mI (830336) BOX_TX: mtu conn=1 mtu=517[0m
+[0;32mI (830366) BOX_TX: subscription conn=1 notify=1[0m
+[0;32mI (830666) BOX_TX: subscribed conn=1 mtu=517 phone=? (no HELLO) -> CORE[0m
+[0;32mI (830706) BOX_TX: session start token=010b conn=1 mtu=517 packets=40 (streaming)[0m
+[0;32mI (830706) BOX_TX:   notify SID          1/40 len= 43 -> ok (rc=0)[0m
+[0;32mI (830756) BOX_TX:   notify CDB          2/40 len=302 -> ok (rc=0)[0m
+[0;32mI (830786) BOX_TX:   notify BOX          3/40 len=202 -> ok (rc=0)[0m
+[0;32mI (830816) BOX_TX:   notify BOX          4/40 len=286 -> ok (rc=0)[0m
+[0;32mI (830866) BOX_TX:   notify BOX          5/40 len=286 -> ok (rc=0)[0m
+[0;32mI (830896) BOX_TX:   notify BOX          6/40 len=202 -> ok (rc=0)[0m
+[0;32mI (830926) BOX_TX:   notify BOX          7/40 len=286 -> ok (rc=0)[0m
+[0;32mI (830956) BOX_TX:   notify BOX          8/40 len=222 -> ok (rc=0)[0m
+[0;32mI (830986) BOX_TX:   notify BOX          9/40 len=198 -> ok (rc=0)[0m
+[0;32mI (831036) BOX_TX:   notify BOX          10/40 len=282 -> ok (rc=0)[0m
+[0;32mI (831066) BOX_TX:   notify BOX          11/40 len=198 -> ok (rc=0)[0m
+[0;32mI (831096) BOX_TX:   notify BOX          12/40 len=198 -> ok (rc=0)[0m
+[0;32mI (831126) BOX_TX:   notify BOX          13/40 len=145 -> ok (rc=0)[0m
+[0;32mI (831156) BOX_TX:   notify BOX          14/40 len=145 -> ok (rc=0)[0m
+[0;32mI (831186) BOX_TX:   notify BOX          15/40 len=198 -> ok (rc=0)[0m
+[0;32mI (831216) BOX_TX:   notify BOX          16/40 len=198 -> ok (rc=0)[0m
+[0;32mI (831246) BOX_TX:   notify BOX          17/40 len=218 -> ok (rc=0)[0m
+[0;32mI (831276) BOX_TX:   notify BOX          18/40 len=141 -> ok (rc=0)[0m
+[0;32mI (831306) BOX_TX:   notify BOX          19/40 len=145 -> ok (rc=0)[0m
+[0;32mI (831336) BOX_TX:   notify BOX          20/40 len=145 -> ok (rc=0)[0m
+[0;32mI (831366) BOX_TX:   notify BOX          21/40 len=145 -> ok (rc=0)[0m
+[0;32mI (831396) BOX_TX:   notify BOX          22/40 len=145 -> ok (rc=0)[0m
+[0;32mI (831426) BOX_TX:   notify BOX          23/40 len=145 -> ok (rc=0)[0m
+[0;32mI (831456) BOX_TX:   notify BOX          24/40 len=145 -> ok (rc=0)[0m
+[0;32mI (831486) BOX_TX:   notify BOX          25/40 len=145 -> ok (rc=0)[0m
+[0;32mI (831516) BOX_TX:   notify BOX          26/40 len=145 -> ok (rc=0)[0m
+[0;32mI (831546) BOX_TX:   notify BOX          27/40 len=145 -> ok (rc=0)[0m
+[0;32mI (831576) BOX_TX:   notify BOX          28/40 len=145 -> ok (rc=0)[0m
+[0;32mI (831606) BOX_TX:   notify BOX          29/40 len=145 -> ok (rc=0)[0m
+[0;32mI (831636) BOX_TX:   notify BOX          30/40 len=145 -> ok (rc=0)[0m
+[0;32mI (831666) BOX_TX:   notify BOX          31/40 len=198 -> ok (rc=0)[0m
+[0;32mI (831696) BOX_TX:   notify BOX          32/40 len=286 -> ok (rc=0)[0m
+[0;32mI (831746) BOX_TX:   notify BOX          33/40 len=286 -> ok (rc=0)[0m
+[0;32mI (831776) BOX_TX:   notify BOX          34/40 len=286 -> ok (rc=0)[0m
+[0;32mI (831806) BOX_TX:   notify BOX          35/40 len=222 -> ok (rc=0)[0m
+[0;32mI (831856) BOX_TX:   notify BOX          36/40 len=286 -> ok (rc=0)[0m
+[0;32mI (831886) BOX_TX:   notify BOX          37/40 len=286 -> ok (rc=0)[0m
+[0;32mI (831916) BOX_TX:   notify BOX          38/40 len=242 -> ok (rc=0)[0m
+[0;32mI (831946) BOX_TX:   notify TRM          39/40 len= 43 -> ok (rc=0)[0m
+[0;32mI (831956) BOX_TX:   notify TRM          40/40 len= 43 -> ok (rc=0)[0m
+[0;32mI (831956) BOX_TX: session done token=010b conn=1 delivered=40/40 rc=0[0m
+[0;32mI (835996) BOX_TX: subscription conn=1 notify=0[0m
+[0;32mI (835996) BOX_TX: incoming disconnect conn=1 reason=531[0m
+[0;32mI (840596) LINK: link=UP peer=CORE boot=2d30 | rx=2421 tx=2424 retx=0 dup=0 failed=0 | crc=0 cobs=1 len=0 | restarts=0 ups=1 downs=0 loop=0 drops=0[0m
+[0;32mI (868726) BOX_TX: incoming connect conn=2 peer=4d:97:51:38:64:e0/1[0m
+[0;32mI (868726) BOX_TX: advertising Box UUID, scan response: node id=aabbccddeeff flags=NODE|SERVING[0m
+[0;32mI (869296) BOX_TX: mtu conn=2 mtu=517[0m
+[0;32mI (869336) BOX_TX: subscription conn=2 notify=1[0m
+[0;32mI (869636) BOX_TX: subscribed conn=2 mtu=517 phone=? (no HELLO) -> CORE[0m
+[0;32mI (869676) BOX_TX: session start token=010c conn=2 mtu=517 packets=40 (streaming)[0m
+[0;32mI (869676) BOX_TX:   notify SID          1/40 len= 43 -> ok (rc=0)[0m
+[0;32mI (869726) BOX_TX:   notify CDB          2/40 len=302 -> ok (rc=0)[0m
+[0;32mI (869756) BOX_TX:   notify BOX          3/40 len=286 -> ok (rc=0)[0m
+[0;32mI (869806) BOX_TX:   notify BOX          4/40 len=286 -> ok (rc=0)[0m
+[0;32mI (869836) BOX_TX:   notify BOX          5/40 len=202 -> ok (rc=0)[0m
+[0;32mI (869866) BOX_TX:   notify BOX          6/40 len=286 -> ok (rc=0)[0m
+[0;32mI (869916) BOX_TX:   notify BOX          7/40 len=266 -> ok (rc=0)[0m
+[0;32mI (869946) BOX_TX:   notify BOX          8/40 len=266 -> ok (rc=0)[0m
+[0;32mI (869996) BOX_TX:   notify BOX          9/40 len=286 -> ok (rc=0)[0m
+[0;32mI (870026) BOX_TX:   notify BOX          10/40 len=218 -> ok (rc=0)[0m
+[0;32mI (870056) BOX_TX:   notify BOX          11/40 len=286 -> ok (rc=0)[0m
+[0;32mI (870106) BOX_TX:   notify BOX          12/40 len=286 -> ok (rc=0)[0m
+[0;32mI (870136) BOX_TX:   notify BOX          13/40 len=222 -> ok (rc=0)[0m
+[0;32mI (870166) BOX_TX:   notify BOX          14/40 len=218 -> ok (rc=0)[0m
+[0;32mI (870196) BOX_TX:   notify BOX          15/40 len=218 -> ok (rc=0)[0m
+[0;32mI (870226) BOX_TX:   notify BOX          16/40 len=198 -> ok (rc=0)[0m
+[0;32mI (870256) BOX_TX:   notify BOX          17/40 len=218 -> ok (rc=0)[0m
+[0;32mI (870286) BOX_TX:   notify BOX          18/40 len=218 -> ok (rc=0)[0m
+[0;32mI (870316) BOX_TX:   notify BOX          19/40 len=286 -> ok (rc=0)[0m
+[0;32mI (870366) BOX_TX:   notify BOX          20/40 len=266 -> ok (rc=0)[0m
+[0;32mI (870396) BOX_TX:   notify BOX          21/40 len=286 -> ok (rc=0)[0m
+[0;32mI (870446) BOX_TX:   notify BOX          22/40 len=266 -> ok (rc=0)[0m
+[0;32mI (870476) BOX_TX:   notify BOX          23/40 len=198 -> ok (rc=0)[0m
+[0;32mI (870506) BOX_TX:   notify BOX          24/40 len=286 -> ok (rc=0)[0m
+[0;32mI (870556) BOX_TX:   notify BOX          25/40 len=266 -> ok (rc=0)[0m
+[0;32mI (870586) BOX_TX:   notify BOX          26/40 len=286 -> ok (rc=0)[0m
+[0;32mI (870596) LINK: link=UP peer=CORE boot=2d30 | rx=2508 tx=2511 retx=0 dup=0 failed=0 | crc=0 cobs=1 len=0 | restarts=0 ups=1 downs=0 loop=0 drops=0[0m
+[0;32mI (870616) BOX_TX:   notify BOX          27/40 len=222 -> ok (rc=0)[0m
+[0;32mI (870666) BOX_TX:   notify BOX          28/40 len=286 -> ok (rc=0)[0m
+[0;32mI (870696) BOX_TX:   notify BOX          29/40 len=242 -> ok (rc=0)[0m
+[0;32mI (870746) BOX_TX:   notify BOX          30/40 len=266 -> ok (rc=0)[0m
+[0;32mI (870776) BOX_TX:   notify BOX          31/40 len=286 -> ok (rc=0)[0m
+[0;32mI (870826) BOX_TX:   notify BOX          32/40 len=286 -> ok (rc=0)[0m
+[0;32mI (870856) BOX_TX:   notify BOX          33/40 len=286 -> ok (rc=0)[0m
+[0;32mI (870906) BOX_TX:   notify BOX          34/40 len=286 -> ok (rc=0)[0m
+[0;32mI (870936) BOX_TX:   notify BOX          35/40 len=286 -> ok (rc=0)[0m
+[0;32mI (870966) BOX_TX:   notify BOX          36/40 len=242 -> ok (rc=0)[0m
+[0;32mI (870996) BOX_TX:   notify BOX          37/40 len=198 -> ok (rc=0)[0m
+[0;32mI (871026) BOX_TX:   notify BOX          38/40 len=238 -> ok (rc=0)[0m
+[0;32mI (871056) BOX_TX:   notify TRM          39/40 len= 43 -> ok (rc=0)[0m
+[0;32mI (871066) BOX_TX:   notify TRM          40/40 len= 43 -> ok (rc=0)[0m
+[0;32mI (871066) BOX_TX: session done token=010c conn=2 delivered=40/40 rc=0[0m
+[0;32mI (875146) BOX_TX: subscription conn=2 notify=0[0m
+[0;32mI (875146) BOX_TX: incoming disconnect conn=2 reason=531[0m
+[0;32mI (900596) LINK: link=UP peer=CORE boot=2d30 | rx=2584 tx=2587 retx=0 dup=0 failed=0 | crc=0 cobs=1 len=0 | restarts=0 ups=1 downs=0 loop=0 drops=0[0m
+[0;32mI (900706) BOX_TX: incoming connect conn=1 peer=43:22:12:76:55:a9/1[0m
+[0;32mI (900706) BOX_TX: advertising Box UUID, scan response: node id=aabbccddeeff flags=NODE|SERVING[0m
+[0;32mI (901266) BOX_TX: mtu conn=1 mtu=517[0m
+[0;32mI (901306) BOX_TX: HELLO conn=1 phone=6a6dc1733925 flags=04[0m
+[0;32mI (901326) BOX_TX: subscription conn=1 notify=1[0m
+[0;32mI (901326) BOX_TX: subscribed conn=1 mtu=517 phone=6a6dc1733925 -> CORE[0m
+[0;32mI (901386) BOX_TX: session start token=010d conn=1 mtu=517 packets=4 (streaming)[0m
+[0;32mI (901386) BOX_TX:   notify SID          1/4 len= 43 -> ok (rc=0)[0m
+[0;32mI (901416) BOX_TX:   notify CDB          2/4 len=302 -> ok (rc=0)[0m
+[0;32mI (901446) BOX_TX:   notify TRM          3/4 len= 43 -> ok (rc=0)[0m
+[0;32mI (901456) BOX_TX:   notify TRM          4/4 len= 43 -> ok (rc=0)[0m
+[0;32mI (901456) BOX_TX: session done token=010d conn=1 delivered=4/4 rc=0[0m
+[0;32mI (905516) BOX_TX: subscription conn=1 notify=0[0m
+[0;32mI (905516) BOX_TX: incoming disconnect conn=1 reason=531[0m
+[0;32mI (917926) BOX_TX: incoming connect conn=2 peer=55:21:d2:d6:3f:ff/1[0m
+[0;32mI (917926) BOX_TX: advertising Box UUID, scan response: node id=aabbccddeeff flags=NODE|SERVING[0m
+[0;32mI (918516) BOX_TX: mtu conn=2 mtu=517[0m
+[0;32mI (918556) BOX_TX: subscription conn=2 notify=1[0m
+[0;32mI (918856) BOX_TX: subscribed conn=2 mtu=517 phone=? (no HELLO) -> CORE[0m
+[0;32mI (918896) BOX_TX: session start token=010e conn=2 mtu=517 packets=40 (streaming)[0m
+[0;32mI (918896) BOX_TX:   notify SID          1/40 len= 43 -> ok (rc=0)[0m
+[0;32mI (918946) BOX_TX:   notify CDB          2/40 len=302 -> ok (rc=0)[0m
+[0;32mI (918976) BOX_TX:   notify BOX          3/40 len=286 -> ok (rc=0)[0m
+[0;32mI (919006) BOX_TX:   notify BOX          4/40 len=222 -> ok (rc=0)[0m
+[0;32mI (919056) BOX_TX:   notify BOX          5/40 len=286 -> ok (rc=0)[0m
+[0;32mI (919086) BOX_TX:   notify BOX          6/40 len=266 -> ok (rc=0)[0m
+[0;32mI (919116) BOX_TX:   notify BOX          7/40 len=238 -> ok (rc=0)[0m
+[0;32mI (919166) BOX_TX:   notify BOX          8/40 len=286 -> ok (rc=0)[0m
+[0;32mI (919196) BOX_TX:   notify BOX          9/40 len=222 -> ok (rc=0)[0m
+[0;32mI (919226) BOX_TX:   notify BOX          10/40 len=286 -> ok (rc=0)[0m
+[0;32mI (919256) BOX_TX:   notify BOX          11/40 len=222 -> ok (rc=0)[0m
+[0;32mI (919306) BOX_TX:   notify BOX          12/40 len=286 -> ok (rc=0)[0m
+[0;32mI (919336) BOX_TX:   notify BOX          13/40 len=286 -> ok (rc=0)[0m
+[0;32mI (919366) BOX_TX:   notify BOX          14/40 len=198 -> ok (rc=0)[0m
+[0;32mI (919396) BOX_TX:   notify BOX          15/40 len=238 -> ok (rc=0)[0m
+[0;32mI (919426) BOX_TX:   notify BOX          16/40 len=202 -> ok (rc=0)[0m
+[0;32mI (919476) BOX_TX:   notify BOX          17/40 len=286 -> ok (rc=0)[0m
+[0;32mI (919506) BOX_TX:   notify BOX          18/40 len=286 -> ok (rc=0)[0m
+[0;32mI (919536) BOX_TX:   notify BOX          19/40 len=202 -> ok (rc=0)[0m
+[0;32mI (919586) BOX_TX:   notify BOX          20/40 len=286 -> ok (rc=0)[0m
+[0;32mI (919616) BOX_TX:   notify BOX          21/40 len=222 -> ok (rc=0)[0m
+[0;32mI (919646) BOX_TX:   notify BOX          22/40 len=198 -> ok (rc=0)[0m
+[0;32mI (919676) BOX_TX:   notify BOX          23/40 len=282 -> ok (rc=0)[0m
+[0;32mI (919706) BOX_TX:   notify BOX          24/40 len=198 -> ok (rc=0)[0m
+[0;32mI (919736) BOX_TX:   notify BOX          25/40 len=198 -> ok (rc=0)[0m
+[0;32mI (919766) BOX_TX:   notify BOX          26/40 len=145 -> ok (rc=0)[0m
+[0;32mI (919796) BOX_TX:   notify BOX          27/40 len=145 -> ok (rc=0)[0m
+[0;32mI (919826) BOX_TX:   notify BOX          28/40 len=198 -> ok (rc=0)[0m
+[0;32mI (919856) BOX_TX:   notify BOX          29/40 len=198 -> ok (rc=0)[0m
+[0;32mI (919886) BOX_TX:   notify BOX          30/40 len=218 -> ok (rc=0)[0m
+[0;32mI (919916) BOX_TX:   notify BOX          31/40 len=141 -> ok (rc=0)[0m
+[0;32mI (919946) BOX_TX:   notify BOX          32/40 len=145 -> ok (rc=0)[0m
+[0;32mI (919976) BOX_TX:   notify BOX          33/40 len=145 -> ok (rc=0)[0m
+[0;32mI (920006) BOX_TX:   notify BOX          34/40 len=145 -> ok (rc=0)[0m
+[0;32mI (920036) BOX_TX:   notify BOX          35/40 len=145 -> ok (rc=0)[0m
+[0;32mI (920066) BOX_TX:   notify BOX          36/40 len=145 -> ok (rc=0)[0m
+[0;32mI (920096) BOX_TX:   notify BOX          37/40 len=145 -> ok (rc=0)[0m
+[0;32mI (920126) BOX_TX:   notify BOX          38/40 len=145 -> ok (rc=0)[0m
+[0;32mI (920156) BOX_TX:   notify TRM          39/40 len= 43 -> ok (rc=0)[0m
+[0;32mI (920166) BOX_TX:   notify TRM          40/40 len= 43 -> ok (rc=0)[0m
+[0;32mI (920166) BOX_TX: session done token=010e conn=2 delivered=40/40 rc=0[0m
+[0;32mI (924206) BOX_TX: subscription conn=2 notify=0[0m
+[0;32mI (924206) BOX_TX: incoming disconnect conn=2 reason=531[0m
+[0;32mI (930596) LINK: link=UP peer=CORE boot=2d30 | rx=2694 tx=2697 retx=0 dup=0 failed=0 | crc=0 cobs=1 len=0 | restarts=0 ups=1 downs=0 loop=0 drops=0[0m
+[0;32mI (957316) BOX_TX: incoming connect conn=1 peer=4c:6a:39:85:3c:29/1[0m
+[0;32mI (957316) BOX_TX: advertising Box UUID, scan response: node id=aabbccddeeff flags=NODE|SERVING[0m
+[0;32mI (957896) BOX_TX: mtu conn=1 mtu=517[0m
+[0;32mI (957936) BOX_TX: subscription conn=1 notify=1[0m
+[0;32mI (958236) BOX_TX: subscribed conn=1 mtu=517 phone=? (no HELLO) -> CORE[0m
+[0;32mI (958276) BOX_TX: session start token=010f conn=1 mtu=517 packets=40 (streaming)[0m
+[0;32mI (958276) BOX_TX:   notify SID          1/40 len= 43 -> ok (rc=0)[0m
+[0;32mI (958326) BOX_TX:   notify CDB          2/40 len=302 -> ok (rc=0)[0m
+[0;32mI (958356) BOX_TX:   notify BOX          3/40 len=145 -> ok (rc=0)[0m
+[0;32mI (958386) BOX_TX:   notify BOX          4/40 len=145 -> ok (rc=0)[0m
+[0;32mI (958416) BOX_TX:   notify BOX          5/40 len=145 -> ok (rc=0)[0m
+[0;32mI (958446) BOX_TX:   notify BOX          6/40 len=145 -> ok (rc=0)[0m
+[0;32mI (958476) BOX_TX:   notify BOX          7/40 len=145 -> ok (rc=0)[0m
+[0;32mI (958506) BOX_TX:   notify BOX          8/40 len=198 -> ok (rc=0)[0m
+[0;32mI (958536) BOX_TX:   notify BOX          9/40 len=286 -> ok (rc=0)[0m
+[0;32mI (958586) BOX_TX:   notify BOX          10/40 len=286 -> ok (rc=0)[0m
+[0;32mI (958616) BOX_TX:   notify BOX          11/40 len=286 -> ok (rc=0)[0m
+[0;32mI (958646) BOX_TX:   notify BOX          12/40 len=222 -> ok (rc=0)[0m
+[0;32mI (958696) BOX_TX:   notify BOX          13/40 len=286 -> ok (rc=0)[0m
+[0;32mI (958726) BOX_TX:   notify BOX          14/40 len=286 -> ok (rc=0)[0m
+[0;32mI (958776) BOX_TX:   notify BOX          15/40 len=286 -> ok (rc=0)[0m
+[0;32mI (958806) BOX_TX:   notify BOX          16/40 len=242 -> ok (rc=0)[0m
+[0;32mI (958836) BOX_TX:   notify BOX          17/40 len=286 -> ok (rc=0)[0m
+[0;32mI (958886) BOX_TX:   notify BOX          18/40 len=286 -> ok (rc=0)[0m
+[0;32mI (958916) BOX_TX:   notify BOX          19/40 len=202 -> ok (rc=0)[0m
+[0;32mI (958946) BOX_TX:   notify BOX          20/40 len=286 -> ok (rc=0)[0m
+[0;32mI (958996) BOX_TX:   notify BOX          21/40 len=266 -> ok (rc=0)[0m
+[0;32mI (959026) BOX_TX:   notify BOX          22/40 len=266 -> ok (rc=0)[0m
+[0;32mI (959076) BOX_TX:   notify BOX          23/40 len=286 -> ok (rc=0)[0m
+[0;32mI (959106) BOX_TX:   notify BOX          24/40 len=218 -> ok (rc=0)[0m
+[0;32mI (959136) BOX_TX:   notify BOX          25/40 len=286 -> ok (rc=0)[0m
+[0;32mI (959186) BOX_TX:   notify BOX          26/40 len=286 -> ok (rc=0)[0m
+[0;32mI (959216) BOX_TX:   notify BOX          27/40 len=222 -> ok (rc=0)[0m
+[0;32mI (959246) BOX_TX:   notify BOX          28/40 len=218 -> ok (rc=0)[0m
+[0;32mI (959276) BOX_TX:   notify BOX          29/40 len=218 -> ok (rc=0)[0m
+[0;32mI (959306) BOX_TX:   notify BOX          30/40 len=198 -> ok (rc=0)[0m
+[0;32mI (959336) BOX_TX:   notify BOX          31/40 len=218 -> ok (rc=0)[0m
+[0;32mI (959366) BOX_TX:   notify BOX          32/40 len=218 -> ok (rc=0)[0m
+[0;32mI (959396) BOX_TX:   notify BOX          33/40 len=286 -> ok (rc=0)[0m
+[0;32mI (959446) BOX_TX:   notify BOX          34/40 len=266 -> ok (rc=0)[0m
+[0;32mI (959476) BOX_TX:   notify BOX          35/40 len=286 -> ok (rc=0)[0m
+[0;32mI (959526) BOX_TX:   notify BOX          36/40 len=266 -> ok (rc=0)[0m
+[0;32mI (959556) BOX_TX:   notify BOX          37/40 len=198 -> ok (rc=0)[0m
+[0;32mI (959586) BOX_TX:   notify BOX          38/40 len=286 -> ok (rc=0)[0m
+[0;32mI (959616) BOX_TX:   notify TRM          39/40 len= 43 -> ok (rc=0)[0m
+[0;32mI (959626) BOX_TX:   notify TRM          40/40 len= 43 -> ok (rc=0)[0m
+[0;32mI (959626) BOX_TX: session done token=010f conn=1 delivered=40/40 rc=0[0m
+[0;32mI (960596) LINK: link=UP peer=CORE boot=2d30 | rx=2796 tx=2799 retx=0 dup=0 failed=0 | crc=0 cobs=1 len=0 | restarts=0 ups=1 downs=0 loop=0 drops=0[0m
+[0;32mI (963686) BOX_TX: subscription conn=1 notify=0[0m
+[0;32mI (963686) BOX_TX: incoming disconnect conn=1 reason=531[0m
+[0;32mI (971956) BOX_TX: incoming connect conn=2 peer=5e:33:ac:5b:f6:8f/1[0m
+[0;32mI (971956) BOX_TX: advertising Box UUID, scan response: node id=aabbccddeeff flags=NODE|SERVING[0m
+[0;32mI (972526) BOX_TX: mtu conn=2 mtu=517[0m
+[0;32mI (972556) BOX_TX: HELLO conn=2 phone=6a6dc1733925 flags=04[0m
+[0;32mI (972576) BOX_TX: subscription conn=2 notify=1[0m
+[0;32mI (972576) BOX_TX: subscribed conn=2 mtu=517 phone=6a6dc1733925 -> CORE[0m
+[0;32mI (972636) BOX_TX: session start token=0110 conn=2 mtu=517 packets=4 (streaming)[0m
+[0;32mI (972636) BOX_TX:   notify SID          1/4 len= 43 -> ok (rc=0)[0m
+[0;32mI (972666) BOX_TX:   notify CDB          2/4 len=302 -> ok (rc=0)[0m
+[0;32mI (972696) BOX_TX:   notify TRM          3/4 len= 43 -> ok (rc=0)[0m
+[0;32mI (972726) BOX_TX:   notify TRM          4/4 len= 43 -> ok (rc=0)[0m
+[0;32mI (972726) BOX_TX: session done token=0110 conn=2 delivered=4/4 rc=0[0m
+[0;32mI (976766) BOX_TX: subscription conn=2 notify=0[0m
+[0;32mI (976766) BOX_TX: incoming disconnect conn=2 reason=531[0m
+[0;32mI (982066) BOX_TX: incoming connect conn=1 peer=69:f5:c1:7a:4a:d9/1[0m
+[0;32mI (982066) BOX_TX: advertising Box UUID, scan response: node id=aabbccddeeff flags=NODE|SERVING[0m
+[0;32mI (982636) BOX_TX: mtu conn=1 mtu=517[0m
+[0;32mI (982676) BOX_TX: subscription conn=1 notify=1[0m
+[0;32mI (982976) BOX_TX: subscribed conn=1 mtu=517 phone=? (no HELLO) -> CORE[0m
+[0;32mI (983016) BOX_TX: session start token=0111 conn=1 mtu=517 packets=40 (streaming)[0m
+[0;32mI (983016) BOX_TX:   notify SID          1/40 len= 43 -> ok (rc=0)[0m
+[0;32mI (983066) BOX_TX:   notify CDB          2/40 len=302 -> ok (rc=0)[0m
+[0;32mI (983096) BOX_TX:   notify BOX          3/40 len=266 -> ok (rc=0)[0m
+[0;32mI (983146) BOX_TX:   notify BOX          4/40 len=286 -> ok (rc=0)[0m
+[0;32mI (983176) BOX_TX:   notify BOX          5/40 len=286 -> ok (rc=0)[0m
+[0;32mI (983206) BOX_TX:   notify BOX          6/40 len=222 -> ok (rc=0)[0m
+[0;32mI (983256) BOX_TX:   notify BOX          7/40 len=286 -> ok (rc=0)[0m
+[0;32mI (983286) BOX_TX:   notify BOX          8/40 len=242 -> ok (rc=0)[0m
+[0;32mI (983316) BOX_TX:   notify BOX          9/40 len=266 -> ok (rc=0)[0m
+[0;32mI (983366) BOX_TX:   notify BOX          10/40 len=286 -> ok (rc=0)[0m
+[0;32mI (983396) BOX_TX:   notify BOX          11/40 len=286 -> ok (rc=0)[0m
+[0;32mI (983446) BOX_TX:   notify BOX          12/40 len=286 -> ok (rc=0)[0m
+[0;32mI (983476) BOX_TX:   notify BOX          13/40 len=286 -> ok (rc=0)[0m
+[0;32mI (983526) BOX_TX:   notify BOX          14/40 len=286 -> ok (rc=0)[0m
+[0;32mI (983556) BOX_TX:   notify BOX          15/40 len=242 -> ok (rc=0)[0m
+[0;32mI (983586) BOX_TX:   notify BOX          16/40 len=198 -> ok (rc=0)[0m
+[0;32mI (983616) BOX_TX:   notify BOX          17/40 len=238 -> ok (rc=0)[0m
+[0;32mI (983646) BOX_TX:   notify BOX          18/40 len=286 -> ok (rc=0)[0m
+[0;32mI (983676) BOX_TX:   notify BOX          19/40 len=222 -> ok (rc=0)[0m
+[0;32mI (983726) BOX_TX:   notify BOX          20/40 len=286 -> ok (rc=0)[0m
+[0;32mI (983756) BOX_TX:   notify BOX          21/40 len=266 -> ok (rc=0)[0m
+[0;32mI (983786) BOX_TX:   notify BOX          22/40 len=238 -> ok (rc=0)[0m
+[0;32mI (983836) BOX_TX:   notify BOX          23/40 len=286 -> ok (rc=0)[0m
+[0;32mI (983866) BOX_TX:   notify BOX          24/40 len=222 -> ok (rc=0)[0m
+[0;32mI (983896) BOX_TX:   notify BOX          25/40 len=286 -> ok (rc=0)[0m
+[0;32mI (983926) BOX_TX:   notify BOX          26/40 len=222 -> ok (rc=0)[0m
+[0;32mI (983976) BOX_TX:   notify BOX          27/40 len=286 -> ok (rc=0)[0m
+[0;32mI (984006) BOX_TX:   notify BOX          28/40 len=286 -> ok (rc=0)[0m
+[0;32mI (984036) BOX_TX:   notify BOX          29/40 len=198 -> ok (rc=0)[0m
+[0;32mI (984066) BOX_TX:   notify BOX          30/40 len=238 -> ok (rc=0)[0m
+[0;32mI (984096) BOX_TX:   notify BOX          31/40 len=202 -> ok (rc=0)[0m
+[0;32mI (984146) BOX_TX:   notify BOX          32/40 len=286 -> ok (rc=0)[0m
+[0;32mI (984176) BOX_TX:   notify BOX          33/40 len=286 -> ok (rc=0)[0m
+[0;32mI (984206) BOX_TX:   notify BOX          34/40 len=202 -> ok (rc=0)[0m
+[0;32mI (984256) BOX_TX:   notify BOX          35/40 len=286 -> ok (rc=0)[0m
+[0;32mI (984286) BOX_TX:   notify BOX          36/40 len=222 -> ok (rc=0)[0m
+[0;32mI (984316) BOX_TX:   notify BOX          37/40 len=198 -> ok (rc=0)[0m
+[0;32mI (984346) BOX_TX:   notify BOX          38/40 len=282 -> ok (rc=0)[0m
+[0;32mI (984376) BOX_TX:   notify TRM          39/40 len= 43 -> ok (rc=0)[0m
+[0;32mI (984386) BOX_TX:   notify TRM          40/40 len= 43 -> ok (rc=0)[0m
+[0;32mI (984386) BOX_TX: session done token=0111 conn=1 delivered=40/40 rc=0[0m
+[0;32mI (988406) BOX_TX: subscription conn=1 notify=0[0m
+[0;32mI (988406) BOX_TX: incoming disconnect conn=1 reason=531[0m
+[0;32mI (990596) LINK: link=UP peer=CORE boot=2d30 | rx=2907 tx=2910 retx=0 dup=0 failed=0 | crc=0 cobs=1 len=0 | restarts=0 ups=1 downs=0 loop=0 drops=0[0m
+[0;32mI (1016206) BOX_TX: incoming connect conn=2 peer=5c:5d:3d:75:7e:3a/1[0m
+[0;32mI (1016206) BOX_TX: advertising Box UUID, scan response: node id=aabbccddeeff flags=NODE|SERVING[0m
+[0;32mI (1016776) BOX_TX: mtu conn=2 mtu=517[0m
+[0;32mI (1016816) BOX_TX: subscription conn=2 notify=1[0m
+[0;32mI (1017116) BOX_TX: subscribed conn=2 mtu=517 phone=? (no HELLO) -> CORE[0m
+[0;32mI (1017156) BOX_TX: session start token=0112 conn=2 mtu=517 packets=40 (streaming)[0m
+[0;32mI (1017156) BOX_TX:   notify SID          1/40 len= 43 -> ok (rc=0)[0m
+[0;32mI (1017206) BOX_TX:   notify CDB          2/40 len=302 -> ok (rc=0)[0m
+[0;32mI (1017236) BOX_TX:   notify BOX          3/40 len=198 -> ok (rc=0)[0m
+[0;32mI (1017266) BOX_TX:   notify BOX          4/40 len=198 -> ok (rc=0)[0m
+[0;32mI (1017296) BOX_TX:   notify BOX          5/40 len=145 -> ok (rc=0)[0m
+[0;32mI (1017326) BOX_TX:   notify BOX          6/40 len=145 -> ok (rc=0)[0m
+[0;32mI (1017356) BOX_TX:   notify BOX          7/40 len=198 -> ok (rc=0)[0m
+[0;32mI (1017386) BOX_TX:   notify BOX          8/40 len=198 -> ok (rc=0)[0m
+[0;32mI (1017416) BOX_TX:   notify BOX          9/40 len=218 -> ok (rc=0)[0m
+[0;32mI (1017446) BOX_TX:   notify BOX          10/40 len=141 -> ok (rc=0)[0m
+[0;32mI (1017476) BOX_TX:   notify BOX          11/40 len=145 -> ok (rc=0)[0m
+[0;32mI (1017506) BOX_TX:   notify BOX          12/40 len=145 -> ok (rc=0)[0m
+[0;32mI (1017536) BOX_TX:   notify BOX          13/40 len=145 -> ok (rc=0)[0m
+[0;32mI (1017566) BOX_TX:   notify BOX          14/40 len=145 -> ok (rc=0)[0m
+[0;32mI (1017596) BOX_TX:   notify BOX          15/40 len=145 -> ok (rc=0)[0m
+[0;32mI (1017626) BOX_TX:   notify BOX          16/40 len=145 -> ok (rc=0)[0m
+[0;32mI (1017656) BOX_TX:   notify BOX          17/40 len=145 -> ok (rc=0)[0m
+[0;32mI (1017686) BOX_TX:   notify BOX          18/40 len=145 -> ok (rc=0)[0m
+[0;32mI (1017716) BOX_TX:   notify BOX          19/40 len=145 -> ok (rc=0)[0m
+[0;32mI (1017746) BOX_TX:   notify BOX          20/40 len=145 -> ok (rc=0)[0m
+[0;32mI (1017776) BOX_TX:   notify BOX          21/40 len=145 -> ok (rc=0)[0m
+[0;32mI (1017806) BOX_TX:   notify BOX          22/40 len=145 -> ok (rc=0)[0m
+[0;32mI (1017836) BOX_TX:   notify BOX          23/40 len=198 -> ok (rc=0)[0m
+[0;32mI (1017866) BOX_TX:   notify BOX          24/40 len=286 -> ok (rc=0)[0m
+[0;32mI (1017916) BOX_TX:   notify BOX          25/40 len=286 -> ok (rc=0)[0m
+[0;32mI (1017946) BOX_TX:   notify BOX          26/40 len=286 -> ok (rc=0)[0m
+[0;32mI (1017976) BOX_TX:   notify BOX          27/40 len=222 -> ok (rc=0)[0m
+[0;32mI (1018026) BOX_TX:   notify BOX          28/40 len=286 -> ok (rc=0)[0m
+[0;32mI (1018056) BOX_TX:   notify BOX          29/40 len=286 -> ok (rc=0)[0m
+[0;32mI (1018106) BOX_TX:   notify BOX          30/40 len=286 -> ok (rc=0)[0m
+[0;32mI (1018136) BOX_TX:   notify BOX          31/40 len=242 -> ok (rc=0)[0m
+[0;32mI (1018166) BOX_TX:   notify BOX          32/40 len=286 -> ok (rc=0)[0m
+[0;32mI (1018216) BOX_TX:   notify BOX          33/40 len=286 -> ok (rc=0)[0m
+[0;32mI (1018246) BOX_TX:   notify BOX          34/40 len=202 -> ok (rc=0)[0m
+[0;32mI (1018276) BOX_TX:   notify BOX          35/40 len=286 -> ok (rc=0)[0m
+[0;32mI (1018326) BOX_TX:   notify BOX          36/40 len=266 -> ok (rc=0)[0m
+[0;32mI (1018356) BOX_TX:   notify BOX          37/40 len=266 -> ok (rc=0)[0m
+[0;32mI (1018406) BOX_TX:   notify BOX          38/40 len=286 -> ok (rc=0)[0m
+[0;32mI (1018416) BOX_TX:   notify TRM          39/40 len= 43 -> ok (rc=0)[0m
+[0;32mI (1018446) BOX_TX:   notify TRM          40/40 len= 43 -> ok (rc=0)[0m
+[0;32mI (1018446) BOX_TX: session done token=0112 conn=2 delivered=40/40 rc=0[0m
+[0;32mI (1020596) LINK: link=UP peer=CORE boot=2d30 | rx=3009 tx=3012 retx=0 dup=0 failed=0 | crc=0 cobs=1 len=0 | restarts=0 ups=1 downs=0 loop=0 drops=0[0m
+[0;32mI (1022486) BOX_TX: subscription conn=2 notify=0[0m
+[0;32mI (1022486) BOX_TX: incoming disconnect conn=2 reason=531[0m
+[0;32mI (1050596) LINK: link=UP peer=CORE boot=2d30 | rx=3070 tx=3073 retx=0 dup=0 failed=0 | crc=0 cobs=1 len=0 | restarts=0 ups=1 downs=0 loop=0 drops=0[0m
+[0;32mI (1055566) BOX_TX: incoming connect conn=1 peer=4a:18:13:38:ac:b8/1[0m
+[0;32mI (1055576) BOX_TX: advertising Box UUID, scan response: node id=aabbccddeeff flags=NODE|SERVING[0m
+[0;32mI (1056136) BOX_TX: mtu conn=1 mtu=517[0m
+[0;32mI (1056186) BOX_TX: subscription conn=1 notify=1[0m
+[0;32mI (1056486) BOX_TX: subscribed conn=1 mtu=517 phone=? (no HELLO) -> CORE[0m
+[0;32mI (1056526) BOX_TX: session start token=0113 conn=1 mtu=517 packets=40 (streaming)[0m
+[0;32mI (1056526) BOX_TX:   notify SID          1/40 len= 43 -> ok (rc=0)[0m
+[0;32mI (1056576) BOX_TX:   notify CDB          2/40 len=302 -> ok (rc=0)[0m
+[0;32mI (1056606) BOX_TX:   notify BOX          3/40 len=218 -> ok (rc=0)[0m
+[0;32mI (1056636) BOX_TX:   notify BOX          4/40 len=286 -> ok (rc=0)[0m
+[0;32mI (1056686) BOX_TX:   notify BOX          5/40 len=286 -> ok (rc=0)[0m
+[0;32mI (1056716) BOX_TX:   notify BOX          6/40 len=222 -> ok (rc=0)[0m
+[0;32mI (1056746) BOX_TX:   notify BOX          7/40 len=218 -> ok (rc=0)[0m
+[0;32mI (1056776) BOX_TX:   notify BOX          8/40 len=218 -> ok (rc=0)[0m
+[0;32mI (1056806) BOX_TX:   notify BOX          9/40 len=198 -> ok (rc=0)[0m
+[0;32mI (1056836) BOX_TX:   notify BOX          10/40 len=218 -> ok (rc=0)[0m
+[0;32mI (1056866) BOX_TX:   notify BOX          11/40 len=218 -> ok (rc=0)[0m
+[0;32mI (1056896) BOX_TX:   notify BOX          12/40 len=286 -> ok (rc=0)[0m
+[0;32mI (1056946) BOX_TX:   notify BOX          13/40 len=266 -> ok (rc=0)[0m
+[0;32mI (1056976) BOX_TX:   notify BOX          14/40 len=286 -> ok (rc=0)[0m
+[0;32mI (1057026) BOX_TX:   notify BOX          15/40 len=266 -> ok (rc=0)[0m
+[0;32mI (1057056) BOX_TX:   notify BOX          16/40 len=198 -> ok (rc=0)[0m
+[0;32mI (1057086) BOX_TX:   notify BOX          17/40 len=266 -> ok (rc=0)[0m
+[0;32mI (1057136) BOX_TX:   notify BOX          18/40 len=286 -> ok (rc=0)[0m
+[0;32mI (1057166) BOX_TX:   notify BOX          19/40 len=286 -> ok (rc=0)[0m
+[0;32mI (1057196) BOX_TX:   notify BOX          20/40 len=222 -> ok (rc=0)[0m
+[0;32mI (1057246) BOX_TX:   notify BOX          21/40 len=286 -> ok (rc=0)[0m
+[0;32mI (1057256) BOX_TX:   notify BOX          22/40 len=242 -> ok (rc=0)[0m
+[0;32mI (1057306) BOX_TX:   notify BOX          23/40 len=266 -> ok (rc=0)[0m
+[0;32mI (1057356) BOX_TX:   notify BOX          24/40 len=286 -> ok (rc=0)[0m
+[0;32mI (1057386) BOX_TX:   notify BOX          25/40 len=286 -> ok (rc=0)[0m
+[0;32mI (1057436) BOX_TX:   notify BOX          26/40 len=286 -> ok (rc=0)[0m
+[0;32mI (1057466) BOX_TX:   notify BOX          27/40 len=286 -> ok (rc=0)[0m
+[0;32mI (1057516) BOX_TX:   notify BOX          28/40 len=286 -> ok (rc=0)[0m
+[0;32mI (1057546) BOX_TX:   notify BOX          29/40 len=242 -> ok (rc=0)[0m
+[0;32mI (1057576) BOX_TX:   notify BOX          30/40 len=198 -> ok (rc=0)[0m
+[0;32mI (1057606) BOX_TX:   notify BOX          31/40 len=238 -> ok (rc=0)[0m
+[0;32mI (1057636) BOX_TX:   notify BOX          32/40 len=286 -> ok (rc=0)[0m
+[0;32mI (1057666) BOX_TX:   notify BOX          33/40 len=222 -> ok (rc=0)[0m
+[0;32mI (1057716) BOX_TX:   notify BOX          34/40 len=286 -> ok (rc=0)[0m
+[0;32mI (1057746) BOX_TX:   notify BOX          35/40 len=266 -> ok (rc=0)[0m
+[0;32mI (1057776) BOX_TX:   notify BOX          36/40 len=238 -> ok (rc=0)[0m
+[0;32mI (1057826) BOX_TX:   notify BOX          37/40 len=286 -> ok (rc=0)[0m
+[0;32mI (1057856) BOX_TX:   notify BOX          38/40 len=222 -> ok (rc=0)[0m
+[0;32mI (1057866) BOX_TX:   notify TRM          39/40 len= 43 -> ok (rc=0)[0m
+[0;32mI (1057896) BOX_TX:   notify TRM          40/40 len= 43 -> ok (rc=0)[0m
+[0;32mI (1057896) BOX_TX: session done token=0113 conn=1 delivered=40/40 rc=0[0m
+[0;32mI (1061906) BOX_TX: subscription conn=1 notify=0[0m
+[0;32mI (1061906) BOX_TX: incoming disconnect conn=1 reason=531[0m
+[0;32mI (1080596) LINK: link=UP peer=CORE boot=2d30 | rx=3173 tx=3176 retx=0 dup=0 failed=0 | crc=0 cobs=1 len=0 | restarts=0 ups=1 downs=0 loop=0 drops=0[0m
+[0;32mI (1082296) BOX_TX: incoming connect conn=2 peer=55:1d:b2:8a:a0:43/1[0m
+[0;32mI (1082306) BOX_TX: advertising Box UUID, scan response: node id=aabbccddeeff flags=NODE|SERVING[0m
+[0;32mI (1082896) BOX_TX: mtu conn=2 mtu=517[0m
+[0;32mI (1082926) BOX_TX: subscription conn=2 notify=1[0m
+[0;32mI (1083226) BOX_TX: subscribed conn=2 mtu=517 phone=? (no HELLO) -> CORE[0m
+[0;32mI (1083266) BOX_TX: session start token=0114 conn=2 mtu=517 packets=40 (streaming)[0m
+[0;32mI (1083266) BOX_TX:   notify SID          1/40 len= 43 -> ok (rc=0)[0m
+[0;32mI (1083316) BOX_TX:   notify CDB          2/40 len=302 -> ok (rc=0)[0m
+[0;32mI (1083346) BOX_TX:   notify BOX          3/40 len=286 -> ok (rc=0)[0m
+[0;32mI (1083376) BOX_TX:   notify BOX          4/40 len=222 -> ok (rc=0)[0m
+[0;32mI (1083426) BOX_TX:   notify BOX          5/40 len=286 -> ok (rc=0)[0m
+[0;32mI (1083456) BOX_TX:   notify BOX          6/40 len=286 -> ok (rc=0)[0m
+[0;32mI (1083486) BOX_TX:   notify BOX          7/40 len=198 -> ok (rc=0)[0m
+[0;32mI (1083516) BOX_TX:   notify BOX          8/40 len=238 -> ok (rc=0)[0m
+[0;32mI (1083546) BOX_TX:   notify BOX          9/40 len=202 -> ok (rc=0)[0m
+[0;32mI (1083596) BOX_TX:   notify BOX          10/40 len=286 -> ok (rc=0)[0m
+[0;32mI (1083626) BOX_TX:   notify BOX          11/40 len=286 -> ok (rc=0)[0m
+[0;32mI (1083656) BOX_TX:   notify BOX          12/40 len=202 -> ok (rc=0)[0m
+[0;32mI (1083706) BOX_TX:   notify BOX          13/40 len=286 -> ok (rc=0)[0m
+[0;32mI (1083736) BOX_TX:   notify BOX          14/40 len=222 -> ok (rc=0)[0m
+[0;32mI (1083766) BOX_TX:   notify BOX          15/40 len=198 -> ok (rc=0)[0m
+[0;32mI (1083796) BOX_TX:   notify BOX          16/40 len=282 -> ok (rc=0)[0m
+[0;32mI (1083826) BOX_TX:   notify BOX          17/40 len=198 -> ok (rc=0)[0m
+[0;32mI (1083856) BOX_TX:   notify BOX          18/40 len=198 -> ok (rc=0)[0m
+[0;32mI (1083886) BOX_TX:   notify BOX          19/40 len=145 -> ok (rc=0)[0m
+[0;32mI (1083916) BOX_TX:   notify BOX          20/40 len=145 -> ok (rc=0)[0m
+[0;32mI (1083946) BOX_TX:   notify BOX          21/40 len=198 -> ok (rc=0)[0m
+[0;32mI (1083976) BOX_TX:   notify BOX          22/40 len=198 -> ok (rc=0)[0m
+[0;32mI (1084006) BOX_TX:   notify BOX          23/40 len=218 -> ok (rc=0)[0m
+[0;32mI (1084036) BOX_TX:   notify BOX          24/40 len=141 -> ok (rc=0)[0m
+[0;32mI (1084066) BOX_TX:   notify BOX          25/40 len=145 -> ok (rc=0)[0m
+[0;32mI (1084096) BOX_TX:   notify BOX          26/40 len=145 -> ok (rc=0)[0m
+[0;32mI (1084126) BOX_TX:   notify BOX          27/40 len=145 -> ok (rc=0)[0m
+[0;32mI (1084156) BOX_TX:   notify BOX          28/40 len=145 -> ok (rc=0)[0m
+[0;32mI (1084186) BOX_TX:   notify BOX          29/40 len=145 -> ok (rc=0)[0m
+[0;32mI (1084216) BOX_TX:   notify BOX          30/40 len=145 -> ok (rc=0)[0m
+[0;32mI (1084246) BOX_TX:   notify BOX          31/40 len=145 -> ok (rc=0)[0m
+[0;32mI (1084276) BOX_TX:   notify BOX          32/40 len=145 -> ok (rc=0)[0m
+[0;32mI (1084306) BOX_TX:   notify BOX          33/40 len=145 -> ok (rc=0)[0m
+[0;32mI (1084336) BOX_TX:   notify BOX          34/40 len=145 -> ok (rc=0)[0m
+[0;32mI (1084366) BOX_TX:   notify BOX          35/40 len=145 -> ok (rc=0)[0m
+[0;32mI (1084396) BOX_TX:   notify BOX          36/40 len=145 -> ok (rc=0)[0m
+[0;32mI (1084426) BOX_TX:   notify BOX          37/40 len=198 -> ok (rc=0)[0m
+[0;32mI (1084476) BOX_TX:   notify BOX          38/40 len=286 -> ok (rc=0)[0m
+[0;32mI (1084486) BOX_TX:   notify TRM          39/40 len= 43 -> ok (rc=0)[0m
+[0;32mI (1084516) BOX_TX:   notify TRM          40/40 len= 43 -> ok (rc=0)[0m
+[0;32mI (1084516) BOX_TX: session done token=0114 conn=2 delivered=40/40 rc=0[0m
+[0;32mI (1088546) BOX_TX: subscription conn=2 notify=0[0m
+[0;32mI (1088546) BOX_TX: incoming disconnect conn=2 reason=531[0m
+[0;32mI (1094576) BOX_TX: incoming connect conn=1 peer=55:53:b4:7b:47:4b/1[0m
+[0;32mI (1094576) BOX_TX: advertising Box UUID, scan response: node id=aabbccddeeff flags=NODE|SERVING[0m
+[0;32mI (1095146) BOX_TX: mtu conn=1 mtu=517[0m
+[0;32mI (1095176) BOX_TX: HELLO conn=1 phone=6a6dc1733925 flags=04[0m
+[0;32mI (1095206) BOX_TX: subscription conn=1 notify=1[0m
+[0;32mI (1095206) BOX_TX: subscribed conn=1 mtu=517 phone=6a6dc1733925 -> CORE[0m
+[0;32mI (1095266) BOX_TX: session start token=0115 conn=1 mtu=517 packets=4 (streaming)[0m
+[0;32mI (1095266) BOX_TX:   notify SID          1/4 len= 43 -> ok (rc=0)[0m
+[0;32mI (1095296) BOX_TX:   notify CDB          2/4 len=302 -> ok (rc=0)[0m
+[0;32mI (1095326) BOX_TX:   notify TRM          3/4 len= 43 -> ok (rc=0)[0m
+[0;32mI (1095336) BOX_TX:   notify TRM          4/4 len= 43 -> ok (rc=0)[0m
+[0;32mI (1095336) BOX_TX: session done token=0115 conn=1 delivered=4/4 rc=0[0m
+[0;32mI (1099406) BOX_TX: subscription conn=1 notify=0[0m
+[0;32mI (1099406) BOX_TX: incoming disconnect conn=1 reason=531[0m
+[0;32mI (1110596) LINK: link=UP peer=CORE boot=2d30 | rx=3283 tx=3286 retx=0 dup=0 failed=0 | crc=0 cobs=1 len=0 | restarts=0 ups=1 downs=0 loop=0 drops=0[0m
+[0;32mI (1121276) BOX_TX: incoming connect conn=2 peer=6e:a3:02:a7:35:b2/1[0m
+[0;32mI (1121276) BOX_TX: advertising Box UUID, scan response: node id=aabbccddeeff flags=NODE|SERVING[0m
+[0;32mI (1121846) BOX_TX: mtu conn=2 mtu=517[0m
+[0;32mI (1121886) BOX_TX: subscription conn=2 notify=1[0m
+[0;32mI (1122186) BOX_TX: subscribed conn=2 mtu=517 phone=? (no HELLO) -> CORE[0m
+[0;32mI (1122226) BOX_TX: session start token=0116 conn=2 mtu=517 packets=40 (streaming)[0m
+[0;32mI (1122226) BOX_TX:   notify SID          1/40 len= 43 -> ok (rc=0)[0m
+[0;32mI (1122276) BOX_TX:   notify BOX          2/40 len=286 -> ok (rc=0)[0m
+[0;32mI (1122306) BOX_TX:   notify BOX          3/40 len=286 -> ok (rc=0)[0m
+[0;32mI (1122356) BOX_TX:   notify BOX          4/40 len=286 -> ok (rc=0)[0m
+[0;32mI (1122386) BOX_TX:   notify BOX          5/40 len=222 -> ok (rc=0)[0m
+[0;32mI (1122416) BOX_TX:   notify BOX          6/40 len=286 -> ok (rc=0)[0m
+[0;32mI (1122466) BOX_TX:   notify BOX          7/40 len=286 -> ok (rc=0)[0m
+[0;32mI (1122496) BOX_TX:   notify BOX          8/40 len=286 -> ok (rc=0)[0m
+[0;32mI (1122526) BOX_TX:   notify BOX          9/40 len=242 -> ok (rc=0)[0m
+[0;32mI (1122576) BOX_TX:   notify BOX          10/40 len=286 -> ok (rc=0)[0m
+[0;32mI (1122606) BOX_TX:   notify BOX          11/40 len=286 -> ok (rc=0)[0m
+[0;32mI (1122636) BOX_TX:   notify BOX          12/40 len=202 -> ok (rc=0)[0m
+[0;32mI (1122686) BOX_TX:   notify BOX          13/40 len=286 -> ok (rc=0)[0m
+[0;32mI (1122716) BOX_TX:   notify BOX          14/40 len=266 -> ok (rc=0)[0m
+[0;32mI (1122766) BOX_TX:   notify BOX          15/40 len=266 -> ok (rc=0)[0m
+[0;32mI (1122796) BOX_TX:   notify BOX          16/40 len=286 -> ok (rc=0)[0m
+[0;32mI (1122826) BOX_TX:   notify BOX          17/40 len=218 -> ok (rc=0)[0m
+[0;32mI (1122876) BOX_TX:   notify BOX          18/40 len=286 -> ok (rc=0)[0m
+[0;32mI (1122906) BOX_TX:   notify BOX          19/40 len=286 -> ok (rc=0)[0m
+[0;32mI (1122936) BOX_TX:   notify BOX          20/40 len=222 -> ok (rc=0)[0m
+[0;32mI (1122966) BOX_TX:   notify BOX          21/40 len=218 -> ok (rc=0)[0m
+[0;32mI (1122996) BOX_TX:   notify BOX          22/40 len=218 -> ok (rc=0)[0m
+[0;32mI (1123026) BOX_TX:   notify BOX          23/40 len=198 -> ok (rc=0)[0m
+[0;32mI (1123056) BOX_TX:   notify BOX          24/40 len=218 -> ok (rc=0)[0m
+[0;32mI (1123086) BOX_TX:   notify BOX          25/40 len=218 -> ok (rc=0)[0m
+[0;32mI (1123136) BOX_TX:   notify BOX          26/40 len=286 -> ok (rc=0)[0m
+[0;32mI (1123166) BOX_TX:   notify BOX          27/40 len=266 -> ok (rc=0)[0m
+[0;32mI (1123216) BOX_TX:   notify BOX          28/40 len=286 -> ok (rc=0)[0m
+[0;32mI (1123246) BOX_TX:   notify BOX          29/40 len=266 -> ok (rc=0)[0m
+[0;32mI (1123276) BOX_TX:   notify BOX          30/40 len=198 -> ok (rc=0)[0m
+[0;32mI (1123326) BOX_TX:   notify BOX          31/40 len=266 -> ok (rc=0)[0m
+[0;32mI (1123356) BOX_TX:   notify BOX          32/40 len=286 -> ok (rc=0)[0m
+[0;32mI (1123406) BOX_TX:   notify BOX          33/40 len=286 -> ok (rc=0)[0m
+[0;32mI (1123436) BOX_TX:   notify BOX          34/40 len=222 -> ok (rc=0)[0m
+[0;32mI (1123466) BOX_TX:   notify BOX          35/40 len=286 -> ok (rc=0)[0m
+[0;32mI (1123496) BOX_TX:   notify BOX          36/40 len=242 -> ok (rc=0)[0m
+[0;32mI (1123546) BOX_TX:   notify BOX          37/40 len=266 -> ok (rc=0)[0m
+[0;32mI (1123576) BOX_TX:   notify BOX          38/40 len=286 -> ok (rc=0)[0m
+[0;32mI (1123606) BOX_TX:   notify TRM          39/40 len= 43 -> ok (rc=0)[0m
+[0;32mI (1123616) BOX_TX:   notify TRM          40/40 len= 43 -> ok (rc=0)[0m
+[0;32mI (1123616) BOX_TX: session done token=0116 conn=2 delivered=40/40 rc=0[0m
+[0;32mI (1127666) BOX_TX: subscription conn=2 notify=0[0m
+[0;32mI (1127666) BOX_TX: incoming disconnect conn=2 reason=531[0m
+[0;32mI (1140596) LINK: link=UP peer=CORE boot=2d30 | rx=3386 tx=3389 retx=0 dup=0 failed=0 | crc=0 cobs=1 len=0 | restarts=0 ups=1 downs=0 loop=0 drops=0[0m
+[0;32mI (1158776) BOX_TX: incoming connect conn=1 peer=70:01:91:ab:f6:a0/1[0m
+[0;32mI (1158776) BOX_TX: advertising Box UUID, scan response: node id=aabbccddeeff flags=NODE|SERVING[0m
+[0;32mI (1159346) BOX_TX: mtu conn=1 mtu=517[0m
+[0;32mI (1159386) BOX_TX: subscription conn=1 notify=1[0m
+[0;32mI (1159686) BOX_TX: subscribed conn=1 mtu=517 phone=? (no HELLO) -> CORE[0m
+[0;32mI (1159726) BOX_TX: session start token=0117 conn=1 mtu=517 packets=40 (streaming)[0m
+[0;32mI (1159726) BOX_TX:   notify SID          1/40 len= 43 -> ok (rc=0)[0m
+[0;32mI (1159776) BOX_TX:   notify BOX          2/40 len=286 -> ok (rc=0)[0m
+[0;32mI (1159806) BOX_TX:   notify BOX          3/40 len=286 -> ok (rc=0)[0m
+[0;32mI (1159856) BOX_TX:   notify BOX          4/40 len=286 -> ok (rc=0)[0m
+[0;32mI (1159886) BOX_TX:   notify BOX          5/40 len=286 -> ok (rc=0)[0m
+[0;32mI (1159936) BOX_TX:   notify BOX          6/40 len=242 -> ok (rc=0)[0m
+[0;32mI (1159966) BOX_TX:   notify BOX          7/40 len=198 -> ok (rc=0)[0m
+[0;32mI (1159996) BOX_TX:   notify BOX          8/40 len=238 -> ok (rc=0)[0m
+[0;32mI (1160026) BOX_TX:   notify BOX          9/40 len=286 -> ok (rc=0)[0m
+[0;32mI (1160056) BOX_TX:   notify BOX          10/40 len=222 -> ok (rc=0)[0m
+[0;32mI (1160106) BOX_TX:   notify BOX          11/40 len=286 -> ok (rc=0)[0m
+[0;32mI (1160136) BOX_TX:   notify BOX          12/40 len=266 -> ok (rc=0)[0m
+[0;32mI (1160166) BOX_TX:   notify BOX          13/40 len=238 -> ok (rc=0)[0m
+[0;32mI (1160216) BOX_TX:   notify BOX          14/40 len=286 -> ok (rc=0)[0m
+[0;32mI (1160246) BOX_TX:   notify BOX          15/40 len=222 -> ok (rc=0)[0m
+[0;32mI (1160276) BOX_TX:   notify BOX          16/40 len=286 -> ok (rc=0)[0m
+[0;32mI (1160306) BOX_TX:   notify BOX          17/40 len=222 -> ok (rc=0)[0m
+[0;32mI (1160356) BOX_TX:   notify BOX          18/40 len=286 -> ok (rc=0)[0m
+[0;32mI (1160386) BOX_TX:   notify BOX          19/40 len=286 -> ok (rc=0)[0m
+[0;32mI (1160416) BOX_TX:   notify BOX          20/40 len=198 -> ok (rc=0)[0m
+[0;32mI (1160446) BOX_TX:   notify BOX          21/40 len=238 -> ok (rc=0)[0m
+[0;32mI (1160476) BOX_TX:   notify BOX          22/40 len=202 -> ok (rc=0)[0m
+[0;32mI (1160526) BOX_TX:   notify BOX          23/40 len=286 -> ok (rc=0)[0m
+[0;32mI (1160556) BOX_TX:   notify BOX          24/40 len=286 -> ok (rc=0)[0m
+[0;32mI (1160586) BOX_TX:   notify BOX          25/40 len=202 -> ok (rc=0)[0m
+[0;32mI (1160636) BOX_TX:   notify BOX          26/40 len=286 -> ok (rc=0)[0m
+[0;32mI (1160666) BOX_TX:   notify BOX          27/40 len=222 -> ok (rc=0)[0m
+[0;32mI (1160696) BOX_TX:   notify BOX          28/40 len=198 -> ok (rc=0)[0m
+[0;32mI (1160726) BOX_TX:   notify BOX          29/40 len=282 -> ok (rc=0)[0m
+[0;32mI (1160756) BOX_TX:   notify BOX          30/40 len=198 -> ok (rc=0)[0m
+[0;32mI (1160786) BOX_TX:   notify BOX          31/40 len=198 -> ok (rc=0)[0m
+[0;32mI (1160816) BOX_TX:   notify BOX          32/40 len=145 -> ok (rc=0)[0m
+[0;32mI (1160846) BOX_TX:   notify BOX          33/40 len=145 -> ok (rc=0)[0m
+[0;32mI (1160876) BOX_TX:   notify BOX          34/40 len=198 -> ok (rc=0)[0m
+[0;32mI (1160906) BOX_TX:   notify BOX          35/40 len=198 -> ok (rc=0)[0m
+[0;32mI (1160936) BOX_TX:   notify BOX          36/40 len=218 -> ok (rc=0)[0m
+[0;32mI (1160966) BOX_TX:   notify BOX          37/40 len=141 -> ok (rc=0)[0m
+[0;32mI (1160996) BOX_TX:   notify BOX          38/40 len=145 -> ok (rc=0)[0m
+[0;32mI (1161026) BOX_TX:   notify TRM          39/40 len= 43 -> ok (rc=0)[0m
+[0;32mI (1161036) BOX_TX:   notify TRM          40/40 len= 43 -> ok (rc=0)[0m
+[0;32mI (1161036) BOX_TX: session done token=0117 conn=1 delivered=40/40 rc=0[0m
+[0;32mI (1165106) BOX_TX: subscription conn=1 notify=0[0m
+[0;32mI (1165106) BOX_TX: incoming disconnect conn=1 reason=531[0m
+[0;32mI (1169066) BOX_TX: incoming connect conn=2 peer=65:eb:14:6b:70:4e/1[0m
+[0;32mI (1169066) BOX_TX: advertising Box UUID, scan response: node id=aabbccddeeff flags=NODE|SERVING[0m
+[0;32mI (1169636) BOX_TX: mtu conn=2 mtu=517[0m
+[0;32mI (1169666) BOX_TX: HELLO conn=2 phone=6a6dc1733925 flags=04[0m
+[0;32mI (1169686) BOX_TX: subscription conn=2 notify=1[0m
+[0;32mI (1169686) BOX_TX: subscribed conn=2 mtu=517 phone=6a6dc1733925 -> CORE[0m
+[0;32mI (1169746) BOX_TX: session start token=0118 conn=2 mtu=517 packets=3 (streaming)[0m
+[0;32mI (1169746) BOX_TX:   notify SID          1/3 len= 43 -> ok (rc=0)[0m
+[0;32mI (1169756) BOX_TX:   notify TRM          2/3 len= 43 -> ok (rc=0)[0m
+[0;32mI (1169786) BOX_TX:   notify TRM          3/3 len= 43 -> ok (rc=0)[0m
+[0;32mI (1169786) BOX_TX: session done token=0118 conn=2 delivered=3/3 rc=0[0m
+[0;32mI (1170596) LINK: link=UP peer=CORE boot=2d30 | rx=3494 tx=3497 retx=0 dup=0 failed=0 | crc=0 cobs=1 len=0 | restarts=0 ups=1 downs=0 loop=0 drops=0[0m
+[0;32mI (1173806) BOX_TX: subscription conn=2 notify=0[0m
+[0;32mI (1173806) BOX_TX: incoming disconnect conn=2 reason=531[0m
+[0;32mI (1200596) LINK: link=UP peer=CORE boot=2d30 | rx=3555 tx=3558 retx=0 dup=0 failed=0 | crc=0 cobs=1 len=0 | restarts=0 ups=1 downs=0 loop=0 drops=0[0m
+[0;32mI (1201256) BOX_TX: incoming connect conn=1 peer=5d:58:ae:9e:4b:da/1[0m
+[0;32mI (1201256) BOX_TX: advertising Box UUID, scan response: node id=aabbccddeeff flags=NODE|SERVING[0m
+[0;32mI (1201846) BOX_TX: mtu conn=1 mtu=517[0m
+[0;32mI (1201886) BOX_TX: subscription conn=1 notify=1[0m
+[0;32mI (1202186) BOX_TX: subscribed conn=1 mtu=517 phone=? (no HELLO) -> CORE[0m
+[0;32mI (1202226) BOX_TX: session start token=0119 conn=1 mtu=517 packets=40 (streaming)[0m
+[0;32mI (1202226) BOX_TX:   notify SID          1/40 len= 43 -> ok (rc=0)[0m
+[0;32mI (1202256) BOX_TX:   notify BOX          2/40 len=145 -> ok (rc=0)[0m
+[0;32mI (1202286) BOX_TX:   notify BOX          3/40 len=145 -> ok (rc=0)[0m
+[0;32mI (1202316) BOX_TX:   notify BOX          4/40 len=145 -> ok (rc=0)[0m
+[0;32mI (1202346) BOX_TX:   notify BOX          5/40 len=145 -> ok (rc=0)[0m
+[0;32mI (1202376) BOX_TX:   notify BOX          6/40 len=145 -> ok (rc=0)[0m
+[0;32mI (1202406) BOX_TX:   notify BOX          7/40 len=145 -> ok (rc=0)[0m
+[0;32mI (1202436) BOX_TX:   notify BOX          8/40 len=145 -> ok (rc=0)[0m
+[0;32mI (1202466) BOX_TX:   notify BOX          9/40 len=145 -> ok (rc=0)[0m
+[0;32mI (1202496) BOX_TX:   notify BOX          10/40 len=145 -> ok (rc=0)[0m
+[0;32mI (1202526) BOX_TX:   notify BOX          11/40 len=145 -> ok (rc=0)[0m
+[0;32mI (1202556) BOX_TX:   notify BOX          12/40 len=145 -> ok (rc=0)[0m
+[0;32mI (1202586) BOX_TX:   notify BOX          13/40 len=198 -> ok (rc=0)[0m
+[0;32mI (1202636) BOX_TX:   notify BOX          14/40 len=286 -> ok (rc=0)[0m
+[0;32mI (1202666) BOX_TX:   notify BOX          15/40 len=286 -> ok (rc=0)[0m
+[0;32mI (1202696) BOX_TX:   notify BOX          16/40 len=286 -> ok (rc=0)[0m
+[0;32mI (1202746) BOX_TX:   notify BOX          17/40 len=222 -> ok (rc=0)[0m
+[0;32mI (1202776) BOX_TX:   notify BOX          18/40 len=286 -> ok (rc=0)[0m
+[0;32mI (1202826) BOX_TX:   notify BOX          19/40 len=286 -> ok (rc=0)[0m
+[0;32mI (1202856) BOX_TX:   notify BOX          20/40 len=286 -> ok (rc=0)[0m
+[0;32mI (1202906) BOX_TX:   notify BOX          21/40 len=242 -> ok (rc=0)[0m
+[0;32mI (1202936) BOX_TX:   notify BOX          22/40 len=286 -> ok (rc=0)[0m
+[0;32mI (1202986) BOX_TX:   notify BOX          23/40 len=286 -> ok (rc=0)[0m
+[0;32mI (1203016) BOX_TX:   notify BOX          24/40 len=202 -> ok (rc=0)[0m
+[0;32mI (1203046) BOX_TX:   notify BOX          25/40 len=286 -> ok (rc=0)[0m
+[0;32mI (1203096) BOX_TX:   notify BOX          26/40 len=266 -> ok (rc=0)[0m
+[0;32mI (1203126) BOX_TX:   notify BOX          27/40 len=266 -> ok (rc=0)[0m
+[0;32mI (1203176) BOX_TX:   notify BOX          28/40 len=286 -> ok (rc=0)[0m
+[0;32mI (1203206) BOX_TX:   notify BOX          29/40 len=218 -> ok (rc=0)[0m
+[0;32mI (1203236) BOX_TX:   notify BOX          30/40 len=286 -> ok (rc=0)[0m
+[0;32mI (1203286) BOX_TX:   notify BOX          31/40 len=286 -> ok (rc=0)[0m
+[0;32mI (1203316) BOX_TX:   notify BOX          32/40 len=222 -> ok (rc=0)[0m
+[0;32mI (1203346) BOX_TX:   notify BOX          33/40 len=218 -> ok (rc=0)[0m
+[0;32mI (1203376) BOX_TX:   notify BOX          34/40 len=218 -> ok (rc=0)[0m
+[0;32mI (1203406) BOX_TX:   notify BOX          35/40 len=198 -> ok (rc=0)[0m
+[0;32mI (1203436) BOX_TX:   notify BOX          36/40 len=218 -> ok (rc=0)[0m
+[0;32mI (1203466) BOX_TX:   notify BOX          37/40 len=218 -> ok (rc=0)[0m
+[0;32mI (1203496) BOX_TX:   notify BOX          38/40 len=286 -> ok (rc=0)[0m
+[0;32mI (1203526) BOX_TX:   notify TRM          39/40 len= 43 -> ok (rc=0)[0m
+[0;32mI (1203536) BOX_TX:   notify TRM          40/40 len= 43 -> ok (rc=0)[0m
+[0;32mI (1203536) BOX_TX: session done token=0119 conn=1 delivered=40/40 rc=0[0m
+[0;32mI (1207586) BOX_TX: subscription conn=1 notify=0[0m
+[0;32mI (1207586) BOX_TX: incoming disconnect conn=1 reason=531[0m
+[0;32mI (1230596) LINK: link=UP peer=CORE boot=2d30 | rx=3658 tx=3661 retx=0 dup=0 failed=0 | crc=0 cobs=1 len=0 | restarts=0 ups=1 downs=0 loop=0 drops=0[0m
+[0;32mI (1233866) BOX_TX: incoming connect conn=2 peer=6e:00:02:11:f9:e2/1[0m
+[0;32mI (1233866) BOX_TX: advertising Box UUID, scan response: node id=aabbccddeeff flags=NODE|SERVING[0m
+[0;32mI (1234436) BOX_TX: mtu conn=2 mtu=517[0m
+[0;32mI (1234476) BOX_TX: HELLO conn=2 phone=6a6dc1733925 flags=04[0m
+[0;32mI (1234486) BOX_TX: subscription conn=2 notify=1[0m
+[0;32mI (1234486) BOX_TX: subscribed conn=2 mtu=517 phone=6a6dc1733925 -> CORE[0m
+[0;32mI (1234546) BOX_TX: session start token=011a conn=2 mtu=517 packets=3 (streaming)[0m
+[0;32mI (1234546) BOX_TX:   notify SID          1/3 len= 43 -> ok (rc=0)[0m
+[0;32mI (1234556) BOX_TX:   notify TRM          2/3 len= 43 -> ok (rc=0)[0m
+[0;32mI (1234586) BOX_TX:   notify TRM          3/3 len= 43 -> ok (rc=0)[0m
+[0;32mI (1234586) BOX_TX: session done token=011a conn=2 delivered=3/3 rc=0[0m
+[0;32mI (1238636) BOX_TX: subscription conn=2 notify=0[0m
+[0;32mI (1238636) BOX_TX: incoming disconnect conn=2 reason=531[0m
+[0;32mI (1260596) LINK: link=UP peer=CORE boot=2d30 | rx=3724 tx=3727 retx=0 dup=0 failed=0 | crc=0 cobs=1 len=0 | restarts=0 ups=1 downs=0 loop=0 drops=0[0m
+[0;32mI (1290596) LINK: link=UP peer=CORE boot=2d30 | rx=3784 tx=3787 retx=0 dup=0 failed=0 | crc=0 cobs=1 len=0 | restarts=0 ups=1 downs=0 loop=0 drops=0[0m
+[0;32mI (1298966) BOX_TX: incoming connect conn=1 peer=42:e9:b5:35:38:b3/1[0m
+[0;32mI (1298966) BOX_TX: advertising Box UUID, scan response: node id=aabbccddeeff flags=NODE|SERVING[0m
+[0;32mI (1299546) BOX_TX: mtu conn=1 mtu=517[0m
+[0;32mI (1299596) BOX_TX: HELLO conn=1 phone=6a6dc1733925 flags=04[0m
+[0;32mI (1299626) BOX_TX: subscription conn=1 notify=1[0m
+[0;32mI (1299626) BOX_TX: subscribed conn=1 mtu=517 phone=6a6dc1733925 -> CORE[0m
+[0;32mI (1299686) BOX_TX: session start token=011b conn=1 mtu=517 packets=3 (streaming)[0m
+[0;32mI (1299686) BOX_TX:   notify SID          1/3 len= 43 -> ok (rc=0)[0m
+[0;32mI (1299696) BOX_TX:   notify TRM          2/3 len= 43 -> ok (rc=0)[0m
+[0;32mI (1299726) BOX_TX:   notify TRM          3/3 len= 43 -> ok (rc=0)[0m
+[0;32mI (1299726) BOX_TX: session done token=011b conn=1 delivered=3/3 rc=0[0m
+[0;32mI (1303766) BOX_TX: subscription conn=1 notify=0[0m
+[0;32mI (1303766) BOX_TX: incoming disconnect conn=1 reason=531[0m
+[0;32mI (1318136) BOX_TX: incoming connect conn=2 peer=49:59:02:eb:d6:86/1[0m
+[0;32mI (1318146) BOX_TX: advertising Box UUID, scan response: node id=aabbccddeeff flags=NODE|SERVING[0m
+[0;32mI (1320596) LINK: link=UP peer=CORE boot=2d30 | rx=3850 tx=3853 retx=0 dup=0 failed=0 | crc=0 cobs=1 len=0 | restarts=0 ups=1 downs=0 loop=0 drops=0[0m
+[0;32mI (1322456) BOX_TX: incoming disconnect conn=2 reason=531[0m
+[0;32mI (1331606) BOX_TX: incoming connect conn=1 peer=4a:f6:fe:24:d8:b2/1[0m
+[0;32mI (1331616) BOX_TX: advertising Box UUID, scan response: node id=aabbccddeeff flags=NODE|SERVING[0m
+[0;32mI (1332206) BOX_TX: mtu conn=1 mtu=517[0m
+[0;32mI (1332236) BOX_TX: subscription conn=1 notify=1[0m
+[0;32mI (1332536) BOX_TX: subscribed conn=1 mtu=517 phone=? (no HELLO) -> CORE[0m
+[0;32mI (1332576) BOX_TX: session start token=011c conn=1 mtu=517 packets=40 (streaming)[0m
+[0;32mI (1332576) BOX_TX:   notify SID          1/40 len= 43 -> ok (rc=0)[0m
+[0;32mI (1332626) BOX_TX:   notify BOX          2/40 len=266 -> ok (rc=0)[0m
+[0;32mI (1332656) BOX_TX:   notify BOX          3/40 len=286 -> ok (rc=0)[0m
+[0;32mI (1332706) BOX_TX:   notify BOX          4/40 len=286 -> ok (rc=0)[0m
+[0;32mI (1332736) BOX_TX:   notify BOX          5/40 len=266 -> ok (rc=0)[0m
+[0;32mI (1332766) BOX_TX:   notify BOX          6/40 len=198 -> ok (rc=0)[0m
+[0;32mI (1332816) BOX_TX:   notify BOX          7/40 len=266 -> ok (rc=0)[0m
+[0;32mI (1332846) BOX_TX:   notify BOX          8/40 len=286 -> ok (rc=0)[0m
+[0;32mI (1332896) BOX_TX:   notify BOX          9/40 len=286 -> ok (rc=0)[0m
+[0;32mI (1332926) BOX_TX:   notify BOX          10/40 len=222 -> ok (rc=0)[0m
+[0;32mI (1332956) BOX_TX:   notify BOX          11/40 len=286 -> ok (rc=0)[0m
+[0;32mI (1333006) BOX_TX:   notify BOX          12/40 len=242 -> ok (rc=0)[0m
+[0;32mI (1333036) BOX_TX:   notify BOX          13/40 len=266 -> ok (rc=0)[0m
+[0;32mI (1333086) BOX_TX:   notify BOX          14/40 len=286 -> ok (rc=0)[0m
+[0;32mI (1333116) BOX_TX:   notify BOX          15/40 len=286 -> ok (rc=0)[0m
+[0;32mI (1333166) BOX_TX:   notify BOX          16/40 len=286 -> ok (rc=0)[0m
+[0;32mI (1333196) BOX_TX:   notify BOX          17/40 len=286 -> ok (rc=0)[0m
+[0;32mI (1333246) BOX_TX:   notify BOX          18/40 len=286 -> ok (rc=0)[0m
+[0;32mI (1333276) BOX_TX:   notify BOX          19/40 len=242 -> ok (rc=0)[0m
+[0;32mI (1333306) BOX_TX:   notify BOX          20/40 len=198 -> ok (rc=0)[0m
+[0;32mI (1333356) BOX_TX:   notify BOX          21/40 len=238 -> ok (rc=0)[0m
+[0;32mI (1333386) BOX_TX:   notify BOX          22/40 len=286 -> ok (rc=0)[0m
+[0;32mI (1333416) BOX_TX:   notify BOX          23/40 len=222 -> ok (rc=0)[0m
+[0;32mI (1333466) BOX_TX:   notify BOX          24/40 len=286 -> ok (rc=0)[0m
+[0;32mI (1333496) BOX_TX:   notify BOX          25/40 len=266 -> ok (rc=0)[0m
+[0;32mI (1333546) BOX_TX:   notify BOX          26/40 len=238 -> ok (rc=0)[0m
+[0;32mI (1333576) BOX_TX:   notify BOX          27/40 len=286 -> ok (rc=0)[0m
+[0;32mI (1333606) BOX_TX:   notify BOX          28/40 len=222 -> ok (rc=0)[0m
+[0;32mI (1333656) BOX_TX:   notify BOX          29/40 len=286 -> ok (rc=0)[0m
+[0;32mI (1333686) BOX_TX:   notify BOX          30/40 len=222 -> ok (rc=0)[0m
+[0;32mI (1333716) BOX_TX:   notify BOX          31/40 len=286 -> ok (rc=0)[0m
+[0;32mI (1333766) BOX_TX:   notify BOX          32/40 len=286 -> ok (rc=0)[0m
+[0;32mI (1333796) BOX_TX:   notify BOX          33/40 len=198 -> ok (rc=0)[0m
+[0;32mI (1333826) BOX_TX:   notify BOX          34/40 len=238 -> ok (rc=0)[0m
+[0;32mI (1333856) BOX_TX:   notify BOX          35/40 len=202 -> ok (rc=0)[0m
+[0;32mI (1333906) BOX_TX:   notify BOX          36/40 len=286 -> ok (rc=0)[0m
+[0;32mI (1333936) BOX_TX:   notify BOX          37/40 len=286 -> ok (rc=0)[0m
+[0;32mI (1333966) BOX_TX:   notify BOX          38/40 len=202 -> ok (rc=0)[0m
+[0;32mI (1333996) BOX_TX:   notify TRM          39/40 len= 43 -> ok (rc=0)[0m
+[0;32mI (1334006) BOX_TX:   notify TRM          40/40 len= 43 -> ok (rc=0)[0m
+[0;32mI (1334006) BOX_TX: session done token=011c conn=1 delivered=40/40 rc=0[0m
+[0;32mI (1338056) BOX_TX: subscription conn=1 notify=0[0m
+[0;32mI (1338056) BOX_TX: incoming disconnect conn=1 reason=531[0m
+[0;32mI (1350596) LINK: link=UP peer=CORE boot=2d30 | rx=3953 tx=3956 retx=0 dup=0 failed=0 | crc=0 cobs=1 len=0 | restarts=0 ups=1 downs=0 loop=0 drops=0[0m
+[0;32mI (1366506) BOX_TX: incoming connect conn=2 peer=46:80:e9:10:b7:55/1[0m
+[0;32mI (1366506) BOX_TX: advertising Box UUID, scan response: node id=aabbccddeeff flags=NODE|SERVING[0m
+[0;32mI (1370966) BOX_TX: incoming disconnect conn=2 reason=531[0m
+[0;32mI (1372476) BOX_TX: incoming connect conn=1 peer=66:0e:49:b3:54:73/1[0m
+[0;32mI (1372476) BOX_TX: advertising Box UUID, scan response: node id=aabbccddeeff flags=NODE|SERVING[0m
+[0;32mI (1373036) BOX_TX: mtu conn=1 mtu=517[0m
+[0;32mI (1373066) BOX_TX: subscription conn=1 notify=1[0m
+[0;32mI (1373366) BOX_TX: subscribed conn=1 mtu=517 phone=? (no HELLO) -> CORE[0m
+[0;32mI (1373406) BOX_TX: session start token=011d conn=1 mtu=517 packets=40 (streaming)[0m
+[0;32mI (1373406) BOX_TX:   notify SID          1/40 len= 43 -> ok (rc=0)[0m
+[0;32mI (1373456) BOX_TX:   notify BOX          2/40 len=286 -> ok (rc=0)[0m
+[0;32mI (1373486) BOX_TX:   notify BOX          3/40 len=222 -> ok (rc=0)[0m
+[0;32mI (1373516) BOX_TX:   notify BOX          4/40 len=198 -> ok (rc=0)[0m
+[0;32mI (1373546) BOX_TX:   notify BOX          5/40 len=282 -> ok (rc=0)[0m
+[0;32mI (1373576) BOX_TX:   notify BOX          6/40 len=198 -> ok (rc=0)[0m
+[0;32mI (1373606) BOX_TX:   notify BOX          7/40 len=198 -> ok (rc=0)[0m
+[0;32mI (1373636) BOX_TX:   notify BOX          8/40 len=145 -> ok (rc=0)[0m
+[0;32mI (1373666) BOX_TX:   notify BOX          9/40 len=145 -> ok (rc=0)[0m
+[0;32mI (1373696) BOX_TX:   notify BOX          10/40 len=198 -> ok (rc=0)[0m
+[0;32mI (1373726) BOX_TX:   notify BOX          11/40 len=198 -> ok (rc=0)[0m
+[0;32mI (1373756) BOX_TX:   notify BOX          12/40 len=218 -> ok (rc=0)[0m
+[0;32mI (1373786) BOX_TX:   notify BOX          13/40 len=141 -> ok (rc=0)[0m
+[0;32mI (1373816) BOX_TX:   notify BOX          14/40 len=145 -> ok (rc=0)[0m
+[0;32mI (1373846) BOX_TX:   notify BOX          15/40 len=145 -> ok (rc=0)[0m
+[0;32mI (1373876) BOX_TX:   notify BOX          16/40 len=145 -> ok (rc=0)[0m
+[0;32mI (1373906) BOX_TX:   notify BOX          17/40 len=145 -> ok (rc=0)[0m
+[0;32mI (1373936) BOX_TX:   notify BOX          18/40 len=145 -> ok (rc=0)[0m
+[0;32mI (1373966) BOX_TX:   notify BOX          19/40 len=145 -> ok (rc=0)[0m
+[0;32mI (1373996) BOX_TX:   notify BOX          20/40 len=145 -> ok (rc=0)[0m
+[0;32mI (1374026) BOX_TX:   notify BOX          21/40 len=145 -> ok (rc=0)[0m
+[0;32mI (1374056) BOX_TX:   notify BOX          22/40 len=145 -> ok (rc=0)[0m
+[0;32mI (1374086) BOX_TX:   notify BOX          23/40 len=145 -> ok (rc=0)[0m
+[0;32mI (1374116) BOX_TX:   notify BOX          24/40 len=145 -> ok (rc=0)[0m
+[0;32mI (1374146) BOX_TX:   notify BOX          25/40 len=145 -> ok (rc=0)[0m
+[0;32mI (1374176) BOX_TX:   notify BOX          26/40 len=198 -> ok (rc=0)[0m
+[0;32mI (1374226) BOX_TX:   notify BOX          27/40 len=286 -> ok (rc=0)[0m
+[0;32mI (1374256) BOX_TX:   notify BOX          28/40 len=286 -> ok (rc=0)[0m
+[0;32mI (1374306) BOX_TX:   notify BOX          29/40 len=286 -> ok (rc=0)[0m
+[0;32mI (1374336) BOX_TX:   notify BOX          30/40 len=222 -> ok (rc=0)[0m
+[0;32mI (1374366) BOX_TX:   notify BOX          31/40 len=286 -> ok (rc=0)[0m
+[0;32mI (1374416) BOX_TX:   notify BOX          32/40 len=286 -> ok (rc=0)[0m
+[0;32mI (1374446) BOX_TX:   notify BOX          33/40 len=286 -> ok (rc=0)[0m
+[0;32mI (1374496) BOX_TX:   notify BOX          34/40 len=242 -> ok (rc=0)[0m
+[0;32mI (1374526) BOX_TX:   notify BOX          35/40 len=286 -> ok (rc=0)[0m
+[0;32mI (1374576) BOX_TX:   notify BOX          36/40 len=286 -> ok (rc=0)[0m
+[0;32mI (1374606) BOX_TX:   notify BOX          37/40 len=202 -> ok (rc=0)[0m
+[0;32mI (1374636) BOX_TX:   notify BOX          38/40 len=286 -> ok (rc=0)[0m
+[0;32mI (1374666) BOX_TX:   notify TRM          39/40 len= 43 -> ok (rc=0)[0m
+[0;32mI (1374676) BOX_TX:   notify TRM          40/40 len= 43 -> ok (rc=0)[0m
+[0;32mI (1374676) BOX_TX: session done token=011d conn=1 delivered=40/40 rc=0[0m
+[0;32mI (1378736) BOX_TX: subscription conn=1 notify=0[0m
+[0;32mI (1378736) BOX_TX: incoming disconnect conn=1 reason=531[0m
+[0;32mI (1380596) LINK: link=UP peer=CORE boot=2d30 | rx=4056 tx=4059 retx=0 dup=0 failed=0 | crc=0 cobs=1 len=0 | restarts=0 ups=1 downs=0 loop=0 drops=0[0m
+[0;32mI (1404816) BOX_TX: incoming connect conn=2 peer=59:28:d4:44:66:2f/1[0m
+[0;32mI (1404816) BOX_TX: advertising Box UUID, scan response: node id=aabbccddeeff flags=NODE|SERVING[0m
+[0;32mI (1405406) BOX_TX: mtu conn=2 mtu=517[0m
+[0;32mI (1405446) BOX_TX: subscription conn=2 notify=1[0m
+[0;32mI (1405746) BOX_TX: subscribed conn=2 mtu=517 phone=? (no HELLO) -> CORE[0m
+[0;32mI (1405786) BOX_TX: session start token=011e conn=2 mtu=517 packets=40 (streaming)[0m
+[0;32mI (1405786) BOX_TX:   notify SID          1/40 len= 43 -> ok (rc=0)[0m
+[0;32mI (1405836) BOX_TX:   notify BOX          2/40 len=266 -> ok (rc=0)[0m
+[0;32mI (1405866) BOX_TX:   notify BOX          3/40 len=286 -> ok (rc=0)[0m
+[0;32mI (1405916) BOX_TX:   notify BOX          4/40 len=266 -> ok (rc=0)[0m
+[0;32mI (1405946) BOX_TX:   notify BOX          5/40 len=286 -> ok (rc=0)[0m
+[0;32mI (1405976) BOX_TX:   notify BOX          6/40 len=218 -> ok (rc=0)[0m
+[0;32mI (1406026) BOX_TX:   notify BOX          7/40 len=286 -> ok (rc=0)[0m
+[0;32mI (1406056) BOX_TX:   notify BOX          8/40 len=286 -> ok (rc=0)[0m
+[0;32mI (1406086) BOX_TX:   notify BOX          9/40 len=222 -> ok (rc=0)[0m
+[0;32mI (1406116) BOX_TX:   notify BOX          10/40 len=218 -> ok (rc=0)[0m
+[0;32mI (1406146) BOX_TX:   notify BOX          11/40 len=218 -> ok (rc=0)[0m
+[0;32mI (1406176) BOX_TX:   notify BOX          12/40 len=198 -> ok (rc=0)[0m
+[0;32mI (1406206) BOX_TX:   notify BOX          13/40 len=218 -> ok (rc=0)[0m
+[0;32mI (1406236) BOX_TX:   notify BOX          14/40 len=218 -> ok (rc=0)[0m
+[0;32mI (1406286) BOX_TX:   notify BOX          15/40 len=266 -> ok (rc=0)[0m
+[0;32mI (1406316) BOX_TX:   notify BOX          16/40 len=286 -> ok (rc=0)[0m
+[0;32mI (1406366) BOX_TX:   notify BOX          17/40 len=286 -> ok (rc=0)[0m
+[0;32mI (1406396) BOX_TX:   notify BOX          18/40 len=266 -> ok (rc=0)[0m
+[0;32mI (1406426) BOX_TX:   notify BOX          19/40 len=198 -> ok (rc=0)[0m
+[0;32mI (1406476) BOX_TX:   notify BOX          20/40 len=266 -> ok (rc=0)[0m
+[0;32mI (1406506) BOX_TX:   notify BOX          21/40 len=286 -> ok (rc=0)[0m
+[0;32mI (1406556) BOX_TX:   notify BOX          22/40 len=286 -> ok (rc=0)[0m
+[0;32mI (1406586) BOX_TX:   notify BOX          23/40 len=222 -> ok (rc=0)[0m
+[0;32mI (1406616) BOX_TX:   notify BOX          24/40 len=286 -> ok (rc=0)[0m
+[0;32mI (1406666) BOX_TX:   notify BOX          25/40 len=242 -> ok (rc=0)[0m
+[0;32mI (1406696) BOX_TX:   notify BOX          26/40 len=266 -> ok (rc=0)[0m
+[0;32mI (1406746) BOX_TX:   notify BOX          27/40 len=286 -> ok (rc=0)[0m
+[0;32mI (1406776) BOX_TX:   notify BOX          28/40 len=286 -> ok (rc=0)[0m
+[0;32mI (1406826) BOX_TX:   notify BOX          29/40 len=286 -> ok (rc=0)[0m
+[0;32mI (1406856) BOX_TX:   notify BOX          30/40 len=286 -> ok (rc=0)[0m
+[0;32mI (1406906) BOX_TX:   notify BOX          31/40 len=286 -> ok (rc=0)[0m
+[0;32mI (1406936) BOX_TX:   notify BOX          32/40 len=242 -> ok (rc=0)[0m
+[0;32mI (1406966) BOX_TX:   notify BOX          33/40 len=198 -> ok (rc=0)[0m
+[0;32mI (1407016) BOX_TX:   notify BOX          34/40 len=238 -> ok (rc=0)[0m
+[0;32mI (1407046) BOX_TX:   notify BOX          35/40 len=286 -> ok (rc=0)[0m
+[0;32mI (1407076) BOX_TX:   notify BOX          36/40 len=222 -> ok (rc=0)[0m
+[0;32mI (1407126) BOX_TX:   notify BOX          37/40 len=286 -> ok (rc=0)[0m
+[0;32mI (1407156) BOX_TX:   notify BOX          38/40 len=266 -> ok (rc=0)[0m
+[0;32mI (1407186) BOX_TX:   notify TRM          39/40 len= 43 -> ok (rc=0)[0m
+[0;32mI (1407196) BOX_TX:   notify TRM          40/40 len= 43 -> ok (rc=0)[0m
+[0;32mI (1407196) BOX_TX: session done token=011e conn=2 delivered=40/40 rc=0[0m
+[0;32mI (1410596) LINK: link=UP peer=CORE boot=2d30 | rx=4158 tx=4161 retx=0 dup=0 failed=0 | crc=0 cobs=1 len=0 | restarts=0 ups=1 downs=0 loop=0 drops=0[0m
+[0;32mI (1411256) BOX_TX: subscription conn=2 notify=0[0m
+[0;32mI (1411256) BOX_TX: incoming disconnect conn=2 reason=531[0m
+[0;32mI (1429956) BOX_TX: incoming connect conn=1 peer=4b:b5:2a:3e:0d:4f/1[0m
+[0;32mI (1429956) BOX_TX: advertising Box UUID, scan response: node id=aabbccddeeff flags=NODE|SERVING[0m
+[0;32mI (1430546) BOX_TX: mtu conn=1 mtu=517[0m
+[0;32mI (1430576) BOX_TX: HELLO conn=1 phone=6a6dc1733925 flags=04[0m
+[0;32mI (1430606) BOX_TX: subscription conn=1 notify=1[0m
+[0;32mI (1430606) BOX_TX: subscribed conn=1 mtu=517 phone=6a6dc1733925 -> CORE[0m
+[0;32mI (1430646) BOX_TX: session start token=011f conn=1 mtu=517 packets=3 (streaming)[0m
+[0;32mI (1430646) BOX_TX:   notify SID          1/3 len= 43 -> ok (rc=0)[0m
+[0;32mI (1430676) BOX_TX:   notify TRM          2/3 len= 43 -> ok (rc=0)[0m
+[0;32mI (1430686) BOX_TX:   notify TRM          3/3 len= 43 -> ok (rc=0)[0m
+[0;32mI (1430686) BOX_TX: session done token=011f conn=1 delivered=3/3 rc=0[0m
+[0;32mI (1434746) BOX_TX: subscription conn=1 notify=0[0m
+[0;32mI (1434746) BOX_TX: incoming disconnect conn=1 reason=531[0m
+[0;32mI (1440596) LINK: link=UP peer=CORE boot=2d30 | rx=4225 tx=4228 retx=0 dup=0 failed=0 | crc=0 cobs=1 len=0 | restarts=0 ups=1 downs=0 loop=0 drops=0[0m
+[0;32mI (1446906) BOX_TX: incoming connect conn=2 peer=76:31:41:fb:ed:59/1[0m
+[0;32mI (1446906) BOX_TX: advertising Box UUID, scan response: node id=aabbccddeeff flags=NODE|SERVING[0m
+[0;32mI (1447496) BOX_TX: mtu conn=2 mtu=517[0m
+[0;32mI (1447526) BOX_TX: subscription conn=2 notify=1[0m
+[0;32mI (1447826) BOX_TX: subscribed conn=2 mtu=517 phone=? (no HELLO) -> CORE[0m
+[0;32mI (1447866) BOX_TX: session start token=0120 conn=2 mtu=517 packets=40 (streaming)[0m
+[0;32mI (1447866) BOX_TX:   notify SID          1/40 len= 43 -> ok (rc=0)[0m
+[0;32mI (1447916) BOX_TX:   notify BOX          2/40 len=238 -> ok (rc=0)[0m
+[0;32mI (1447946) BOX_TX:   notify BOX          3/40 len=286 -> ok (rc=0)[0m
+[0;32mI (1447976) BOX_TX:   notify BOX          4/40 len=222 -> ok (rc=0)[0m
+[0;32mI (1448026) BOX_TX:   notify BOX          5/40 len=286 -> ok (rc=0)[0m
+[0;32mI (1448056) BOX_TX:   notify BOX          6/40 len=222 -> ok (rc=0)[0m
+[0;32mI (1448086) BOX_TX:   notify BOX          7/40 len=286 -> ok (rc=0)[0m
+[0;32mI (1448136) BOX_TX:   notify BOX          8/40 len=286 -> ok (rc=0)[0m
+[0;32mI (1448166) BOX_TX:   notify BOX          9/40 len=198 -> ok (rc=0)[0m
+[0;32mI (1448196) BOX_TX:   notify BOX          10/40 len=238 -> ok (rc=0)[0m
+[0;32mI (1448226) BOX_TX:   notify BOX          11/40 len=202 -> ok (rc=0)[0m
+[0;32mI (1448276) BOX_TX:   notify BOX          12/40 len=286 -> ok (rc=0)[0m
+[0;32mI (1448306) BOX_TX:   notify BOX          13/40 len=286 -> ok (rc=0)[0m
+[0;32mI (1448336) BOX_TX:   notify BOX          14/40 len=202 -> ok (rc=0)[0m
+[0;32mI (1448386) BOX_TX:   notify BOX          15/40 len=286 -> ok (rc=0)[0m
+[0;32mI (1448416) BOX_TX:   notify BOX          16/40 len=222 -> ok (rc=0)[0m
+[0;32mI (1448446) BOX_TX:   notify BOX          17/40 len=198 -> ok (rc=0)[0m
+[0;32mI (1448476) BOX_TX:   notify BOX          18/40 len=282 -> ok (rc=0)[0m
+[0;32mI (1448506) BOX_TX:   notify BOX          19/40 len=198 -> ok (rc=0)[0m
+[0;32mI (1448536) BOX_TX:   notify BOX          20/40 len=198 -> ok (rc=0)[0m
+[0;32mI (1448566) BOX_TX:   notify BOX          21/40 len=145 -> ok (rc=0)[0m
+[0;32mI (1448596) BOX_TX:   notify BOX          22/40 len=145 -> ok (rc=0)[0m
+[0;32mI (1448626) BOX_TX:   notify BOX          23/40 len=198 -> ok (rc=0)[0m
+[0;32mI (1448656) BOX_TX:   notify BOX          24/40 len=198 -> ok (rc=0)[0m
+[0;32mI (1448686) BOX_TX:   notify BOX          25/40 len=218 -> ok (rc=0)[0m
+[0;32mI (1448716) BOX_TX:   notify BOX          26/40 len=141 -> ok (rc=0)[0m
+[0;32mI (1448746) BOX_TX:   notify BOX          27/40 len=145 -> ok (rc=0)[0m
+[0;32mI (1448776) BOX_TX:   notify BOX          28/40 len=145 -> ok (rc=0)[0m
+[0;32mI (1448806) BOX_TX:   notify BOX          29/40 len=145 -> ok (rc=0)[0m
+[0;32mI (1448836) BOX_TX:   notify BOX          30/40 len=145 -> ok (rc=0)[0m
+[0;32mI (1448866) BOX_TX:   notify BOX          31/40 len=145 -> ok (rc=0)[0m
+[0;32mI (1448896) BOX_TX:   notify BOX          32/40 len=145 -> ok (rc=0)[0m
+[0;32mI (1448926) BOX_TX:   notify BOX          33/40 len=145 -> ok (rc=0)[0m
+[0;32mI (1448956) BOX_TX:   notify BOX          34/40 len=145 -> ok (rc=0)[0m
+[0;32mI (1448986) BOX_TX:   notify BOX          35/40 len=145 -> ok (rc=0)[0m
+[0;32mI (1449016) BOX_TX:   notify BOX          36/40 len=145 -> ok (rc=0)[0m
+[0;32mI (1449046) BOX_TX:   notify BOX          37/40 len=145 -> ok (rc=0)[0m
+[0;32mI (1449076) BOX_TX:   notify BOX          38/40 len=145 -> ok (rc=0)[0m
+[0;32mI (1449106) BOX_TX:   notify TRM          39/40 len= 43 -> ok (rc=0)[0m
+[0;32mI (1449116) BOX_TX:   notify TRM          40/40 len= 43 -> ok (rc=0)[0m
+[0;32mI (1449116) BOX_TX: session done token=0120 conn=2 delivered=40/40 rc=0[0m
+[0;32mI (1453166) BOX_TX: subscription conn=2 notify=0[0m
+[0;32mI (1453166) BOX_TX: incoming disconnect conn=2 reason=531[0m
+[0;32mI (1470596) LINK: link=UP peer=CORE boot=2d30 | rx=4328 tx=4331 retx=0 dup=0 failed=0 | crc=0 cobs=1 len=0 | restarts=0 ups=1 downs=0 loop=0 drops=0[0m
+[0;32mI (1500596) LINK: link=UP peer=CORE boot=2d30 | rx=4388 tx=4391 retx=0 dup=0 failed=0 | crc=0 cobs=1 len=0 | restarts=0 ups=1 downs=0 loop=0 drops=0[0m
+[0;32mI (1501236) BOX_TX: incoming connect conn=1 peer=64:30:e7:72:a5:e3/1[0m
+[0;32mI (1501236) BOX_TX: advertising Box UUID, scan response: node id=aabbccddeeff flags=NODE|SERVING[0m
+[0;32mI (1501836) BOX_TX: mtu conn=1 mtu=517[0m
+[0;32mI (1501886) BOX_TX: HELLO conn=1 phone=6a6dc1733925 flags=04[0m
+[0;32mI (1501916) BOX_TX: subscription conn=1 notify=1[0m
+[0;32mI (1501916) BOX_TX: subscribed conn=1 mtu=517 phone=6a6dc1733925 -> CORE[0m
+[0;32mI (1501956) BOX_TX: session start token=0121 conn=1 mtu=517 packets=3 (streaming)[0m
+[0;32mI (1501956) BOX_TX:   notify SID          1/3 len= 43 -> ok (rc=0)[0m
+[0;32mI (1501986) BOX_TX:   notify TRM          2/3 len= 43 -> ok (rc=0)[0m
+[0;32mI (1501996) BOX_TX:   notify TRM          3/3 len= 43 -> ok (rc=0)[0m
+[0;32mI (1501996) BOX_TX: session done token=0121 conn=1 delivered=3/3 rc=0[0m
+[0;32mI (1506056) BOX_TX: subscription conn=1 notify=0[0m
+[0;32mI (1506056) BOX_TX: incoming disconnect conn=1 reason=531[0m
+[0;32mI (1514856) BOX_TX: incoming connect conn=2 peer=4f:28:e2:d6:ad:6a/1[0m
+[0;32mI (1514856) BOX_TX: advertising Box UUID, scan response: node id=aabbccddeeff flags=NODE|SERVING[0m
+[0;32mI (1515426) BOX_TX: mtu conn=2 mtu=517[0m
+[0;32mI (1515466) BOX_TX: subscription conn=2 notify=1[0m
+[0;32mI (1515766) BOX_TX: subscribed conn=2 mtu=517 phone=? (no HELLO) -> CORE[0m
+[0;32mI (1515806) BOX_TX: session start token=0122 conn=2 mtu=517 packets=40 (streaming)[0m
+[0;32mI (1515806) BOX_TX:   notify SID          1/40 len= 43 -> ok (rc=0)[0m
+[0;32mI (1515836) BOX_TX:   notify BOX          2/40 len=198 -> ok (rc=0)[0m
+[0;32mI (1515886) BOX_TX:   notify BOX          3/40 len=286 -> ok (rc=0)[0m
+[0;32mI (1515916) BOX_TX:   notify BOX          4/40 len=286 -> ok (rc=0)[0m
+[0;32mI (1515966) BOX_TX:   notify BOX          5/40 len=286 -> ok (rc=0)[0m
+[0;32mI (1515996) BOX_TX:   notify BOX          6/40 len=222 -> ok (rc=0)[0m
+[0;32mI (1516026) BOX_TX:   notify BOX          7/40 len=286 -> ok (rc=0)[0m
+[0;32mI (1516076) BOX_TX:   notify BOX          8/40 len=286 -> ok (rc=0)[0m
+[0;32mI (1516106) BOX_TX:   notify BOX          9/40 len=286 -> ok (rc=0)[0m
+[0;32mI (1516156) BOX_TX:   notify BOX          10/40 len=242 -> ok (rc=0)[0m
+[0;32mI (1516186) BOX_TX:   notify BOX          11/40 len=286 -> ok (rc=0)[0m
+[0;32mI (1516236) BOX_TX:   notify BOX          12/40 len=286 -> ok (rc=0)[0m
+[0;32mI (1516266) BOX_TX:   notify BOX          13/40 len=202 -> ok (rc=0)[0m
+[0;32mI (1516296) BOX_TX:   notify BOX          14/40 len=266 -> ok (rc=0)[0m
+[0;32mI (1516346) BOX_TX:   notify BOX          15/40 len=286 -> ok (rc=0)[0m
+[0;32mI (1516376) BOX_TX:   notify BOX          16/40 len=266 -> ok (rc=0)[0m
+[0;32mI (1516426) BOX_TX:   notify BOX          17/40 len=286 -> ok (rc=0)[0m
+[0;32mI (1516456) BOX_TX:   notify BOX          18/40 len=218 -> ok (rc=0)[0m
+[0;32mI (1516486) BOX_TX:   notify BOX          19/40 len=286 -> ok (rc=0)[0m
+[0;32mI (1516536) BOX_TX:   notify BOX          20/40 len=286 -> ok (rc=0)[0m
+[0;32mI (1516566) BOX_TX:   notify BOX          21/40 len=222 -> ok (rc=0)[0m
+[0;32mI (1516596) BOX_TX:   notify BOX          22/40 len=218 -> ok (rc=0)[0m
+[0;32mI (1516626) BOX_TX:   notify BOX          23/40 len=218 -> ok (rc=0)[0m
+[0;32mI (1516656) BOX_TX:   notify BOX          24/40 len=198 -> ok (rc=0)[0m
+[0;32mI (1516686) BOX_TX:   notify BOX          25/40 len=218 -> ok (rc=0)[0m
+[0;32mI (1516716) BOX_TX:   notify BOX          26/40 len=218 -> ok (rc=0)[0m
+[0;32mI (1516746) BOX_TX:   notify BOX          27/40 len=266 -> ok (rc=0)[0m
+[0;32mI (1516796) BOX_TX:   notify BOX          28/40 len=286 -> ok (rc=0)[0m
+[0;32mI (1516826) BOX_TX:   notify BOX          29/40 len=286 -> ok (rc=0)[0m
+[0;32mI (1516876) BOX_TX:   notify BOX          30/40 len=266 -> ok (rc=0)[0m
+[0;32mI (1516906) BOX_TX:   notify BOX          31/40 len=198 -> ok (rc=0)[0m
+[0;32mI (1516936) BOX_TX:   notify BOX          32/40 len=266 -> ok (rc=0)[0m
+[0;32mI (1516986) BOX_TX:   notify BOX          33/40 len=286 -> ok (rc=0)[0m
+[0;32mI (1517016) BOX_TX:   notify BOX          34/40 len=286 -> ok (rc=0)[0m
+[0;32mI (1517046) BOX_TX:   notify BOX          35/40 len=222 -> ok (rc=0)[0m
+[0;32mI (1517096) BOX_TX:   notify BOX          36/40 len=286 -> ok (rc=0)[0m
+[0;32mI (1517126) BOX_TX:   notify BOX          37/40 len=242 -> ok (rc=0)[0m
+[0;32mI (1517176) BOX_TX:   notify BOX          38/40 len=266 -> ok (rc=0)[0m
+[0;32mI (1517186) BOX_TX:   notify TRM          39/40 len= 43 -> ok (rc=0)[0m
+[0;32mI (1517216) BOX_TX:   notify TRM          40/40 len= 43 -> ok (rc=0)[0m
+[0;32mI (1517216) BOX_TX: session done token=0122 conn=2 delivered=40/40 rc=0[0m
+[0;32mI (1521236) BOX_TX: subscription conn=2 notify=0[0m
+[0;32mI (1521236) BOX_TX: incoming disconnect conn=2 reason=531[0m
+[0;32mI (1530596) LINK: link=UP peer=CORE boot=2d30 | rx=4497 tx=4500 retx=0 dup=0 failed=0 | crc=0 cobs=1 len=0 | restarts=0 ups=1 downs=0 loop=0 drops=0[0m
+[0;32mI (1560596) LINK: link=UP peer=CORE boot=2d30 | rx=4557 tx=4560 retx=0 dup=0 failed=0 | crc=0 cobs=1 len=0 | restarts=0 ups=1 downs=0 loop=0 drops=0[0m
+[0;32mI (1563756) BOX_TX: incoming connect conn=1 peer=73:bf:cd:50:fe:2b/1[0m
+[0;32mI (1563756) BOX_TX: advertising Box UUID, scan response: node id=aabbccddeeff flags=NODE|SERVING[0m
+[0;32mI (1564326) BOX_TX: mtu conn=1 mtu=517[0m
+[0;32mI (1564366) BOX_TX: HELLO conn=1 phone=6a6dc1733925 flags=04[0m
+[0;32mI (1564396) BOX_TX: subscription conn=1 notify=1[0m
+[0;32mI (1564396) BOX_TX: subscribed conn=1 mtu=517 phone=6a6dc1733925 -> CORE[0m
+[0;32mI (1564456) BOX_TX: session start token=0123 conn=1 mtu=517 packets=3 (streaming)[0m
+[0;32mI (1564456) BOX_TX:   notify SID          1/3 len= 43 -> ok (rc=0)[0m
+[0;32mI (1564466) BOX_TX:   notify TRM          2/3 len= 43 -> ok (rc=0)[0m
+[0;32mI (1564496) BOX_TX:   notify TRM          3/3 len= 43 -> ok (rc=0)[0m
+[0;32mI (1564496) BOX_TX: session done token=0123 conn=1 delivered=3/3 rc=0[0m
+[0;32mI (1568516) BOX_TX: subscription conn=1 notify=0[0m
+[0;32mI (1568516) BOX_TX: incoming disconnect conn=1 reason=531[0m
+[0;32mI (1588656) BOX_TX: incoming connect conn=2 peer=54:13:29:52:18:84/1[0m
+[0;32mI (1588666) BOX_TX: advertising Box UUID, scan response: node id=aabbccddeeff flags=NODE|SERVING[0m
+[0;32mI (1589226) BOX_TX: mtu conn=2 mtu=517[0m
+[0;32mI (1589266) BOX_TX: subscription conn=2 notify=1[0m
+[0;32mI (1589566) BOX_TX: subscribed conn=2 mtu=517 phone=? (no HELLO) -> CORE[0m
+[0;32mI (1589606) BOX_TX: session start token=0124 conn=2 mtu=517 packets=40 (streaming)[0m
+[0;32mI (1589606) BOX_TX:   notify SID          1/40 len= 43 -> ok (rc=0)[0m
+[0;32mI (1589656) BOX_TX:   notify BOX          2/40 len=286 -> ok (rc=0)[0m
+[0;32mI (1589686) BOX_TX:   notify BOX          3/40 len=286 -> ok (rc=0)[0m
+[0;32mI (1589736) BOX_TX:   notify BOX          4/40 len=286 -> ok (rc=0)[0m
+[0;32mI (1589766) BOX_TX:   notify BOX          5/40 len=286 -> ok (rc=0)[0m
+[0;32mI (1589816) BOX_TX:   notify BOX          6/40 len=242 -> ok (rc=0)[0m
+[0;32mI (1589846) BOX_TX:   notify BOX          7/40 len=198 -> ok (rc=0)[0m
+[0;32mI (1589876) BOX_TX:   notify BOX          8/40 len=238 -> ok (rc=0)[0m
+[0;32mI (1589926) BOX_TX:   notify BOX          9/40 len=286 -> ok (rc=0)[0m
+[0;32mI (1589956) BOX_TX:   notify BOX          10/40 len=222 -> ok (rc=0)[0m
+[0;32mI (1589986) BOX_TX:   notify BOX          11/40 len=286 -> ok (rc=0)[0m
+[0;32mI (1590036) BOX_TX:   notify BOX          12/40 len=266 -> ok (rc=0)[0m
+[0;32mI (1590066) BOX_TX:   notify BOX          13/40 len=238 -> ok (rc=0)[0m
+[0;32mI (1590116) BOX_TX:   notify BOX          14/40 len=286 -> ok (rc=0)[0m
+[0;32mI (1590146) BOX_TX:   notify BOX          15/40 len=222 -> ok (rc=0)[0m
+[0;32mI (1590176) BOX_TX:   notify BOX          16/40 len=286 -> ok (rc=0)[0m
+[0;32mI (1590206) BOX_TX:   notify BOX          17/40 len=222 -> ok (rc=0)[0m
+[0;32mI (1590256) BOX_TX:   notify BOX          18/40 len=286 -> ok (rc=0)[0m
+[0;32mI (1590286) BOX_TX:   notify BOX          19/40 len=286 -> ok (rc=0)[0m
+[0;32mI (1590316) BOX_TX:   notify BOX          20/40 len=198 -> ok (rc=0)[0m
+[0;32mI (1590366) BOX_TX:   notify BOX          21/40 len=238 -> ok (rc=0)[0m
+[0;32mI (1590396) BOX_TX:   notify BOX          22/40 len=202 -> ok (rc=0)[0m
+[0;32mI (1590426) BOX_TX:   notify BOX          23/40 len=286 -> ok (rc=0)[0m
+[0;32mI (1590476) BOX_TX:   notify BOX          24/40 len=286 -> ok (rc=0)[0m
+[0;32mI (1590506) BOX_TX:   notify BOX          25/40 len=202 -> ok (rc=0)[0m
+[0;32mI (1590536) BOX_TX:   notify BOX          26/40 len=286 -> ok (rc=0)[0m
+[0;32mI (1590566) BOX_TX:   notify BOX          27/40 len=222 -> ok (rc=0)[0m
+[0;32mI (1590596) LINK: link=UP peer=CORE boot=2d30 | rx=4652 tx=4655 retx=0 dup=0 failed=0 | crc=0 cobs=1 len=0 | restarts=0 ups=1 downs=0 loop=0 drops=0[0m
+[0;32mI (1590596) BOX_TX:   notify BOX          28/40 len=198 -> ok (rc=0)[0m
+[0;32mI (1590646) BOX_TX:   notify BOX          29/40 len=282 -> ok (rc=0)[0m
+[0;32mI (1590676) BOX_TX:   notify BOX          30/40 len=198 -> ok (rc=0)[0m
+[0;32mI (1590706) BOX_TX:   notify BOX          31/40 len=198 -> ok (rc=0)[0m
+[0;32mI (1590736) BOX_TX:   notify BOX          32/40 len=145 -> ok (rc=0)[0m
+[0;32mI (1590766) BOX_TX:   notify BOX          33/40 len=145 -> ok (rc=0)[0m
+[0;32mI (1590796) BOX_TX:   notify BOX          34/40 len=198 -> ok (rc=0)[0m
+[0;32mI (1590826) BOX_TX:   notify BOX          35/40 len=198 -> ok (rc=0)[0m
+[0;32mI (1590856) BOX_TX:   notify BOX          36/40 len=218 -> ok (rc=0)[0m
+[0;32mI (1590886) BOX_TX:   notify BOX          37/40 len=141 -> ok (rc=0)[0m
+[0;32mI (1590916) BOX_TX:   notify BOX          38/40 len=145 -> ok (rc=0)[0m
+[0;32mI (1590926) BOX_TX:   notify TRM          39/40 len= 43 -> ok (rc=0)[0m
+[0;32mI (1590956) BOX_TX:   notify TRM          40/40 len= 43 -> ok (rc=0)[0m
+[0;32mI (1590956) BOX_TX: session done token=0124 conn=2 delivered=40/40 rc=0[0m
+[0;32mI (1594976) BOX_TX: subscription conn=2 notify=0[0m
+[0;32mI (1594976) BOX_TX: incoming disconnect conn=2 reason=531[0m
+[0;32mI (1620596) LINK: link=UP peer=CORE boot=2d30 | rx=4726 tx=4729 retx=0 dup=0 failed=0 | crc=0 cobs=1 len=0 | restarts=0 ups=1 downs=0 loop=0 drops=0[0m
+[0;32mI (1629766) BOX_TX: incoming connect conn=1 peer=76:9e:d7:d8:e6:ea/1[0m
+[0;32mI (1629766) BOX_TX: advertising Box UUID, scan response: node id=aabbccddeeff flags=NODE|SERVING[0m
+[0;32mI (1630336) BOX_TX: mtu conn=1 mtu=517[0m
+[0;32mI (1630376) BOX_TX: subscription conn=1 notify=1[0m
+[0;32mI (1630676) BOX_TX: subscribed conn=1 mtu=517 phone=? (no HELLO) -> CORE[0m
+[0;32mI (1630716) BOX_TX: session start token=0125 conn=1 mtu=517 packets=40 (streaming)[0m
+[0;32mI (1630716) BOX_TX:   notify SID          1/40 len= 43 -> ok (rc=0)[0m
+[0;32mI (1630746) BOX_TX:   notify BOX          2/40 len=145 -> ok (rc=0)[0m
+[0;32mI (1630776) BOX_TX:   notify BOX          3/40 len=145 -> ok (rc=0)[0m
+[0;32mI (1630806) BOX_TX:   notify BOX          4/40 len=145 -> ok (rc=0)[0m
+[0;32mI (1630836) BOX_TX:   notify BOX          5/40 len=145 -> ok (rc=0)[0m
+[0;32mI (1630866) BOX_TX:   notify BOX          6/40 len=145 -> ok (rc=0)[0m
+[0;32mI (1630896) BOX_TX:   notify BOX          7/40 len=145 -> ok (rc=0)[0m
+[0;32mI (1630926) BOX_TX:   notify BOX          8/40 len=145 -> ok (rc=0)[0m
+[0;32mI (1630956) BOX_TX:   notify BOX          9/40 len=145 -> ok (rc=0)[0m
+[0;32mI (1630986) BOX_TX:   notify BOX          10/40 len=145 -> ok (rc=0)[0m
+[0;32mI (1631016) BOX_TX:   notify BOX          11/40 len=145 -> ok (rc=0)[0m
+[0;32mI (1631046) BOX_TX:   notify BOX          12/40 len=145 -> ok (rc=0)[0m
+[0;32mI (1631076) BOX_TX:   notify BOX          13/40 len=198 -> ok (rc=0)[0m
+[0;32mI (1631126) BOX_TX:   notify BOX          14/40 len=286 -> ok (rc=0)[0m
+[0;32mI (1631156) BOX_TX:   notify BOX          15/40 len=286 -> ok (rc=0)[0m
+[0;32mI (1631206) BOX_TX:   notify BOX          16/40 len=286 -> ok (rc=0)[0m
+[0;32mI (1631236) BOX_TX:   notify BOX          17/40 len=222 -> ok (rc=0)[0m
+[0;32mI (1631266) BOX_TX:   notify BOX          18/40 len=286 -> ok (rc=0)[0m
+[0;32mI (1631316) BOX_TX:   notify BOX          19/40 len=286 -> ok (rc=0)[0m
+[0;32mI (1631346) BOX_TX:   notify BOX          20/40 len=286 -> ok (rc=0)[0m
+[0;32mI (1631396) BOX_TX:   notify BOX          21/40 len=242 -> ok (rc=0)[0m
+[0;32mI (1631426) BOX_TX:   notify BOX          22/40 len=286 -> ok (rc=0)[0m
+[0;32mI (1631476) BOX_TX:   notify BOX          23/40 len=286 -> ok (rc=0)[0m
+[0;32mI (1631486) BOX_TX:   notify BOX          24/40 len=202 -> ok (rc=0)[0m
+[0;32mI (1631536) BOX_TX:   notify BOX          25/40 len=266 -> ok (rc=0)[0m
+[0;32mI (1631586) BOX_TX:   notify BOX          26/40 len=286 -> ok (rc=0)[0m
+[0;32mI (1631616) BOX_TX:   notify BOX          27/40 len=266 -> ok (rc=0)[0m
+[0;32mI (1631666) BOX_TX:   notify BOX          28/40 len=286 -> ok (rc=0)[0m
+[0;32mI (1631696) BOX_TX:   notify BOX          29/40 len=218 -> ok (rc=0)[0m
+[0;32mI (1631726) BOX_TX:   notify BOX          30/40 len=286 -> ok (rc=0)[0m
+[0;32mI (1631776) BOX_TX:   notify BOX          31/40 len=286 -> ok (rc=0)[0m
+[0;32mI (1631806) BOX_TX:   notify BOX          32/40 len=222 -> ok (rc=0)[0m
+[0;32mI (1631836) BOX_TX:   notify BOX          33/40 len=218 -> ok (rc=0)[0m
+[0;32mI (1631866) BOX_TX:   notify BOX          34/40 len=218 -> ok (rc=0)[0m
+[0;32mI (1631896) BOX_TX:   notify BOX          35/40 len=198 -> ok (rc=0)[0m
+[0;32mI (1631926) BOX_TX:   notify BOX          36/40 len=218 -> ok (rc=0)[0m
+[0;32mI (1631956) BOX_TX:   notify BOX          37/40 len=218 -> ok (rc=0)[0m
+[0;32mI (1632006) BOX_TX:   notify BOX          38/40 len=266 -> ok (rc=0)[0m
+[0;32mI (1632016) BOX_TX:   notify TRM          39/40 len= 43 -> ok (rc=0)[0m
+[0;32mI (1632046) BOX_TX:   notify TRM          40/40 len= 43 -> ok (rc=0)[0m
+[0;32mI (1632046) BOX_TX: session done token=0125 conn=1 delivered=40/40 rc=0[0m
+[0;32mI (1636106) BOX_TX: subscription conn=1 notify=0[0m
+[0;32mI (1636106) BOX_TX: incoming disconnect conn=1 reason=531[0m
+[0;32mI (1650596) LINK: link=UP peer=CORE boot=2d30 | rx=4829 tx=4832 retx=0 dup=0 failed=0 | crc=0 cobs=1 len=0 | restarts=0 ups=1 downs=0 loop=0 drops=0[0m
+[0;32mI (1660036) BOX_TX: incoming connect conn=2 peer=6e:b1:fd:cd:81:bb/1[0m
+[0;32mI (1660036) BOX_TX: advertising Box UUID, scan response: node id=aabbccddeeff flags=NODE|SERVING[0m
+[0;32mI (1660596) BOX_TX: mtu conn=2 mtu=517[0m
+[0;32mI (1660636) BOX_TX: subscription conn=2 notify=1[0m
+[0;32mI (1660936) BOX_TX: subscribed conn=2 mtu=517 phone=? (no HELLO) -> CORE[0m
+[0;32mI (1660976) BOX_TX: session start token=0126 conn=2 mtu=517 packets=40 (streaming)[0m
+[0;32mI (1660976) BOX_TX:   notify SID          1/40 len= 43 -> ok (rc=0)[0m
+[0;32mI (1661026) BOX_TX:   notify BOX          2/40 len=286 -> ok (rc=0)[0m
+[0;32mI (1661056) BOX_TX:   notify BOX          3/40 len=266 -> ok (rc=0)[0m
+[0;32mI (1661086) BOX_TX:   notify BOX          4/40 len=198 -> ok (rc=0)[0m
+[0;32mI (1661136) BOX_TX:   notify BOX          5/40 len=266 -> ok (rc=0)[0m
+[0;32mI (1661166) BOX_TX:   notify BOX          6/40 len=286 -> ok (rc=0)[0m
+[0;32mI (1661216) BOX_TX:   notify BOX          7/40 len=286 -> ok (rc=0)[0m
+[0;32mI (1661246) BOX_TX:   notify BOX          8/40 len=222 -> ok (rc=0)[0m
+[0;32mI (1661296) BOX_TX:   notify BOX          9/40 len=286 -> ok (rc=0)[0m
+[0;32mI (1661326) BOX_TX:   notify BOX          10/40 len=242 -> ok (rc=0)[0m
+[0;32mI (1661376) BOX_TX:   notify BOX          11/40 len=286 -> ok (rc=0)[0m
+[0;32mI (1661406) BOX_TX:   notify BOX          12/40 len=266 -> ok (rc=0)[0m
+[0;32mI (1661456) BOX_TX:   notify BOX          13/40 len=286 -> ok (rc=0)[0m
+[0;32mI (1661486) BOX_TX:   notify BOX          14/40 len=286 -> ok (rc=0)[0m
+[0;32mI (1661536) BOX_TX:   notify BOX          15/40 len=286 -> ok (rc=0)[0m
+[0;32mI (1661566) BOX_TX:   notify BOX          16/40 len=286 -> ok (rc=0)[0m
+[0;32mI (1661616) BOX_TX:   notify BOX          17/40 len=242 -> ok (rc=0)[0m
+[0;32mI (1661646) BOX_TX:   notify BOX          18/40 len=198 -> ok (rc=0)[0m
+[0;32mI (1661676) BOX_TX:   notify BOX          19/40 len=238 -> ok (rc=0)[0m
+[0;32mI (1661726) BOX_TX:   notify BOX          20/40 len=286 -> ok (rc=0)[0m
+[0;32mI (1661756) BOX_TX:   notify BOX          21/40 len=222 -> ok (rc=0)[0m
+[0;32mI (1661806) BOX_TX:   notify BOX          22/40 len=286 -> ok (rc=0)[0m
+[0;32mI (1661836) BOX_TX:   notify BOX          23/40 len=266 -> ok (rc=0)[0m
+[0;32mI (1661886) BOX_TX:   notify BOX          24/40 len=238 -> ok (rc=0)[0m
+[0;32mI (1661916) BOX_TX:   notify BOX          25/40 len=286 -> ok (rc=0)[0m
+[0;32mI (1661966) BOX_TX:   notify BOX          26/40 len=222 -> ok (rc=0)[0m
+[0;32mI (1661996) BOX_TX:   notify BOX          27/40 len=286 -> ok (rc=0)[0m
+[0;32mI (1662046) BOX_TX:   notify BOX          28/40 len=222 -> ok (rc=0)[0m
+[0;32mI (1662076) BOX_TX:   notify BOX          29/40 len=286 -> ok (rc=0)[0m
+[0;32mI (1662126) BOX_TX:   notify BOX          30/40 len=286 -> ok (rc=0)[0m
+[0;32mI (1662156) BOX_TX:   notify BOX          31/40 len=198 -> ok (rc=0)[0m
+[0;32mI (1662186) BOX_TX:   notify BOX          32/40 len=238 -> ok (rc=0)[0m
+[0;32mI (1662216) BOX_TX:   notify BOX          33/40 len=202 -> ok (rc=0)[0m
+[0;32mI (1662266) BOX_TX:   notify BOX          34/40 len=286 -> ok (rc=0)[0m
+[0;32mI (1662296) BOX_TX:   notify BOX          35/40 len=286 -> ok (rc=0)[0m
+[0;32mI (1662326) BOX_TX:   notify BOX          36/40 len=202 -> ok (rc=0)[0m
+[0;32mI (1662376) BOX_TX:   notify BOX          37/40 len=286 -> ok (rc=0)[0m
+[0;32mI (1662406) BOX_TX:   notify BOX          38/40 len=222 -> ok (rc=0)[0m
+[0;32mI (1662436) BOX_TX:   notify TRM          39/40 len= 43 -> ok (rc=0)[0m
+[0;32mI (1662446) BOX_TX:   notify TRM          40/40 len= 43 -> ok (rc=0)[0m
+[0;32mI (1662446) BOX_TX: session done token=0126 conn=2 delivered=40/40 rc=0[0m
+[0;32mI (1666516) BOX_TX: subscription conn=2 notify=0[0m
+[0;32mI (1666516) BOX_TX: incoming disconnect conn=2 reason=531[0m
+[0;32mI (1667236) BOX_TX: incoming connect conn=1 peer=5f:21:aa:8f:7f:85/1[0m
+[0;32mI (1667236) BOX_TX: advertising Box UUID, scan response: node id=aabbccddeeff flags=NODE|SERVING[0m
+[0;32mI (1667816) BOX_TX: mtu conn=1 mtu=517[0m
+[0;32mI (1667866) BOX_TX: HELLO conn=1 phone=6a6dc1733925 flags=04[0m
+[0;32mI (1667926) BOX_TX: subscription conn=1 notify=1[0m
+[0;32mI (1667926) BOX_TX: subscribed conn=1 mtu=517 phone=6a6dc1733925 -> CORE[0m
+[0;32mI (1667966) BOX_TX: session start token=0127 conn=1 mtu=517 packets=3 (streaming)[0m
+[0;32mI (1667966) BOX_TX:   notify SID          1/3 len= 43 -> ok (rc=0)[0m
+[0;32mI (1667996) BOX_TX:   notify TRM          2/3 len= 43 -> ok (rc=0)[0m
+[0;32mI (1668006) BOX_TX:   notify TRM          3/3 len= 43 -> ok (rc=0)[0m
+[0;32mI (1668006) BOX_TX: session done token=0127 conn=1 delivered=3/3 rc=0[0m
+[0;32mI (1672066) BOX_TX: subscription conn=1 notify=0[0m
+[0;32mI (1672066) BOX_TX: incoming disconnect conn=1 reason=531[0m
+[0;32mI (1680596) LINK: link=UP peer=CORE boot=2d30 | rx=4938 tx=4941 retx=0 dup=0 failed=0 | crc=0 cobs=1 len=0 | restarts=0 ups=1 downs=0 loop=0 drops=0[0m
+[0;32mI (1710596) LINK: link=UP peer=CORE boot=2d30 | rx=4998 tx=5001 retx=0 dup=0 failed=0 | crc=0 cobs=1 len=0 | restarts=0 ups=1 downs=0 loop=0 drops=0[0m
+[0;32mI (1740596) LINK: link=UP peer=CORE boot=2d30 | rx=5058 tx=5061 retx=0 dup=0 failed=0 | crc=0 cobs=1 len=0 | restarts=0 ups=1 downs=0 loop=0 drops=0[0m
+[0;32mI (1770596) LINK: link=UP peer=CORE boot=2d30 | rx=5118 tx=5121 retx=0 dup=0 failed=0 | crc=0 cobs=1 len=0 | restarts=0 ups=1 downs=0 loop=0 drops=0[0m
+[0;32mI (1800596) LINK: link=UP peer=CORE boot=2d30 | rx=5178 tx=5181 retx=0 dup=0 failed=0 | crc=0 cobs=1 len=0 | restarts=0 ups=1 downs=0 loop=0 drops=0[0m
+[0;32mI (1830596) LINK: link=UP peer=CORE boot=2d30 | rx=5238 tx=5241 retx=0 dup=0 failed=0 | crc=0 cobs=1 len=0 | restarts=0 ups=1 downs=0 loop=0 drops=0[0m
+[0;32mI (1860596) LINK: link=UP peer=CORE boot=2d30 | rx=5298 tx=5301 retx=0 dup=0 failed=0 | crc=0 cobs=1 len=0 | restarts=0 ups=1 downs=0 loop=0 drops=0[0m
+[0;32mI (1890596) LINK: link=UP peer=CORE boot=2d30 | rx=5358 tx=5361 retx=0 dup=0 failed=0 | crc=0 cobs=1 len=0 | restarts=0 ups=1 downs=0 loop=0 drops=0[0m
+[0;32mI (1920596) LINK: link=UP peer=CORE boot=2d30 | rx=5418 tx=5421 retx=0 dup=0 failed=0 | crc=0 cobs=1 len=0 | restarts=0 ups=1 downs=0 loop=0 drops=0[0m
+[0;32mI (1950596) LINK: link=UP peer=CORE boot=2d30 | rx=5478 tx=5481 retx=0 dup=0 failed=0 | crc=0 cobs=1 len=0 | restarts=0 ups=1 downs=0 loop=0 drops=0[0m
+[0;32mI (1980596) LINK: link=UP peer=CORE boot=2d30 | rx=5538 tx=5541 retx=0 dup=0 failed=0 | crc=0 cobs=1 len=0 | restarts=0 ups=1 downs=0 loop=0 drops=0[0m
+[0;32mI (2010596) LINK: link=UP peer=CORE boot=2d30 | rx=5598 tx=5601 retx=0 dup=0 failed=0 | crc=0 cobs=1 len=0 | restarts=0 ups=1 downs=0 loop=0 drops=0[0m
+[0;32mI (2040596) LINK: link=UP peer=CORE boot=2d30 | rx=5658 tx=5661 retx=0 dup=0 failed=0 | crc=0 cobs=1 len=0 | restarts=0 ups=1 downs=0 loop=0 drops=0[0m
+[0;32mI (2070596) LINK: link=UP peer=CORE boot=2d30 | rx=5718 tx=5721 retx=0 dup=0 failed=0 | crc=0 cobs=1 len=0 | restarts=0 ups=1 downs=0 loop=0 drops=0[0m
+[0;32mI (2100596) LINK: link=UP peer=CORE boot=2d30 | rx=5778 tx=5781 retx=0 dup=0 failed=0 | crc=0 cobs=1 len=0 | restarts=0 ups=1 downs=0 loop=0 drops=0[0m
+[0;32mI (2130596) LINK: link=UP peer=CORE boot=2d30 | rx=5838 tx=5841 retx=0 dup=0 failed=0 | crc=0 cobs=1 len=0 | restarts=0 ups=1 downs=0 loop=0 drops=0[0m
+[0;32mI (2160596) LINK: link=UP peer=CORE boot=2d30 | rx=5898 tx=5901 retx=0 dup=0 failed=0 | crc=0 cobs=1 len=0 | restarts=0 ups=1 downs=0 loop=0 drops=0[0m
+[0;32mI (2190596) LINK: link=UP peer=CORE boot=2d30 | rx=5958 tx=5961 retx=0 dup=0 failed=0 | crc=0 cobs=1 len=0 | restarts=0 ups=1 downs=0 loop=0 drops=0[0m
+[0;32mI (2220596) LINK: link=UP peer=CORE boot=2d30 | rx=6018 tx=6021 retx=0 dup=0 failed=0 | crc=0 cobs=1 len=0 | restarts=0 ups=1 downs=0 loop=0 drops=0[0m
+[0;32mI (2250596) LINK: link=UP peer=CORE boot=2d30 | rx=6078 tx=6081 retx=0 dup=0 failed=0 | crc=0 cobs=1 len=0 | restarts=0 ups=1 downs=0 loop=0 drops=0[0m
+[0;32mI (2280596) LINK: link=UP peer=CORE boot=2d30 | rx=6138 tx=6141 retx=0 dup=0 failed=0 | crc=0 cobs=1 len=0 | restarts=0 ups=1 downs=0 loop=0 drops=0[0m
+[0;32mI (2310596) LINK: link=UP peer=CORE boot=2d30 | rx=6198 tx=6201 retx=0 dup=0 failed=0 | crc=0 cobs=1 len=0 | restarts=0 ups=1 downs=0 loop=0 drops=0[0m
+[0;32mI (2340596) LINK: link=UP peer=CORE boot=2d30 | rx=6258 tx=6261 retx=0 dup=0 failed=0 | crc=0 cobs=1 len=0 | restarts=0 ups=1 downs=0 loop=0 drops=0[0m
+[0;32mI (2370596) LINK: link=UP peer=CORE boot=2d30 | rx=6318 tx=6321 retx=0 dup=0 failed=0 | crc=0 cobs=1 len=0 | restarts=0 ups=1 downs=0 loop=0 drops=0[0m
+[0;32mI (2400596) LINK: link=UP peer=CORE boot=2d30 | rx=6378 tx=6381 retx=0 dup=0 failed=0 | crc=0 cobs=1 len=0 | restarts=0 ups=1 downs=0 loop=0 drops=0[0m
+[0;32mI (2430596) LINK: link=UP peer=CORE boot=2d30 | rx=6438 tx=6441 retx=0 dup=0 failed=0 | crc=0 cobs=1 len=0 | restarts=0 ups=1 downs=0 loop=0 drops=0[0m
+[0;32mI (2460596) LINK: link=UP peer=CORE boot=2d30 | rx=6498 tx=6501 retx=0 dup=0 failed=0 | crc=0 cobs=1 len=0 | restarts=0 ups=1 downs=0 loop=0 drops=0[0m
+[0;32mI (2490596) LINK: link=UP peer=CORE boot=2d30 | rx=6558 tx=6561 retx=0 dup=0 failed=0 | crc=0 cobs=1 len=0 | restarts=0 ups=1 downs=0 loop=0 drops=0[0m
+[0;32mI (2520596) LINK: link=UP peer=CORE boot=2d30 | rx=6618 tx=6621 retx=0 dup=0 failed=0 | crc=0 cobs=1 len=0 | restarts=0 ups=1 downs=0 loop=0 drops=0[0m
+[0;32mI (2550596) LINK: link=UP peer=CORE boot=2d30 | rx=6678 tx=6681 retx=0 dup=0 failed=0 | crc=0 cobs=1 len=0 | restarts=0 ups=1 downs=0 loop=0 drops=0[0m
+[0;32mI (2580596) LINK: link=UP peer=CORE boot=2d30 | rx=6738 tx=6741 retx=0 dup=0 failed=0 | crc=0 cobs=1 len=0 | restarts=0 ups=1 downs=0 loop=0 drops=0[0m
+[0;32mI (2610596) LINK: link=UP peer=CORE boot=2d30 | rx=6798 tx=6801 retx=0 dup=0 failed=0 | crc=0 cobs=1 len=0 | restarts=0 ups=1 downs=0 loop=0 drops=0[0m
+[0;32mI (2640596) LINK: link=UP peer=CORE boot=2d30 | rx=6858 tx=6861 retx=0 dup=0 failed=0 | crc=0 cobs=1 len=0 | restarts=0 ups=1 downs=0 loop=0 drops=0[0m
+[0;32mI (2670596) LINK: link=UP peer=CORE boot=2d30 | rx=6918 tx=6921 retx=0 dup=0 failed=0 | crc=0 cobs=1 len=0 | restarts=0 ups=1 downs=0 loop=0 drops=0[0m
+[0;32mI (2700596) LINK: link=UP peer=CORE boot=2d30 | rx=6978 tx=6981 retx=0 dup=0 failed=0 | crc=0 cobs=1 len=0 | restarts=0 ups=1 downs=0 loop=0 drops=0[0m
+[0;32mI (2730596) LINK: link=UP peer=CORE boot=2d30 | rx=7038 tx=7041 retx=0 dup=0 failed=0 | crc=0 cobs=1 len=0 | restarts=0 ups=1 downs=0 loop=0 drops=0[0m
+[0;32mI (2760596) LINK: link=UP peer=CORE boot=2d30 | rx=7098 tx=7101 retx=0 dup=0 failed=0 | crc=0 cobs=1 len=0 | restarts=0 ups=1 downs=0 loop=0 drops=0[0m
+[0;32mI (2790596) LINK: link=UP peer=CORE boot=2d30 | rx=7158 tx=7161 retx=0 dup=0 failed=0 | crc=0 cobs=1 len=0 | restarts=0 ups=1 downs=0 loop=0 drops=0[0m
+[0;32mI (2820596) LINK: link=UP peer=CORE boot=2d30 | rx=7218 tx=7221 retx=0 dup=0 failed=0 | crc=0 cobs=1 len=0 | restarts=0 ups=1 downs=0 loop=0 drops=0[0m
+[0;32mI (2850596) LINK: link=UP peer=CORE boot=2d30 | rx=7278 tx=7281 retx=0 dup=0 failed=0 | crc=0 cobs=1 len=0 | restarts=0 ups=1 downs=0 loop=0 drops=0[0m
+[0;32mI (2880596) LINK: link=UP peer=CORE boot=2d30 | rx=7338 tx=7341 retx=0 dup=0 failed=0 | crc=0 cobs=1 len=0 | restarts=0 ups=1 downs=0 loop=0 drops=0[0m
+[0;32mI (2910596) LINK: link=UP peer=CORE boot=2d30 | rx=7398 tx=7401 retx=0 dup=0 failed=0 | crc=0 cobs=1 len=0 | restarts=0 ups=1 downs=0 loop=0 drops=0[0m
+[0;32mI (2940596) LINK: link=UP peer=CORE boot=2d30 | rx=7458 tx=7461 retx=0 dup=0 failed=0 | crc=0 cobs=1 len=0 | restarts=0 ups=1 downs=0 loop=0 drops=0[0m
+[0;32mI (2970596) LINK: link=UP peer=CORE boot=2d30 | rx=7518 tx=7521 retx=0 dup=0 failed=0 | crc=0 cobs=1 len=0 | restarts=0 ups=1 downs=0 loop=0 drops=0[0m
+[0;32mI (3000596) LINK: link=UP peer=CORE boot=2d30 | rx=7578 tx=7581 retx=0 dup=0 failed=0 | crc=0 cobs=1 len=0 | restarts=0 ups=1 downs=0 loop=0 drops=0[0m
+[0;32mI (3030596) LINK: link=UP peer=CORE boot=2d30 | rx=7638 tx=7641 retx=0 dup=0 failed=0 | crc=0 cobs=1 len=0 | restarts=0 ups=1 downs=0 loop=0 drops=0[0m
+[0;32mI (3060596) LINK: link=UP peer=CORE boot=2d30 | rx=7698 tx=7701 retx=0 dup=0 failed=0 | crc=0 cobs=1 len=0 | restarts=0 ups=1 downs=0 loop=0 drops=0[0m
+[0;32mI (3090596) LINK: link=UP peer=CORE boot=2d30 | rx=7758 tx=7761 retx=0 dup=0 failed=0 | crc=0 cobs=1 len=0 | restarts=0 ups=1 downs=0 loop=0 drops=0[0m
+[0;32mI (3120596) LINK: link=UP peer=CORE boot=2d30 | rx=7818 tx=7821 retx=0 dup=0 failed=0 | crc=0 cobs=1 len=0 | restarts=0 ups=1 downs=0 loop=0 drops=0[0m
+[0;32mI (3150596) LINK: link=UP peer=CORE boot=2d30 | rx=7878 tx=7881 retx=0 dup=0 failed=0 | crc=0 cobs=1 len=0 | restarts=0 ups=1 downs=0 loop=0 drops=0[0m
+[0;32mI (3180596) LINK: link=UP peer=CORE boot=2d30 | rx=7938 tx=7941 retx=0 dup=0 failed=0 | crc=0 cobs=1 len=0 | restarts=0 ups=1 downs=0 loop=0 drops=0[0m
+[0;32mI (3210596) LINK: link=UP peer=CORE boot=2d30 | rx=799

@@ -39,8 +39,11 @@ typedef struct {
     uint8_t  is_event;
     uint8_t  type;
     uint16_t len;
-    uint8_t  data[16];      /* сообщения TX -> CORE короткие (<= 8 байт) */
+    uint8_t  data[32];      /* TX -> CORE: до RL_MAX_TX_MSG (SUBSCRIBED с HELLO — 23 байта) */
 } rmsg_t;
+/* dual-0.4.3 и раньше: data[16], SUBSCRIBED с HELLO (23 байта) молча отбрасывался —
+ * CORE не строил сессию, телефон отключался по «message waiting timeout». */
+_Static_assert(sizeof(((rmsg_t *)0)->data) >= RL_MAX_TX_MSG, "rmsg_t too small for TX -> CORE messages");
 
 static QueueHandle_t relay_q;
 static portMUX_TYPE addr_mux = portMUX_INITIALIZER_UNLOCKED;
@@ -189,6 +192,19 @@ e2e_rx_action_t node_on_rx(const uint8_t *data, size_t len)
 #endif
     E2E_UNLOCK();
     return a;
+}
+
+uint32_t node_rx_useful(void)
+{
+#if defined(NODE_MODE_E2E)
+    static uint32_t n;
+    return ++n;              /* тест e2e: без пауз между сеансами */
+#else
+    E2E_LOCK();
+    uint32_t v = store_ok ? rn_rx_useful() : 0;
+    E2E_UNLOCK();
+    return v;
+#endif
 }
 
 void node_tick(void)

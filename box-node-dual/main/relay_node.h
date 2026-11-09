@@ -56,6 +56,9 @@ void            rn_commit_session(const e2e_session_t *s, int delivered);
 
 void            rn_tick(void);                     /* раз в 100 мс … 1 с */
 const rn_stats_t *rn_stats(void);
+/* Нарастающий счётчик «полезного» от телефонов: новые сообщения, колбэки про наши
+ * коробки, подтверждения наших колбэков. Не изменился за сеанс — сеанс был пустым. */
+uint32_t        rn_rx_useful(void);
 void            rn_status_line(char *out, size_t cap);
 int             rn_pending_callbacks(void);
 int             rn_pending_acbs(void);
